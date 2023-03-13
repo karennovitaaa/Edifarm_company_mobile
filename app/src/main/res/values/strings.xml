@@ -11,4 +11,30 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string-array name="countries_arry">
+        <item> name="Afghanistan" </item>
+        <item> name="Albania" </item>
+        <item> name="Algeria" </item>
+        <item> name="America" </item>
+        <item> name="Andorra" </item>
+        <item> name="Angola" </item>
+        <item> name="Anguilla" </item>
+        <item> name="Antarctica" </item>
+        <item> name="Antigua and Barbuda" </item>
+        <item> name="Antarctica" </item>
+        <item> name="Argentina" </item>
+        <item> name="Armenia" </item>
+        <item> name="Aruba" </item>
+        <item> name="Australia" </item>
+        <item> name="Austria" </item>
+        <item> name="Azerbaijan" </item>
+        <item> name="Bahrain" </item>
+        <item> name="Bangladesh" </item>
+        <item> name="Barbados" </item>
+        <item> name="Belarus" </item>
+        <item> name="Belgium" </item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
