@@ -11,10 +11,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-<<<<<<< HEAD
+<!--    <-->
+<!--    <-->
+<!--    <-->
+<!--    <-->
+<!--    <-->
+<!--    <-->
+<!--    < HEAD-->
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
+<!--    =======-->
     <string-array name="countries_arry">
         <item> name="Afghanistan" </item>
         <item> name="Albania" </item>
@@ -39,7 +45,7 @@
         <item> name="Belgium" </item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 
->>>>>>> 073b9415ed0924a5b94de5236890973202ec3234
+<!--    >>>>>>> 073b9415ed0924a5b94de5236890973202ec3234-->
 </resources>
