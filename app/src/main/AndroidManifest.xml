@@ -15,12 +15,20 @@
         android:theme="@style/Theme.Edifarm_Company"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+            android:name=".post_comment"
+=======
             android:name=".MainActivity1"
+>>>>>>> 073b9415ed0924a5b94de5236890973202ec3234
             android:exported="true" >
 
         </activity>
         <activity
+<<<<<<< HEAD
+            android:name=".aktivitas"
+=======
             android:name=".comen"
+>>>>>>> 073b9415ed0924a5b94de5236890973202ec3234
             android:exported="false" />
         <activity
             android:name=".coment"
