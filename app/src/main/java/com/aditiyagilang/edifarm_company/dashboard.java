@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.aditiyagilang.edifarm_company.model.model_dashboard;
 import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,11 +24,15 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
     private ArrayList<model_dashboard> model_dashboards;
 
-    @SuppressLint("MissingInflatedId")
+   BottomNavigationItemView bottomNavigationItemView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        bottomNavigationItemView = findViewById(R.id.bottom);
+//        bottomNavigationItemView.setSelected(R.id.dashboard);
+//
+//        bottomNavigationItemView.setOn
 
 
 //        likeButton.setOnClickListener(new View.OnClickListener() {

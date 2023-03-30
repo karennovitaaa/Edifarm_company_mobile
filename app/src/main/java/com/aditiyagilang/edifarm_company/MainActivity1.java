@@ -1,6 +1,9 @@
 package com.aditiyagilang.edifarm_company;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
@@ -80,10 +83,23 @@ public class MainActivity1 extends AppCompatActivity {
             }
         };
 
-        addButton.setOnClickListener(buttonClickListener);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {load(new dashboardfix());
+
+            }
+        });
         homeButton.setOnClickListener(buttonClickListener);
         profileButton.setOnClickListener(buttonClickListener);
+
     }
+    private void load(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.commit();
+    }
+
 
     @Override
     public void onBackPressed() {

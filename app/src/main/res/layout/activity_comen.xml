@@ -44,6 +44,7 @@
 
                 <TextView
                     android:id="@+id/name"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -63,7 +64,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:fontFamily="@font/poppins_thin"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="cerah banget ya lamgitnyaa"
@@ -158,5 +159,20 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:foregroundGravity="bottom"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
