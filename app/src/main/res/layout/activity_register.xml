@@ -385,7 +385,7 @@
                     </TextView>
 
                     <EditText
-                        android:id="@+id/bord_date_field"
+                        android:id="@+id/born_date_field"
                         android:layout_width="237dp"
                         android:layout_height="wrap_content"
 

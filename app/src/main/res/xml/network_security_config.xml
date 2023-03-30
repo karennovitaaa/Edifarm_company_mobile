@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">192.168.1.4</domain>
+        <domain includeSubdomains="true">61ef-140-213-219-57.ap.ngrok.io</domain>
     </domain-config>
 </network-security-config>

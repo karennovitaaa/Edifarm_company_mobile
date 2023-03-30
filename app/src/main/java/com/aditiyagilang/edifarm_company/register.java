@@ -43,7 +43,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
     ApiInterface apiInterface;
     String Username, Name, Address, Phone, Paswword, Born_Date, Email, CPassword;
     private ProgressBar progres;
-    private String URL_REGIS = "http://127.0.0.1:8000/api/register";
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -57,7 +57,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         eaddress = (EditText) findViewById(R.id.address_field);
         ephone = (EditText) findViewById(R.id.phone_field);
         epassword = (EditText) findViewById(R.id.password_field);
-        eborn_date = (EditText) findViewById(R.id.bord_date_field);
+        eborn_date = (EditText) findViewById(R.id.born_date_field);
         eemail = (EditText) findViewById(R.id.email_field);
         daftar = (Button) findViewById(R.id.daftar);
         tv_login = (TextView) findViewById(R.id.tv_login);
@@ -94,7 +94,11 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         call.enqueue(new Callback<Register>() {
             @Override
             public void onResponse(Call<Register> call, Response<Register> response) {
-                if (response.isSuccessful() && response.body().isSuccess()){
+                if (response.isSuccessful() && response.body().isSuccess() && response != null){
+                    Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(register.this, login.class);
+                    startActivity(intent);
+                }else {
                     Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
                 }
             }

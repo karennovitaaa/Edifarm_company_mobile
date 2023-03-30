@@ -3,6 +3,8 @@ package com.aditiyagilang.edifarm_company.api;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -20,11 +22,20 @@ public interface ApiInterface {
     @POST("register")
     Call<Register> registerresponse(
             @Field("username") String username,
-            @Field("password") String password,
-            @Field("confirm_password") String confirm_password,
             @Field("name") String name,
-            @Field("phone") String phone,
             @Field("address") String address,
+            @Field("phone") String phone,
+            @Field("password") String password,
+            @Field("born_date") String born_date,
+            @Field("email") String email,
+            @Field("confirm_password") String confirm_password
 
-            String email, String confirmPassword);
+
+
+
+
+
+
+
+            );
 }

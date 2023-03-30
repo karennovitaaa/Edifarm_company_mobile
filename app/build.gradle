@@ -39,16 +39,15 @@ dependencies {
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.navigation:navigation-fragment:2.5.3'
     implementation 'androidx.navigation:navigation-ui:2.5.3'
-<<<<<<< HEAD
+
     implementation 'androidx.cardview:cardview:1.0.0'
-=======
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-<<<<<<< HEAD
+
     implementation 'com.google.android.material:material:1.9.0-alpha02'
-=======
->>>>>>> 073b9415ed0924a5b94de5236890973202ec3234
->>>>>>> 0cdd17930e0ce7b34f5d86af07cb2645c711102b
+
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
