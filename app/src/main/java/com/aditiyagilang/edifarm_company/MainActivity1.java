@@ -26,7 +26,7 @@ public class MainActivity1 extends AppCompatActivity {
         add = findViewById(R.id.add);
         home = findViewById(R.id.home);
         profile = findViewById(R.id.profile);
-        adddef = R.drawable.icon_add; // menyimpan ID gambar asli
+//        adddef = R.drawable.icon_add; // menyimpan ID gambar asli
         homedef = R.drawable.home; //
         profiledef = R.drawable.icon_profile; //
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
@@ -36,7 +36,7 @@ public class MainActivity1 extends AppCompatActivity {
                     case R.id.add:
                         // jika gambar saat ini bukan gambar baru, maka simpan ID gambar saat ini sebagai defaultImageId
                         if (add.getTag() == null || (int) add.getTag() != R.drawable.icon_add_klik) {
-                            adddef = add.getDrawable() == null ? (int) add.getTag() : R.drawable.icon_add;
+//                            adddef = add.getDrawable() == null ? (int) add.getTag() : R.drawable.icon_add;
                         }
                         add.setImageDrawable(getResources().getDrawable(R.drawable.icon_add_klik));
                         add.setTag(R.drawable.icon_add_klik);

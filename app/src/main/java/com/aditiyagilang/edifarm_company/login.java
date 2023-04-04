@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.login.Login;
+import com.aditiyagilang.edifarm_company.model.login.LoginData;
 
 
 import retrofit2.Call;
@@ -23,9 +24,10 @@ import retrofit2.Response;
 public class login extends AppCompatActivity  implements View.OnClickListener{
 
     EditText usernameField, passwordField;
-    String username, password;
+    String Username, Password;
     TextView tv_daftar;
     ApiInterface apiInterface;
+    SesionManager sesionManager;
 
 Button btn_login;
 
@@ -49,9 +51,9 @@ tv_daftar.setOnClickListener(this);
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.login:
-             username = usernameField.getText().toString();
-             password = passwordField.getText().toString();
-             login(username, password);
+             Username = usernameField.getText().toString();
+             Password = passwordField.getText().toString();
+             login(Username, Password);
                 break;
 
             case R.id.daftar1:
@@ -69,12 +71,15 @@ apiInterface = ApiClient.getClient().create(ApiInterface.class);
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
                 if (response.body() != null && response.body().isSuccess() && response.isSuccessful() ){
+                sesionManager = new SesionManager(login.this);
+                    LoginData loginData = response.body().getData();
+                    sesionManager.createLoginSession(loginData);
 
-//
                 Toast.makeText(login.this, response.body().getData().getUsername(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(login.this, account_utama.class);
 
-                    Intent intent = new Intent(login.this, register.class);
                     startActivity(intent);
+                    finish();
 
             }else {
                     Toast.makeText(login.this,response.body().getMassage(), Toast.LENGTH_SHORT).show();

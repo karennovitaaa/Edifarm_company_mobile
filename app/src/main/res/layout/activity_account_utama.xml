@@ -33,6 +33,50 @@
                     app:srcCompat="@drawable/shape_rectangle_dashboard" />
 
 
+<<<<<<< HEAD
+=======
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="392dp"
+                    android:layout_marginTop="175dp"
+                    android:layout_height="64dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.842"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_anchor="@id/view_pager"
+                        app:layout_anchorGravity="bottom"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/black"
+                        app:tabMode="fixed">
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Posts">
+
+                        </com.google.android.material.tabs.TabItem>
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Likes">
+
+                        </com.google.android.material.tabs.TabItem>
+
+                    </com.google.android.material.tabs.TabLayout>
+
+                </androidx.viewpager.widget.ViewPager>
+>>>>>>> bc457bda3d9ee4e7693a3af1022c6378e09a199a
 
                 <ImageView
                     android:id="@+id/imageView5"

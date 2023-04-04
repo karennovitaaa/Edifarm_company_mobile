@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private boolean mIsLiked = false;
-
+SesionManager sesionManager;
 
     private ArrayList<model_dashboard> model_dashboards;
 
@@ -28,6 +28,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sesionManager = new SesionManager(dashboard.this);
+        if (!sesionManager.isLogin()){
+            movetoLogin();
+        }
         setContentView(R.layout.activity_dashboard);
         bottomNavigationItemView = findViewById(R.id.bottom);
 //        bottomNavigationItemView.setSelected(R.id.dashboard);
@@ -65,6 +69,13 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //            }
 //        });
 
+    }
+
+    private void movetoLogin() {
+        Intent intent = new Intent(dashboard.this, login.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        finish();
     }
 
     private ArrayList<model_dashboard> setMedsosAndName() {

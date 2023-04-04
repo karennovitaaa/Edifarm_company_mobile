@@ -15,7 +15,7 @@
             android:id="@+id/textview_editprofil1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background=""
+
             android:text="Edit Profil"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -203,7 +203,7 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- TODO: Update blank fragment layout -->
+
 
 
 </FrameLayout>
