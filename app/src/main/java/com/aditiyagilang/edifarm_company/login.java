@@ -35,6 +35,7 @@ Button btn_login;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         // Mendapatkan referensi ke EditText untuk username dan password
         usernameField = findViewById(R.id.username);
         passwordField = findViewById(R.id.password);

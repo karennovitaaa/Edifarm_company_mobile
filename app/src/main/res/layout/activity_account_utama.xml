@@ -32,32 +32,7 @@
                     app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@drawable/shape_rectangle_dashboard" />
 
-                <!-- TabLayout -->
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="392dp"
-                    android:layout_marginTop="175dp"
-                    android:layout_height="64dp"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.842"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        app:layout_anchor="@id/view_pager"
-                        app:layout_anchorGravity="bottom"
-                        app:tabGravity="fill"
-                        app:tabIndicatorColor="@color/black"
-                        app:tabMode="fixed" />
-                </androidx.viewpager.widget.ViewPager>
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -121,10 +96,40 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.906" />
 
-                
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="52dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Posts"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Likes"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toTopOf="parent"-->
+<!--        app:layout_constraintLeft_toRightOf="parent">-->
+
+<!--    </androidx.fragment.app.FragmentContainerView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
