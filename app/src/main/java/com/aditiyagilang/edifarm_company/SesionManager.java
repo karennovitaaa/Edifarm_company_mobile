@@ -25,7 +25,7 @@ public class SesionManager {
         editor = sharedPreferences.edit();
     }
     public void createLoginSession(LoginData user){
-        editor.putBoolean("ISLOGIN", true);
+        editor.putBoolean(ISLOGIN, true);
         editor.putString(TOKEN, user.getToken());
         editor.putString(USERNAME, user.getUsername());
         editor.putString(LEVEL, user.getLevel());

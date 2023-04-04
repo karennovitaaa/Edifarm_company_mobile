@@ -24,7 +24,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/eclipse_success1"
-        tools:layout_editor_absoluteX="-125dp" />
+        tools:layout_editor_absoluteX="-125dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -58,6 +59,39 @@
         android:text="login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp"
+android:backgroundTint="@color/transparant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="BottomAppBar">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/transparent_background"
+
+            app:menu="@menu/buttom_menu"
+
+            >
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

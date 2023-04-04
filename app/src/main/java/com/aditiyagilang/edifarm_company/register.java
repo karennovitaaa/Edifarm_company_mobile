@@ -96,7 +96,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if (response.isSuccessful() && response.body().isSuccess() && response != null){
                     Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(register.this, login.class);
+                    Intent intent = new Intent(register.this, berhasil_login.class);
                     startActivity(intent);
                 }else {
                     Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
