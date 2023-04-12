@@ -2,6 +2,6 @@
 <network-security-config>
     <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">61ef-140-213-219-57.ap.ngrok.io</domain>
+        <domain includeSubdomains="true">7951-118-99-83-50.ap.ngrok.io</domain>
     </domain-config>
 </network-security-config>

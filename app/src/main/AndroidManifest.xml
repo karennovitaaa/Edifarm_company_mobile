@@ -19,17 +19,14 @@
             android:exported="false" />
         <activity
             android:name=".berhasil_login"
-            android:exported="true">
+            android:exported="false">
+
 
         </activity>
         <activity
             android:name=".account_utama"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".akun_utama"
@@ -40,7 +37,13 @@
             android:exported="false" />
         <activity
             android:name=".dashboard"
-            android:exported="true"></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".register"
             android:exported="true" />
