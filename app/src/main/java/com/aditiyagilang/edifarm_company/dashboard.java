@@ -142,7 +142,7 @@ SesionManager sesionManager;
 
     }
     public void coment(View view){
-        Intent intent = new Intent(dashboard.this,coment.class);
+        Intent intent = new Intent(dashboard.this,comen.class);
 
         startActivity(intent);
     }
