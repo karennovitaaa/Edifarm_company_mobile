@@ -76,7 +76,7 @@ apiInterface = ApiClient.getClient().create(ApiInterface.class);
                     sesionManager.createLoginSession(loginData);
 
                 Toast.makeText(login.this, response.body().getData().getUsername(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(login.this, account_utama.class);
+                    Intent intent = new Intent(login.this, dashboard.class);
 
                     startActivity(intent);
                     finish();

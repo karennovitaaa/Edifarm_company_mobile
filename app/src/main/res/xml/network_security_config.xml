@@ -2,6 +2,10 @@
 <network-security-config>
     <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
+<<<<<<< HEAD
         <domain includeSubdomains="true">01a5-140-213-44-33.ap.ngrok.io</domain>
+=======
+        <domain includeSubdomains="true">7951-118-99-83-50.ap.ngrok.io</domain>
+>>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
     </domain-config>
 </network-security-config>

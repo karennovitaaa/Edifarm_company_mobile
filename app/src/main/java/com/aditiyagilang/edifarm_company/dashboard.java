@@ -28,12 +28,18 @@ SesionManager sesionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard);
         sesionManager = new SesionManager(dashboard.this);
         if (!sesionManager.isLogin()){
             movetoLogin();
         }
+<<<<<<< HEAD
         setContentView(R.layout.activity_dashboard);
 
+=======
+
+//        bottomNavigationItemView = findViewById(R.id.bottomNavigationView);
+>>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
 //        bottomNavigationItemView.setSelected(R.id.dashboard);
 //
 //        bottomNavigationItemView.setOn
