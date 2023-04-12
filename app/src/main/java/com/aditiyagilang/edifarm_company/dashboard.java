@@ -33,7 +33,7 @@ SesionManager sesionManager;
             movetoLogin();
         }
         setContentView(R.layout.activity_dashboard);
-        bottomNavigationItemView = findViewById(R.id.bottom);
+
 //        bottomNavigationItemView.setSelected(R.id.dashboard);
 //
 //        bottomNavigationItemView.setOn
@@ -143,6 +143,11 @@ SesionManager sesionManager;
     }
     public void coment(View view){
         Intent intent = new Intent(dashboard.this,comen.class);
+
+        startActivity(intent);
+    }
+    public void ck(View view){
+        Intent intent = new Intent(dashboard.this,account_utama.class);
 
         startActivity(intent);
     }

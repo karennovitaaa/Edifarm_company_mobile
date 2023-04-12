@@ -18,31 +18,32 @@ import com.aditiyagilang.edifarm_company.model.listDataPost;
 import java.util.ArrayList;
 
 public class post extends Fragment implements AdapterView.OnItemClickListener {
-    private  ArrayList<listDataPost> listData;
-    ListView listView;
+    private ArrayList<listDataPost> listData;
+    private ListView listView;
 
-    public post() {
-        listView = listView.findViewById(R.id.listview_post);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_post, container, false);
+        listView = rootView.findViewById(R.id.listview_post);
         listData = setData();
-        listDataPostAdapter postAdapter = new listDataPostAdapter(post.this, listData);
+        listDataPostAdapter postAdapter = new listDataPostAdapter(getActivity(), listData);
         listView.setAdapter(postAdapter);
         listView.setOnItemClickListener(this);
+        return rootView;
     }
-    public void onItemClick(AdapterView<?>adapterView, View view, int position, long L) {
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long L) {
         listDataPost list = listData.get(position);
-
-
+        // code for item click
     }
 
     private ArrayList<listDataPost> setData() {
-        listData = new ArrayList<>();
+        ArrayList<listDataPost> listData = new ArrayList<>();
         listData.add(new listDataPost("lusy123", "12-12-12", "yaallah pengen bukber", R.drawable.petanimurka));
         listData.add(new listDataPost("adit123", "12-12-14", "yaallah pengen sahur", R.drawable.petanimurka));
         listData.add(new listDataPost("karen123", "12-12-52", "yaallah pengen trawehh", R.drawable.petanimurka));
         listData.add(new listDataPost("andru123", "12-16-12", "yaallah pengen ke gereja", R.drawable.petanimurka));
-    return listData;
+        return listData;
     }
 }
-
-
-

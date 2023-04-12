@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <TextView
                 style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
                 android:layout_width="wrap_content"
@@ -94,6 +95,7 @@
                 android:layout_width="34dp"
                 android:layout_height="31dp"
                 android:alpha="0.54"
+                android:onClick="ck"
                 android:background="@drawable/shape_search"
                 android:src="@drawable/icon_search"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -231,21 +233,5 @@
 
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:foregroundGravity="bottom"
-android:id="@+id/bottom"
-        app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu"
-
-  >
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
