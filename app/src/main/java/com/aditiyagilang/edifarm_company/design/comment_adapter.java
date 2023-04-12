@@ -37,23 +37,6 @@ public class comment_adapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-
-
-
-    //    @Override
-//    public int getCount() {
-//        return model_comment.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int position) {
-//        return model_comment.get(position);
-//    }
-//
-//    @Override
-//    public long getItemId(int id) {
-//        return id;
-//    }
     @Override
     public View getView(int position, View convertview, ViewGroup parent) {
         HolderView holderView;

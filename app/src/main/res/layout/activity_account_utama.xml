@@ -8,8 +8,13 @@
     tools:context=".account_utama">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -20,6 +25,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
+                <!--                <androidx.viewpager.widget.ViewPager-->
+<!--                    android:id="@+id/view_pager"-->
+<!--                    android:layout_width="392dp"-->
+<!--                    android:layout_height="64dp"-->
+<!--                    android:layout_marginTop="175dp"-->
+<!--                    app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.842"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="1.0">-->
+
+<!--                    <com.google.android.material.tabs.TabLayout-->
+<!--                        android:id="@+id/tab_layout"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@color/transparant"-->
+<!--                        app:layout_anchor="@id/view_pager"-->
+<!--                        app:layout_anchorGravity="bottom"-->
+<!--                        app:tabGravity="fill"-->
+<!--                        app:tabIndicatorColor="@color/black"-->
+<!--                        app:tabMode="fixed">-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Posts">-->
+
+<!--                        </com.google.android.material.tabs.TabItem>-->
+
+<!--                        <com.google.android.material.tabs.TabItem-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Likes">-->
+
+<!--                        </com.google.android.material.tabs.TabItem>-->
+
+<!--                    </com.google.android.material.tabs.TabLayout>-->
+
+<!--                </androidx.viewpager.widget.ViewPager>-->
+
+
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="0dp"
@@ -29,52 +78,8 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/shape_rectangle_dashboard" />
-
-                <!-- TabLayout -->
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="392dp"
-                    android:layout_marginTop="175dp"
-                    android:layout_height="64dp"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.842"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
-
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/transparant"
-                        app:layout_anchor="@id/view_pager"
-                        app:layout_anchorGravity="bottom"
-                        app:tabGravity="fill"
-                        app:tabIndicatorColor="@color/black"
-                        app:tabMode="fixed">
-
-                        <com.google.android.material.tabs.TabItem
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Posts">
-
-                        </com.google.android.material.tabs.TabItem>
-
-                        <com.google.android.material.tabs.TabItem
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Likes">
-
-                        </com.google.android.material.tabs.TabItem>
-
-                    </com.google.android.material.tabs.TabLayout>
-
-                </androidx.viewpager.widget.ViewPager>
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -138,10 +143,41 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.906" />
 
-                
+                <Button
+                    android:id="@+id/buttonPosts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="52dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Posts"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonLikes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Likes"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentFrame"
+        android:layout_marginTop="220dp">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
