@@ -2,6 +2,9 @@
 <network-security-config>
     <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">dffb-114-125-77-69.ngrok-free.app</domain>
+
+        <domain includeSubdomains="true">2dd4-103-156-141-253.ngrok-free.app</domain>
+
+
     </domain-config>
 </network-security-config>

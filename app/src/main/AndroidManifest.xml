@@ -19,6 +19,15 @@
             android:exported="false" />
         <activity
             android:name=".berhasil_login"
+<<<<<<< HEAD
+            android:exported="true" />
+        <activity
+            android:name=".account_utama"
+            android:exported="true"></activity>
+        <activity
+            android:name=".dashboard"
+            android:exported="true">
+=======
 
             android:exported="false">
 
@@ -39,6 +48,7 @@
         <activity
             android:name=".dashboard"
             android:exported="true" >
+>>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,15 +62,28 @@
             android:name=".login"
             android:exported="true"
             android:label="@string/title_activity_login"
+<<<<<<< HEAD
             android:theme="@style/Theme.Edifarm_Company.NoActionBar">
 
         </activity>
+=======
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar"></activity>
+<<<<<<< HEAD
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".edit_profile"
+            android:exported="true"></activity>
+=======
+>>>>>>> 011dd489e71858d006cf714ae9d18d7645136e37
 
 
 
 
 
 
+>>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
     </application>
 
 </manifest>

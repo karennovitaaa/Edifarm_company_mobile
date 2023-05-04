@@ -37,9 +37,35 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
             movetoLogin();
         }
 
+        setContentView(R.layout.activity_dashboard);
+
+
         eprofile = (ImageButton) findViewById(R.id.editProfil);
         activity = (ImageButton) findViewById(R.id.activity);
         logout = (Button) findViewById(R.id.logout);
+
+//        bottomNavigationItemView = findViewById(R.id.bottomNavigationView);
+//        bottomNavigationItemView.setSelected(R.id.dashboard);
+//
+//        bottomNavigationItemView.setOn
+
+
+//        likeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!mIsLiked) {
+//                    likeButton.setBackgroundResource(R.drawable.heart_button_field);
+//                    mIsLiked = true;
+//                    Toast.makeText(dashboard.this, "Liked", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    likeButton.setBackgroundResource(R.drawable.heart_button);
+//                    mIsLiked = false;
+//                    Toast.makeText(dashboard.this, "Unliked", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+
         ListView listView = findViewById(R.id.listview);
 
         model_dashboards = setMedsosAndName();
@@ -123,6 +149,7 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         startActivity(intent);
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -145,5 +172,11 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
     public void logout() {
         sesionManager.logoutSession();
         movetoLogin();
+
+    public void ck(View view){
+        Intent intent = new Intent(dashboard.this,account_utama.class);
+
+        startActivity(intent);
+
     }
 }
