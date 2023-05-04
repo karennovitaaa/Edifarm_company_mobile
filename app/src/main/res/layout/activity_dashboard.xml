@@ -143,22 +143,24 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-<androidx.cardview.widget.CardView
-    android:id="@+id/cardmenu"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.891"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-</androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
-        android:layout_height="668dp"
+        android:id="@+id/cardmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="400dp"
+
+        android:layout_height="668dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -168,9 +170,9 @@
             android:id="@+id/scrollView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:maxHeight="2000dp"
+            android:background="@color/white"
             android:fillViewport="false"
+            android:maxHeight="2000dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.891"
@@ -189,9 +191,9 @@
                     android:id="@+id/scrollView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white"
                     android:fillViewport="true"
-
-android:layout_marginBottom="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -203,9 +205,9 @@ android:layout_marginBottom="16dp"
                     <LinearLayout
                         android:id="@+id/menu"
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:background="@color/white"
                         android:orientation="horizontal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -216,20 +218,24 @@ android:layout_marginBottom="16dp"
                         tools:ignore="MissingConstraints">
 
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/activity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.822"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.168"></ImageView>
+                            app:layout_constraintVertical_bias="0.168"></ImageButton>
 
-                        <ImageView
+                        <ImageButton
+                            android:id="@+id/editProfil"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -238,11 +244,12 @@ android:layout_marginBottom="16dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.162">
 
-                        </ImageView>
+                        </ImageButton>
 
-                        <ImageView
+                        <ImageButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -251,11 +258,12 @@ android:layout_marginBottom="16dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.162">
 
-                        </ImageView>
+                        </ImageButton>
 
-                        <ImageView
+                        <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -264,11 +272,12 @@ android:layout_marginBottom="16dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.162">
 
-                        </ImageView>
+                        </ImageButton>
 
-                        <ImageView
+                        <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -277,11 +286,12 @@ android:layout_marginBottom="16dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.162">
 
-                        </ImageView>
+                        </ImageButton>
 
-                        <ImageView
+                        <ImageButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@color/white"
                             android:src="@drawable/aktifitas"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -290,7 +300,7 @@ android:layout_marginBottom="16dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.162">
 
-                        </ImageView>
+                        </ImageButton>
 
 
                     </LinearLayout>
@@ -298,11 +308,11 @@ android:layout_marginBottom="16dp"
 
                 <ScrollView
                     android:id="@+id/scrollView4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:maxHeight="2000dp"
+                    android:background="@color/white"
                     android:fillViewport="false"
+                    android:maxHeight="2000dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.891"
@@ -311,27 +321,44 @@ android:layout_marginBottom="16dp"
                     app:layout_constraintVertical_bias="0"
                     tools:ignore="MissingConstraints">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-                    <ListView
-                        android:id="@+id/listview"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="536dp"
-                        android:layout_gravity="top"
-                        android:layout_marginBottom="50dp"
-                        android:divider="@color/black"
-                        android:dividerHeight="1dp"
-                        android:paddingBottom="20dp">
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical">
 
-                    </ListView>
-</LinearLayout>
+                        <ListView
+                            android:id="@+id/listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="10000dp"
+                            android:layout_gravity="top"
+                            android:layout_marginBottom="50dp"
+                            android:background="@color/white"
+                            android:divider="@color/black"
+                            android:dividerHeight="1dp"
+                            android:paddingBottom="20dp">
+
+
+                        </ListView>
+                    </LinearLayout>
                 </ScrollView>
             </LinearLayout>
         </ScrollView>
+
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:layout_constraintVertical_bias="0.9"
+      app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

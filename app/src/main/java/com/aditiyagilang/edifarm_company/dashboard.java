@@ -18,58 +18,39 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
     private boolean mIsLiked = false;
-SesionManager sesionManager;
-
+    SesionManager sesionManager;
+    Button  logout;
+    ImageButton eprofile, activity;
     private ArrayList<model_dashboard> model_dashboards;
 
-   BottomNavigationItemView bottomNavigationItemView;
+    BottomNavigationItemView bottomNavigationItemView;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         sesionManager = new SesionManager(dashboard.this);
-        if (!sesionManager.isLogin()){
+        if (!sesionManager.isLogin()) {
             movetoLogin();
         }
 
-//        bottomNavigationItemView = findViewById(R.id.bottomNavigationView);
-//        bottomNavigationItemView.setSelected(R.id.dashboard);
-//
-//        bottomNavigationItemView.setOn
-
-
-//        likeButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (!mIsLiked) {
-//                    likeButton.setBackgroundResource(R.drawable.heart_button_field);
-//                    mIsLiked = true;
-//                    Toast.makeText(dashboard.this, "Liked", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    likeButton.setBackgroundResource(R.drawable.heart_button);
-//                    mIsLiked = false;
-//                    Toast.makeText(dashboard.this, "Unliked", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
+        eprofile = (ImageButton) findViewById(R.id.editProfil);
+        activity = (ImageButton) findViewById(R.id.activity);
+        logout = (Button) findViewById(R.id.logout);
         ListView listView = findViewById(R.id.listview);
+
         model_dashboards = setMedsosAndName();
         dasboardAdapter dasboardAdapter = new dasboardAdapter(dashboard.this, model_dashboards);
         listView.setAdapter(dasboardAdapter);
         listView.setOnItemClickListener(this);
 
-//        ImageButton btnLike = findViewById(R.id.like_button);
-//        btnLike.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Ubah background image ke like_red.png
-//                btnLike.setBackgroundResource(R.drawable.like_red);
-//            }
-//        });
 
+        eprofile.setOnClickListener(this);
+        activity.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     private void movetoLogin() {
@@ -114,7 +95,6 @@ SesionManager sesionManager;
         model_dashboards.add(new model_dashboard(R.drawable.post, "Facebook"));
 
 
-
         return model_dashboards;
     }
 
@@ -124,27 +104,46 @@ SesionManager sesionManager;
         Toast.makeText(dashboard.this, "Social Media Name ..." + list.getName(), Toast.LENGTH_SHORT).show();
     }
 
-    public void like(View view){
-        ImageButton likeButton = findViewById(R.id.like_button);
-                likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!mIsLiked) {
-                    likeButton.setBackgroundResource(R.drawable.like_red);
-                    mIsLiked = true;
-                    Toast.makeText(dashboard.this, "Liked", Toast.LENGTH_SHORT).show();
-                } else {
-                    likeButton.setBackgroundResource(R.drawable.like_white);
-                    mIsLiked = false;
-                    Toast.makeText(dashboard.this, "Unliked", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+    public void like(View view) {
+        ImageButton likeButton = view.findViewById(R.id.like_button);
+        if (!mIsLiked) {
+            likeButton.setBackgroundResource(R.drawable.like_red);
+            mIsLiked = true;
+            Toast.makeText(dashboard.this, "Liked", Toast.LENGTH_SHORT).show();
+        } else {
+            likeButton.setBackgroundResource(R.drawable.like_white);
+            mIsLiked = false;
+            Toast.makeText(dashboard.this, "Unliked", Toast.LENGTH_SHORT).show();
+        }
     }
-    public void coment(View view){
-        Intent intent = new Intent(dashboard.this,comen.class);
+
+    public void coment(View view) {
+        Intent intent = new Intent(dashboard.this, comen.class);
 
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.activity:
+                Intent aintent = new Intent(this, post_comment.class);
+                startActivity(aintent);
+
+                break;
+
+            case R.id.editProfil:
+                Intent eintent = new Intent(this, edit_profile.class);
+                startActivity(eintent);
+                break;
+            case R.id.logout:
+                logout();
+                break;
+        }
+    }
+
+    public void logout() {
+        sesionManager.logoutSession();
+        movetoLogin();
     }
 }

@@ -1,23 +1,23 @@
-package com.aditiyagilang.edifarm_company.model.login;
+package com.aditiyagilang.edifarm_company.model.update;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Login{
+public class Update{
 
 	@SerializedName("data")
-	private LoginData data;
+	private UpdateData data;
 
 	@SerializedName("success")
 	private boolean success;
 
-	@SerializedName("massage")
-	private String massage;
+	@SerializedName("message")
+	private String message;
 
-	public void setData(LoginData data){
+	public void setData(UpdateData data){
 		this.data = data;
 	}
 
-	public LoginData getData(){
+	public UpdateData getData(){
 		return data;
 	}
 
@@ -29,21 +29,21 @@ public class Login{
 		return success;
 	}
 
-	public void setMassage(String massage){
-		this.massage = massage;
+	public void setMessage(String message){
+		this.message = message;
 	}
 
-	public String getMassage(){
-		return massage;
+	public String getMessage(){
+		return message;
 	}
 
 	@Override
  	public String toString(){
 		return 
-			"Login{" + 
+			"Update{" + 
 			"data = '" + data + '\'' + 
 			",success = '" + success + '\'' + 
-			",massage = '" + massage + '\'' + 
+			",message = '" + message + '\'' + 
 			"}";
 		}
 }
