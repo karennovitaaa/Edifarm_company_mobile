@@ -126,7 +126,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="center|left"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
                         android:text="Username"
@@ -151,7 +151,7 @@
 
                         android:background="@drawable/field"
 
-                        android:hint="Enter Username"
+                        android:hint="Masukkan Username"
 
                         android:maxLines="1"
                         android:padding="10dp"
@@ -174,7 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="center|left"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
                         android:text="Name"
@@ -199,7 +199,7 @@
 
                         android:background="@drawable/field"
 
-                        android:hint="Enter Nameame"
+                        android:hint="Masukkan Nama"
 
                         android:maxLines="1"
                         android:padding="10dp"
@@ -222,199 +222,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:gravity="center"
-                        android:text="Alamat"
-
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:textStyle="normal"
-
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.104">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/address_field"
-                        android:layout_width="237dp"
-                        android:layout_height="wrap_content"
-
-                        android:background="@drawable/field"
-
-                        android:hint="Enter Alamat"
-
-                        android:maxLines="1"
-                        android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/darker_gray"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.151" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:gravity="center"
-                        android:text="No HP"
-
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:textStyle="normal"
-
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.104">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/phone_field"
-                        android:layout_width="237dp"
-                        android:layout_height="wrap_content"
-
-                        android:background="@drawable/field"
-
-                        android:hint="Enter No Hp"
-
-                        android:maxLines="1"
-                        android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/darker_gray"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.151" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:gravity="center"
-                        android:text="Password"
-
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:textStyle="normal"
-
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.104">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/password_field"
-                        android:layout_width="237dp"
-                        android:layout_height="wrap_content"
-
-                        android:background="@drawable/field"
-
-                        android:hint="Enter Password"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/darker_gray"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.151" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:gravity="center"
-                        android:text="Tanggal Lahir"
-
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:textStyle="normal"
-
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.104">
-
-                    </TextView>
-
-                    <EditText
-                        android:id="@+id/born_date_field"
-                        android:layout_width="237dp"
-                        android:layout_height="wrap_content"
-
-                        android:background="@drawable/field"
-
-                        android:hint="Enter Tanggal Lahir"
-
-                        android:maxLines="1"
-                        android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@android:color/darker_gray"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.151" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="center|left"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
                         android:text="Email"
@@ -454,6 +262,196 @@
                         app:layout_constraintVertical_bias="0.151" />
                 </TableRow>
 
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="Alamat"
+
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="normal"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.104">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/address_field"
+                        android:layout_width="237dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/field"
+                        android:hint="Masukkan Alamat"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.478"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.151" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="No HP"
+
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.104">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/phone_field"
+                        android:layout_width="237dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/field"
+
+                        android:hint="Maukkan No Hp"
+
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.478"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.151" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="Tanggal Lahir"
+
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="normal"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.104">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/born_date_field"
+                        android:layout_width="237dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/field"
+
+                        android:hint="Masukkan Tanggal Lahir"
+
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.478"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.151" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|left"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="Password"
+
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="normal"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.104">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/password_field"
+                        android:layout_width="237dp"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/field"
+
+                        android:hint="Masukkan Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.478"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.151" />
+                </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -465,7 +463,7 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="5dp"
                         android:gravity="center"
-                        android:text="Password"
+                        android:text="Konfirmasi Password"
 
                         android:textColor="@color/black"
                         android:textSize="10dp"
@@ -487,7 +485,7 @@
 
                         android:background="@drawable/field"
 
-                        android:hint="Confirm Password"
+                        android:hint="Konfirmasi Password"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:padding="10dp"
@@ -560,33 +558,33 @@
 
 
 
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.699">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearLayout4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.699">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Setuju Untuk Mendaftar ?"
-                    android:textColor="@color/black"
-                    android:textSize="12dp">
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Setuju Untuk Mendaftar ?"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="12dp">-->
 
-                </TextView>
+<!--                </TextView>-->
 
-                <CheckBox
-                    android:id="@+id/setuju"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+<!--                <CheckBox-->
+<!--                    android:id="@+id/setuju"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                </CheckBox>
-            </LinearLayout>
+<!--                </CheckBox>-->
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -604,6 +602,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sudah Punya Akun ?"
+                    android:textSize="8dp"
                     android:textColor="@color/black">
 
                 </TextView>
@@ -612,8 +611,10 @@
                     android:id="@+id/tv_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="10dp"
                     android:onClick="login"
                     android:text="Login"
+                    android:layout_marginLeft="5dp"
                     android:textColor="@color/button"
                     android:textStyle="bold|italic">
 

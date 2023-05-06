@@ -7,6 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.model.listDataPost;
 import com.aditiyagilang.edifarm_company.post;
