@@ -15,35 +15,33 @@
         android:theme="@style/Theme.Edifarm_Company"
         tools:targetApi="31">
         <activity
+            android:name=".dashboard_tabbed"
+            android:exported="false"
+            android:label="@string/title_activity_dashboard_tabbed"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
+        <activity
+            android:name=".activitys"
+            android:exported="false"
+            android:label="@string/title_activity_activitys"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".home"
             android:exported="false" />
         <activity
             android:name=".berhasil_login"
-<<<<<<< HEAD
             android:exported="true" />
         <activity
             android:name=".account_utama"
-            android:exported="true"></activity>
+            android:exported="true" />
+        <activity
+            android:name=".edit_profile"
+            android:exported="true" />
         <activity
             android:name=".dashboard"
             android:exported="true">
-=======
-
-            android:exported="false">
-
-
-        </activity>
-        <activity
-            android:name=".account_utama"
-            android:exported="true" >
-
-        </activity>
-
-
-        <activity
-            android:name=".dashboard"
-            android:exported="true" >
->>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,22 +55,10 @@
             android:name=".login"
             android:exported="true"
             android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Edifarm_Company.NoActionBar"></activity>
-<<<<<<< HEAD
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity
-            android:name=".edit_profile"
-            android:exported="true"></activity>
-=======
-
-
-
-
-
-
->>>>>>> 2c1dda71483edfa9d4a8e07850cf52adfaefbeeb
     </application>
 
 </manifest>

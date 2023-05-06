@@ -2,7 +2,6 @@ package com.aditiyagilang.edifarm_company;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

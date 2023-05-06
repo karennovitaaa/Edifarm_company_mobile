@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    android:background="@color/base"
+    app:startDestination="@id/First2Fragment">
+
+    <fragment
+        android:id="@+id/First2Fragment"
+        android:name="com.aditiyagilang.edifarm_company.First2Fragment"
+        android:label="Aktivitas"
+        android:background="@color/base"
+        tools:layout="@layout/fragment_first2">
+
+        <action
+            android:id="@+id/action_First2Fragment_to_Second2Fragment"
+            app:destination="@id/Second2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Second2Fragment"
+        android:name="com.aditiyagilang.edifarm_company.Second2Fragment"
+        android:label="Aktivitas"
+        tools:layout="@layout/fragment_second2">
+
+        <action
+            android:id="@+id/action_Second2Fragment_to_First2Fragment"
+            app:destination="@id/First2Fragment" />
+    </fragment>
+</navigation>

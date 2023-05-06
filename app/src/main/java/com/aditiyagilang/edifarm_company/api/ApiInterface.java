@@ -2,8 +2,7 @@ package com.aditiyagilang.edifarm_company.api;
 
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
-
-import java.util.Date;
+import com.aditiyagilang.edifarm_company.model.update.Update;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -29,13 +28,19 @@ public interface ApiInterface {
             @Field("born_date") String born_date,
             @Field("email") String email,
             @Field("confirm_password") String confirm_password
-
-
-
-
-
-
-
-
             );
+
+    @FormUrlEncoded
+    @POST("update")
+    Call<Update> updateResponse(
+//            @Field("id") String id,
+            @Field("username") String username,
+            @Field("name") String name,
+            @Field("address") String address,
+            @Field("phone") String phone,
+            @Field("born_date") String born_date,
+            @Field("email")  String email
+            );
+
+
 }
