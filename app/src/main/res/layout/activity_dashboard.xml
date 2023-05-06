@@ -365,22 +365,6 @@
 
 
 
-            <ListView
-                android:id="@+id/listview"
-
-                android:layout_width="match_parent"
-                android:layout_height="5000dp"
-                android:layout_gravity="top"
-                android:layout_marginBottom="50dp"
-                android:divider="@color/black"
-                android:dividerHeight="1dp"
-                tools:ignore="DuplicateIds,MissingConstraints">
-
-            </ListView>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

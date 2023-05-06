@@ -33,14 +33,14 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("update")
     Call<Update> updateResponse(
-            @Field("id") String id,
+//            @Field("id") String id,
             @Field("username") String username,
             @Field("name") String name,
             @Field("address") String address,
             @Field("phone") String phone,
-            @Field("password") String password,
             @Field("born_date") String born_date,
-            @Field("email") String email,
-            @Field("confirm_password") String confirm_password
-    );
+            @Field("email")  String email
+            );
+
+
 }

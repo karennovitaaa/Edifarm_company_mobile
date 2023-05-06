@@ -39,14 +39,14 @@ public class register extends AppCompatActivity implements View.OnClickListener 
     private EditText ecpassword;
     private Button daftar;
     private CheckBox acc;
-    private TextView tv_login;
+    private Button tv_login;
     ApiInterface apiInterface;
     String Username, Name, Address, Phone, Paswword, Born_Date, Email, CPassword;
     private ProgressBar progres;
 
 
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +60,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         eborn_date = (EditText) findViewById(R.id.born_date_field);
         eemail = (EditText) findViewById(R.id.email_field);
         daftar = (Button) findViewById(R.id.daftar);
-        tv_login = (TextView) findViewById(R.id.tv_login);
+        tv_login = (Button) findViewById(R.id.tv_login);
         acc = (CheckBox) findViewById(R.id.setuju);
         ecpassword = (EditText) findViewById(R.id.cpassword_field);
         progres = (ProgressBar) findViewById(R.id.progres);
@@ -82,6 +82,10 @@ public class register extends AppCompatActivity implements View.OnClickListener 
             Email = eemail.getText().toString();
             CPassword = ecpassword.getText().toString();
             register(Username, Name, Address, Phone, Paswword, Born_Date, Email, CPassword);
+
+           case R.id.tv_login:
+               Intent intent = new Intent(register.this, login.class);
+               startActivity(intent);
        }
 
     }

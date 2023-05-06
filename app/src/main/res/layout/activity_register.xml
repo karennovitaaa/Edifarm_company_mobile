@@ -598,7 +598,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.875">
+                app:layout_constraintVertical_bias="0.9">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -608,8 +608,9 @@
 
                 </TextView>
 
-                <TextView
+                <Button
                     android:id="@+id/tv_login"
+                    android:background="@color/transparant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="login"
@@ -617,7 +618,7 @@
                     android:textColor="@color/button"
                     android:textStyle="bold|italic">
 
-                </TextView>
+                </Button>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

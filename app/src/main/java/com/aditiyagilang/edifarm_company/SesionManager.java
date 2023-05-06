@@ -19,6 +19,7 @@ public class SesionManager {
   public static final String TOKEN = "token";
 
     public static final String USERNAME = "username";
+    public static final String ID = "id";
     public static final String ADDRESS = "address";
     public static final String PHONE = "phone";
     public static final String NAME = "name";
@@ -44,6 +45,7 @@ public class SesionManager {
         editor.putString(PHOTO, user.getPhoto());
         editor.putString(BORN_DATE, user.getBornDate());
         editor.putString(EMAIL, user.getEmail());
+        editor.putString(ID, user.getId());
         editor.commit();
     }
 
@@ -58,6 +60,7 @@ public class SesionManager {
         user.put(PHOTO, sharedPreferences.getString(PHOTO,null));
         user.put(BORN_DATE, sharedPreferences.getString(BORN_DATE,null));
         user.put(EMAIL, sharedPreferences.getString(EMAIL,null));
+        user.put(ID, sharedPreferences.getString(ID,null));
         return user;
 
     }

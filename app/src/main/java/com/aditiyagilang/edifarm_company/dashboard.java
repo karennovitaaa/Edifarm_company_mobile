@@ -154,7 +154,7 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.activity:
-                Intent aintent = new Intent(this, post_comment.class);
+                Intent aintent = new Intent(this, activitys.class);
                 startActivity(aintent);
 
                 break;
@@ -173,10 +173,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         sesionManager.logoutSession();
         movetoLogin();
 
-    public void ck(View view){
-        Intent intent = new Intent(dashboard.this,account_utama.class);
-
-        startActivity(intent);
-
-    }
-}
+//    public void ck(View view){
+//        Intent intent = new Intent(dashboard.this,account_utama.class);
+//
+//        startActivity(intent);
+//
+//    }
+}}
