@@ -107,11 +107,12 @@
                 android:layout_below="@+id/listImagePost"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="right"
-                android:layout_marginTop="-150dp"
-                android:layout_marginEnd="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
 
                 <ImageButton
@@ -120,38 +121,48 @@
                     android:layout_height="30dp"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
+
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/like_white">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/coment_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@color/white"
-                    android:onClick="coment"
                     android:src="@drawable/coment">
 
                 </ImageButton>
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="left"
+                    android:text="121"
+                    android:textColor="@color/black"></TextView>
+
                 <ImageButton
-                    android:id="@+id/more_button"
-                    android:layout_width="30dp"
+                    android:id="@+id/coment_button"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
                     android:background="@color/white"
-                    android:onClick="more"
-                    android:src="@drawable/more">
+                    android:onClick="coment"
+                    android:src="@drawable/button_likefix">
 
                 </ImageButton>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:text="126"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="5dp">
+
+                </TextView>
+
 
             </LinearLayout>
 
