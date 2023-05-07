@@ -1,5 +1,6 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.update.Update;
@@ -41,6 +42,28 @@ public interface ApiInterface {
             @Field("born_date") String born_date,
             @Field("email")  String email
             );
+    @FormUrlEncoded
+    @POST("getact")
+    Call<Activity> actResponse(
+            @Field("id") String id
 
+    );
+    @FormUrlEncoded
+    @POST("upact")
+    Call<Activity> UpactResponse(
+            @Field("id") String id,
+            @Field("user_id") String id_user,
+            @Field("status") String status
 
+    );
+    @FormUrlEncoded
+    @POST("addActivity")
+    Call<Activity> CreatActResponse(
+            @Field("activity_name") String activity_name,
+            @Field("status") String status,
+            @Field("start") String start,
+            @Field("end") String end,
+            @Field("user_id") String user_id
+
+    );
 }

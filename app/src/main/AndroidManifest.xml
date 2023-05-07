@@ -18,11 +18,6 @@
             android:name=".contain_tab"
             android:exported="false" />
         <activity
-            android:name=".dashboard_tabbed"
-            android:exported="false"
-            android:label="@string/title_activity_dashboard_tabbed"
-            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
-        <activity
             android:name=".activitys"
             android:exported="false"
             android:label="@string/title_activity_activitys"
@@ -30,7 +25,9 @@
         <activity
             android:name=".profile"
             android:exported="false" />
+
         <activity
+
             android:name=".home"
             android:exported="false" />
         <activity

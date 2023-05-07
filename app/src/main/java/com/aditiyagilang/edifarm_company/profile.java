@@ -2,21 +2,12 @@ package com.aditiyagilang.edifarm_company;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
-import com.aditiyagilang.edifarm_company.model.activity.Coba;
-import com.aditiyagilang.edifarm_company.model.activity.Data;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class profile extends AppCompatActivity implements View.OnClickListener {
 EditText editText;

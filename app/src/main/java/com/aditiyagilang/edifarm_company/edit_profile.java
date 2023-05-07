@@ -75,7 +75,7 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
         if (SesionManager.USERNAME == null) {
             eusername.setHint("Masukan Username");
         } else {
-            eusername.setHint(sesionManager.getUserDetail().get(SesionManager.USERNAME));
+            eusername.setHint(sesionManager.getUserDetail().get(SesionManager.ID));
         }
 
         ename = (EditText) findViewById(R.id.editnama);

@@ -10,26 +10,33 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/toolbar"
         android:theme="@style/Theme.Edifarm_Company.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/base"
-            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
+            android:background="@drawable/toolbar"
+            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" >
+           <ImageButton
+               android:id="@+id/fab"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/icon_search"
+               android:background="@color/app_bar"
+               android:layout_gravity="center|right"
+               android:layout_marginRight="20dp">
+
+           </ImageButton>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_activitys" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_input_add" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
