@@ -1,11 +1,17 @@
 package com.aditiyagilang.edifarm_company;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -102,6 +108,7 @@ addAct = getView().findViewById(R.id.addAct);
     String Id;
     String Id_Kegiatan, Status;
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -113,9 +120,23 @@ addAct = getView().findViewById(R.id.addAct);
                 break;
 
             case R.id.addAct:
-                NavHostFragment.findNavController(First2Fragment.this)
-                        .navigate(R.id.action_First2Fragment_to_Second2Fragment);
+//                NavHostFragment.findNavController(First2Fragment.this)
+//                        .navigate(R.id.action_First2Fragment_to_Second2Fragment);
+                showDialog();
         }
+    }
+
+    private void showDialog() {
+        final Dialog dialog = new Dialog(getContext());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.fragment_second2);
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
     }
 
     private void klaim(String id, String id_Kegiatan, String status) {
@@ -151,5 +172,8 @@ addAct = getView().findViewById(R.id.addAct);
     public void onStatusClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item) {
 
     }
+
+
+
 }
 
