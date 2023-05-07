@@ -12,12 +12,11 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         android:background="@color/backgroun"
         android:elevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,8 +60,8 @@
 
             </ImageView>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,74 +75,21 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="180dp"
-        app:cardBackgroundColor="@color/transparant"
-        app:cardElevation="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#08899E"
-            app:cardCornerRadius="17dp">
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#08899E"
-            app:cardCornerRadius="17dp">
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#08899E"
-            app:cardCornerRadius="17dp"
-            android:layout_marginLeft="100dp">
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#08899E"
-            app:cardCornerRadius="17dp"
-            android:layout_marginLeft="200dp">
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="120dp"
-            android:backgroundTint="#08899E"
-            app:cardCornerRadius="17dp"
-            android:layout_marginLeft="300dp">
-
-        </androidx.cardview.widget.CardView>
 
 
-=======
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardmenu"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
-      >
 
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+
+
+        <include layout="@layout/activity_contain_tab">
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
@@ -348,283 +294,291 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+    </Button>
+
+
+        </include>
+    </androidx.appcompat.widget.Toolbar>
+
+
 
     <!--    <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--        android:id="@+id/bottomAppBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        android:background="@color/base"-->
-<!--        android:backgroundTint="@color/transparant"-->
-<!--        app:backgroundTint="@color/base"-->
+    <!--        android:id="@+id/bottomAppBar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        android:background="@color/base"-->
+    <!--        android:backgroundTint="@color/transparant"-->
+    <!--        app:backgroundTint="@color/base"-->
 
-<!--        app:fabCradleRoundedCornerRadius="10dp"-->
-<!--        app:fabCradleVerticalOffset="10dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-
-
-<!--        app:layout_constraintVertical_bias="1.0"-->
-<!--        tools:ignore="BottomAppBar,UnknownId">-->
-
-<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--            android:id="@+id/bottomNavigationView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-
-<!--            android:background="@color/white"-->
-
-<!--            app:menu="@menu/buttom_menu"-->
-
-<!--            >-->
-
-<!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
-<!--    </com.google.android.material.bottomappbar.BottomAppBar>-->
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/cardView2"-->
-<!--        android:layout_width="443dp"-->
-<!--        android:layout_height="137dp"-->
-<!--        app:cardBackgroundColor="@color/backgroun"-->
-<!--        app:cardElevation="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.34"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.0">-->
-
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
+    <!--        app:fabCradleRoundedCornerRadius="10dp"-->
+    <!--        app:fabCradleVerticalOffset="10dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
 
 
-<!--            <TextView-->
-<!--                style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="what you wanna know today?"-->
-<!--                android:textSize="14dp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.498"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.347"></TextView>-->
+    <!--        app:layout_constraintVertical_bias="1.0"-->
+    <!--        tools:ignore="BottomAppBar,UnknownId">-->
 
-<!--            <TextView-->
-<!--                style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="get some nice farm information "-->
-<!--                android:textSize="11dp"-->
-<!--                android:textStyle="normal"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.447"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.491">-->
+    <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--            android:id="@+id/bottomNavigationView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
 
-<!--            </TextView>-->
+    <!--            android:background="@color/white"-->
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/logo"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.082"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.492"></ImageView>-->
+    <!--            app:menu="@menu/buttom_menu"-->
+
+    <!--            >-->
+
+    <!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+    <!--    </com.google.android.material.bottomappbar.BottomAppBar>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardView2"-->
+    <!--        android:layout_width="443dp"-->
+    <!--        android:layout_height="137dp"-->
+    <!--        app:cardBackgroundColor="@color/backgroun"-->
+    <!--        app:cardElevation="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.34"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.0">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
 
 
-<!--            <EditText-->
-<!--                android:id="@+id/password_field"-->
-<!--                android:layout_width="242dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:layout_margin="16dp"-->
-<!--                android:alpha="0.54"-->
-<!--                android:background="@drawable/field"-->
-<!--                android:hint="Search"-->
-<!--                android:inputType="textPassword"-->
-<!--                android:maxLines="1"-->
-<!--                android:padding="10dp"-->
-<!--                android:textColor="@android:color/black"-->
-<!--                android:textColorHint="@android:color/darker_gray"-->
-<!--                android:textSize="10sp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.636"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.953" />-->
+    <!--            <TextView-->
+    <!--                style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="what you wanna know today?"-->
+    <!--                android:textSize="14dp"-->
+    <!--                android:textStyle="bold"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.498"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintVertical_bias="0.347"></TextView>-->
 
-<!--            <ImageButton-->
-<!--                android:id="@+id/search"-->
-<!--                android:layout_width="34dp"-->
-<!--                android:layout_height="31dp"-->
-<!--                android:alpha="0.54"-->
-<!--                android:onClick="ck"-->
-<!--                android:background="@drawable/shape_search"-->
-<!--                android:src="@drawable/icon_search"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.81"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.825">-->
+    <!--            <TextView-->
+    <!--                style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:text="get some nice farm information "-->
+    <!--                android:textSize="11dp"-->
+    <!--                android:textStyle="normal"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.447"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintVertical_bias="0.491">-->
 
-<!--            </ImageButton>-->
+    <!--            </TextView>-->
 
-
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--    </androidx.cardview.widget.CardView>-->
-<!--<androidx.cardview.widget.CardView-->
-<!--    android:id="@+id/cardmenu"-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--    app:layout_constraintEnd_toEndOf="parent"-->
-<!--    app:layout_constraintHorizontal_bias="0.891"-->
-<!--    app:layout_constraintStart_toStartOf="parent"-->
-<!--    app:layout_constraintTop_toBottomOf="@+id/cardView2">-->
-
-<!--</androidx.cardview.widget.CardView>-->
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="668dp"-->
-<!--        android:background="#33FFFFFF"-->
-
-<!--        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/cardView2">-->
-
-<!--        <ScrollView-->
-<!--            android:id="@+id/scrollView2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-
-<!--            android:maxHeight="2000dp"-->
-<!--            android:fillViewport="false"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.891"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/scrollView3"-->
-<!--            app:layout_constraintVertical_bias="0"-->
-<!--            tools:ignore="MissingConstraints">-->
-
-<!--            <LinearLayout-->
-<!--                android:background="#33FFFFFF"-->
-<!--                -->
-
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <HorizontalScrollView-->
-
-<!--                    android:id="@+id/scrollView3"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fillViewport="true"-->
-
-<!--android:layout_marginBottom="16dp"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHorizontal_bias="0.0"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/cardView2"-->
-<!--                    app:layout_constraintVertical_bias="0.0"-->
-<!--                    tools:ignore="MissingConstraints">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:id="@+id/menu"-->
-<!--                        android:layout_width="wrap_content"-->
+    <!--            <ImageView-->
+    <!--                android:id="@+id/imageView2"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:src="@drawable/logo"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.082"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintVertical_bias="0.492"></ImageView>-->
 
 
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintHorizontal_bias="0.498"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toTopOf="@id/cardView2"-->
-<!--                        app:layout_constraintVertical_bias="0.175"-->
-<!--                        tools:ignore="MissingConstraints">-->
+    <!--            <EditText-->
+    <!--                android:id="@+id/password_field"-->
+    <!--                android:layout_width="242dp"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:layout_margin="16dp"-->
+    <!--                android:alpha="0.54"-->
+    <!--                android:background="@drawable/field"-->
+    <!--                android:hint="Search"-->
+    <!--                android:inputType="textPassword"-->
+    <!--                android:maxLines="1"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:textColor="@android:color/black"-->
+    <!--                android:textColorHint="@android:color/darker_gray"-->
+    <!--                android:textSize="10sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.636"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintVertical_bias="0.953" />-->
+
+    <!--            <ImageButton-->
+    <!--                android:id="@+id/search"-->
+    <!--                android:layout_width="34dp"-->
+    <!--                android:layout_height="31dp"-->
+    <!--                android:alpha="0.54"-->
+    <!--                android:onClick="ck"-->
+    <!--                android:background="@drawable/shape_search"-->
+    <!--                android:src="@drawable/icon_search"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.81"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:layout_constraintVertical_bias="0.825">-->
+
+    <!--            </ImageButton>-->
 
 
-<!--                        <ImageView-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:src="@drawable/aktifitas"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintHorizontal_bias="0.108"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:layout_constraintVertical_bias="0.162">-->
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<!--                        </ImageView>-->
+    <!--    </androidx.cardview.widget.CardView>-->
+    <!--<androidx.cardview.widget.CardView-->
+    <!--    android:id="@+id/cardmenu"-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    app:layout_constraintHorizontal_bias="0.891"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintTop_toBottomOf="@+id/cardView2">-->
+
+    <!--</androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="400dp"-->
+    <!--        android:layout_height="668dp"-->
+    <!--        android:background="#33FFFFFF"-->
+
+    <!--        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/cardView2">-->
+
+    <!--        <ScrollView-->
+    <!--            android:id="@+id/scrollView2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+
+    <!--            android:maxHeight="2000dp"-->
+    <!--            android:fillViewport="false"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.891"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/scrollView3"-->
+    <!--            app:layout_constraintVertical_bias="0"-->
+    <!--            tools:ignore="MissingConstraints">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:background="#33FFFFFF"-->
+    <!--                -->
+
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <HorizontalScrollView-->
+
+    <!--                    android:id="@+id/scrollView3"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:fillViewport="true"-->
+
+    <!--android:layout_marginBottom="16dp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintHorizontal_bias="0.0"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardView2"-->
+    <!--                    app:layout_constraintVertical_bias="0.0"-->
+    <!--                    tools:ignore="MissingConstraints">-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/menu"-->
+    <!--                        android:layout_width="wrap_content"-->
 
 
-<!--                    </LinearLayout>-->
-<!--                </HorizontalScrollView>-->
-
-<!--                <ScrollView-->
-<!--                    android:id="@+id/scrollView4"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-
-<!--                    android:maxHeight="2000dp"-->
-<!--                    android:fillViewport="false"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintHorizontal_bias="0.891"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/scrollView3"-->
-<!--                    app:layout_constraintVertical_bias="0"-->
-<!--                    tools:ignore="MissingConstraints">-->
-
-<!--<LinearLayout-->
-<!--    android:layout_width="wrap_content"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:orientation="vertical">-->
-<!--    <ListView-->
-<!--        android:id="@+id/listview_post"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:divider="@color/button_background"-->
-<!--        android:dividerHeight="4dp"-->
-<!--        android:scrollbars="vertical"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        tools:listitem="@layout/posts_list_item">-->
-
-<!--    </ListView>-->
-
-<!--</LinearLayout>-->
-<!--                </ScrollView>-->
-<!--            </LinearLayout>-->
-<!--        </ScrollView>-->
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="20dp"-->
+    <!--                        android:orientation="horizontal"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="@id/cardView2"-->
+    <!--                        app:layout_constraintVertical_bias="0.175"-->
+    <!--                        tools:ignore="MissingConstraints">-->
 
 
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:src="@drawable/aktifitas"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintHorizontal_bias="0.108"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:layout_constraintVertical_bias="0.162">-->
+
+    <!--                        </ImageView>-->
+
+
+    <!--                    </LinearLayout>-->
+    <!--                </HorizontalScrollView>-->
+
+    <!--                <ScrollView-->
+    <!--                    android:id="@+id/scrollView4"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+
+    <!--                    android:maxHeight="2000dp"-->
+    <!--                    android:fillViewport="false"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintHorizontal_bias="0.891"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/scrollView3"-->
+    <!--                    app:layout_constraintVertical_bias="0"-->
+    <!--                    tools:ignore="MissingConstraints">-->
+
+    <!--<LinearLayout-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:orientation="vertical">-->
+    <!--    <ListView-->
+    <!--        android:id="@+id/listview_post"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:divider="@color/button_background"-->
+    <!--        android:dividerHeight="4dp"-->
+    <!--        android:scrollbars="vertical"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        tools:listitem="@layout/posts_list_item">-->
+
+    <!--    </ListView>-->
+
+    <!--</LinearLayout>-->
+    <!--                </ScrollView>-->
+    <!--            </LinearLayout>-->
+    <!--        </ScrollView>-->
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
 
-    </Button>
+
+
+
+
 
 
 

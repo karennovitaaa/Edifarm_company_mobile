@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,6 +31,8 @@ private Button addActivity;
     SesionManager sesionManager;
     Button addAct;
     private FragmentSecond2Binding binding;
+    Button buttonsheet;
+
 
     @Override
     public View onCreateView(
@@ -41,6 +45,22 @@ private Button addActivity;
 
     }
 
+
+
+
+
+//    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(Second2Fragment.this)
+//                        .navigate(R.id.action_Second2Fragment_to_First2Fragment);
+//            }
+//        });
+//    }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 addActivity = getView().findViewById(R.id.button_second);
@@ -49,6 +69,7 @@ addActivity = getView().findViewById(R.id.button_second);
 
         addActivity.setOnClickListener(this);
     }
+
 
     @Override
     public void onDestroyView() {
