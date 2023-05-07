@@ -1,6 +1,8 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
+import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.update.Update;
@@ -33,8 +35,8 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("update")
-    Call<Update> updateResponse(
-//            @Field("id") String id,
+    Call<UpdateBio> updateResponse(
+            @Field("id") String id,
             @Field("username") String username,
             @Field("name") String name,
             @Field("address") String address,
@@ -58,7 +60,7 @@ public interface ApiInterface {
     );
     @FormUrlEncoded
     @POST("addActivity")
-    Call<Activity> CreatActResponse(
+    Call<AddActivity> CreatActResponse(
             @Field("activity_name") String activity_name,
             @Field("status") String status,
             @Field("start") String start,

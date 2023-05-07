@@ -61,7 +61,7 @@ public class register extends AppCompatActivity implements View.OnClickListener 
         eemail = (EditText) findViewById(R.id.email_field);
         daftar = (Button) findViewById(R.id.daftar);
         tv_login = (Button) findViewById(R.id.tv_login);
-        acc = (CheckBox) findViewById(R.id.setuju);
+
         ecpassword = (EditText) findViewById(R.id.cpassword_field);
         progres = (ProgressBar) findViewById(R.id.progres);
 
