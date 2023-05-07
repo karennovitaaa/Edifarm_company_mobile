@@ -1,17 +1,6 @@
 package com.aditiyagilang.edifarm_company;
 
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
-public class edit_profile extends AppCompatActivity {
-    private TextView textViewPassword;
-    private TextView textViewConfirmPassword;
-    private Button buttonSimpan;
-=======
 
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +11,7 @@ import android.widget.Toast;
 
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.update.Update;
 
 import retrofit2.Call;
@@ -43,27 +33,12 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
     ApiInterface apiInterface;
 
 
->>>>>>> d114a539fbca5e3856680880d1f662265022fd33
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-<<<<<<< HEAD
-        textViewPassword = (TextView) findViewById(R.id.field_pass);
-        textViewPassword = (TextView) findViewById(R.id.field_confirmpass);
-        buttonSimpan = (Button) findViewById(R.id.button_simpan);
-        buttonSimpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDialog();
-            }
-        });
-    }
-    public void openDialog() {
-
-=======
         sesionManager = new SesionManager(edit_profile.this);
 
         updated= (Button) findViewById(R.id.update);
@@ -115,22 +90,15 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
 
 
 
-}
+    }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
 
             case R.id.update:
-//                Id = "5";
-//                Username = "aku";
-//                Name = "aku";
-//                Address = "jom";
-//                Phone = "089";
-//                Born_date = "2002-11-11";
-//                Email = "akak@hmail.com";
-//                Id = sesionManager.getUserDetail().get(SesionManager.ID);
-                Username = sesionManager.getUserDetail().get(SesionManager.USERNAME);
+                Id = sesionManager.getUserDetail().get(SesionManager.ID);
+                Username = eusername.getText().toString();
                 if (eusername.getText().toString() == null){
                     Username = sesionManager.getUserDetail().get(SesionManager.USERNAME);
                 }
@@ -154,22 +122,21 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
                 if (eemail.getText().toString() == null){
                     Email = sesionManager.getUserDetail().get(SesionManager.EMAIL);
                 }
-kirim(Username, Name, Address, Phone, Born_date, Email);
+                kirim(Id,Username, Name, Address, Phone, Born_date, Email);
 
         }
->>>>>>> d114a539fbca5e3856680880d1f662265022fd33
     }
 
-    private void kirim( String username, String name,
-                       String address, String phone,
-                       String born_date, String email){
+    private void kirim( String id, String username, String name,
+                        String address, String phone,
+                        String born_date, String email){
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<Update> Ucall = apiInterface.updateResponse( username, name,
+        Call<UpdateBio> Ucall = apiInterface.updateResponse( id, username, name,
                 address,  phone, born_date, email);
 
-        Ucall.enqueue(new Callback<Update>() {
+        Ucall.enqueue(new Callback<UpdateBio>() {
             @Override
-            public void onResponse(Call<Update> call, Response<Update> response) {
+            public void onResponse(Call<UpdateBio> call, Response<UpdateBio> response) {
 
 
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
@@ -182,11 +149,13 @@ kirim(Username, Name, Address, Phone, Born_date, Email);
             }
 
             @Override
-            public void onFailure(Call<Update> call, Throwable throwable) {
+            public void onFailure(Call<UpdateBio> call, Throwable throwable) {
                 Toast.makeText(edit_profile.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("SERVER", throwable.toString());
             }
         }); {
-    }
+        }
 
 
-}}
+
+    }}

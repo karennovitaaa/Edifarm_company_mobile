@@ -68,13 +68,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:id="@+id/toolbar_tablayout"
-            android:background="">
+            >
 
-<<<<<<< HEAD
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-    <include layout="@layout/"
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+      >
 
     </androidx.cardview.widget.CardView>
 
@@ -150,10 +150,10 @@
         android:layout_width="400dp"
 
         android:layout_height="668dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomAppBar"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ScrollView
             android:id="@+id/scrollView2"
@@ -334,7 +334,6 @@
             </LinearLayout>
         </ScrollView>
 
->>>>>>> d114a539fbca5e3856680880d1f662265022fd33
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -349,7 +348,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-<<<<<<< HEAD
+
     <!--    <com.google.android.material.bottomappbar.BottomAppBar-->
 <!--        android:id="@+id/bottomAppBar"-->
 <!--        android:layout_width="match_parent"-->
@@ -624,12 +623,11 @@
 
 
 
-=======
+
     </Button>
 
 
 
 
->>>>>>> d114a539fbca5e3856680880d1f662265022fd33
 
 </androidx.constraintlayout.widget.ConstraintLayout>
