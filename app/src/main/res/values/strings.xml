@@ -35,16 +35,22 @@
         <item> name="Belarus" </item>
         <item> name="Belgium" </item>
     </string-array>
-<<<<<<< HEAD
+    <
+    <
+    <
+    <
+    <
+    <
+    < HEAD
     <string name="title_activity_dashboard_tab">dashboard_tab</string>
     <string name="title_activity_dashboardtabb">dashboardtabb</string>
     <string name="title_activity_tabed">tabed</string>
-=======
+    =======
     <string name="title_activity_activitys">activitys</string>
     <string name="title_activity_dashboard_tabbed">dashboard_tabbed</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
->>>>>>> d114a539fbca5e3856680880d1f662265022fd33
+    >>>>>>> d114a539fbca5e3856680880d1f662265022fd33
     <!-- TODO: Remove or change this placeholder text -->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 

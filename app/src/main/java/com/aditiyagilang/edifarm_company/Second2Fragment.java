@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,8 @@ import com.aditiyagilang.edifarm_company.databinding.FragmentSecond2Binding;
 public class Second2Fragment extends Fragment {
 
     private FragmentSecond2Binding binding;
+    Button buttonsheet;
+
 
     @Override
     public View onCreateView(
@@ -26,17 +29,20 @@ public class Second2Fragment extends Fragment {
 
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(Second2Fragment.this)
-                        .navigate(R.id.action_Second2Fragment_to_First2Fragment);
-            }
-        });
-    }
+
+
+//    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(Second2Fragment.this)
+//                        .navigate(R.id.action_Second2Fragment_to_First2Fragment);
+//            }
+//        });
+//    }
 
     @Override
     public void onDestroyView() {
