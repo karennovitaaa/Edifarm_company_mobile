@@ -79,9 +79,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
                 Toast.makeText(context, Id + User_ID, Toast.LENGTH_SHORT).show();
                 if (listener != null) {
                     listener.onStatusClick(ActivityAdapter.this, view, position, item);
-                    klaim(User_ID, Id);
-
-
+                    klaim(Id, User_ID);
                 }
             }
         });
@@ -120,6 +118,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
         void onStatusClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
     }
+
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
         TextView nama_kegiatan;
