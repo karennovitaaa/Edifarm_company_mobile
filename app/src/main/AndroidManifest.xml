@@ -15,11 +15,6 @@
         android:theme="@style/Theme.Edifarm_Company"
         tools:targetApi="31">
         <activity
-            android:name=".ChangeProfile"
-            android:exported="false"
-            android:label="@string/title_activity_change_profile"
-            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
-        <activity
             android:name=".dashboard_tabbed"
             android:exported="false" />
         <activity
