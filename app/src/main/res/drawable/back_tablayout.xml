@@ -7,6 +7,9 @@
                 android:startColor="@color/backgroun" />
             <corners
                 android:radius="20dp"/>
+            <stroke
+                android:color="@color/button_background"
+                />
 
         </shape>
     </item>
