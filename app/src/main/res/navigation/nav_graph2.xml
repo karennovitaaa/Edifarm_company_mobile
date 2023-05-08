@@ -21,7 +21,7 @@
         android:id="@+id/Second2Fragment"
         android:name="com.aditiyagilang.edifarm_company.Second2Fragment"
         android:label="Aktivitas"
-        tools:layout="@layout/fragment_second2">
+        tools:layout="@layout/fragment_secound_fragmen">
 
         <action
             android:id="@+id/action_Second2Fragment_to_First2Fragment"

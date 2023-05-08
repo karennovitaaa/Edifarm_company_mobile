@@ -1,11 +1,11 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
-import com.aditiyagilang.edifarm_company.model.update.Update;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -20,6 +20,7 @@ public interface ApiInterface {
             @Field("username") String username,
             @Field("password") String password
     );
+
     @FormUrlEncoded
     @POST("register")
     Call<Register> registerresponse(
@@ -31,7 +32,7 @@ public interface ApiInterface {
             @Field("born_date") String born_date,
             @Field("email") String email,
             @Field("confirm_password") String confirm_password
-            );
+    );
 
     @FormUrlEncoded
     @POST("update")
@@ -42,22 +43,24 @@ public interface ApiInterface {
             @Field("address") String address,
             @Field("phone") String phone,
             @Field("born_date") String born_date,
-            @Field("email")  String email
-            );
+            @Field("email") String email
+    );
+
     @FormUrlEncoded
     @POST("getact")
     Call<Activity> actResponse(
             @Field("id") String id
 
     );
+
     @FormUrlEncoded
-    @POST("upact")
-    Call<Activity> UpactResponse(
+    @POST("updateStatus")
+    Call<UpActivity> UpactResponse(
             @Field("id") String id,
-            @Field("user_id") String id_user,
-            @Field("status") String status
+            @Field("user_id") String user_id
 
     );
+
     @FormUrlEncoded
     @POST("addActivity")
     Call<AddActivity> CreatActResponse(
