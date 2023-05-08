@@ -1,13 +1,11 @@
-package com.aditiyagilang.edifarm_company.model.activity;
+package com.aditiyagilang.edifarm_company.model.UpActivity;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class Activity {
+public class UpActivity {
 
     @SerializedName("data")
-    private List<ActivityDataItem> data;
+    private UpActivityData data;
 
     @SerializedName("success")
     private boolean success;
@@ -15,11 +13,11 @@ public class Activity {
     @SerializedName("message")
     private String message;
 
-    public List<ActivityDataItem> getData() {
+    public UpActivityData getData() {
         return data;
     }
 
-    public void setData(List<ActivityDataItem> data) {
+    public void setData(UpActivityData data) {
         this.data = data;
     }
 
@@ -37,15 +35,5 @@ public class Activity {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    @Override
-    public String toString() {
-        return
-                "Activity{" +
-                        "data = '" + data + '\'' +
-                        ",success = '" + success + '\'' +
-                        ",message = '" + message + '\'' +
-                        "}";
     }
 }

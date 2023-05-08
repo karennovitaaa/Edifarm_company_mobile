@@ -33,11 +33,12 @@
 
         <TextView
 
+            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.9"
-            android:fontFamily="@font/poppins_medium"
 
+            android:fontFamily="@font/poppins_medium"
             android:text="Penyiraman pakek air"
             android:textColor="@color/font_card_activity"
             android:textSize="9dp"
@@ -49,7 +50,7 @@
             app:layout_constraintVertical_bias="0.592"></TextView>
 
         <Button
-            android:id="@+id/klaim_k"
+            android:id="@+id/status"
 
             android:layout_width="71dp"
 
@@ -61,6 +62,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 

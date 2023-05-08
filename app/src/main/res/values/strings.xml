@@ -36,6 +36,7 @@
         <item> name="Belgium" </item>
     </string-array>
 
+
     <string name="title_activity_dashboard_tab">dashboard_tab</string>
     <string name="title_activity_dashboardtabb">dashboardtabb</string>
     <string name="title_activity_tabed">tabed</string>
@@ -44,7 +45,9 @@
     <string name="title_activity_dashboard_tabbed">dashboard_tabbed</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
     <string name="title_activity_change_profile">ChangeProfile</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

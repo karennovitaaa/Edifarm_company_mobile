@@ -53,6 +53,7 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
             eusername.setHint(sesionManager.getUserDetail().get(SesionManager.ID));
         }
 
+
         ename = (EditText) findViewById(R.id.editnama);
         if(SesionManager.NAME == null){
             ename.setHint("Masukan Nama");
@@ -97,32 +98,17 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
 
             case R.id.update:
+
                 Id = sesionManager.getUserDetail().get(SesionManager.ID);
-                Username = eusername.getText().toString();
-                if (eusername.getText().toString() == null){
-                    Username = sesionManager.getUserDetail().get(SesionManager.USERNAME);
-                }
-                Name = ename.getText().toString();
-                if (ename.getText().toString() == null){
-                    Name = sesionManager.getUserDetail().get(SesionManager.NAME);
-                }
-                Address = eaddress.getText().toString();
-                if (eaddress.getText().toString() == null){
-                    Address = sesionManager.getUserDetail().get(SesionManager.ADDRESS);
-                }
-                Phone = ephone.getText().toString();
-                if (ephone.getText().toString()== null){
-                    Phone = sesionManager.getUserDetail().get(SesionManager.PHONE);
-                }
-                Born_date = eborn_date.getText().toString();
-                if (eborn_date.getText().toString() == null){
-                    Born_date = sesionManager.getUserDetail().get(SesionManager.BORN_DATE);
-                }
-                Email = eemail.getText().toString();
-                if (eemail.getText().toString() == null){
-                    Email = sesionManager.getUserDetail().get(SesionManager.EMAIL);
-                }
-                kirim(Id,Username, Name, Address, Phone, Born_date, Email);
+                Username = eusername.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.USERNAME) : eusername.getText().toString();
+                Name = ename.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.NAME) : ename.getText().toString();
+                Address = eaddress.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.ADDRESS) : eaddress.getText().toString();
+                Phone = ephone.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.PHONE) : ephone.getText().toString();
+                Born_date = eborn_date.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.BORN_DATE) : eborn_date.getText().toString();
+                Email = eemail.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.EMAIL) : eemail.getText().toString();
+                kirim(Id, Username, Name, Address, Phone, Born_date, Email);
+                break;
+
 
         }
     }
