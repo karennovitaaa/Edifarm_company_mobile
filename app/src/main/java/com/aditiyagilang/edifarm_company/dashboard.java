@@ -40,7 +40,7 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         setContentView(R.layout.activity_dashboard);
 
 
-        eprofile = (ImageButton) findViewById(R.id.editProfil);
+//        eprofile = (ImageButton) findViewById(R.id.editProfil);
         activity = (ImageButton) findViewById(R.id.activity);
         logout = (Button) findViewById(R.id.logout);
 
@@ -159,10 +159,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
                 break;
 
-            case R.id.editProfil:
-                Intent eintent = new Intent(this, edit_profile.class);
-                startActivity(eintent);
-                break;
+//            case R.id.editProfil:
+//                Intent eintent = new Intent(this, edit_profile.class);
+//                startActivity(eintent);
+//                break;
             case R.id.logout:
                 logout();
                 break;
