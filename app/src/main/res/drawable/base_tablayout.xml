@@ -7,8 +7,12 @@
                 android:startColor="@color/white" />
             <corners
                 android:radius="20dp"/>
+            <stroke
+                android:color="@color/backgroun"
+                android:width="2dp" />
 
         </shape>
+
     </item>
 
 </selector>

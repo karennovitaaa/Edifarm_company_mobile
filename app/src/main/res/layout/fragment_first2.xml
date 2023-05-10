@@ -175,4 +175,11 @@
         app:layout_constraintVertical_bias="0.98">
 
     </ImageButton>
+    <include
+        android:id="@+id/load"
+        layout="@layout/animation_loading"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

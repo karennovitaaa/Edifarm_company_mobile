@@ -52,6 +52,13 @@
 
 
 
+
+=======
+    <string name="title_activity_change_profile">ChangeProfile</string>
+
+
+
+>>>>>>> ccebb5f19be180807e87c6f9edc9822cc04b12f6
     <!-- TODO: Remove or change this placeholder text -->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 

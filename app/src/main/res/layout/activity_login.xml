@@ -13,13 +13,13 @@
         android:id="@+id/cardViews2"
         android:layout_width="320dp"
         android:layout_height="400dp"
-        android:background="@color/backgroun"
+        android:layout_marginTop="100dp"
 
+        android:background="@color/backgroun"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/base"
         app:cardCornerRadius="25dp"
         app:cardMaxElevation="210dp"
-        android:layout_marginTop="100dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +90,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.419"
-                />
+                app:layout_constraintVertical_bias="0.419" />
+
             <ImageView
                 android:id="@+id/pengguna"
                 android:layout_width="wrap_content"
@@ -138,8 +138,7 @@
                 app:layout_constraintHorizontal_bias="0.513"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.622"
-                />
+                app:layout_constraintVertical_bias="0.622" />
 
 
             <LinearLayout
@@ -178,43 +177,29 @@
                 android:src="@drawable/view1"
                 tools:layout_editor_absoluteX="47dp"
                 tools:layout_editor_absoluteY="255dp"></ImageView>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/button"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Masuk"
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.76" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="95dp"
-        android:layout_height="40dp"
-        android:foregroundGravity="center"
-        app:cardBackgroundColor="@color/button"
-        android:layout_marginTop="310dp"
-
-        app:cardCornerRadius="15dp"
-        app:cardMaxElevation="20dp"
-        android:onClick="masuk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/button"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:text="Masuk"
-            android:textColor="@android:color/background_light"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView"

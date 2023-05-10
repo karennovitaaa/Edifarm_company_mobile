@@ -7,29 +7,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aditiyagilang.edifarm_company.R;
+import com.aditiyagilang.edifarm_company.SesionManager;
+import com.aditiyagilang.edifarm_company.api.ApiClient;
+import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.AdapterHolder> {
 
-    private OnItemClickListener listener;
-    private Context context;
-    private List<ActivityDataItem> dataList;
+    private final OnItemClickListener listener;
+    private final Context context;
+    private final List<ActivityDataItem> dataList;
+    ActivityDataItem activityDataItem;
+    SesionManager sesionManager;
+    ApiInterface apiInterface;
 
     public ActivityAdapter(Context context, List<ActivityDataItem> dataList, OnItemClickListener listener) {
         this.context = context;
         this.dataList = dataList;
         this.listener = listener;
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
-        void onStatusClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
+        sesionManager = new SesionManager(context);
+        apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
     @NonNull
@@ -41,13 +51,18 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
     @Override
     public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
+
+        final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
+        final String Id = String.valueOf(dataList.get(position).getId());
+
         final ActivityDataItem item = dataList.get(position);
         String activity_name = item.getActivityName();
-        String status = item.getStatus();
-        String id = String.valueOf(item.getId());
+        String status1 = item.getStatus();
+
 
         holder.nama_kegiatan.setText(activity_name);
-        holder.status.setText(status);
+        holder.status.setText(status1);
+        holder.activityDataItem = item;
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,37 +76,76 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
         holder.status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, Id + User_ID, Toast.LENGTH_SHORT).show();
                 if (listener != null) {
                     listener.onStatusClick(ActivityAdapter.this, view, position, item);
+                    klaim(Id, User_ID);
                 }
             }
         });
-
     }
+
+    public void klaim(String id, String user_id) {
+        Call<UpActivity> UpActCall = apiInterface.UpactResponse(id, user_id);
+        UpActCall.enqueue(new Callback<UpActivity>() {
+            @Override
+            public void onResponse(Call<UpActivity> call, Response<UpActivity> response) {
+                if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                    // update the activity status locally
+
+                    notifyDataSetChanged();
+                    Toast.makeText(context, response.body().getMessage() + "Mari Gess", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UpActivity> call, Throwable t) {
+                Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     @Override
     public int getItemCount() {
         return dataList.size();
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
+
+        void onStatusClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
+    }
+
+
     public class AdapterHolder extends RecyclerView.ViewHolder {
         TextView nama_kegiatan;
         Button status;
+        SesionManager sesionManager;
+        ApiInterface apiInterface;
+        ActivityDataItem activityDataItem;
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
             nama_kegiatan = itemView.findViewById(R.id.nama_kegiatan);
-            status = itemView.findViewById(R.id.klaim_k);
+            status = itemView.findViewById(R.id.status);
+            sesionManager = new SesionManager(itemView.getContext());
+            apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
             status.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onStatusClick(ActivityAdapter.this, view, position, dataList.get(position));
+                    if (position != RecyclerView.NO_POSITION) {
                     }
                 }
             });
         }
+
     }
+
+
 }
+
