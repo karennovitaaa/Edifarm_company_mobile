@@ -1,16 +1,18 @@
 package com.aditiyagilang.edifarm_company.api;
 
-import com.aditiyagilang.edifarm_company.Activity.UpdateActivity;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
+import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
+import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
@@ -55,6 +57,13 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @GET("getpost")
+    Call<DashboardModel> GetPostResponse(
+
+
+    );
+
+    @FormUrlEncoded
     @POST("filterActivity")
     Call<Activity> actFilterResponse(
             @Field("id") String id
@@ -79,13 +88,14 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
-    @POST("updateActivitu")
-    Call<UpdateActivity> UpdateActResponse(
+    @POST("updateActivity")
+    Call<UpdateActivitys> UpdateActResponse(
             @Field("id") String id,
-            @Field("activity_name") String activity_name,
-            @Field("status") String status,
+            @Field("user_id") String user_id,
             @Field("start") String start,
             @Field("end") String end,
-            @Field("user_id") String user_id
+            @Field("status") String status,
+            @Field("activity_name") String activity_name
     );
+
 }

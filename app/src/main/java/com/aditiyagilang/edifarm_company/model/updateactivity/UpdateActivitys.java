@@ -2,7 +2,7 @@ package com.aditiyagilang.edifarm_company.model.updateactivity;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UpdateActivity {
+public class UpdateActivitys {
 
     @SerializedName("data")
     private UpdateActivityData updateActivityData;

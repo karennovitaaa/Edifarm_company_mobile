@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
-import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
+import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
 import java.util.Calendar;
 import java.util.List;
@@ -99,6 +100,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                 ImageButton endDate = dialog.findViewById(R.id.upcalEnd);
                 Button upActivity = dialog.findViewById(R.id.edit);
 
+
                 ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
                 SesionManager sesionManager = new SesionManager(dialog.getContext());
                 estart.setHint("yy-mm-dd");
@@ -136,6 +138,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                 endDate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         // Mendapatkan tanggal saat ini
                         final Calendar calendar = Calendar.getInstance();
                         int year = calendar.get(Calendar.YEAR);
@@ -168,14 +171,29 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                     @Override
                     public void onClick(View view) {
                         String activityName = enameActivity.getText().toString();
+                        if (TextUtils.isEmpty(activityName)) {
+                            activityName = item.getActivityName();
+                        }
                         String status = "belum";
                         String start = estart.getText().toString();
+                        if (TextUtils.isEmpty(start)) {
+                            start = item.getStart();
+                        }
                         String end = efinish.getText().toString();
+                        if (TextUtils.isEmpty(end)) {
+                            end = item.getEnd();
+                        }
                         String userId = sesionManager.getUserDetail().get(SesionManager.ID);
-                        create(activityName, status, start, end, userId);
+                        String id = String.valueOf(item.getId());
+
+                        Toast.makeText(context, activityName, Toast.LENGTH_SHORT).show();
+
+                        // Call the API method with the appropriate parameters
+                        klaim(id, userId, activityName, status, start, end);
                         dialog.dismiss();
                     }
                 });
+
 
                 dialog.show();
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -183,25 +201,41 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                 dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
 
+
             }
 
-            private void create(String Activity_Name, String Status, String Start, String End, String User_Id) {
-                apiInterface.CreatActResponse(Activity_Name, Status, Start, End, User_Id).enqueue(new Callback<AddActivity>() {
-                    @Override
-                    public void onResponse(Call<AddActivity> call, Response<AddActivity> response) {
-                        if (response.isSuccessful() && response.body() != null) {
-                            Toast.makeText(context.getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            // pindah ke halaman first2_fragment dan merefresh halaman tersebut
+            public void klaim(String id, String user_id, String activity_name, String status, String start, String end) {
+                if (TextUtils.isEmpty(start)) {
+                    start = String.valueOf(dataList.get(position).getStart());
+                }
+                if (TextUtils.isEmpty(end)) {
+                    end = String.valueOf(dataList.get(position).getEnd());
+                }
+                if (TextUtils.isEmpty(activity_name)) {
+                    activity_name = String.valueOf(dataList.get(position).getActivityName());
+                }
 
+                Call<UpdateActivitys> UpActCall = apiInterface.UpdateActResponse(id, user_id, activity_name, status, start, end);
+                UpActCall.enqueue(new Callback<UpdateActivitys>() {
+                    @Override
+                    public void onResponse(Call<UpdateActivitys> call, Response<UpdateActivitys> response) {
+                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                            // update the activity status locally
+                            notifyDataSetChanged();
+                            Toast.makeText(context, response.message() + "Mari Gess", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(context, response.message() + "Salah", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<AddActivity> call, Throwable t) {
-                        t.printStackTrace();
+                    public void onFailure(Call<UpdateActivitys> call, Throwable t) {
+                        Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
+
+
         });
     }
 
@@ -233,6 +267,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
             buttonedit = itemView.findViewById(R.id.buttonedit);
             sesionManager = new SesionManager(itemView.getContext());
             apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
 
 //            status.setOnClickListener(new View.OnClickListener() {
 //                @Override

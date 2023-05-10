@@ -26,6 +26,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/fieldedit"
                 android:hint="Cari Kegiatan Anda"
+                android:padding="5dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black">
 
@@ -36,9 +37,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"
-                
+
                 android:layout_marginRight="20dp"
-                android:layout_weight="1"
+
                 android:background="@color/transparant"
                 android:src="@drawable/icon_search">
 
@@ -51,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="78dp"
         android:layout_marginRight="15dp">
 
     </androidx.recyclerview.widget.RecyclerView>

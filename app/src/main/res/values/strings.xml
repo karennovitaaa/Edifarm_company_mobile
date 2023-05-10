@@ -12,6 +12,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="hello_blank_fragment">Hello first fragment</string>
+    String[] dropdownOptions = {"Sudah", "Selesai"};
+
     <string-array name="countries_arry">
         <item> name="Afghanistan" </item>
         <item> name="Albania" </item>
@@ -48,17 +50,12 @@
     <string name="tab_text_2">Tab 2</string>
 
 
-
-
-
-
-
-=======
+    =======
     <string name="title_activity_change_profile">ChangeProfile</string>
     <string name="title_activity_edit_profile">EditProfile</string>
 
 
->>>>>>> ccebb5f19be180807e87c6f9edc9822cc04b12f6
+    >>>>>>> ccebb5f19be180807e87c6f9edc9822cc04b12f6
     <!-- TODO: Remove or change this placeholder text -->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 
