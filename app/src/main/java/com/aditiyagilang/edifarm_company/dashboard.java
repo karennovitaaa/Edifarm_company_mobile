@@ -12,25 +12,27 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aditiyagilang.edifarm_company.model.model_dashboard;
-import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
+import com.aditiyagilang.edifarm_company.model.model_dashboard;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import java.util.ArrayList;
 
 public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
-    private boolean mIsLiked = false;
     SesionManager sesionManager;
-    Button  logout;
+    Button logout;
     ImageButton eprofile, activity;
-    private ArrayList<model_dashboard> model_dashboards;
-
     BottomNavigationItemView bottomNavigationItemView;
+<<<<<<< HEAD
     ColorStateList def;
     TextView item_feeds, item_act, select;
+=======
+    private boolean mIsLiked = false;
+    private ArrayList<model_dashboard> model_dashboards;
+>>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -174,10 +176,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
                 break;
 
-            case R.id.editProfil:
-                Intent eintent = new Intent(this, edit_profile.class);
-                startActivity(eintent);
-                break;
+//            case R.id.editProfil:
+//                Intent eintent = new Intent(this, edit_profile.class);
+//                startActivity(eintent);
+//                break;
             case R.id.logout:
                 logout();
                 break;
@@ -194,4 +196,5 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //        startActivity(intent);
 //
 //    }
-    }}
+    }
+}

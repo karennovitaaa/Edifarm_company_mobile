@@ -1,5 +1,6 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.Activity.UpdateActivity;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
@@ -54,6 +55,12 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("filterActivity")
+    Call<Activity> actFilterResponse(
+            @Field("id") String id
+    );
+
+    @FormUrlEncoded
     @POST("updateStatus")
     Call<UpActivity> UpactResponse(
             @Field("id") String id,
@@ -69,6 +76,16 @@ public interface ApiInterface {
             @Field("start") String start,
             @Field("end") String end,
             @Field("user_id") String user_id
+    );
 
+    @FormUrlEncoded
+    @POST("updateActivitu")
+    Call<UpdateActivity> UpdateActResponse(
+            @Field("id") String id,
+            @Field("activity_name") String activity_name,
+            @Field("status") String status,
+            @Field("start") String start,
+            @Field("end") String end,
+            @Field("user_id") String user_id
     );
 }

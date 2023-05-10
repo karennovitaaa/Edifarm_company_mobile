@@ -42,7 +42,7 @@ public class Activity {
     @Override
     public String toString() {
         return
-                "Activity{" +
+                "Activity.Activity{" +
                         "data = '" + data + '\'' +
                         ",success = '" + success + '\'' +
                         ",message = '" + message + '\'' +
