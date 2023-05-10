@@ -10,22 +10,21 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.aditiyagilang.edifarm_company.model.model_dashboard;
-import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
+import com.aditiyagilang.edifarm_company.model.model_dashboard;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import java.util.ArrayList;
 
 public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
-    private boolean mIsLiked = false;
     SesionManager sesionManager;
-    Button  logout;
+    Button logout;
     ImageButton eprofile, activity;
-    private ArrayList<model_dashboard> model_dashboards;
-
     BottomNavigationItemView bottomNavigationItemView;
+    private boolean mIsLiked = false;
+    private ArrayList<model_dashboard> model_dashboards;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -159,10 +158,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
                 break;
 
-            case R.id.editProfil:
-                Intent eintent = new Intent(this, edit_profile.class);
-                startActivity(eintent);
-                break;
+//            case R.id.editProfil:
+//                Intent eintent = new Intent(this, edit_profile.class);
+//                startActivity(eintent);
+//                break;
             case R.id.logout:
                 logout();
                 break;
@@ -179,4 +178,5 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //        startActivity(intent);
 //
 //    }
-    }}
+    }
+}
