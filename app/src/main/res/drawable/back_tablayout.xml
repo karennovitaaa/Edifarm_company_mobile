@@ -8,7 +8,9 @@
             <corners
                 android:radius="20dp"/>
             <stroke
-                android:color="@color/button_background"
+                android:color="@color/white"
+                android:width="2dp"
+
                 />
 
         </shape>

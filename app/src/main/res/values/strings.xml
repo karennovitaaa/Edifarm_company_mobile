@@ -52,7 +52,11 @@
 
     =======
     <string name="title_activity_change_profile">ChangeProfile</string>
+<<<<<<< HEAD
+    <string name="title_activity_dashboardfix">dashboardfix</string>
+=======
     <string name="title_activity_edit_profile">EditProfile</string>
+>>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
 
 
     >>>>>>> ccebb5f19be180807e87c6f9edc9822cc04b12f6
