@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".First2Fragment">
+    tools:context=".Activity.First2Fragment">
 
     <ScrollView
         android:id="@+id/scrollView5"
@@ -28,6 +28,7 @@
                 android:id="@+id/cardView6"
                 android:layout_width="317dp"
                 android:layout_height="138dp"
+
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/app_bar"
                 app:cardCornerRadius="20dp"
@@ -154,6 +155,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+
                 app:layout_constraintTop_toTopOf="parent">
 
             </androidx.recyclerview.widget.RecyclerView>
@@ -165,8 +167,9 @@
         android:id="@+id/addAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="35dp"
         android:background="@color/transparant"
-        android:src="@drawable/icon_add_act"
+        android:src="@drawable/icon_more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -175,11 +178,12 @@
         app:layout_constraintVertical_bias="0.98">
 
     </ImageButton>
+
     <include
         android:id="@+id/load"
         layout="@layout/animation_loading"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-    />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

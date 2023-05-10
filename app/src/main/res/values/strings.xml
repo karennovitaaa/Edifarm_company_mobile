@@ -47,7 +47,7 @@
     <string name="tab_text_2">Tab 2</string>
 
     <string name="title_activity_change_profile">ChangeProfile</string>
-
+    <string name="title_activity_edit_profile">EditProfile</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
