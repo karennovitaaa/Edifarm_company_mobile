@@ -2,12 +2,14 @@ package com.aditiyagilang.edifarm_company;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aditiyagilang.edifarm_company.model.model_dashboard;
@@ -15,6 +17,7 @@ import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -26,12 +29,24 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
     private ArrayList<model_dashboard> model_dashboards;
 
     BottomNavigationItemView bottomNavigationItemView;
+    ColorStateList def;
+    TextView item_feeds, item_act, select;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_dashboard_tabbed2);
+        Toolbar toolbar = findViewById(R.id.toolbar_tab);
+        setSupportActionBar(toolbar);
+        item_feeds = findViewById(R.id.item_feeds);
+        item_act = findViewById(R.id.item_act);
+
+        item_feeds.setOnClickListener(this);
+        item_act.setOnClickListener(this);
+
+        select = findViewById(R.id.select);
+        def = item_act.getTextColors();
         sesionManager = new SesionManager(dashboard.this);
         if (!sesionManager.isLogin()) {
             movetoLogin();
