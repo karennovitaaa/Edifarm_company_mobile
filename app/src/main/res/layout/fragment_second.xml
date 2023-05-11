@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".dashboardfixx.SecondFragment">
 
   <androidx.recyclerview.widget.RecyclerView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      >
+      tools:ignore="MissingConstraints">
 
   </androidx.recyclerview.widget.RecyclerView>
-=======
-    tools:context=".EditProfile.SecondFragment">
 
     <TextView
         android:id="@+id/textview_second"
@@ -39,5 +33,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_second" />
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
+
 </androidx.constraintlayout.widget.ConstraintLayout>

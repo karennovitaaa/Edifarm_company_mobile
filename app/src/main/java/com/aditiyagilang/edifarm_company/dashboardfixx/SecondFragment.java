@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-import com.aditiyagilang.edifarm_company.dashboardfixx.databinding.FragmentSecondBinding;
+
+import com.aditiyagilang.edifarm_company.R;
+import com.aditiyagilang.edifarm_company.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
@@ -32,7 +34,7 @@ private FragmentSecondBinding binding;
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(com.aditiyagilang.edifarm_company.R.id.action_SecondFragment_to_FirstFragment);
             }
         });
     }

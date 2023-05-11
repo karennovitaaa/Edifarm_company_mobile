@@ -7,15 +7,12 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-<<<<<<< HEAD
+
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first" >
-=======
-        android:name="com.aditiyagilang.edifarm_company.EditProfile.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
+        tools:layout="@layout/fragment_dashboard" >
+
+
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -23,15 +20,10 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-<<<<<<< HEAD
+
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second" >
-=======
-        android:name="com.aditiyagilang.edifarm_company.EditProfile.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
