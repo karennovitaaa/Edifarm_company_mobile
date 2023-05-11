@@ -123,6 +123,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
     public class AdapterHolder extends RecyclerView.ViewHolder {
         TextView nama_kegiatan;
         Button status;
+
         SesionManager sesionManager;
         ApiInterface apiInterface;
         ActivityDataItem activityDataItem;

@@ -6,6 +6,7 @@ import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
+import com.aditiyagilang.edifarm_company.model.deleteActivity.DeleteActivity;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
@@ -58,6 +59,14 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("deleteData")
+    Call<DeleteActivity> deleteactResponse(
+            @Field("id") String id,
+            @Field("user_id") String user_id
+
+    );
+
+    @FormUrlEncoded
     @POST("getActFull")
     Call<GetFullActivity> actFullResponse(
             @Field("id") String id
@@ -92,6 +101,13 @@ public interface ApiInterface {
             @Field("status") String status,
             @Field("start") String start,
             @Field("end") String end,
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("filterActivity")
+    Call<GetFullActivity> filterActivityResponse(
+            @Field("search") String search,
             @Field("user_id") String user_id
     );
 
