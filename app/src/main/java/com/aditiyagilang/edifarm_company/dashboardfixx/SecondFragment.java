@@ -9,10 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-<<<<<<< HEAD
-import com.aditiyagilang.edifarm_company.R;
-=======
->>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 import com.aditiyagilang.edifarm_company.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
