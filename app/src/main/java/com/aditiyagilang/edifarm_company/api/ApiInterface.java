@@ -1,5 +1,6 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
@@ -52,6 +53,13 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("getact")
     Call<Activity> actResponse(
+            @Field("id") String id
+
+    );
+
+    @FormUrlEncoded
+    @POST("getActFull")
+    Call<GetFullActivity> actFullResponse(
             @Field("id") String id
 
     );

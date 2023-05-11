@@ -10,8 +10,12 @@
 
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.FirstFragment"
         android:label="@string/first_fragment_label"
+<<<<<<< HEAD
         tools:layout="@layout/fragment_dashboard" >
 
+=======
+        tools:layout="@layout/fragment_first">
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
 
         <action
@@ -23,7 +27,12 @@
 
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.SecondFragment"
         android:label="@string/second_fragment_label"
+<<<<<<< HEAD
         tools:layout="@layout/fragment_second" >
+=======
+        tools:layout="@layout/fragment_second">
+
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

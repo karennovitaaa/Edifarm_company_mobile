@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:layout_width="match_parent"
     tools:context=".EditProfile.EditProfile"
 
     >
 
+=======
+    tools:context=".dashboardfixx.FirstFragment">
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
 
+<<<<<<< HEAD
+=======
+    </androidx.recyclerview.widget.RecyclerView>
+
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -419,3 +432,8 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+<<<<<<< HEAD
+=======
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304

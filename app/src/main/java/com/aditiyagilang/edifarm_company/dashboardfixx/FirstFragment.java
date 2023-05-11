@@ -10,8 +10,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+<<<<<<< HEAD
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+=======
+
+import com.aditiyagilang.edifarm_company.databinding.FragmentFirstBinding;
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
 import com.aditiyagilang.edifarm_company.Activity.First2Fragment;
 import com.aditiyagilang.edifarm_company.R;
@@ -56,6 +61,10 @@ private FragmentDashboardBinding binding;
     ApiInterface apiInterface;
     DashboardDataItem dashboardDataItem;
 
+<<<<<<< HEAD
+=======
+    private FragmentFirstBinding binding;
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
     @Override
     public View onCreateView(
@@ -63,14 +72,20 @@ private FragmentDashboardBinding binding;
             Bundle savedInstanceState
     ) {
 
+<<<<<<< HEAD
       binding = FragmentDashboardBinding.inflate(inflater, container, false);
       return binding.getRoot();
+=======
+        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+<<<<<<< HEAD
         fotoProfil = getView().findViewById(R.id.imageProfilPost);
         namaAkun = getView().findViewById(R.id.textProfil);
         reportButton = getView().findViewById(R.id.button_repost);
@@ -122,6 +137,21 @@ private FragmentDashboardBinding binding;
     @Override
     public void onClick(View v) {
 
+=======
+//        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(FirstFragment.this)
+//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+//            }
+//        });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
     }
 
     @Override

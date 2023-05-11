@@ -9,12 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+<<<<<<< HEAD
 import com.aditiyagilang.edifarm_company.R;
+=======
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 import com.aditiyagilang.edifarm_company.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
-private FragmentSecondBinding binding;
+    private FragmentSecondBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,8 +25,8 @@ private FragmentSecondBinding binding;
             Bundle savedInstanceState
     ) {
 
-      binding = FragmentSecondBinding.inflate(inflater, container, false);
-      return binding.getRoot();
+        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
     }
 
@@ -39,7 +42,7 @@ private FragmentSecondBinding binding;
         });
     }
 
-@Override
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;

@@ -40,7 +40,7 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_tabbed2);
         Toolbar toolbar = findViewById(R.id.toolbar_tab);
-        setSupportActionBar(toolbar);
+        
         item_feeds = findViewById(R.id.item_feeds);
         item_act = findViewById(R.id.item_act);
 

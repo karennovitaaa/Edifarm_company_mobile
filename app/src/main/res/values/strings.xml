@@ -55,7 +55,10 @@
     <string name="title_activity_dashboardfix">dashboardfix</string>
 
     <string name="title_activity_edit_profile">EditProfile</string>
+<<<<<<< HEAD
     <string name="title_activity_postingan">postingan</string>
+=======
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
     <!-- TODO: Remove or change this placeholder text -->
     <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->

@@ -47,9 +47,7 @@
         android:label="Aktivitas"
         tools:layout="@layout/fragment_list_up_activity">
 
-        <!--        <action-->
-        <!--            android:id="@+id/action_ListActivity_to_UpdatePop"-->
-        <!--            app:destination="@id/First2Fragment" />-->
+   
     </fragment>
     <fragment
         android:id="@+id/PopEdit"

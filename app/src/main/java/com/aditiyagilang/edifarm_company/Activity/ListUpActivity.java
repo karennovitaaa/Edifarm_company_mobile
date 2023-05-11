@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +18,8 @@ import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.databinding.FragmentListUpActivityBinding;
 import com.aditiyagilang.edifarm_company.design.ActivityListAdapter;
-import com.aditiyagilang.edifarm_company.model.activity.Activity;
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivityDataItem;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 
 import java.util.List;
@@ -38,6 +40,7 @@ public class ListUpActivity extends Fragment implements View.OnClickListener, Ac
     ImageButton addAct;
     RecyclerView recyclerView;
     ActivityDataItem activityDataItem;
+    GetFullActivityDataItem getFullActivityDataItem;
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
     private FragmentListUpActivityBinding binding;
@@ -67,30 +70,32 @@ public class ListUpActivity extends Fragment implements View.OnClickListener, Ac
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
 
-        Call<Activity> ActCall = apiInterface.actResponse(id);
+        Call<GetFullActivity> ActCall = apiInterface.actFullResponse(id);
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
 
             public void run() {
                 // Panggil kembali API setiap 5 detik
-                Call<Activity> ActCall = apiInterface.actResponse(id);
+                Call<GetFullActivity> ActCall = apiInterface.actFullResponse(id);
 
-                ActCall.enqueue(new Callback<Activity>() {
+                ActCall.enqueue(new Callback<GetFullActivity>() {
                     @Override
-                    public void onResponse(Call<Activity> call, Response<Activity> response) {
+                    public void onResponse(Call<GetFullActivity> call, Response<GetFullActivity> response) {
 
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-
-                            List<ActivityDataItem> activityDataItemList = response.body().getData();
-                            ActivityListAdapter activitylistAdapter = new ActivityListAdapter(getContext(), activityDataItemList, ListUpActivity.this);
+                            Toast.makeText(getContext(), id, Toast.LENGTH_SHORT).show();
+                            List<GetFullActivityDataItem> getFullActivityDataItemList = response.body().getData();
+                            ActivityListAdapter activitylistAdapter = new ActivityListAdapter(getContext(), getFullActivityDataItemList, ListUpActivity.this);
 
                             recyclerView.setAdapter(activitylistAdapter);
-                            activityDataItem = activityDataItemList.get(0);
+                            getFullActivityDataItem = getFullActivityDataItemList.get(0);
+                        } else {
+                            Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Activity> call, Throwable t) {
+                    public void onFailure(Call<GetFullActivity> call, Throwable t) {
                         t.printStackTrace();
                     }
                 });
@@ -108,12 +113,14 @@ public class ListUpActivity extends Fragment implements View.OnClickListener, Ac
 
 
     @Override
-    public void onItemClick(ActivityListAdapter adapter, View view, int position, ActivityDataItem item) {
+    public void onItemClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item) {
 
     }
 
     @Override
-    public void onStatusClick(ActivityListAdapter adapter, View view, int position, ActivityDataItem item) {
+    public void onStatusClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item) {
 
     }
+
+
 }

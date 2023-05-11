@@ -60,7 +60,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
     implementation 'org.glassfish:javax.annotation:10.0-b28'
     implementation 'com.airbnb.android:lottie:3.5.0'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62bb525c16240a4b45c7c455c570de0fbd3c7304
 
 
 }
