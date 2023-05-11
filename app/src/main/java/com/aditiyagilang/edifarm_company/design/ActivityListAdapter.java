@@ -26,6 +26,7 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivityDataItem;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
@@ -39,17 +40,18 @@ import retrofit2.Response;
 public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapter.AdapterHolder> {
     private final OnItemClickListener listener;
     private final Context context;
-    private final List<ActivityDataItem> dataList;
-    ActivityDataItem activityDataItem;
+    private final List<GetFullActivityDataItem> dataList;
+    GetFullActivityDataItem getFullActivityDataItem;
     SesionManager sesionManager;
     ApiInterface apiInterface;
 
-    public ActivityListAdapter(Context context, List<ActivityDataItem> dataList, ActivityListAdapter.OnItemClickListener listener) {
+    public ActivityListAdapter(Context context, List<GetFullActivityDataItem> dataList, ActivityListAdapter.OnItemClickListener listener) {
         this.context = context;
         this.dataList = dataList;
         this.listener = listener;
         sesionManager = new SesionManager(context);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
     }
 
     @NonNull
@@ -64,14 +66,14 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
         final String Id = String.valueOf(dataList.get(position).getId());
 
-        final ActivityDataItem item = dataList.get(position);
+        final GetFullActivityDataItem item = dataList.get(position);
         String activity_name = item.getActivityName();
         String status1 = item.getStatus();
 
 
         holder.nama_kegiatans.setText(activity_name);
 //        holder.status.setText(status1);
-        holder.activityDataItem = item;
+        holder.getFullActivityDataItem = item;
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,7 +185,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                         if (TextUtils.isEmpty(end)) {
                             end = item.getEnd();
                         }
-                        String userId = sesionManager.getUserDetail().get(SesionManager.ID);
+                        String userId = User_ID;
                         String id = String.valueOf(item.getId());
 
                         Toast.makeText(context, activityName, Toast.LENGTH_SHORT).show();
@@ -204,39 +206,34 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
             }
 
-            public void klaim(String id, String user_id, String activity_name, String status, String start, String end) {
-                if (TextUtils.isEmpty(start)) {
-                    start = String.valueOf(dataList.get(position).getStart());
-                }
-                if (TextUtils.isEmpty(end)) {
-                    end = String.valueOf(dataList.get(position).getEnd());
-                }
-                if (TextUtils.isEmpty(activity_name)) {
-                    activity_name = String.valueOf(dataList.get(position).getActivityName());
-                }
-
-                Call<UpdateActivitys> UpActCall = apiInterface.UpdateActResponse(id, user_id, activity_name, status, start, end);
-                UpActCall.enqueue(new Callback<UpdateActivitys>() {
-                    @Override
-                    public void onResponse(Call<UpdateActivitys> call, Response<UpdateActivitys> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            // update the activity status locally
-                            notifyDataSetChanged();
-                            Toast.makeText(context, response.message() + "Mari Gess", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(context, response.message() + "Salah", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<UpdateActivitys> call, Throwable t) {
-                        Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
 
         });
+    }
+
+    public void klaim(String id, String user_id, String activity_name, String status, String start, String end) {
+        if (sesionManager != null) {
+            // Gunakan user_id yang diteruskan sebagai parameter
+            Call<UpdateActivitys> UpActCall = apiInterface.UpdateActResponse(id, user_id, start, end, status, activity_name);
+            UpActCall.enqueue(new Callback<UpdateActivitys>() {
+                @Override
+                public void onResponse(Call<UpdateActivitys> call, Response<UpdateActivitys> response) {
+                    if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                        // Perbarui data pada objek ActivityDataItem
+
+                        Toast.makeText(context, status, Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(context, response.body().getMessage() + id, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<UpdateActivitys> call, Throwable t) {
+                    Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -245,9 +242,9 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
     }
 
     public interface OnItemClickListener {
-        void onItemClick(ActivityListAdapter adapter, View view, int position, ActivityDataItem item);
+        void onItemClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item);
 
-        void onStatusClick(ActivityListAdapter adapter, View view, int position, ActivityDataItem item);
+        void onStatusClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item);
     }
 
 
@@ -259,6 +256,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         SesionManager sesionManager;
         ApiInterface apiInterface;
         ActivityDataItem activityDataItem;
+        GetFullActivityDataItem getFullActivityDataItem;
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);

@@ -26,13 +26,13 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
     Button logout;
     ImageButton eprofile, activity;
     BottomNavigationItemView bottomNavigationItemView;
-<<<<<<< HEAD
+
     ColorStateList def;
     TextView item_feeds, item_act, select;
-=======
+
     private boolean mIsLiked = false;
     private ArrayList<model_dashboard> model_dashboards;
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -40,7 +40,7 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_tabbed2);
         Toolbar toolbar = findViewById(R.id.toolbar_tab);
-        setSupportActionBar(toolbar);
+        
         item_feeds = findViewById(R.id.item_feeds);
         item_act = findViewById(R.id.item_act);
 

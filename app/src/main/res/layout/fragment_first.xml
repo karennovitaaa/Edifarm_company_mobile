@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-=======
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     tools:context=".dashboardfixx.FirstFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,9 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
-    tools:context=".fragment_Editprofile">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -429,5 +422,5 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-</FrameLayout>
->>>>>>> ffe97435f9982fff5350b4cd5a6f169a3be24cc6
+</androidx.constraintlayout.widget.ConstraintLayout>
+
