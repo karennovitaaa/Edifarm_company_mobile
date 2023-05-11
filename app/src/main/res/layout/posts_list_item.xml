@@ -59,7 +59,7 @@
             </com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
-                android:id="@+id/textPost1"
+                android:id="@+id/text_caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/linear_icons"
@@ -87,7 +87,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/textPost2"
+                android:id="@+id/text_tanggal_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/listImagePost"
@@ -106,6 +106,7 @@
             </TextView>
 
             <ImageButton
+                android:id="@+id/button_repost"
                 android:layout_width="22dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -133,7 +134,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/like_button"
+                    android:id="@+id/comment_button"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
@@ -147,6 +148,7 @@
 
 
                 <TextView
+                    android:id="@+id/jumlahh_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
@@ -157,7 +159,7 @@
                     android:textColor="@color/black"></TextView>
 
                 <ImageButton
-                    android:id="@+id/coment_button"
+                    android:id="@+id/like_button"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
@@ -170,6 +172,7 @@
                 </ImageButton>
 
                 <TextView
+                    android:id="@+id/jumlah_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"

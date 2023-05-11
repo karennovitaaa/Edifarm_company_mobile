@@ -15,6 +15,7 @@
         android:theme="@style/Theme.Edifarm_Company"
         tools:targetApi="31">
         <activity
+
             android:name=".dashboardfixx.dashboardfix"
             android:exported="true"
             android:label="@string/title_activity_dashboardfix"
@@ -25,7 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
+
             android:name=".EditProfile.EditProfile"
             android:exported="false"
             android:label="@string/title_activity_edit_profile"
@@ -58,9 +62,13 @@
             android:exported="true" />
         <activity
             android:name=".dashboard"
+
             android:exported="true">
 
+
+            >
         </activity>
+
         <activity
             android:name=".register"
             android:exported="true" />

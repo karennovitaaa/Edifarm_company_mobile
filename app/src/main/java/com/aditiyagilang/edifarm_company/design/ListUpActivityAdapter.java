@@ -16,7 +16,9 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
-import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
+import com.aditiyagilang.edifarm_company.model.FilterActivity.FilterActivity;
+import com.aditiyagilang.edifarm_company.model.FilterActivity.FilterActivityDataItem;
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 
 import java.util.List;
@@ -25,16 +27,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.AdapterHolder> {
+public class ListUpActivityAdapter extends RecyclerView.Adapter<ListUpActivityAdapter.AdapterHolder>  {
 
-    private final OnItemClickListener listener;
+
+    private final ListUpActivityAdapter.OnItemClickListener listener;
     private final Context context;
-    private final List<ActivityDataItem> dataList;
+    private final List<FilterActivityDataItem> dataList;
     ActivityDataItem activityDataItem;
     SesionManager sesionManager;
     ApiInterface apiInterface;
 
-    public ActivityAdapter(Context context, List<ActivityDataItem> dataList, OnItemClickListener listener) {
+    public ListUpActivityAdapter(Context context, List<FilterActivityDataItem> dataList, ListUpActivityAdapter.OnItemClickListener listener) {
         this.context = context;
         this.dataList = dataList;
         this.listener = listener;
@@ -44,41 +47,41 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
     @NonNull
     @Override
-    public AdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListUpActivityAdapter.AdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.card_activity, parent, false);
-        return new AdapterHolder(view);
+        return new ListUpActivityAdapter.AdapterHolder(view);
     }
 
-           @Override
-        public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
+    @Override
+    public void onBindViewHolder(@NonNull ListUpActivityAdapter.AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
 
-            final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
-            final String Id = String.valueOf(dataList.get(position).getId());
+        final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
+        final String Id = String.valueOf(dataList.get(position).getId());
 
-            final ActivityDataItem item = dataList.get(position);
-            String activity_name = item.getActivityName();
-            String status1 = item.getStatus();
+        final FilterActivityDataItem item = dataList.get(position);
+        String activity_name = item.getActivityName();
+        String status1 = item.getStatus();
 
 
-            holder.nama_kegiatan.setText(activity_name);
-            holder.status.setText(status1);
-            holder.activityDataItem = item;
+        holder.nama_kegiatan.setText(activity_name);
+        holder.status.setText(status1);
+        holder.filterActivityDataItem = item;
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (listener != null) {
-                        listener.onItemClick(ActivityAdapter.this, view, position, item);
-                    }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onItemClick(ListUpActivityAdapter.this, view, position, item);
                 }
-            });
+            }
+        });
 
         holder.status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, Id + User_ID, Toast.LENGTH_SHORT).show();
                 if (listener != null) {
-                    listener.onStatusClick(ActivityAdapter.this, view, position, item);
+                    listener.onStatusClick(ListUpActivityAdapter.this, view, position, item);
                     klaim(Id, User_ID);
                 }
             }
@@ -86,10 +89,10 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
     }
 
     public void klaim(String id, String user_id) {
-        Call<UpActivity> UpActCall = apiInterface.UpactResponse(id, user_id);
-        UpActCall.enqueue(new Callback<UpActivity>() {
+        Call<GetFullActivity> UpActCall = apiInterface.filterActivityResponse(id, user_id);
+        UpActCall.enqueue(new Callback<com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity>() {
             @Override
-            public void onResponse(Call<UpActivity> call, Response<UpActivity> response) {
+            public void onResponse(Call<GetFullActivity> call, Response<GetFullActivity> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                     // update the activity status locally
 
@@ -101,7 +104,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
             }
 
             @Override
-            public void onFailure(Call<UpActivity> call, Throwable t) {
+            public void onFailure(Call<GetFullActivity> call, Throwable t) {
                 Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -114,9 +117,9 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
     }
 
     public interface OnItemClickListener {
-        void onItemClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
+        void onItemClick(ListUpActivityAdapter adapter, View view, int position, FilterActivityDataItem item);
 
-        void onStatusClick(ActivityAdapter adapter, View view, int position, ActivityDataItem item);
+        void onStatusClick(ListUpActivityAdapter adapter, View view, int position, FilterActivityDataItem item);
     }
 
 
@@ -126,7 +129,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
         SesionManager sesionManager;
         ApiInterface apiInterface;
-        ActivityDataItem activityDataItem;
+        FilterActivityDataItem filterActivityDataItem;
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
@@ -149,4 +152,3 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
 
 }
-

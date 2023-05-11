@@ -19,24 +19,91 @@
 
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/toolbar"
-            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" >
-           <ImageButton
-               android:id="@+id/fab"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:src="@drawable/icon_search"
-               android:background="@color/app_bar"
-               android:layout_gravity="center|right"
-               android:layout_marginRight="20dp">
+            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay">
 
-           </ImageButton>
+            <ImageButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="20dp"
+                android:background="@color/app_bar"
+                android:src="@drawable/icon_search">
+
+            </ImageButton>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_activitys" />
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@color/backgroun"
+        android:elevation="4dp"
+        android:gravity="bottom|center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/transparant"
+            android:paddingTop="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparant">
+
+                <ImageButton
+                    android:id="@+id/homes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/backgroun"
+                    android:src="@drawable/icon_homes">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/backgroun"
+                    android:src="@drawable/icon_add">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/prof"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/backgroun"
+                    android:src="@drawable/icon_profile">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/backgroun"
+                    android:src="@drawable/icon_histori_selected">
+
+                </ImageButton>
+            </TableRow>
+
+
+        </TableLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -49,10 +49,10 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
         select = findViewById(R.id.select);
         def = item_act.getTextColors();
-        sesionManager = new SesionManager(dashboard.this);
-        if (!sesionManager.isLogin()) {
-            movetoLogin();
-        }
+//        sesionManager = new SesionManager(dashboard.this);
+//        if (!sesionManager.isLogin()) {
+//            movetoLogin();
+//        }
 
         setContentView(R.layout.activity_dashboard);
 
@@ -96,12 +96,12 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         logout.setOnClickListener(this);
     }
 
-    private void movetoLogin() {
-        Intent intent = new Intent(dashboard.this, login.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
-        startActivity(intent);
-        finish();
-    }
+//    private void movetoLogin() {
+//        Intent intent = new Intent(dashboard.this, login.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+//        startActivity(intent);
+//        finish();
+//    }
 
     private ArrayList<model_dashboard> setMedsosAndName() {
         model_dashboards = new ArrayList<>();
@@ -180,15 +180,15 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //                Intent eintent = new Intent(this, edit_profile.class);
 //                startActivity(eintent);
 //                break;
-            case R.id.logout:
-                logout();
-                break;
+//            case R.id.logout:
+//                logout();
+//                break;
         }
     }
 
-    public void logout() {
-        sesionManager.logoutSession();
-        movetoLogin();
+//    public void logout() {
+//        sesionManager.logoutSession();
+//        movetoLogin();}
 
 //    public void ck(View view){
 //        Intent intent = new Intent(dashboard.this,account_utama.class);
@@ -196,5 +196,5 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //        startActivity(intent);
 //
 //    }
-    }
+
 }

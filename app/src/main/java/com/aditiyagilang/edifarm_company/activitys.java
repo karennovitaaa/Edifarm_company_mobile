@@ -1,22 +1,24 @@
 package com.aditiyagilang.edifarm_company;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.aditiyagilang.edifarm_company.EditProfile.EditProfile;
+import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
+import com.google.android.material.snackbar.Snackbar;
 
-public class activitys extends AppCompatActivity {
+public class activitys extends AppCompatActivity implements View.OnClickListener {
 
+    ImageButton add, prof, history, homes;
     private AppBarConfiguration appBarConfiguration;
     private ActivityActivitysBinding binding;
 
@@ -40,6 +42,18 @@ public class activitys extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        add = findViewById(R.id.add);
+        prof = findViewById(R.id.prof);
+        history = findViewById(R.id.history);
+        homes = findViewById(R.id.homes);
+
+
+        add.setOnClickListener(this);
+        prof.setOnClickListener(this);
+        history.setOnClickListener(this);
+        homes.setOnClickListener(this);
     }
 
     @Override
@@ -47,5 +61,27 @@ public class activitys extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_activitys);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.homes:
+                Intent intent = new Intent(activitys.this, dashboardfix.class);
+                startActivity(intent);
+                break;
+            case R.id.prof:
+                Intent intent1 = new Intent(activitys.this, EditProfile.class);
+                startActivity(intent1);
+                break;
+            case R.id.add:
+                Intent intent2 = new Intent(activitys.this, activitys.class);
+                startActivity(intent2);
+                break;
+            case R.id.history:
+                Intent intent3 = new Intent(activitys.this, activitys.class);
+                startActivity(intent3);
+                break;
+        }
     }
 }

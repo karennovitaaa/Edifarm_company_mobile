@@ -10,7 +10,8 @@
 
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_post">
+
+        tools:layout="@layout/fragment_first">
 
 
         <action
@@ -22,6 +23,7 @@
 
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.SecondFragment"
         android:label="@string/second_fragment_label"
+
         tools:layout="@layout/fragment_second">
 
 

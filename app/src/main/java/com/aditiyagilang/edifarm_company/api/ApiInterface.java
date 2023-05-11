@@ -14,7 +14,6 @@ import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
@@ -73,10 +72,9 @@ public interface ApiInterface {
 
     );
 
-    @FormUrlEncoded
-    @GET("getpost")
-    Call<DashboardModel> GetPostResponse(
 
+    @POST("getpost")
+    Call<DashboardModel> GetPostResponse(
 
     );
 
