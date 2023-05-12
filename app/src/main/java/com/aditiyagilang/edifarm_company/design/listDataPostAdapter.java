@@ -56,19 +56,17 @@ public class listDataPostAdapter extends BaseAdapter {
 
         listDataPost list = listData.get(position);
         holder.nama.setText(list.getNama());
-        holder.time.setText(list.getTime());
-        holder.caption.setText(list.getCaption());
+
         holder.image.setImageResource(list.getImage());
 
         return convertView;
     }
     private static class Holder{
-        private final TextView nama, time, caption;
+        private final TextView nama;
         private final ImageView image;
         public Holder (View view) {
             nama = view.findViewById(R.id.textProfil);
-            time = view.findViewById(R.id.textPost2);
-            caption = view.findViewById(R.id.textPost1);
+
             image = view.findViewById(R.id.imageProfilPost);
 
 

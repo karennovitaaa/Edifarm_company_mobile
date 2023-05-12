@@ -2,40 +2,57 @@ package com.aditiyagilang.edifarm_company;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.aditiyagilang.edifarm_company.model.model_dashboard;
-import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.aditiyagilang.edifarm_company.design.dasboardAdapter;
+import com.aditiyagilang.edifarm_company.model.model_dashboard;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import java.util.ArrayList;
 
 public class dashboard extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
-    private boolean mIsLiked = false;
     SesionManager sesionManager;
-    Button  logout;
+    Button logout;
     ImageButton eprofile, activity;
+    BottomNavigationItemView bottomNavigationItemView;
+
+    ColorStateList def;
+    TextView item_feeds, item_act, select;
+
+    private boolean mIsLiked = false;
     private ArrayList<model_dashboard> model_dashboards;
 
-    BottomNavigationItemView bottomNavigationItemView;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-        sesionManager = new SesionManager(dashboard.this);
-        if (!sesionManager.isLogin()) {
-            movetoLogin();
-        }
+        setContentView(R.layout.activity_dashboard_tabbed2);
+        Toolbar toolbar = findViewById(R.id.toolbar_tab);
+        
+        item_feeds = findViewById(R.id.item_feeds);
+        item_act = findViewById(R.id.item_act);
+
+        item_feeds.setOnClickListener(this);
+        item_act.setOnClickListener(this);
+
+        select = findViewById(R.id.select);
+        def = item_act.getTextColors();
+//        sesionManager = new SesionManager(dashboard.this);
+//        if (!sesionManager.isLogin()) {
+//            movetoLogin();
+//        }
 
         setContentView(R.layout.activity_dashboard);
 
@@ -79,12 +96,12 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
         logout.setOnClickListener(this);
     }
 
-    private void movetoLogin() {
-        Intent intent = new Intent(dashboard.this, login.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
-        startActivity(intent);
-        finish();
-    }
+//    private void movetoLogin() {
+//        Intent intent = new Intent(dashboard.this, login.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+//        startActivity(intent);
+//        finish();
+//    }
 
     private ArrayList<model_dashboard> setMedsosAndName() {
         model_dashboards = new ArrayList<>();
@@ -159,19 +176,19 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 
                 break;
 
-            case R.id.editProfil:
-                Intent eintent = new Intent(this, edit_profile.class);
-                startActivity(eintent);
-                break;
-            case R.id.logout:
-                logout();
-                break;
+//            case R.id.editProfil:
+//                Intent eintent = new Intent(this, edit_profile.class);
+//                startActivity(eintent);
+//                break;
+//            case R.id.logout:
+//                logout();
+//                break;
         }
     }
 
-    public void logout() {
-        sesionManager.logoutSession();
-        movetoLogin();
+//    public void logout() {
+//        sesionManager.logoutSession();
+//        movetoLogin();}
 
 //    public void ck(View view){
 //        Intent intent = new Intent(dashboard.this,account_utama.class);
@@ -179,4 +196,5 @@ public class dashboard extends AppCompatActivity implements AdapterView.OnItemCl
 //        startActivity(intent);
 //
 //    }
-    }}
+
+}

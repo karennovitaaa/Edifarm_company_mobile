@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
+    android:background="@drawable/bg_dialogbottom"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    android:gravity="center_horizontal"
-    android:background="@drawable/bg_dialogbottom"
-    tools:context=".Second2Fragment">
+    tools:context=".Activity.Second2Fragment">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/line25"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:src="@drawable/line25">
 
     </ImageView>
 
@@ -28,44 +28,43 @@
 
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
-        android:textColor="@color/black"
-        />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_gravity="left"
-    >
-    <EditText
-        android:id="@+id/field_tanggal"
-        android:layout_width="300dp"
+        android:textColor="@color/black" />
 
-        android:layout_gravity="left|center"
-        android:layout_height="50dp"
-
-        android:layout_marginEnd="2dp"
-        android:background="@drawable/fieldedit"
-        android:hint="#..."
-        android:maxLines="1"
-        android:padding="10dp"
-
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="10sp"
-        android:onClick="showDatePickerDialog"
-        />
-    <ImageButton
-        android:id="@+id/calStart"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:src="@drawable/calendarr"
-        android:background="@color/transparant"
-        android:layout_gravity="center|right"
-        >
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
 
-    </ImageButton>
-</LinearLayout>
+        <EditText
+            android:id="@+id/field_tanggal"
+            android:layout_width="250dp"
+
+            android:layout_height="50dp"
+            android:layout_gravity="left|center"
+
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/fieldedit"
+            android:hint="#..."
+            android:maxLines="1"
+            android:onClick="showDatePickerDialog"
+
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="10sp" />
+
+        <ImageButton
+            android:id="@+id/calStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="15dp"
+            android:background="@color/transparant"
+            android:src="@drawable/calendarr">
+
+        </ImageButton>
+    </LinearLayout>
 
 
     <TextView
@@ -76,62 +75,55 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
-        android:textColor="@color/black"
-        />
+        android:textColor="@color/black" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="left"
-        >
+  
+        android:orientation="horizontal">
+
         <EditText
             android:id="@+id/field_tanggal_selesai"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
 
-            android:layout_gravity="left|center"
             android:layout_height="50dp"
+            android:layout_gravity="left|center"
 
             android:layout_marginEnd="2dp"
             android:background="@drawable/fieldedit"
             android:hint="#..."
             android:maxLines="1"
-            android:padding="10dp"
+            android:onClick="showDatePickerDialog"
 
+            android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/darker_gray"
-            android:textSize="10sp"
-            android:onClick="showDatePickerDialog"
-            />
+            android:textSize="10sp" />
+
         <ImageButton
             android:id="@+id/calEnd"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/calendarr"
-            android:background="@color/transparant"
             android:layout_gravity="center|right"
-            >
+            android:layout_marginLeft="15dp"
+            android:background="@color/transparant"
+            android:src="@drawable/calendarr">
 
         </ImageButton>
     </LinearLayout>
-
-
-
 
 
     <TextView
         android:id="@+id/textView_ket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_gravity="left|center"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="115dp"
         android:text="Tuliskan Keterangan"
-        android:textColor="@color/black"
-        />
-
+        android:textColor="@color/black" />
 
 
     <EditText
@@ -139,31 +131,28 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
 
+        android:layout_gravity="center|left"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"
         android:hint="keterangan ..."
         android:maxLines="4"
         android:padding="10dp"
-        android:layout_gravity="center|left"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="10sp"
-        >
+        android:textSize="10sp">
 
     </EditText>
 
 
-
-
     <Button
-        android:src="@drawable/add"
+        android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Unggah"
-        android:id="@+id/upload"
-android:layout_marginBottom="30dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/backgroun"></Button>
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/backgroun"
+        android:src="@drawable/add"
+        android:text="Unggah"></Button>
 
 
 </LinearLayout>

@@ -1,11 +1,15 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
+import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
+import com.aditiyagilang.edifarm_company.model.deleteActivity.DeleteActivity;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
+import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -54,6 +58,33 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("deleteData")
+    Call<DeleteActivity> deleteactResponse(
+            @Field("id") String id,
+            @Field("user_id") String user_id
+
+    );
+
+    @FormUrlEncoded
+    @POST("getActFull")
+    Call<GetFullActivity> actFullResponse(
+            @Field("id") String id
+
+    );
+
+
+    @POST("getpost")
+    Call<DashboardModel> GetPostResponse(
+
+    );
+
+    @FormUrlEncoded
+    @POST("filterActivity")
+    Call<Activity> actFilterResponse(
+            @Field("id") String id
+    );
+
+    @FormUrlEncoded
     @POST("updateStatus")
     Call<UpActivity> UpactResponse(
             @Field("id") String id,
@@ -69,6 +100,24 @@ public interface ApiInterface {
             @Field("start") String start,
             @Field("end") String end,
             @Field("user_id") String user_id
-
     );
+
+    @FormUrlEncoded
+    @POST("filterActivity")
+    Call<GetFullActivity> filterActivityResponse(
+            @Field("search") String search,
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("updateActivity")
+    Call<UpdateActivitys> UpdateActResponse(
+            @Field("id") String id,
+            @Field("user_id") String user_id,
+            @Field("start") String start,
+            @Field("end") String end,
+            @Field("status") String status,
+            @Field("activity_name") String activity_name
+    );
+
 }

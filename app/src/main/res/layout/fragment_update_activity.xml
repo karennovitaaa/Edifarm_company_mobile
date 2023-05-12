@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_dialogbottom"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    tools:context=".Activity.UpdateActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/line25">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textView_doc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginTop="28dp"
+
+        android:layout_marginEnd="136dp"
+        android:text="Edit Tanggal Mulai"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/upfield_tanggal"
+            android:layout_width="300dp"
+
+            android:layout_height="50dp"
+            android:layout_gravity="left|center"
+
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/fieldedit"
+            android:hint="#..."
+            android:maxLines="1"
+            android:onClick="showDatePickerDialog"
+
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="10sp" />
+
+        <ImageButton
+            android:id="@+id/upcalStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="5dp"
+            android:background="@color/transparant"
+            android:src="@drawable/calendarr">
+
+        </ImageButton>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView_doci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="136dp"
+        android:text="Edit Tanggal Selesai"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/upfield_tanggal_selesai"
+            android:layout_width="300dp"
+
+            android:layout_height="50dp"
+            android:layout_gravity="left|center"
+
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/fieldedit"
+            android:hint="#..."
+            android:maxLines="1"
+            android:onClick="showDatePickerDialog"
+
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="10sp" />
+
+        <ImageButton
+            android:id="@+id/upcalEnd"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="5dp"
+            android:background="@color/transparant"
+            android:src="@drawable/calendarr">
+
+        </ImageButton>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView_ket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="115dp"
+        android:text="Edit Keterangan"
+        android:textColor="@color/black" />
+
+
+    <EditText
+        android:id="@+id/upnameAct"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:layout_gravity="center|left"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/fieldedit"
+        android:hint="keterangan ..."
+        android:maxLines="4"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="10sp">
+
+    </EditText>
+
+    <Spinner
+
+        android:id="@+id/dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+
+        android:spinnerMode="dropdown" />
+
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/backgroun"
+        android:src="@drawable/add"
+        android:text="Unggah"></Button>
+
+
+</LinearLayout>
+
+
+
