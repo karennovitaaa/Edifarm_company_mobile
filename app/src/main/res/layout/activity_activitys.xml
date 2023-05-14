@@ -37,73 +37,12 @@
 
     <include layout="@layout/content_activitys" />
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/bottomAppBar"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:background="@color/backgroun"
-        android:elevation="4dp"
-        android:gravity="bottom|center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/transparant"
-            android:paddingTop="5dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/transparant">
-
-                <ImageButton
-                    android:id="@+id/homes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/backgroun"
-                    android:src="@drawable/icon_homes">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/add"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/backgroun"
-                    android:src="@drawable/icon_add">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/prof"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/backgroun"
-                    android:src="@drawable/icon_profile">
-
-                </ImageButton>
-
-                <ImageButton
-                    android:id="@+id/history"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/backgroun"
-                    android:src="@drawable/icon_histori_selected">
-
-                </ImageButton>
-            </TableRow>
-
-
-        </TableLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

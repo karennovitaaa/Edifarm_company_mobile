@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/bottom_dash"
         android:title="Home"
         android:icon="@drawable/baseline_home_24"/>
 
     <item
-        android:id="@+id/shorts"
-        android:title="History"
+        android:id="@+id/bottom_riwayat"
+        android:title="Riwayat"
         android:icon="@drawable/baseline_history_24"/>
 
     <item
-        android:id="@+id/fab"
+        android:id="@+id/bottom_plus"
         android:title=""
         android:enabled="false"/>
 
     <item
-        android:id="@+id/subscriptions"
-        android:title="Activity"
+        android:id="@+id/bottom_activitas"
+        android:title="Aktivitas"
         android:icon="@drawable/baseline_edit_calendar_24"/>
 
     <item
-        android:id="@+id/library"
-        android:title="Profile"
+        android:id="@+id/bottom_profil"
+        android:title="Profil"
         android:icon="@drawable/baseline_account_circle_24"/>
 
 </menu>

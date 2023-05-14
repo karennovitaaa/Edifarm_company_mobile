@@ -1,10 +1,15 @@
 package com.aditiyagilang.edifarm_company.dashboardfixx;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,13 +21,19 @@ import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.activitys;
 import com.aditiyagilang.edifarm_company.databinding.ActivityDashboardfixBinding;
 import com.aditiyagilang.edifarm_company.login;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class dashboardfix extends AppCompatActivity {
+
+    ColorStateList def;
+    TextView item1, item2, select;
+
     SesionManager sesionManager;
     ImageButton add, prof, history, homes;
     private AppBarConfiguration appBarConfiguration;
     private ActivityDashboardfixBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +52,75 @@ public class dashboardfix extends AppCompatActivity {
             movetoLogin();
         }
 
-        add = findViewById(R.id.add);
-        prof = findViewById(R.id.prof);
-        history = findViewById(R.id.history);
-        homes = findViewById(R.id.homes);
+//        add = findViewById(R.id.add);
+//        prof = findViewById(R.id.prof);
+//        history = findViewById(R.id.history);
+//        homes = findViewById(R.id.homes);
 
-        binding.history.setOnClickListener(new View.OnClickListener() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent3 = new Intent(dashboardfix.this, activitys.class);
-                startActivity(intent3);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
 
+                switch (item.getItemId()) {
+                    case R.id.bottom_dash:
+
+                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
+                        finish();
+
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_riwayat:
+
+                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_plus:
+
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_activitas:
+
+                        startActivity(new Intent(dashboardfix.this, activitys.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_profil:
+
+                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    default:
+                        return false;
+                }
             }
         });
+
+
+
+//        binding.history.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent3 = new Intent(dashboardfix.this, activitys.class);
+//                startActivity(intent3);
+//
+//            }
+//        });
 //        add.setOnClickListener(this);
 //        prof.setOnClickListener(this);
 //        history.setOnClickListener(this);
@@ -83,6 +150,9 @@ public class dashboardfix extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
 
 //    @Override
 //    public void onClick(View view) {
