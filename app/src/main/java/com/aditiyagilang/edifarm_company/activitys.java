@@ -2,9 +2,11 @@ package com.aditiyagilang.edifarm_company;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -13,10 +15,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
-import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-public class activitys extends AppCompatActivity implements View.OnClickListener {
+public class activitys extends AppCompatActivity {
 
     ImageButton add, prof, history, homes;
     private AppBarConfiguration appBarConfiguration;
@@ -35,6 +37,59 @@ public class activitys extends AppCompatActivity implements View.OnClickListener
         appBarConfiguration = new AppBarConfiguration.Builder(R.id.First2Fragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                switch (item.getItemId()) {
+                    case R.id.bottom_dash:
+
+                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        finish();
+
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_riwayat:
+
+                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_plus:
+
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_activitas:
+
+                        startActivity(new Intent(activitys.this, activitys.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    case R.id.bottom_profil:
+
+                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        finish();
+                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+
+                        item.setChecked(true);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+
+
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,16 +99,16 @@ public class activitys extends AppCompatActivity implements View.OnClickListener
         });
 
 
-        add = findViewById(R.id.add);
-        prof = findViewById(R.id.prof);
-        history = findViewById(R.id.history);
-        homes = findViewById(R.id.homes);
+//        add = findViewById(R.id.add);
+//        prof = findViewById(R.id.prof);
+//        history = findViewById(R.id.history);
+//        homes = findViewById(R.id.homes);
 
 
-        add.setOnClickListener(this);
-        prof.setOnClickListener(this);
-        history.setOnClickListener(this);
-        homes.setOnClickListener(this);
+//        add.setOnClickListener(this);
+//        prof.setOnClickListener(this);
+//        history.setOnClickListener(this);
+//        homes.setOnClickListener(this);
     }
 
     @Override
@@ -63,25 +118,5 @@ public class activitys extends AppCompatActivity implements View.OnClickListener
                 || super.onSupportNavigateUp();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.homes:
-                Intent intent = new Intent(activitys.this, dashboardfix.class);
-                startActivity(intent);
-                break;
-            case R.id.prof:
-                Intent intent1 = new Intent(activitys.this, Sesession_jenis.class);
-                startActivity(intent1);
-                break;
-            case R.id.add:
-                Intent intent2 = new Intent(activitys.this, activitys.class);
-                startActivity(intent2);
-                break;
-            case R.id.history:
-                Intent intent3 = new Intent(activitys.this, activitys.class);
-                startActivity(intent3);
-                break;
-        }
-    }
+
 }
