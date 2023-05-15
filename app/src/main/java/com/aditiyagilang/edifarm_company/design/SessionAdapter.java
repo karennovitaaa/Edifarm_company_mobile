@@ -102,8 +102,31 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.AdapterH
 
                 if (listener != null) {
                     listener.onStatusClick(SessionAdapter.this, view, position, item);
-                    klaim(Id, User_ID);
+//                    klaim(Id, User_ID);
                 }
+                final Dialog dialog = new Dialog(view.getContext());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.pop_up_dowload);
+                Button download = dialog.findViewById(R.id.download);
+                Button cancel = dialog.findViewById(R.id.cancell);
+                download.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        klaim(Id, User_ID);
+                    }
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                dialog.show();
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                dialog.getWindow().setGravity(Gravity.CENTER);
             }
         });
         holder.edit.setOnClickListener(new View.OnClickListener() {

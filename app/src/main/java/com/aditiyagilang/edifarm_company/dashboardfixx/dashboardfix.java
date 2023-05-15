@@ -80,7 +80,7 @@ public class dashboardfix extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.bottom_profil:
-                        Intent intent4 = new Intent(dashboardfix.this, Biographical.class);
+                        Intent intent4 = new Intent(dashboardfix.this, Sesession_jenis.class);
                         startActivity(intent4);
                         finish();
                         break;

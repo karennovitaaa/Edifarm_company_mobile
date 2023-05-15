@@ -33,6 +33,12 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
+    <style name="DialogAnimationSettPop">
+        <item name="android:windowEnterAnimation">@anim/slide_in_pop</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_pop</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
     <style name="Theme.Edifarm_Company.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Edifarm_Company.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
