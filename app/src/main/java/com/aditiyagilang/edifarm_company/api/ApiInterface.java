@@ -1,20 +1,35 @@
 package com.aditiyagilang.edifarm_company.api;
 
+import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
+import com.aditiyagilang.edifarm_company.model.CountLike.CountLike;
+import com.aditiyagilang.edifarm_company.model.DeleteLike.DeleteLike;
+import com.aditiyagilang.edifarm_company.model.FilterActivity.FilterActivity;
 import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
+import com.aditiyagilang.edifarm_company.model.Like.Like;
+import com.aditiyagilang.edifarm_company.model.Posting.Posting;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
+import com.aditiyagilang.edifarm_company.model.UpdateSesion.UpdateSesion;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
+import com.aditiyagilang.edifarm_company.model.addSession.AddSession;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
 import com.aditiyagilang.edifarm_company.model.deleteActivity.DeleteActivity;
+import com.aditiyagilang.edifarm_company.model.deleteSession.DeleteSession;
+import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
+import com.aditiyagilang.edifarm_company.model.getSession.GetSession;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 public interface ApiInterface {
 
@@ -53,22 +68,21 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("getact")
     Call<Activity> actResponse(
-            @Field("id") String id
+            @Field("user_id") String user_id
 
     );
 
     @FormUrlEncoded
     @POST("deleteData")
     Call<DeleteActivity> deleteactResponse(
-            @Field("id") String id,
-            @Field("user_id") String user_id
+            @Field("id") String id
 
     );
 
     @FormUrlEncoded
     @POST("getActFull")
     Call<GetFullActivity> actFullResponse(
-            @Field("id") String id
+            @Field("user_id") String user_id
 
     );
 
@@ -87,6 +101,20 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("updateStatus")
     Call<UpActivity> UpactResponse(
+            @Field("id") String id
+
+    );
+
+    @FormUrlEncoded
+    @POST("getses")
+    Call<GetSession> getsesResponse(
+            @Field("user_id") String user_id
+
+    );
+
+    @FormUrlEncoded
+    @POST("updateStatusSession")
+    Call<ClearSession> updateStatusSessionResponse(
             @Field("id") String id,
             @Field("user_id") String user_id
 
@@ -99,25 +127,92 @@ public interface ApiInterface {
             @Field("status") String status,
             @Field("start") String start,
             @Field("end") String end,
-            @Field("user_id") String user_id
+            @Field("session_id") String session_id
     );
 
     @FormUrlEncoded
     @POST("filterActivity")
-    Call<GetFullActivity> filterActivityResponse(
-            @Field("search") String search,
-            @Field("user_id") String user_id
+    Call<FilterActivity> filterActivityResponse(
+            @Field("user_id") String user_id,
+            @Field("search") String search
     );
 
     @FormUrlEncoded
     @POST("updateActivity")
     Call<UpdateActivitys> UpdateActResponse(
             @Field("id") String id,
-            @Field("user_id") String user_id,
+            @Field("activity_name") String activity_name,
             @Field("start") String start,
-            @Field("end") String end,
-            @Field("status") String status,
-            @Field("activity_name") String activity_name
+            @Field("end") String end
     );
 
+    @FormUrlEncoded
+    @POST("updateSession")
+    Call<UpdateSesion> UpdateSesResponse(
+            @Field("id") String id,
+            @Field("status") String status,
+            @Field("start") String start,
+            @Field("end") String end
+
+    );
+
+    @FormUrlEncoded
+    @POST("addSession")
+    Call<AddSession> AddSessionResponse(
+            @Field("plant_name") String plant_name,
+            @Field("start") String start,
+            @Field("end") String end,
+            @Field("user_id") String user_id
+    );
+
+
+    @Multipart
+    @POST("post")
+    Call<Posting> postResponse(
+            @Part("caption") RequestBody caption,
+            @Part("post_latitude") RequestBody latitude,
+            @Part("post_longitude") RequestBody longitude,
+            @Part("user_id") RequestBody userId,
+            @Part MultipartBody.Part image
+    );
+
+
+    @FormUrlEncoded
+    @POST("getSessionByUserId")
+    Call<GetSession> GetSessionResponse(
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("addLike")
+    Call<Like> LikeResponse(
+            @Field("user_id") String user_id,
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("getLike")
+    Call<GetLike> GetLikeResponse(
+            @Field("user_id") String user_id,
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("deleteLikeByPostId")
+    Call<DeleteLike> DeleteLikeResponse(
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("countLikesByPostId")
+    Call<CountLike> CountLikeResponse(
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("deleteStatusSession")
+    Call<DeleteSession> DeleteSessionResponse(
+            @Field("user_id") String user_id,
+            @Field("id") String id
+    );
 }

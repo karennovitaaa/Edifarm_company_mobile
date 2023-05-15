@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="6dp"
         android:layout_marginVertical="2dp"
+        android:background="@color/button_background"
         app:cardCornerRadius="5dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="12dp"
-        android:background="@color/button_background">
+        tools:layout_editor_absoluteX="12dp">
 
 
         <RelativeLayout
@@ -166,8 +166,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
-                    android:onClick="coment"
-                    android:src="@drawable/button_likefix">
+                    android:onClick="coment">
 
                 </ImageButton>
 

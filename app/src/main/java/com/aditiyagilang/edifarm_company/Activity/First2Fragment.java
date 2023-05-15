@@ -5,11 +5,16 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -29,13 +34,17 @@ import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.databinding.FragmentFirst2Binding;
 import com.aditiyagilang.edifarm_company.design.ActivityAdapter;
-import com.aditiyagilang.edifarm_company.design.ActivityAdapter.OnItemClickListener;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
+import com.aditiyagilang.edifarm_company.model.getSession.GetSession;
+import com.aditiyagilang.edifarm_company.model.getSession.GetSessionDataItem;
 
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -43,10 +52,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class First2Fragment extends Fragment implements View.OnClickListener, OnItemClickListener {
+public class First2Fragment extends Fragment implements View.OnClickListener, ActivityAdapter.OnItemClickListener {
     public String Activity_Name, Status, Start, End, User_Id;
     SesionManager sesionManager;
     TextView activitys_name;
+    TextView tanggal, jam;
     Button status;
     ImageButton addAct;
     RecyclerView recyclerView;
@@ -54,6 +64,8 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
     private FragmentFirst2Binding binding;
+    private String selectedSessionId;
+
 
     @Override
     public View onCreateView(
@@ -76,17 +88,49 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
         recyclerView = getView().findViewById(R.id.tvlist_activity);
         linearLayoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        String id = sesionManager.getUserDetail().get(SesionManager.ID);
+        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        tanggal = getView().findViewById(R.id.tanggal);
+        jam = getView().findViewById(R.id.jam);
+        Calendar calendar = Calendar.getInstance();
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+        int month = calendar.get(Calendar.MONTH);
+        int year = calendar.get(Calendar.YEAR);
 
+        DateFormatSymbols symbols = new DateFormatSymbols(new Locale("id", "ID"));
+        String monthName = symbols.getMonths()[month];
+        String currentDate = dayOfMonth + " " + monthName + " " + year;
+        tanggal.setText(currentDate);
 
-        Call<Activity> ActCall = apiInterface.actResponse(id);
+        Handler handler;
+        Runnable runnable;
+        handler = new Handler();
+
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                // Dapatkan waktu saat ini
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm", new Locale("id", "ID"));
+                String currentTime = dateFormat.format(calendar.getTime());
+
+                // Atur teks pada TextView jam
+                jam.setText(currentTime + " WIB");
+
+                // Jalankan pembaruan setiap detik
+                handler.postDelayed(this, 1000);
+            }
+        };
+
+// Mulai pembaruan setiap detik saat activity dimulai
+        handler.postDelayed(runnable, 0);
+        Call<Activity> ActCall = apiInterface.actResponse(user_id);
 
         new Timer().scheduleAtFixedRate(new TimerTask() {
 
             public void run() {
                 // Panggil kembali API setiap 5 detik
-                Call<Activity> ActCall = apiInterface.actResponse(id);
+                Call<Activity> ActCall = apiInterface.actResponse(user_id);
 
                 ActCall.enqueue(new Callback<Activity>() {
                     @Override
@@ -108,7 +152,7 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
                     }
                 });
             }
-        }, 0, 5000);
+        }, 0, 5000000);
 
 
         addAct.setOnClickListener(this);
@@ -142,7 +186,7 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
             @Override
             public void onClick(View view) {
                 NavController navController = NavHostFragment.findNavController(First2Fragment.this);
-                navController.navigate(R.id.action_First2Fragment_to_ListActivity);
+                navController.navigate(R.id.action_First2Fragment_to_List);
                 dialog.dismiss();
 
             }
@@ -169,8 +213,56 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_secound_fragmen);
+        AutoCompleteTextView listsession = dialog.findViewById(R.id.list_session);
+
+        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
+        Call<GetSession> ActCall = apiInterface.getsesResponse(user_id);
+
+        ActCall.enqueue(new Callback<GetSession>() {
+            @Override
+            public void onResponse(Call<GetSession> call, Response<GetSession> response) {
+                Log.d("USER", user_id);
+                if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                    Log.d("LALALU", response.body().getData().toString());
+                    List<GetSessionDataItem> getSessionDataItemList = response.body().getData();
+
+                    if (!getSessionDataItemList.isEmpty()) {
+                        GetSessionDataItem getSessionDataItem = getSessionDataItemList.get(0);
+
+                        // Menggunakan getSessionDataItemList sebagai data untuk dropdown
+                        String[] items = new String[getSessionDataItemList.size()];
+                        final String[] ids = new String[getSessionDataItemList.size()]; // Array untuk menyimpan ID
+                        for (int i = 0; i < getSessionDataItemList.size(); i++) {
+                            GetSessionDataItem item = getSessionDataItemList.get(i);
+                            items[i] = item.getPlantName();
+                            ids[i] = item.getId(); // Menyimpan ID pada array ids
+                        }
+
+                        // Set adapter dan item click listener untuk dropdown
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, items);
+                        listsession.setAdapter(adapter);
+                        listsession.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                                selectedSessionId = ids[position]; // Mendapatkan ID item yang dipilih
+                                // Gunakan selectedSessionId sesuai kebutuhan
+                            }
+                        });
+
+                    } else {
+                        Toast.makeText(requireContext(), "Kosong", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Cok", Toast.LENGTH_SHORT).show();
+                }
+            }
 
 
+            @Override
+            public void onFailure(Call<GetSession> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
         EditText estart = dialog.findViewById(R.id.field_tanggal);
         EditText efinish = dialog.findViewById(R.id.field_tanggal_selesai);
         EditText enameActivity = dialog.findViewById(R.id.nameAct);
@@ -183,6 +275,16 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
         SesionManager sesionManager = new SesionManager(requireContext());
         estart.setHint("yy-mm-dd");
         efinish.setHint("yy-mm-dd");
+
+        listsession.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                String item = (String) adapterView.getItemAtPosition(position);
+                // Gunakan item yang dipilih sesuai kebutuhan
+            }
+        });
+
+
         startDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -251,8 +353,8 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
                 String status = "belum";
                 String start = estart.getText().toString();
                 String end = efinish.getText().toString();
-                String userId = sesionManager.getUserDetail().get(SesionManager.ID);
-                create(activityName, status, start, end, userId);
+                String session_id = selectedSessionId;
+                create(activityName, status, start, end, session_id);
                 dialog.dismiss();
             }
         });
@@ -264,8 +366,8 @@ public class First2Fragment extends Fragment implements View.OnClickListener, On
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
-    private void create(String Activity_Name, String Status, String Start, String End, String User_Id) {
-        apiInterface.CreatActResponse(Activity_Name, Status, Start, End, User_Id).enqueue(new Callback<AddActivity>() {
+    private void create(String Activity_Name, String Status, String Start, String End, String Session_Id) {
+        apiInterface.CreatActResponse(Activity_Name, Status, Start, End, Session_Id).enqueue(new Callback<AddActivity>() {
             @Override
             public void onResponse(Call<AddActivity> call, Response<AddActivity> response) {
                 if (response.isSuccessful() && response.body() != null) {

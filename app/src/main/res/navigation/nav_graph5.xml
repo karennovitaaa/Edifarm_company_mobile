@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph5"
+    app:startDestination="@id/PostUser">
+
+    <fragment
+        android:id="@+id/BioPost"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_biopost">
+
+        <action
+            android:id="@+id/action_First3Fragment_to_Second3Fragment"
+            app:destination="@id/PostUser" />
+        <action
+            android:id="@+id/action_BioPost_to_MenuSlide"
+            app:destination="@id/MenuSlide" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MenuSlide"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_menu_side">
+
+
+        <action
+            android:id="@+id/action_MenuSlide_to_ChangePass"
+            app:destination="@id/ChangePass" />
+        <action
+            android:id="@+id/action_MenuSlide_to_ChangeAcount"
+            app:destination="@id/ChangeAcount" />
+        <action
+            android:id="@+id/action_MenuSlide_to_ChangePass2"
+            app:destination="@id/ChangePass" />
+        <action
+            android:id="@+id/action_MenuSlide_to_Pop"
+            app:destination="@id/Pop" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChangePass"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_change_pass">
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/Pop"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/pop_up_logout">
+
+
+        <action
+            android:id="@+id/action_Pop_to_PostUser"
+            app:destination="@id/PostUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/ChangeAcount"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_change_acount">
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/PostUser"
+        android:name="com.aditiyagilang.edifarm_company.Biographical.PostingUser"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_posting_user">
+
+        <action
+            android:id="@+id/action_Second3Fragment_to_First3Fragment"
+            app:destination="@id/BioPost" />
+        <action
+            android:id="@+id/action_PostUser_to_First3Fragment"
+            app:destination="@id/BioPost" />
+        <action
+            android:id="@+id/action_PostUser_to_NewPost"
+            app:destination="@id/NewPost" />
+        <action
+            android:id="@+id/action_PostUser_to_ChangePass"
+            app:destination="@id/ChangePass" />
+        <action
+            android:id="@+id/action_PostUser_to_ChangeAcount"
+            app:destination="@id/ChangeAcount" />
+    </fragment>
+
+</navigation>

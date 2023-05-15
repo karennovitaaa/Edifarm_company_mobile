@@ -9,54 +9,66 @@
     <fragment
         android:id="@+id/First2Fragment"
         android:name="com.aditiyagilang.edifarm_company.Activity.First2Fragment"
-        android:background="@color/base"
-        android:label="Aktivitas"
+        android:label="First Fragment"
         tools:layout="@layout/fragment_first2">
 
         <action
-            android:id="@+id/action_First2Fragment_to_Second2Fragment"
-            app:destination="@id/Second2Fragment" />
+            android:id="@+id/action_First2Fragment_to_List"
+            app:destination="@id/List" />
         <action
-            android:id="@+id/action_First2Fragment_to_ListActivity"
-            app:destination="@id/listfilter" />
+            android:id="@+id/action_First2Fragment_to_PopButton"
+            app:destination="@id/PopButton" />
     </fragment>
+
     <fragment
         android:id="@+id/Second2Fragment"
         android:name="com.aditiyagilang.edifarm_company.Activity.Second2Fragment"
-        android:label="Aktivitas"
-        tools:layout="@layout/fragment_secound_fragmen">
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_secound_fragmen" />
 
-        <action
-            android:id="@+id/action_Second2Fragment_to_First2Fragment"
-            app:destination="@id/First2Fragment" />
-    </fragment>
     <fragment
         android:id="@+id/PopButton"
         android:name="com.aditiyagilang.edifarm_company.Activity.PopButton"
-        android:label="Aktivitas"
+        android:label="Pop Button Fragment"
         tools:layout="@layout/fragment_pop_button">
 
+
         <action
-            android:id="@+id/action_PopButton_to_ListActivity"
-            app:destination="@id/listfilter" />
+            android:id="@+id/action_PopButton_to_Second2Fragment"
+            app:destination="@id/Second2Fragment" />
+        <action
+            android:id="@+id/action_PopButton_to_List"
+            app:destination="@id/List" />
     </fragment>
 
     <fragment
-        android:id="@+id/listfilter"
+        android:id="@+id/List"
         android:name="com.aditiyagilang.edifarm_company.Activity.ListUpActivity"
-        android:label="Aktivitas"
+        android:label="List Fragment"
         tools:layout="@layout/fragment_list_up_activity">
 
-   
+
+        <action
+            android:id="@+id/action_List_to_PopEdit"
+            app:destination="@id/PopEdit" />
+        <action
+            android:id="@+id/action_List_to_Filter"
+            app:destination="@id/Filter" />
+        <action
+            android:id="@+id/action_List_to_First2Fragment"
+            app:destination="@id/First2Fragment" />
     </fragment>
+
     <fragment
         android:id="@+id/PopEdit"
         android:name="com.aditiyagilang.edifarm_company.Activity.UpdateActivity"
-        android:label="Aktivitas"
-        tools:layout="@layout/fragment_update_activity">
+        android:label="Pop Edit Fragment"
+        tools:layout="@layout/fragment_update_activity" />
 
-        <action
-            android:id="@+id/action_ListActivity_to_First2Fragment"
-            app:destination="@id/First2Fragment" />
-    </fragment>
+    <fragment
+        android:id="@+id/Filter"
+        android:name="com.aditiyagilang.edifarm_company.Activity.fragment_filterActivity"
+        android:label="Filter Fragment"
+        tools:layout="@layout/fragment_filter_activity" />
+
 </navigation>

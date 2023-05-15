@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        tools:context=".dashboardfixx.NewPosting">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Unggah Postingan"
+            android:textColor="@color/backgroun"
+            android:textSize="24dp"
+            android:textStyle="bold"
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@color/transparant"
+            android:backgroundTint="@color/transparant"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+
+                android:id="@+id/gbr_post"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+
+                android:src="@drawable/gbr_add">
+
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/addImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/transparant"
+            android:src="@drawable/icon_post">
+
+        </ImageButton>
+
+        <TextView
+            android:id="@+id/text_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="115dp"
+            android:text="Tuliska Keterangan"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/add_caption"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center|left"
+            android:layout_marginTop="0dp"
+
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/fieldedit"
+            android:hint="keterangan ..."
+            android:maxLines="4"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+
+            android:layout_marginTop="30dp"
+
+
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/add_location"
+                android:layout_width="250dp"
+
+                android:layout_height="100dp"
+                android:layout_gravity="left|center"
+
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/fieldedit"
+                android:hint="#..."
+                android:maxLines="4"
+                android:onClick="showDatePickerDialog"
+
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+            <ImageButton
+                android:id="@+id/callocation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|right"
+                android:layout_marginLeft="15dp"
+                android:background="@color/transparant"
+                android:src="@drawable/icon_placeholder">
+
+            </ImageButton>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_posting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="70dp"
+            android:backgroundTint="@color/button"
+            android:text="Unggah" />
+
+    </LinearLayout>
+</ScrollView>

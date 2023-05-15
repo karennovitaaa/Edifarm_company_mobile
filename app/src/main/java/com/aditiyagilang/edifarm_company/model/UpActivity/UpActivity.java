@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class UpActivity {
 
     @SerializedName("data")
-    private UpActivityData data;
+    private UpActivityData upActivityData;
 
     @SerializedName("success")
     private boolean success;
@@ -14,11 +14,11 @@ public class UpActivity {
     private String message;
 
     public UpActivityData getData() {
-        return data;
+        return upActivityData;
     }
 
-    public void setData(UpActivityData data) {
-        this.data = data;
+    public void setData(UpActivityData upActivityData) {
+        this.upActivityData = upActivityData;
     }
 
     public boolean isSuccess() {

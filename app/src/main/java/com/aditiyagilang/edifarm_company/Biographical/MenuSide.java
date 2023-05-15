@@ -1,4 +1,4 @@
-package com.aditiyagilang.edifarm_company;
+package com.aditiyagilang.edifarm_company.Biographical;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.aditiyagilang.edifarm_company.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link post_foto#newInstance} factory method to
+ * Use the {@link MenuSide#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class post_foto extends Fragment {
+public class MenuSide extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class post_foto extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public post_foto() {
+    public MenuSide() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class post_foto extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment post_foto.
+     * @return A new instance of fragment MenuSide.
      */
     // TODO: Rename and change types and number of parameters
-    public static post_foto newInstance(String param1, String param2) {
-        post_foto fragment = new post_foto();
+    public static MenuSide newInstance(String param1, String param2) {
+        MenuSide fragment = new MenuSide();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class post_foto extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_post_foto, container, false);
+        return inflater.inflate(R.layout.fragment_menu_side, container, false);
     }
 }

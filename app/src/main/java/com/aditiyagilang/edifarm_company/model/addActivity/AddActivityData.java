@@ -4,91 +4,69 @@ import com.google.gson.annotations.SerializedName;
 
 public class AddActivityData {
 
-	@SerializedName("activity_name")
-	private String activityName;
+    @SerializedName("activity_name")
+    private String activityName;
 
-	@SerializedName("updated_at")
-	private String updatedAt;
+    @SerializedName("start")
+    private String start;
 
-	@SerializedName("user_id")
-	private String userId;
+    @SerializedName("session_id")
+    private String sessionId;
 
-	@SerializedName("start")
-	private String start;
+    @SerializedName("end")
+    private String end;
 
-	@SerializedName("created_at")
-	private String createdAt;
+    @SerializedName("id")
+    private int id;
 
-	@SerializedName("end")
-	private String end;
+    @SerializedName("status")
+    private String status;
 
-	@SerializedName("id")
-	private int id;
+    public String getActivityName() {
+        return activityName;
+    }
 
-	@SerializedName("status")
-	private String status;
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
 
-	public void setActivityName(String activityName){
-		this.activityName = activityName;
-	}
+    public String getStart() {
+        return start;
+    }
 
-	public String getActivityName(){
-		return activityName;
-	}
+    public void setStart(String start) {
+        this.start = start;
+    }
 
-	public void setUpdatedAt(String updatedAt){
-		this.updatedAt = updatedAt;
-	}
+    public String getSessionId() {
+        return sessionId;
+    }
 
-	public String getUpdatedAt(){
-		return updatedAt;
-	}
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 
-	public void setUserId(String userId){
-		this.userId = userId;
-	}
+    public String getEnd() {
+        return end;
+    }
 
-	public String getUserId(){
-		return userId;
-	}
+    public void setEnd(String end) {
+        this.end = end;
+    }
 
-	public void setStart(String start){
-		this.start = start;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getStart(){
-		return start;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setCreatedAt(String createdAt){
-		this.createdAt = createdAt;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public String getCreatedAt(){
-		return createdAt;
-	}
-
-	public void setEnd(String end){
-		this.end = end;
-	}
-
-	public String getEnd(){
-		return end;
-	}
-
-	public void setId(int id){
-		this.id = id;
-	}
-
-	public int getId(){
-		return id;
-	}
-
-	public void setStatus(String status){
-		this.status = status;
-	}
-
-	public String getStatus(){
-		return status;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

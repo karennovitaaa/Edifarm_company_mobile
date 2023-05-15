@@ -11,12 +11,15 @@
         android:name="com.aditiyagilang.edifarm_company.dashboardfixx.FirstFragment"
         android:label="@string/first_fragment_label"
 
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_posting_sosmed">
 
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_NewPost"
+            app:destination="@id/NewPost" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -29,6 +32,18 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/NewPost"
+        android:name="com.aditiyagilang.edifarm_company.dashboardfixx.NewPosting"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_new_posting">
+
+
+        <action
+            android:id="@+id/action_NewPost_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

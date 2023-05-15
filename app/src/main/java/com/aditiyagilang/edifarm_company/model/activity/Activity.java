@@ -38,14 +38,4 @@ public class Activity {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    @Override
-    public String toString() {
-        return
-                "Activity.Activity{" +
-                        "data = '" + data + '\'' +
-                        ",success = '" + success + '\'' +
-                        ",message = '" + message + '\'' +
-                        "}";
-    }
 }

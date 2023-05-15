@@ -38,7 +38,7 @@
 
         <EditText
             android:id="@+id/upfield_tanggal"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
 
             android:layout_height="50dp"
             android:layout_gravity="left|center"
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|right"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15dp"
             android:background="@color/transparant"
             android:src="@drawable/calendarr">
 
@@ -85,7 +85,7 @@
 
         <EditText
             android:id="@+id/upfield_tanggal_selesai"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
 
             android:layout_height="50dp"
             android:layout_gravity="left|center"
@@ -107,7 +107,7 @@
 
             android:layout_height="match_parent"
             android:layout_gravity="center|right"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15dp"
             android:background="@color/transparant"
             android:src="@drawable/calendarr">
 

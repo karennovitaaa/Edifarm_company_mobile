@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,10 +19,11 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
-import com.aditiyagilang.edifarm_company.databinding.FragmentFirstBinding;
+import com.aditiyagilang.edifarm_company.databinding.FragmentPostingSosmedBinding;
 import com.aditiyagilang.edifarm_company.design.DashboardFixAdapter;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
+import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.List;
 
@@ -46,7 +48,11 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
     DashboardDataItem dashboardDataItem;
-    private FragmentFirstBinding binding;
+    ImageButton add_post;
+    private FragmentPostingSosmedBinding binding;
+    private LottieAnimationView progressBar;
+
+// Dalam metode onViewCreated, dapatkan referensi ke LottieAnimationView dan atur animasi dan opsi lainnya
 
     @Override
     public View onCreateView(
@@ -54,7 +60,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentPostingSosmedBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
 //        binding = FragmentFirstBinding.inflate(inflater, container, false);
@@ -65,7 +71,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        add_post = getView().findViewById(R.id.add_postings);
         fotoProfil = getView().findViewById(R.id.imageProfilPost);
         namaAkun = getView().findViewById(R.id.textProfil);
         reportButton = getView().findViewById(R.id.button_repost);
@@ -82,9 +88,23 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        loadingIndicator = getView().findViewById(R.id.load_titiks);
+        progressBar = getView().findViewById(R.id.load_titiku);
+        progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.playAnimation();
 
 
+        binding.addPostings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_NewPost);
+            }
+        });
         // Panggil kembali API setiap 5 detik
+
+
         Call<DashboardModel> dashCall = apiInterface.GetPostResponse();
         dashCall.enqueue(new Callback<DashboardModel>() {
             @Override
@@ -98,6 +118,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
                     recyclerView.setAdapter(dashboardfixAdapter);
                     dashboardDataItem = dashboardDataItemList.get(0);
                     Toast.makeText(getContext(), response.body().getMassage(), Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                    progressBar.cancelAnimation();
                 }
             }
 

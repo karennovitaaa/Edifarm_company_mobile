@@ -8,13 +8,13 @@ public class UpdateActivityData {
     private String activityName;
 
     @SerializedName("updated_at")
-    private String updatedAt;
-
-    @SerializedName("user_id")
-    private int userId;
+    private Object updatedAt;
 
     @SerializedName("start")
     private String start;
+
+    @SerializedName("session_id")
+    private int sessionId;
 
     @SerializedName("created_at")
     private Object createdAt;
@@ -36,20 +36,12 @@ public class UpdateActivityData {
         this.activityName = activityName;
     }
 
-    public String getUpdatedAt() {
+    public Object getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Object updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getStart() {
@@ -58,6 +50,14 @@ public class UpdateActivityData {
 
     public void setStart(String start) {
         this.start = start;
+    }
+
+    public int getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(int sessionId) {
+        this.sessionId = sessionId;
     }
 
     public Object getCreatedAt() {

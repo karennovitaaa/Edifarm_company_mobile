@@ -69,6 +69,7 @@
             android:paddingTop="15dp"
             app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay">
 
+
             <include layout="@layout/activity_contain_tab"
 
 
@@ -78,6 +79,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_dashboardfix" />
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bottomAppBar"

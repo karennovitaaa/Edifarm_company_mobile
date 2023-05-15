@@ -224,6 +224,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViews2" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/load_titik"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/load_titik">
+
+    </com.airbnb.lottie.LottieAnimationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

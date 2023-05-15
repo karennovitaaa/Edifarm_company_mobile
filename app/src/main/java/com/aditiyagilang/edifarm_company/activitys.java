@@ -11,9 +11,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.aditiyagilang.edifarm_company.EditProfile.EditProfile;
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
+import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 import com.google.android.material.snackbar.Snackbar;
 
 public class activitys extends AppCompatActivity implements View.OnClickListener {
@@ -32,7 +32,7 @@ public class activitys extends AppCompatActivity implements View.OnClickListener
         setSupportActionBar(binding.toolbar);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_activitys);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.First2Fragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +71,7 @@ public class activitys extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent);
                 break;
             case R.id.prof:
-                Intent intent1 = new Intent(activitys.this, EditProfile.class);
+                Intent intent1 = new Intent(activitys.this, Sesession_jenis.class);
                 startActivity(intent1);
                 break;
             case R.id.add:

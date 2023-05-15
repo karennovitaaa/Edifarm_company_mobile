@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/postlist"
+    android:id="@+id/text11"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".EditProfile.EditProfile"
-
-    >
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:padding="16dp"
+    android:textAppearance="?attr/textAppearanceSubtitle1">
 
 </androidx.recyclerview.widget.RecyclerView>

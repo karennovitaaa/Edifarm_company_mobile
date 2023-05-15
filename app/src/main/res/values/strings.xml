@@ -38,7 +38,7 @@
         <item> name="Belgium" </item>
     </string-array>
 
-
+    <string name="select">Select Item</string>
     <string name="title_activity_dashboard_tab">dashboard_tab</string>
     <string name="title_activity_dashboardtabb">dashboardtabb</string>
     <string name="title_activity_tabed">tabed</string>
@@ -57,6 +57,8 @@
     <string name="title_activity_edit_profile">EditProfile</string>
 
     <string name="title_activity_postingan">postingan</string>
+    <string name="title_activity_sesession_jenis">Sesession_jenis</string>
+    <string name="title_activity_biographical">Biographical</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

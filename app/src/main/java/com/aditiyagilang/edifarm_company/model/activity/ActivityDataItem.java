@@ -4,106 +4,113 @@ import com.google.gson.annotations.SerializedName;
 
 public class ActivityDataItem {
 
-	@SerializedName("activity_name")
-	private String activityName;
+    @SerializedName("activity_name")
+    private String activityName;
 
-	@SerializedName("updated_at")
-	private Object updatedAt;
+    @SerializedName("updated_at")
+    private Object updatedAt;
 
-	@SerializedName("user_id")
-	private int userId;
+    @SerializedName("user_id")
+    private int userId;
 
-	@SerializedName("start")
-	private String start;
+    @SerializedName("start")
+    private String start;
 
-	@SerializedName("created_at")
-	private Object createdAt;
+    @SerializedName("session_id")
+    private int sessionId;
 
-	@SerializedName("end")
-	private String end;
+    @SerializedName("created_at")
+    private Object createdAt;
 
-	@SerializedName("id")
-	private int id;
+    @SerializedName("end")
+    private String end;
 
-	@SerializedName("status")
-	private String status;
+    @SerializedName("id")
+    private int id;
 
-	public void setActivityName(String activityName){
-		this.activityName = activityName;
-	}
+    @SerializedName("status")
+    private String status;
 
-	public String getActivityName(){
-		return activityName;
-	}
+    @SerializedName("plant_name")
+    private String plantName;
 
-	public void setUpdatedAt(Object updatedAt){
-		this.updatedAt = updatedAt;
-	}
+    public String getActivityName() {
+        return activityName;
+    }
 
-	public Object getUpdatedAt(){
-		return updatedAt;
-	}
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
 
-	public void setUserId(int userId){
-		this.userId = userId;
-	}
+    public Object getUpdatedAt() {
+        return updatedAt;
+    }
 
-	public int getUserId(){
-		return userId;
-	}
+    public void setUpdatedAt(Object updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 
-	public void setStart(String start){
-		this.start = start;
-	}
+    public int getUserId() {
+        return userId;
+    }
 
-	public String getStart(){
-		return start;
-	}
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	public void setCreatedAt(Object createdAt){
-		this.createdAt = createdAt;
-	}
+    public String getStart() {
+        return start;
+    }
 
-	public Object getCreatedAt(){
-		return createdAt;
-	}
+    public void setStart(String start) {
+        this.start = start;
+    }
 
-	public void setEnd(String end){
-		this.end = end;
-	}
+    public int getSessionId() {
+        return sessionId;
+    }
 
-	public String getEnd(){
-		return end;
-	}
+    public void setSessionId(int sessionId) {
+        this.sessionId = sessionId;
+    }
 
-	public void setId(int id){
-		this.id = id;
-	}
+    public Object getCreatedAt() {
+        return createdAt;
+    }
 
-	public int getId(){
-		return id;
-	}
+    public void setCreatedAt(Object createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void setStatus(String status){
-		this.status = status;
-	}
+    public String getEnd() {
+        return end;
+    }
 
-	public String getStatus(){
-		return status;
-	}
+    public void setEnd(String end) {
+        this.end = end;
+    }
 
-	@Override
- 	public String toString(){
-		return 
-			"DataItem{" + 
-			"activity_name = '" + activityName + '\'' + 
-			",updated_at = '" + updatedAt + '\'' + 
-			",user_id = '" + userId + '\'' + 
-			",start = '" + start + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",end = '" + end + '\'' + 
-			",id = '" + id + '\'' + 
-			",status = '" + status + '\'' + 
-			"}";
-		}
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPlantName() {
+        return plantName;
+    }
+
+    public void setPlantName(String plantName) {
+        this.plantName = plantName;
+    }
 }

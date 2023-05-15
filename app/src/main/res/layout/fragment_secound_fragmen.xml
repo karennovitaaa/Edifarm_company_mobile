@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -18,6 +19,32 @@
         android:src="@drawable/line25">
 
     </ImageView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/fieldedit"
+        android:hint="Pilih Jenis"
+
+        android:textColorHint="@color/black"
+
+        app:endIconTint="@color/backgroun"
+        app:hintTextColor="@color/backgroun"
+
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/list_session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:outlineAmbientShadowColor="@color/backgroun"
+            android:outlineSpotShadowColor="@color/backgroun"
+            android:textColorHint="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView_doc"
@@ -81,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-  
+
         android:orientation="horizontal">
 
         <EditText

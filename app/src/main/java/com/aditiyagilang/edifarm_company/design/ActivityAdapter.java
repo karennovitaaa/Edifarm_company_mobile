@@ -42,6 +42,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
+
     @NonNull
     @Override
     public AdapterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -49,29 +50,31 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
         return new AdapterHolder(view);
     }
 
-           @Override
-        public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
+    @Override
+    public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
 
-            final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
-            final String Id = String.valueOf(dataList.get(position).getId());
+        final String User_ID = sesionManager.getUserDetail().get(SesionManager.ID);
+        final String Id = String.valueOf(dataList.get(position).getId());
 
-            final ActivityDataItem item = dataList.get(position);
-            String activity_name = item.getActivityName();
-            String status1 = item.getStatus();
+        final ActivityDataItem item = dataList.get(position);
+        String activity_name = item.getActivityName();
+        String status1 = item.getStatus();
+        String plantname = item.getPlantName();
 
 
-            holder.nama_kegiatan.setText(activity_name);
-            holder.status.setText(status1);
-            holder.activityDataItem = item;
+        holder.nama_kegiatan.setText(activity_name);
+        holder.status.setText(status1);
+        holder.planName.setText(plantname);
+        holder.activityDataItem = item;
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (listener != null) {
-                        listener.onItemClick(ActivityAdapter.this, view, position, item);
-                    }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onItemClick(ActivityAdapter.this, view, position, item);
                 }
-            });
+            }
+        });
 
         holder.status.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,14 +82,14 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
                 Toast.makeText(context, Id + User_ID, Toast.LENGTH_SHORT).show();
                 if (listener != null) {
                     listener.onStatusClick(ActivityAdapter.this, view, position, item);
-                    klaim(Id, User_ID);
+                    klaim(Id);
                 }
             }
         });
     }
 
-    public void klaim(String id, String user_id) {
-        Call<UpActivity> UpActCall = apiInterface.UpactResponse(id, user_id);
+    public void klaim(String id) {
+        Call<UpActivity> UpActCall = apiInterface.UpactResponse(id);
         UpActCall.enqueue(new Callback<UpActivity>() {
             @Override
             public void onResponse(Call<UpActivity> call, Response<UpActivity> response) {
@@ -121,7 +124,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
-        TextView nama_kegiatan;
+        TextView nama_kegiatan, planName;
         Button status;
 
         SesionManager sesionManager;
@@ -134,6 +137,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
             status = itemView.findViewById(R.id.status);
             sesionManager = new SesionManager(itemView.getContext());
             apiInterface = ApiClient.getClient().create(ApiInterface.class);
+            planName = itemView.findViewById(R.id.textsession);
 
             status.setOnClickListener(new View.OnClickListener() {
                 @Override

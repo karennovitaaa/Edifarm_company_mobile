@@ -53,7 +53,16 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="78dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="50dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/pindah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pindah">
+
+    </Button>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

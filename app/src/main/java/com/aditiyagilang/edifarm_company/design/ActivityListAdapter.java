@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,12 +40,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapter.AdapterHolder> {
-    private final OnItemClickListener listener;
     private final Context context;
     private final List<GetFullActivityDataItem> dataList;
     GetFullActivityDataItem getFullActivityDataItem;
     SesionManager sesionManager;
     ApiInterface apiInterface;
+    private OnItemClickListener listener;
+    private OnItemClickListener editClickListener;
+
 
     public ActivityListAdapter(Context context, List<GetFullActivityDataItem> dataList, ActivityListAdapter.OnItemClickListener listener) {
         this.context = context;
@@ -54,6 +57,15 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
     }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    public void setOnEditClickListener(OnItemClickListener listener) {
+        this.editClickListener = listener;
+    }
+
 
     @NonNull
     @Override
@@ -91,12 +103,12 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
                 if (listener != null) {
                     listener.onDeleteClick(ActivityListAdapter.this, view, position, item);
-                    delete(Id, User_ID);
+                    delete(Id);
                 }
             }
 
-            private void delete(String id, String user_id) {
-                Call<DeleteActivity> UpActCall = apiInterface.deleteactResponse(id, user_id);
+            private void delete(String id) {
+                Call<DeleteActivity> UpActCall = apiInterface.deleteactResponse(id);
                 UpActCall.enqueue(new Callback<DeleteActivity>() {
                     @Override
                     public void onResponse(Call<DeleteActivity> call, Response<DeleteActivity> response) {
@@ -105,10 +117,12 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                             dataList.remove(position);
                             notifyItemRemoved(position);
                             notifyItemRangeChanged(position, dataList.size());
-
+                            Toast.makeText(context, id, Toast.LENGTH_SHORT).show();
                             Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(context, response.body().getMessage() + " Salah", Toast.LENGTH_SHORT).show();
+                            Log.d("LO", id);
+
                         }
                     }
 
@@ -121,9 +135,15 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         });
 
         holder.buttonedit.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
 
+                if (listener != null) {
+                    listener.onEditClick(ActivityListAdapter.this, view, position, item);
+
+                }
                 final Dialog dialog = new Dialog(view.getContext());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.fragment_update_activity);
@@ -207,27 +227,31 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                 upActivity.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String activityName = enameActivity.getText().toString();
-                        if (TextUtils.isEmpty(activityName)) {
-                            activityName = item.getActivityName();
-                        }
-                        String status = "belum";
-                        String start = estart.getText().toString();
-                        if (TextUtils.isEmpty(start)) {
-                            start = item.getStart();
-                        }
-                        String end = efinish.getText().toString();
-                        if (TextUtils.isEmpty(end)) {
-                            end = item.getEnd();
-                        }
-                        String userId = User_ID;
-                        String id = String.valueOf(item.getId());
+                        if (listener != null) {
 
-                        Toast.makeText(context, activityName, Toast.LENGTH_SHORT).show();
 
-                        // Call the API method with the appropriate parameters
-                        klaim(id, userId, activityName, status, start, end);
-                        dialog.dismiss();
+                            String activityName = enameActivity.getText().toString();
+                            if (TextUtils.isEmpty(activityName)) {
+                                activityName = item.getActivityName();
+                            }
+
+                            String start = estart.getText().toString();
+                            if (TextUtils.isEmpty(start)) {
+                                start = item.getStart();
+                            }
+                            String end = efinish.getText().toString();
+                            if (TextUtils.isEmpty(end)) {
+                                end = item.getEnd();
+                            }
+
+                            String id = String.valueOf(item.getId());
+
+                            Toast.makeText(context, activityName, Toast.LENGTH_SHORT).show();
+                            listener.onDeleteClick(ActivityListAdapter.this, view, position, item);
+                            // Call the API method with the appropriate parameters
+                            klaim(id, activityName, start, end);
+                            dialog.dismiss();
+                        }
                     }
                 });
 
@@ -245,21 +269,24 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         });
     }
 
-    public void klaim(String id, String user_id, String activity_name, String status, String start, String end) {
+    public void klaim(String id, String activity_name, String start, String end) {
         if (sesionManager != null) {
             // Gunakan user_id yang diteruskan sebagai parameter
-            Call<UpdateActivitys> UpActCall = apiInterface.UpdateActResponse(id, user_id, start, end, status, activity_name);
+            Call<UpdateActivitys> UpActCall = apiInterface.UpdateActResponse(id, activity_name, start, end);
             UpActCall.enqueue(new Callback<UpdateActivitys>() {
+
+
                 @Override
                 public void onResponse(Call<UpdateActivitys> call, Response<UpdateActivitys> response) {
                     if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                         // Perbarui data pada objek ActivityDataItem
 
-                        Toast.makeText(context, status, Toast.LENGTH_SHORT).show();
 
                         Toast.makeText(context, response.body().getMessage() + id, Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
+                        Log.d("KUKU", response.body().getData().toString());
+                        Toast.makeText(context, id + start + start + end, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -277,9 +304,17 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
     }
 
     public interface OnItemClickListener {
-        void onItemClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item);
+        void onItemClick(ActivityListAdapter adapter, View view, GetFullActivityDataItem item);
+
+        void onDeleteClick(ActivityListAdapter adapter, View view, GetFullActivityDataItem item);
 
         void onDeleteClick(ActivityListAdapter adapter, View view, int position, GetFullActivityDataItem item);
+
+        void onEditClick(ActivityListAdapter adapter, View view, GetFullActivityDataItem item);
+
+        void onItemClick(ActivityListAdapter activityListAdapter, View view, int position, GetFullActivityDataItem item);
+
+        void onEditClick(ActivityListAdapter activityListAdapter, View view, int position, GetFullActivityDataItem item);
     }
 
 
@@ -302,14 +337,6 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
             apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
 
-//            status.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    int position = getAdapterPosition();
-//                    if (position != RecyclerView.NO_POSITION) {
-//                    }
-//                }
-//            });
         }
     }
 }

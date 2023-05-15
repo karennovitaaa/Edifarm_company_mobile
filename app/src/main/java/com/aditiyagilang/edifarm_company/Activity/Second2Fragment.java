@@ -2,16 +2,12 @@ package com.aditiyagilang.edifarm_company.Activity;
 
 
 import android.os.Bundle;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,27 +15,13 @@ import androidx.fragment.app.Fragment;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
-
-
 import com.aditiyagilang.edifarm_company.databinding.FragmentSecoundFragmenBinding;
-import com.aditiyagilang.edifarm_company.model.activity.Activity;
-
-import okhttp3.Response;
-
-
 
 
 //    public void showDatePickerDialog(View v) {
 //        DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(
 //                new DatePickerDialog.OnDateSetListener() {
 //    }
-
-
-import com.aditiyagilang.edifarm_company.databinding.FragmentSecoundFragmenBinding;
-import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
-
-import retrofit2.Call;
-import retrofit2.Callback;
 
 
 public class Second2Fragment extends Fragment {
@@ -50,7 +32,6 @@ public class Second2Fragment extends Fragment {
     SesionManager sesionManager;
     String Activity_Name, Status, Start, End, User_Id;
     private FragmentSecoundFragmenBinding binding;
-
 
 
 //    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -74,7 +55,6 @@ public class Second2Fragment extends Fragment {
 //
 //        addActivity.setOnClickListener(this);
 //    }
-
 
 
 //
@@ -184,7 +164,6 @@ public class Second2Fragment extends Fragment {
     }
 
 
-
     public void onClick(View view) {
 //        switch (view.getId()){
 //            case R.id.button_second:
@@ -218,7 +197,7 @@ public class Second2Fragment extends Fragment {
 //        Log.d("SERVER!" , t.toString());
 //    }
 //});
-    }
+}
 
 
 //    private void Creat(
