@@ -17,7 +17,6 @@ import androidx.navigation.ui.NavigationUI;
 import com.aditiyagilang.edifarm_company.Biographical.Biographical;
 import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
-import com.aditiyagilang.edifarm_company.activitys;
 import com.aditiyagilang.edifarm_company.databinding.ActivityDashboardfixBinding;
 import com.aditiyagilang.edifarm_company.login;
 import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
@@ -65,7 +64,7 @@ public class dashboardfix extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.bottom_riwayat:
-                        Intent intent1 = new Intent(dashboardfix.this, activitys.class);
+                        Intent intent1 = new Intent(dashboardfix.this, Biographical.class);
                         startActivity(intent1);
                         finish();
                         break;
