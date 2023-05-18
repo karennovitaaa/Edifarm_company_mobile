@@ -16,9 +16,10 @@ import androidx.navigation.ui.NavigationUI;
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.snackbar.Snackbar;
 
-public class activitys extends AppCompatActivity {
+public class activitys extends bottom_navbar {
 
     ImageButton add, prof, history, homes;
     private AppBarConfiguration appBarConfiguration;
@@ -33,61 +34,60 @@ public class activitys extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_activitys);
         appBarConfiguration = new AppBarConfiguration.Builder(R.id.First2Fragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                switch (item.getItemId()) {
-                    case R.id.bottom_dash:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
-                        finish();
-
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    case R.id.bottom_riwayat:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
-                        finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    case R.id.bottom_plus:
-
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    case R.id.bottom_activitas:
-
-                        startActivity(new Intent(activitys.this, activitys.class));
-                        finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    case R.id.bottom_profil:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
-                        finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    default:
-                        return false;
-                }
-            }
-        });
+//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                int id = item.getItemId();
+//
+//                switch (item.getItemId()) {
+//                    case R.id.bottom_dash:
+//                        startActivity(new Intent(activitys.this, dashboardfix.class));
+//                        finish();
+//                        bottomNavigationView.setItemBackgroundResource(R.drawable.selected_bottombar);
+//                        item.setChecked(true);
+//                        overridePendingTransition(0, 0);
+//                        return true;
+//
+//                    case R.id.bottom_riwayat:
+//                        startActivity(new Intent(activitys.this, dashboardfix.class));
+//                        finish();
+//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+//                        item.setChecked(true);
+//                        overridePendingTransition(0, 0);
+//                        return true;
+//
+//                    case R.id.bottom_plus:
+//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+//                        item.setChecked(true);
+//                        overridePendingTransition(0, 0);
+//                        return true;
+//
+//                    case R.id.bottom_activitas:
+//                        startActivity(new Intent(activitys.this, activitys.class));
+//                        finish();
+//                        bottomNavigationView.setItemBackgroundResource(R.drawable.selected_bottombar);
+//                        item.setChecked(true);
+//                        overridePendingTransition(0, 0);
+//                        return true;
+//
+//                    case R.id.bottom_profil:
+//                        startActivity(new Intent(activitys.this, dashboardfix.class));
+//                        finish();
+//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
+//                        item.setChecked(true);
+//                        overridePendingTransition(0, 0);
+//                        return true;
+//                    default:
+//                        return false;
+//                }
+//            }
+//        });
 
 
         binding.fab.setOnClickListener(new View.OnClickListener() {

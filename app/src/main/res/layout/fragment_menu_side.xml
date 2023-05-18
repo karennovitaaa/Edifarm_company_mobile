@@ -56,6 +56,8 @@
             android:drawableLeft="@drawable/icon_row"
             android:gravity="center|right"
             android:text="Biodata"
+            android:fontFamily="@font/poppins_medium"
+            android:textAllCaps="false"
             android:textColor="@color/black">
 
         </Button>
@@ -69,6 +71,8 @@
             android:drawableLeft="@drawable/icon_row"
             android:gravity="center|right"
             android:text="Password"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black">
 
         </Button>
@@ -81,7 +85,8 @@
             android:drawableLeft="@drawable/icon_row"
             android:gravity="center|right"
             android:text="Akun"
-
+            android:fontFamily="@font/poppins_medium"
+            android:textAllCaps="false"
             android:textColor="@color/black">
 
         </Button>
@@ -97,6 +102,8 @@
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/icon_logout"
         android:text="Keluar"
+        android:fontFamily="@font/poppins_medium"
+        android:textAllCaps="false"
         android:textColor="@color/black">
 
     </Button>

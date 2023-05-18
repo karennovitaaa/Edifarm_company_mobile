@@ -13,7 +13,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ToggleButton;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -29,7 +28,7 @@ import com.aditiyagilang.edifarm_company.edit_profile;
 import com.aditiyagilang.edifarm_company.login;
 
 
-public class Biographical extends AppCompatActivity {
+public class Biographical extends bottom_navbar {
     ToggleButton posting;
     ToggleButton likes;
     Button seting;

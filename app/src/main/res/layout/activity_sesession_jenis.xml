@@ -21,6 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jenis Tanaman"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="24dp">
 
             </TextView>

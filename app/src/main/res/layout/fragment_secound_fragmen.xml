@@ -40,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="none"
+            android:fontFamily="@font/poppins_medium"
             android:outlineAmbientShadowColor="@color/backgroun"
             android:outlineSpotShadowColor="@color/backgroun"
             android:textColorHint="@color/black" />
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|center"
         android:layout_marginTop="28dp"
-
+        android:fontFamily="@font/poppins_medium"
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
         android:textColor="@color/black" />
@@ -72,7 +73,7 @@
 
             android:layout_marginEnd="2dp"
             android:background="@drawable/fieldedit"
-            android:hint="#..."
+            android:hint=""
             android:maxLines="1"
             android:onClick="showDatePickerDialog"
 
@@ -102,6 +103,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <LinearLayout
@@ -114,16 +116,13 @@
         <EditText
             android:id="@+id/field_tanggal_selesai"
             android:layout_width="250dp"
-
             android:layout_height="50dp"
             android:layout_gravity="left|center"
-
             android:layout_marginEnd="2dp"
             android:background="@drawable/fieldedit"
-            android:hint="#..."
+            android:hint=""
             android:maxLines="1"
             android:onClick="showDatePickerDialog"
-
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/darker_gray"
@@ -150,6 +149,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="115dp"
         android:text="Tuliskan Keterangan"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
 
@@ -157,11 +157,11 @@
         android:id="@+id/nameAct"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-
         android:layout_gravity="center|left"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"
         android:hint="keterangan ..."
+        android:fontFamily="@font/poppins_medium"
         android:maxLines="4"
         android:padding="10dp"
         android:textColor="@android:color/black"
@@ -178,8 +178,13 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/backgroun"
+        android:fontFamily="@font/poppins_medium"
         android:src="@drawable/add"
-        android:text="Unggah"></Button>
+        android:text="Unggah"
+        android:textAllCaps="false">
+
+
+    </Button>
 
 
 </LinearLayout>

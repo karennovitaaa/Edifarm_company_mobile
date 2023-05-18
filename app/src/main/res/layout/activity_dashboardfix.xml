@@ -78,18 +78,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_dashboardfix" />
 
+    <include layout="@layout/fragment_bottom_sheet">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_navigation">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </include>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

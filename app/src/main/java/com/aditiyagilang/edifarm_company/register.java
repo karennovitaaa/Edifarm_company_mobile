@@ -43,7 +43,6 @@ public class register extends AppCompatActivity implements View.OnClickListener 
 
         eusername = (EditText) findViewById(R.id.username_field);
         ename = (EditText) findViewById(R.id.name_field);
-        eaddress = (EditText) findViewById(R.id.address_field);
         ephone = (EditText) findViewById(R.id.phone_field);
         epassword = (EditText) findViewById(R.id.password_field);
         eborn_date = (EditText) findViewById(R.id.born_date_field);

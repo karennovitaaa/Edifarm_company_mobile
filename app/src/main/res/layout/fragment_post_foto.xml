@@ -15,7 +15,8 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="136dp"
         android:text="Unggah Info Pertanian"
-        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/backgroun"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +27,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="336dp"
         android:text="Pilih Foto"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="20dp"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -46,7 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="268dp"
+        android:layout_marginEnd="248dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="20dp"
         android:text="Tuliskan Keterangan"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +68,7 @@
         android:hint="keterangan ..."
         android:inputType="textPassword"
         android:maxLines="1"
+        android:fontFamily="@font/poppins_medium"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
@@ -75,9 +82,10 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="268dp"
         android:text="tambahkan hashtag"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editusername" />
@@ -86,19 +94,17 @@
         android:id="@+id/editText"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="28dp"
         android:background="@drawable/fieldedit"
         android:hint="#..."
-        android:inputType="textPassword"
         android:maxLines="1"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editusername"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/editusername" />
 
     <Button
         android:id="@+id/button2"

@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="lusyy123"
+                android:fontFamily="@font/poppins_bold"
                 android:id="@+id/username_comment"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp">
@@ -36,6 +37,7 @@
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="halo apakabar semua Dengan generator teks online Anda dapat memproses Lorem Ipsum pribadi Anda dengan memperkayanya dengan elemen html yang menentukan strukturnya">
 
             </TextView>

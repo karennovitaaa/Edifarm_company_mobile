@@ -85,25 +85,26 @@
                         android:id="@+id/posting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
                         android:textOff="Posting"
                         android:textOn="Posting"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/poppins_medium"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
 
                     <ToggleButton
                         android:id="@+id/likes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
                         android:textOff="Like"
                         android:textOn="Like"
-
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/poppins_medium"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
                 </TableRow>
             </TableLayout>

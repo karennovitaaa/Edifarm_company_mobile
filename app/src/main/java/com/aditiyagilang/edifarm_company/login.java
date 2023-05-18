@@ -1,9 +1,15 @@
 package com.aditiyagilang.edifarm_company;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -75,6 +81,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                     LoginData loginData = response.body().getData();
                     sesionManager.createLoginSession(loginData);
 
+
+
                     Toast.makeText(login.this, response.body().getData().getUsername(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(login.this, dashboardfix.class);
 
@@ -96,4 +104,5 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         });
 
     }
+
 }

@@ -37,14 +37,12 @@
 
 
         <activity
-            android:name=".bottom_navbar"
-            android:exported="false" />
-        <activity
 
             android:name=".dashboardfixx.dashboardfix"
             android:exported="true"
             android:label="@string/title_activity_dashboardfix"
-            android:theme="@style/Theme.Edifarm_Company.NoActionBar">
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
