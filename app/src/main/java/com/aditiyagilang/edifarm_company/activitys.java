@@ -1,9 +1,11 @@
 package com.aditiyagilang.edifarm_company;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -13,9 +15,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.aditiyagilang.edifarm_company.Biographical.Biographical;
+import com.aditiyagilang.edifarm_company.Riwayat.Historys;
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
+import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class activitys extends AppCompatActivity {
@@ -37,56 +43,58 @@ public class activitys extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(R.id.First2Fragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationViewAct);
+        bottomNavigationView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+        });
+        bottomNavigationView.getMenu().findItem(R.id.bottom_activitas).setChecked(true);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-
-                switch (item.getItemId()) {
+                switch (id) {
                     case R.id.bottom_dash:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        Intent intent = new Intent(activitys.this, dashboardfix.class);
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
                         finish();
-
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
+                        break;
                     case R.id.bottom_riwayat:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        Intent intent1 = new Intent(activitys.this, Historys.class);
+                        startActivity(intent1);
+                        overridePendingTransition(0, 0);
                         finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
+                        break;
                     case R.id.bottom_plus:
-
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
+                        Intent intent2 = new Intent(activitys.this, Sesession_jenis.class);
+                        startActivity(intent2);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
                     case R.id.bottom_activitas:
-
-                        startActivity(new Intent(activitys.this, activitys.class));
+                        Intent intent5 = new Intent(activitys.this, activitys.class);
+                        startActivity(intent5);
+                        overridePendingTransition(0, 0);
                         finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
+                        break;
                     case R.id.bottom_profil:
-
-                        startActivity(new Intent(activitys.this, dashboardfix.class));
+                        Intent intent4 = new Intent(activitys.this, Biographical.class);
+                        startActivity(intent4);
+                        overridePendingTransition(0, 0);
                         finish();
-                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-
-                        item.setChecked(true);
-                        return true;
-                    default:
-                        return false;
+                        break;
                 }
+
+                return true;
             }
+
+
         });
 
 

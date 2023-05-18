@@ -18,10 +18,10 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
-import com.aditiyagilang.edifarm_company.databinding.FragmentPostingUserBinding;
+import com.aditiyagilang.edifarm_company.databinding.FragmentPostingSosmedBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostLike;
-import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
-import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
+import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
+import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLikeDataItem;
 
 import java.util.List;
 
@@ -46,8 +46,8 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
     SesionManager sesionManager;
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
-    DashboardDataItem dashboardDataItem;
-    private FragmentPostingUserBinding binding;
+    GetPostLikeDataItem dashboardDataItem;
+    private FragmentPostingSosmedBinding binding;
 
     @Override
     public View onCreateView(
@@ -55,47 +55,39 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentPostingUserBinding.inflate(inflater, container, false);
+        binding = FragmentPostingSosmedBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fotoProfil = getView().findViewById(R.id.imageProfilPostu);
-        namaAkun = getView().findViewById(R.id.textProfilUsers);
-        reportButton = getView().findViewById(R.id.button_repostu);
-        gambarPosting = getView().findViewById(R.id.listImagePostUser);
-        tanggalPost = getView().findViewById(R.id.text_tanggal_postu);
-        commentButton = getView().findViewById(R.id.comment_buttonu);
-        likeButton = getView().findViewById(R.id.like_buttonu);
-        jumlahLike = getView().findViewById(R.id.jumlah_likeu);
-        jumlahComment = getView().findViewById(R.id.jumlahh_commentu);
-        caption = getView().findViewById(R.id.text_captionu);
+
         sesionManager = new SesionManager(requireContext());
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        recyclerView = getView().findViewById(R.id.postuser);
+        recyclerView = getView().findViewById(R.id.postlist);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        Call<DashboardModel> dashCall = apiInterface.GetPostResponse();
-        dashCall.enqueue(new Callback<DashboardModel>() {
+        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
+        Call<GetPostLike> dashCall = apiInterface.getPostlikeResponse(user_id);
+        dashCall.enqueue(new Callback<GetPostLike>() {
             @Override
-            public void onResponse(Call<DashboardModel> call, Response<DashboardModel> response) {
+            public void onResponse(Call<GetPostLike> call, Response<GetPostLike> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
 
-                    List<DashboardDataItem> dashboardDataItemList = response.body().getData();
-                    AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), dashboardDataItemList, PostingUser.this);
+                    List<GetPostLikeDataItem> postLikeDataItemList = response.body().getData();
+                    AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), postLikeDataItemList, PostingUser.this);
 
 
                     recyclerView.setAdapter(adapterPostLike);
-                    dashboardDataItem = dashboardDataItemList.get(0);
-                    Toast.makeText(getContext(), response.body().getMassage(), Toast.LENGTH_SHORT).show();
+                    dashboardDataItem = postLikeDataItemList.get(0);
+                    Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<DashboardModel> call, Throwable t) {
+            public void onFailure(Call<GetPostLike> call, Throwable t) {
 
             }
         });
@@ -119,8 +111,9 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
 
     }
 
+
     @Override
-    public void onItemClick(AdapterPostLike adapter, View view, int position, DashboardDataItem item) {
+    public void onItemClick(AdapterPostLike adapter, View view, int position, GetPostLikeDataItem item) {
 
     }
 }

@@ -72,14 +72,6 @@
                 android:text="allahuakbar"
                 android:textColor="@color/black" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="18dp"
-                android:text="delete">
-
-            </Button>
 
             <TextView
                 android:id="@+id/textProfilUsers"
@@ -176,8 +168,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
-                    android:onClick="coment"
-                    android:src="@drawable/button_likefix">
+                    android:onClick="coment">
 
                 </ImageButton>
 
@@ -188,7 +179,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:text="126"
+                    android:text="0"
                     android:textColor="@color/black">
 
                 </TextView>

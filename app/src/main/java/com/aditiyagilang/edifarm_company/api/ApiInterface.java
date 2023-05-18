@@ -1,26 +1,38 @@
 package com.aditiyagilang.edifarm_company.api;
 
+
+import com.aditiyagilang.edifarm_company.model.AddComment.AddComment;
+import com.aditiyagilang.edifarm_company.model.AddReason.AddReason;
 import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
+import com.aditiyagilang.edifarm_company.model.CountComment.CountComment;
 import com.aditiyagilang.edifarm_company.model.CountLike.CountLike;
 import com.aditiyagilang.edifarm_company.model.DeleteLike.DeleteLike;
+import com.aditiyagilang.edifarm_company.model.Download.Download;
 import com.aditiyagilang.edifarm_company.model.FilterActivity.FilterActivity;
+import com.aditiyagilang.edifarm_company.model.GetComment.GetComment;
 import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
+import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
+import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUser;
+import com.aditiyagilang.edifarm_company.model.History.History;
 import com.aditiyagilang.edifarm_company.model.Like.Like;
+import com.aditiyagilang.edifarm_company.model.PosActivity.PostActivity;
 import com.aditiyagilang.edifarm_company.model.Posting.Posting;
+import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcount;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
 import com.aditiyagilang.edifarm_company.model.UpdateSesion.UpdateSesion;
 import com.aditiyagilang.edifarm_company.model.activity.Activity;
 import com.aditiyagilang.edifarm_company.model.addActivity.AddActivity;
 import com.aditiyagilang.edifarm_company.model.addSession.AddSession;
-import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
 import com.aditiyagilang.edifarm_company.model.deleteActivity.DeleteActivity;
 import com.aditiyagilang.edifarm_company.model.deleteSession.DeleteSession;
+import com.aditiyagilang.edifarm_company.model.documentation.Documentation;
 import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
 import com.aditiyagilang.edifarm_company.model.getSession.GetSession;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
+import com.aditiyagilang.edifarm_company.ui.DashboardModel;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -113,10 +125,31 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("getAllDocumentations")
+    Call<History> getAllDocumentationsResponse(
+            @Field("user_id") String user_id
+
+    );
+
+    @FormUrlEncoded
+    @POST("generateReport")
+    Call<Documentation> generateReportResponse(
+            @Field("user_id") String user_id,
+            @Field("session_id") String session_id
+
+    );
+
+    @FormUrlEncoded
     @POST("updateStatusSession")
     Call<ClearSession> updateStatusSessionResponse(
             @Field("id") String id,
             @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("downloadPDF")
+    Call<Download> downloadPDFResponse(
+            @Field("id") String id
 
     );
 
@@ -210,9 +243,63 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("getCommentsByPostId")
+    Call<GetComment> getCommentsByPostIdResponse(
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("countUserByPost")
+    Call<CountComment> countUserByPostResponse(
+            @Field("post_id") String post_id
+    );
+
+    @FormUrlEncoded
+    @POST("addComment")
+    Call<AddComment> addCommentResponse(
+            @Field("post_id") String post_id,
+            @Field("comment") String comment,
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("addReason")
+    Call<AddReason> addReasonResponse(
+            @Field("post_id") String post_id,
+            @Field("reason") String reason,
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("getPostLike")
+    Call<GetPostLike> getPostlikeResponse(
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("getpoststalk")
+    Call<StalkingAcount> getpoststalkResponse(
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("getPostUser")
+    Call<GetPostUser> getPostUserResponse(
+            @Field("user_id") String user_id
+    );
+
+    @FormUrlEncoded
     @POST("deleteStatusSession")
     Call<DeleteSession> DeleteSessionResponse(
             @Field("user_id") String user_id,
             @Field("id") String id
+    );
+
+    @FormUrlEncoded
+    @POST("addPostActivity")
+    Call<PostActivity> addPostActivityResponse(
+            @Field("user_id") String user_id,
+            @Field("session_id") String id,
+            @Field("pdf_file") String post_file
     );
 }

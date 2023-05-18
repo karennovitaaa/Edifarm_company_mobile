@@ -33,6 +33,7 @@ import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
 import com.aditiyagilang.edifarm_company.model.UpdateSesion.UpdateSesion;
 import com.aditiyagilang.edifarm_company.model.deleteSession.DeleteSession;
+import com.aditiyagilang.edifarm_company.model.documentation.Documentation;
 import com.aditiyagilang.edifarm_company.model.getSession.GetSessionDataItem;
 import com.aditiyagilang.edifarm_company.session.First3Fragment;
 import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
@@ -102,31 +103,10 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.AdapterH
 
                 if (listener != null) {
                     listener.onStatusClick(SessionAdapter.this, view, position, item);
-//                    klaim(Id, User_ID);
+                    klaim(Id, User_ID);
                 }
-                final Dialog dialog = new Dialog(view.getContext());
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.pop_up_dowload);
-                Button download = dialog.findViewById(R.id.download);
-                Button cancel = dialog.findViewById(R.id.cancell);
-                download.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        klaim(Id, User_ID);
-                    }
-                });
 
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
 
-                    }
-                });
-                dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
-                dialog.getWindow().setGravity(Gravity.CENTER);
             }
         });
         holder.edit.setOnClickListener(new View.OnClickListener() {
@@ -345,6 +325,27 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.AdapterH
                     notifyDataSetChanged();
                     Toast.makeText(context, response.body().getMessage() + "Mari Gess", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, Sesession_jenis.class);
+                    Call<Documentation> UpActCall = apiInterface.generateReportResponse(user_id, id);
+                    UpActCall.enqueue(new Callback<Documentation>() {
+                        @Override
+                        public void onResponse(Call<Documentation> call, Response<Documentation> response) {
+                            if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                                // update the activity status locally
+
+                                notifyDataSetChanged();
+                                Toast.makeText(context, response.body().getMessage() + "Mari Gess", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(context, Sesession_jenis.class);
+
+                            } else {
+                                Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Documentation> call, Throwable t) {
+                            Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 } else {
                     Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
                 }

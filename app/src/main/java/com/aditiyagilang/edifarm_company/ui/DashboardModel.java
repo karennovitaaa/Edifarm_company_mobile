@@ -1,40 +1,42 @@
 package com.aditiyagilang.edifarm_company.ui;
 
-import java.util.List;
+import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
 import com.google.gson.annotations.SerializedName;
 
-public class DashboardModel{
+import java.util.List;
 
-	@SerializedName("data")
-	private List<DataItem> data;
+public class DashboardModel {
 
-	@SerializedName("success")
-	private boolean success;
+    @SerializedName("data")
+    private List<DashboardDataItem> data;
 
-	@SerializedName("massage")
-	private String massage;
+    @SerializedName("success")
+    private boolean success;
 
-	public void setData(List<DataItem> data){
-		this.data = data;
-	}
+    @SerializedName("massage")
+    private String massage;
 
-	public List<DataItem> getData(){
-		return data;
-	}
+    public List<DashboardDataItem> getData() {
+        return data;
+    }
 
-	public void setSuccess(boolean success){
-		this.success = success;
-	}
+    public void setData(List<DashboardDataItem> data) {
+        this.data = data;
+    }
 
-	public boolean isSuccess(){
-		return success;
-	}
+    public boolean isSuccess() {
+        return success;
+    }
 
-	public void setMassage(String massage){
-		this.massage = massage;
-	}
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
 
-	public String getMassage(){
-		return massage;
-	}
+    public String getMassage() {
+        return massage;
+    }
+
+    public void setMassage(String massage) {
+        this.massage = massage;
+    }
 }

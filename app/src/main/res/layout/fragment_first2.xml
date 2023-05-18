@@ -170,6 +170,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="25dp"
         android:background="@color/transparant"
         android:src="@drawable/icon_more"
         app:layout_constraintBottom_toBottomOf="parent"

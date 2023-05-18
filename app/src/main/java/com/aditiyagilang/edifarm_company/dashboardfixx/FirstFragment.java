@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,7 +21,7 @@ import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.databinding.FragmentPostingSosmedBinding;
 import com.aditiyagilang.edifarm_company.design.DashboardFixAdapter;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
-import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardModel;
+import com.aditiyagilang.edifarm_company.ui.DashboardModel;
 import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.List;
@@ -72,10 +71,10 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         add_post = getView().findViewById(R.id.add_postings);
-        fotoProfil = getView().findViewById(R.id.imageProfilPost);
-        namaAkun = getView().findViewById(R.id.textProfil);
-        reportButton = getView().findViewById(R.id.button_repost);
-        gambarPosting = getView().findViewById(R.id.listImagePost);
+//        fotoProfil = getView().findViewById(R.id.imageProfilPost);
+//        namaAkun = getView().findViewById(R.id.textProfil);
+        reportButton = getView().findViewById(R.id.button_reason);
+//        gambarPosting = getView().findViewById(R.id.listImagePost);
         tanggalPost = getView().findViewById(R.id.text_tanggal_post);
         commentButton = getView().findViewById(R.id.comment_button);
         likeButton = getView().findViewById(R.id.like_button);
@@ -111,13 +110,14 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
             public void onResponse(Call<DashboardModel> call, Response<DashboardModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
 
+
                     List<DashboardDataItem> dashboardDataItemList = response.body().getData();
                     DashboardFixAdapter dashboardfixAdapter = new DashboardFixAdapter(requireContext(), dashboardDataItemList, FirstFragment.this);
 
 
                     recyclerView.setAdapter(dashboardfixAdapter);
                     dashboardDataItem = dashboardDataItemList.get(0);
-                    Toast.makeText(getContext(), response.body().getMassage(), Toast.LENGTH_SHORT).show();
+
                     progressBar.setVisibility(View.GONE);
                     progressBar.cancelAnimation();
                 }
@@ -154,14 +154,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     }
 
 
+    @Override
     public void onItemClick(DashboardFixAdapter adapter, View view, int position, DashboardDataItem item) {
 
     }
-
-
-    public void onStatusClick(DashboardFixAdapter adapter, View view, int position, DashboardDataItem item) {
-
-    }
-
-
 }

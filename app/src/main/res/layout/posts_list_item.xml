@@ -34,17 +34,18 @@
                 android:layout_marginTop="10sp"
                 app:cardCornerRadius="100dp">
 
-                <ImageView
-                    android:id="@+id/imageProfilPost"
+                <ImageButton
+                    android:id="@+id/imageProfilPosting"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/wishal_profile" />
 
             </androidx.cardview.widget.CardView>
 
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/listImagePost"
+                android:id="@+id/listImagePosting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cardViewPost"
@@ -72,7 +73,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/textProfil"
+                android:id="@+id/textProfils"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/cardViewPost"
@@ -82,6 +83,8 @@
                 android:layout_marginEnd="13dp"
                 android:layout_marginBottom="13dp"
                 android:layout_toEndOf="@+id/cardViewPost"
+                android:background="@color/transparant"
+                android:backgroundTint="@color/transparant"
                 android:paddingLeft="10dp"
                 android:text="wishal123"
                 android:textColor="@color/black" />
@@ -90,7 +93,7 @@
                 android:id="@+id/text_tanggal_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/listImagePost"
+                android:layout_below="@id/listImagePosting"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
@@ -106,14 +109,14 @@
             </TextView>
 
             <ImageButton
-                android:id="@+id/button_repost"
+                android:id="@+id/button_reason"
                 android:layout_width="22dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="22dp"
                 android:layout_marginEnd="203dp"
-                android:layout_toEndOf="@+id/textProfil"
+                android:layout_toEndOf="@+id/textProfils"
                 android:backgroundTint="@color/transparant"
                 android:padding="0dp"
                 android:src="@drawable/danger" />
@@ -122,7 +125,7 @@
                 android:id="@+id/linear_icons"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/listImagePost"
+                android:layout_below="@+id/listImagePosting"
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="right"
                 android:layout_marginLeft="6dp"
@@ -155,7 +158,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="4dp"
                     android:gravity="left"
-                    android:text="121"
+                    android:text="0"
                     android:textColor="@color/black"></TextView>
 
                 <ImageButton
@@ -177,7 +180,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:text="126"
+                    android:text="0"
                     android:textColor="@color/black">
 
                 </TextView>
