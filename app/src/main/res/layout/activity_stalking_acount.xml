@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:elevation="0dp"
+    tools:context=".Stalking.StalkingAcount">>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/shape_profil"
+        android:backgroundTint="@color/backgroun"
+        android:theme="@style/Theme.Edifarm_Company.AppBarOverlay">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+
+            android:layout_gravity="center"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+
+                android:id="@+id/imageprofile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/wishal_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+            </ImageView>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/toolbar"
+            android:theme="@style/Theme.Edifarm_Company.AppBarOverlay"
+            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay">
+
+
+            <TableLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ToggleButton
+                        android:id="@+id/posting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_profil"
+                        android:backgroundTint="@color/backgroun"
+                        android:textOff="Postingan"
+                        android:textOn="Postingan"
+                        android:textStyle="bold"
+                        app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
+
+                    <ToggleButton
+                        android:id="@+id/likes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_profil"
+                        android:backgroundTint="@color/backgroun"
+                        android:textOff="Aktivitas"
+                        android:textOn="Aktivitas"
+                        android:textStyle="bold"
+
+                        app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
+                </TableRow>
+            </TableLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <include layout="@layout/content_stalking_acount" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

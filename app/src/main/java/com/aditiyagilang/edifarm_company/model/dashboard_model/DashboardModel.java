@@ -12,8 +12,8 @@ public class DashboardModel {
     @SerializedName("success")
     private boolean success;
 
-    @SerializedName("massage")
-    private String massage;
+    @SerializedName("message")
+    private String message;
 
     public List<DashboardDataItem> getData() {
         return data;
@@ -31,11 +31,11 @@ public class DashboardModel {
         this.success = success;
     }
 
-    public String getMassage() {
-        return massage;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMassage(String massage) {
-        this.massage = massage;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

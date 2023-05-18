@@ -1,157 +1,145 @@
 package com.aditiyagilang.edifarm_company.dashboardfixx;
 
-import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Gravity;
-
-import android.view.ViewGroup;
-import android.view.Window;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.aditiyagilang.edifarm_company.Biographical.Biographical;
 import com.aditiyagilang.edifarm_company.R;
+import com.aditiyagilang.edifarm_company.Riwayat.Historys;
 import com.aditiyagilang.edifarm_company.SesionManager;
+import com.aditiyagilang.edifarm_company.activitys;
 import com.aditiyagilang.edifarm_company.databinding.ActivityDashboardfixBinding;
 import com.aditiyagilang.edifarm_company.login;
+import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 
-
-
-public class dashboardfix extends bottom_navbar {
+public class dashboardfix extends AppCompatActivity {
 
     ColorStateList def;
-    TextView item1, item2, select;
+    Button item1, act, selecte;
 
     SesionManager sesionManager;
     ImageButton add, prof, history, homes;
+    BottomNavigationView bottomNavigationView;
     private AppBarConfiguration appBarConfiguration;
     private ActivityDashboardfixBinding binding;
 
 
-    @Override
+// ...
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDashboardfixBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         setSupportActionBar(binding.toolbar);
-
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboardfix);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
         sesionManager = new SesionManager(dashboardfix.this);
         if (!sesionManager.isLogin()) {
             movetoLogin();
         }
+        bottomNavigationView.getMenu().findItem(R.id.bottom_dash).setChecked(true);
 
-//        add = findViewById(R.id.add);
-//        prof = findViewById(R.id.prof);
-//        history = findViewById(R.id.history);
-//        homes = findViewById(R.id.homes);
-
-        final Dialog dialog = new Dialog(dashboardfix.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.pupup_login_oke);
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-        dialog.getWindow().setGravity(Gravity.CENTER);
-
-
-
-
-        new Handler().postDelayed(new Runnable() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void run() {
-                dialog.dismiss();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.bottom_dash:
+                        Intent intent = new Intent(dashboardfix.this, dashboardfix.class);
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
+                    case R.id.bottom_riwayat:
+                        Intent intent1 = new Intent(dashboardfix.this, Historys.class);
+                        startActivity(intent1);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
+                    case R.id.bottom_plus:
+                        Intent intent2 = new Intent(dashboardfix.this, Sesession_jenis.class);
+                        startActivity(intent2);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
+                    case R.id.bottom_activitas:
+                        Intent intent5 = new Intent(dashboardfix.this, activitys.class);
+                        startActivity(intent5);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
+                    case R.id.bottom_profil:
+                        Intent intent4 = new Intent(dashboardfix.this, Biographical.class);
+                        startActivity(intent4);
+                        overridePendingTransition(0, 0);
+                        finish();
+                        break;
+                }
+
+                return true;
             }
-        }, 5000);
+        });
+
+        binding.selecte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                load(new FirstFragment());
+                binding.selecte.setBackgroundColor(R.drawable.back_tablayout);
+                binding.selecte.setTextColor(getResources().getColor(R.color.white));
+                binding.act.setBackgroundColor(getResources().getColor(R.color.white));
+                binding.act.setTextColor(R.drawable.white_tablayout);
+            }
+        });
+
+        binding.act.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                load(new ActivityPost());
+                binding.selecte.setBackgroundColor(R.drawable.white_tablayout);
+                binding.selecte.setTextColor(getResources().getColor(R.color.white));
+                binding.act.setBackgroundColor(getResources().getColor(R.color.backgroun));
+                binding.act.setTextColor(R.drawable.back_tablayout);
+            }
+        });
 
 
-//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-//
-//
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//
-//                switch (id) {
-//                    case R.id.bottom_dash:
-//                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
-//                        finish();
-//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-//                        item.setChecked(true);
-//                        return true;
-//
-//                    case R.id.bottom_riwayat:
-//                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
-//                        finish();
-//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-//                        item.setChecked(true);
-//                        return true;
-//
-//                    case R.id.bottom_plus:
-//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-//                        item.setChecked(true);
-//                        return true;
-//
-//                    case R.id.bottom_activitas:
-//                        startActivity(new Intent(dashboardfix.this, activitys.class));
-//                        finish();
-//                        bottomNavigationView.setItemBackgroundResource(R.drawable.selected_bottombar);
-//                        item.setChecked(true);
-//                        return true;
-//
-//                    case R.id.bottom_profil:
-//                        startActivity(new Intent(dashboardfix.this, dashboardfix.class));
-//                        finish();
-//                        bottomNavigationView.setItemBackgroundResource(R.drawable.unselected_botombar);
-//                        item.setChecked(true);
-//                        return true;
-//
-//                    default:
-//                        return false;
-//                }
-//            }
-//        });
-
-
-
-//        binding.history.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent3 = new Intent(dashboardfix.this, activitys.class);
-//                startActivity(intent3);
-//
-//            }
-//        });
-//        add.setOnClickListener(this);
-//        prof.setOnClickListener(this);
-//        history.setOnClickListener(this);
-//        homes.setOnClickListener(this);
+        // Tambahkan kode berikut
+        View view = getWindow().getDecorView().getRootView();
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+            }
+        });
     }
-
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
 
     private void movetoLogin() {
         Intent intent = new Intent(dashboardfix.this, login.class);
@@ -160,6 +148,7 @@ public class dashboardfix extends bottom_navbar {
         finish();
     }
 
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboardfix);
@@ -167,33 +156,12 @@ public class dashboardfix extends bottom_navbar {
                 || super.onSupportNavigateUp();
     }
 
+    private void load(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.dashu, fragment);
+        fragmentTransaction.commit();
+    }
 
 
-
-//    @Override
-//    public void onClick(View view) {
-//
-//    }
-
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.homes:
-//                Intent intent = new Intent(dashboardfix.this, dashboardfix.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.prof:
-//                Intent intent1 = new Intent(dashboardfix.this, EditProfile.class);
-//                startActivity(intent1);
-//                break;
-//            case R.id.add:
-//                Intent intent2 = new Intent(dashboardfix.this, activitys.class);
-//                startActivity(intent2);
-//                break;
-//            case R.id.history:
-//                Intent intent3 = new Intent(dashboardfix.this, activitys.class);
-//                startActivity(intent3);
-//                break;
-//        }
-//    }
 }

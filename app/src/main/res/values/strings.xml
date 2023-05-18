@@ -59,6 +59,8 @@
     <string name="title_activity_postingan">postingan</string>
     <string name="title_activity_sesession_jenis">Sesession_jenis</string>
     <string name="title_activity_biographical">Biographical</string>
+    <string name="title_activity_stalking_acount">StalkingAcount</string>
+    <string name="title_activity_history">History</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

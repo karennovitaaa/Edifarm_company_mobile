@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <ImageButton
+        android:id="@+id/cancel_reason_lose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@color/transparant"
+        android:src="@drawable/icon_cancel">
+
+    </ImageButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="20dp"
+        android:text="Ingin Melaporkan Postingan Ini ?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/button"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:fontFamily="@font/poppins_medium"
+
+
+        android:text="Berikan Laporan"
+
+
+        android:textAllCaps="false"
+        android:textColor="@color/subText"
+        android:textSize="16dp">
+
+    </TextView>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pencemaran nama baik"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konten tidak pantas"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pelanggaran privasi"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konten ilegal"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spam"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLainnya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lainnya"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/editTextReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/subText"
+        android:hint="Alasan lainnya"
+        android:textColor="@color/black"
+        android:textColorHint="@color/subText"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/button"
+        android:text="Laporkan" />
+
+</LinearLayout>

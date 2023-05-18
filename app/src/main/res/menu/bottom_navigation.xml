@@ -1,32 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+
     >
-
-
 
     <item
         android:id="@+id/bottom_dash"
-        android:title="Home"
-        android:icon="@drawable/baseline_home_24"/>
+        android:icon="@drawable/baseline_home_24"
+        android:tint="@color/backgroun"
+        android:title="Home" />
 
     <item
         android:id="@+id/bottom_riwayat"
-        android:title="Riwayat"
-        android:icon="@drawable/baseline_history_24"/>
+        android:icon="@drawable/baseline_history_24"
+        android:tint="@color/backgroun"
+        android:title="Riwayat" />
 
     <item
         android:id="@+id/bottom_plus"
-        android:title=""
-        android:enabled="false"/>
+
+        android:icon="@drawable/icon_nature"
+        android:tint="@color/backgroun"
+        android:title="Sesi" />
 
     <item
         android:id="@+id/bottom_activitas"
-        android:title="Aktivitas"
-        android:icon="@drawable/baseline_edit_calendar_24"/>
+        android:icon="@drawable/baseline_edit_calendar_24"
+        android:tint="@color/backgroun"
+        android:title="Aktivitas" />
 
     <item
         android:id="@+id/bottom_profil"
-        android:title="Profil"
-        android:icon="@drawable/baseline_account_circle_24"/>
-
+        android:icon="@drawable/baseline_account_circle_24"
+        android:tint="@color/backgroun"
+        android:title="Profil" />
 </menu>
