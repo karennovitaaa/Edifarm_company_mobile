@@ -1,8 +1,11 @@
 package com.aditiyagilang.edifarm_company.api;
 
 
+import com.aditiyagilang.edifarm_company.model.ActivityPost.ActivityPost;
 import com.aditiyagilang.edifarm_company.model.AddComment.AddComment;
+import com.aditiyagilang.edifarm_company.model.AddRating.AddRating;
 import com.aditiyagilang.edifarm_company.model.AddReason.AddReason;
+import com.aditiyagilang.edifarm_company.model.CekUserRating.CekUserRating;
 import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
 import com.aditiyagilang.edifarm_company.model.CountComment.CountComment;
 import com.aditiyagilang.edifarm_company.model.CountLike.CountLike;
@@ -13,6 +16,7 @@ import com.aditiyagilang.edifarm_company.model.GetComment.GetComment;
 import com.aditiyagilang.edifarm_company.model.GetFullActivity.GetFullActivity;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUser;
+import com.aditiyagilang.edifarm_company.model.GetRate.GetRating;
 import com.aditiyagilang.edifarm_company.model.History.History;
 import com.aditiyagilang.edifarm_company.model.Like.Like;
 import com.aditiyagilang.edifarm_company.model.PosActivity.PostActivity;
@@ -101,6 +105,11 @@ public interface ApiInterface {
 
     @POST("getpost")
     Call<DashboardModel> GetPostResponse(
+
+    );
+
+    @POST("getPostActivity")
+    Call<ActivityPost> getPostActivityPostResponse(
 
     );
 
@@ -301,5 +310,26 @@ public interface ApiInterface {
             @Field("user_id") String user_id,
             @Field("session_id") String id,
             @Field("pdf_file") String post_file
+    );
+
+    @FormUrlEncoded
+    @POST("addRating")
+    Call<AddRating> addRatingResponse(
+            @Field("user_id") String user_id,
+            @Field("post_activity_id") String post_activity_id,
+            @Field("rate") int rate
+    );
+
+    @FormUrlEncoded
+    @POST("calculateAverageRating")
+    Call<GetRating> calculateAverageRatingResponse(
+            @Field("post_activity_id") String post_activity_id
+    );
+
+    @FormUrlEncoded
+    @POST("checkUserRating")
+    Call<CekUserRating> checkUserRatingResponse(
+            @Field("user_id") String user_id,
+            @Field("post_activity_id") String post_activity_id
     );
 }
