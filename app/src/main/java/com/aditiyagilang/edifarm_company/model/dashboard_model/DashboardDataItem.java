@@ -10,35 +10,26 @@ public class DashboardDataItem {
     @SerializedName("address")
     private String address;
 
-    @SerializedName("level")
-    private String level;
-
     @SerializedName("post_latitude")
     private String postLatitude;
-
-    @SerializedName("latitude")
-    private String latitude;
 
     @SerializedName("post_longitude")
     private String postLongitude;
 
-    @SerializedName("photo")
-    private String photo;
-
-    @SerializedName("created_at")
-    private String createdAt;
+    @SerializedName("latitude")
+    private String latitude;
 
     @SerializedName("caption")
     private String caption;
 
-    @SerializedName("password")
-    private String password;
+    @SerializedName("created_at")
+    private String createdAt;
+
+    @SerializedName("photo")
+    private String photo;
 
     @SerializedName("updated_at")
     private String updatedAt;
-
-    @SerializedName("phone")
-    private String phone;
 
     @SerializedName("user_id")
     private int userId;
@@ -48,9 +39,6 @@ public class DashboardDataItem {
 
     @SerializedName("id")
     private int id;
-
-    @SerializedName("born_date")
-    private String bornDate;
 
     @SerializedName("email")
     private String email;
@@ -77,28 +65,12 @@ public class DashboardDataItem {
         this.address = address;
     }
 
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
     public String getPostLatitude() {
         return postLatitude;
     }
 
     public void setPostLatitude(String postLatitude) {
         this.postLatitude = postLatitude;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
     }
 
     public String getPostLongitude() {
@@ -109,20 +81,12 @@ public class DashboardDataItem {
         this.postLongitude = postLongitude;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
     public String getCaption() {
@@ -133,12 +97,20 @@ public class DashboardDataItem {
         this.caption = caption;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getUpdatedAt() {
@@ -147,14 +119,6 @@ public class DashboardDataItem {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public int getUserId() {
@@ -179,14 +143,6 @@ public class DashboardDataItem {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getBornDate() {
-        return bornDate;
-    }
-
-    public void setBornDate(String bornDate) {
-        this.bornDate = bornDate;
     }
 
     public String getEmail() {

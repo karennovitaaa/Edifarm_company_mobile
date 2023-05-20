@@ -92,6 +92,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
         progressBar.setVisibility(View.VISIBLE);
         progressBar.playAnimation();
+//        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
 
 
         binding.addPostings.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +105,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         // Panggil kembali API setiap 5 detik
 
 
-        Call<DashboardModel> dashCall = apiInterface.GetPostResponse();
+        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
+        Call<DashboardModel> dashCall = apiInterface.GetPostResponse(user_id);
         dashCall.enqueue(new Callback<DashboardModel>() {
             @Override
             public void onResponse(Call<DashboardModel> call, Response<DashboardModel> response) {
