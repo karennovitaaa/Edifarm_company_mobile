@@ -10,9 +10,6 @@ public class GetPostLikeDataItem {
     @SerializedName("address")
     private String address;
 
-    @SerializedName("level")
-    private String level;
-
     @SerializedName("post_latitude")
     private String postLatitude;
 
@@ -22,20 +19,14 @@ public class GetPostLikeDataItem {
     @SerializedName("latitude")
     private String latitude;
 
-    @SerializedName("created_at")
-    private String createdAt;
-
     @SerializedName("caption")
     private String caption;
 
+    @SerializedName("created_at")
+    private String createdAt;
+
     @SerializedName("photo")
     private String photo;
-
-    @SerializedName("password")
-    private String password;
-
-    @SerializedName("post_id")
-    private int postId;
 
     @SerializedName("updated_at")
     private String updatedAt;
@@ -43,17 +34,11 @@ public class GetPostLikeDataItem {
     @SerializedName("user_id")
     private int userId;
 
-    @SerializedName("phone")
-    private String phone;
-
     @SerializedName("name")
     private String name;
 
     @SerializedName("id")
     private int id;
-
-    @SerializedName("born_date")
-    private String bornDate;
 
     @SerializedName("email")
     private String email;
@@ -80,14 +65,6 @@ public class GetPostLikeDataItem {
         this.address = address;
     }
 
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
     public String getPostLatitude() {
         return postLatitude;
     }
@@ -112,14 +89,6 @@ public class GetPostLikeDataItem {
         this.latitude = latitude;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public String getCaption() {
         return caption;
     }
@@ -128,28 +97,20 @@ public class GetPostLikeDataItem {
         this.caption = caption;
     }
 
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public String getPhoto() {
         return photo;
     }
 
     public void setPhoto(String photo) {
         this.photo = photo;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getPostId() {
-        return postId;
-    }
-
-    public void setPostId(int postId) {
-        this.postId = postId;
     }
 
     public String getUpdatedAt() {
@@ -168,14 +129,6 @@ public class GetPostLikeDataItem {
         this.userId = userId;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getName() {
         return name;
     }
@@ -190,14 +143,6 @@ public class GetPostLikeDataItem {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getBornDate() {
-        return bornDate;
-    }
-
-    public void setBornDate(String bornDate) {
-        this.bornDate = bornDate;
     }
 
     public String getEmail() {

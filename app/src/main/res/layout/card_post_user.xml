@@ -66,15 +66,15 @@
                 android:layout_below="@+id/textProfilUserss"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="3dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:paddingTop="0dp"
                 android:fontFamily="@font/poppins_medium"
-                android:textSize="12dp"
+                android:paddingTop="0dp"
                 android:paddingBottom="10dp"
                 android:text="allahuakbar"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/textProfilUserss"
@@ -82,12 +82,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/cardViewPost"
                 android:layout_alignBottom="@+id/cardViewPost"
-                android:fontFamily="@font/poppins_bold"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_marginBottom="13dp"
                 android:layout_toEndOf="@+id/cardViewPost"
+                android:fontFamily="@font/poppins_bold"
                 android:paddingLeft="10dp"
                 android:text="wishal123"
                 android:textColor="@color/black" />
@@ -102,8 +102,8 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="74dp"
                 android:layout_marginRight="13dp"
-                android:fontFamily="@font/poppins_medium"
                 android:layout_marginBottom="11dp"
+                android:fontFamily="@font/poppins_medium"
 
                 android:paddingLeft="10dp"
                 android:text="1-3-3032"
@@ -112,7 +112,7 @@
             </TextView>
 
             <ImageButton
-                android:id="@+id/button_repostu"
+                android:id="@+id/button_deleted"
                 android:layout_width="22dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -123,7 +123,7 @@
                 android:layout_toEndOf="@+id/textProfilUserss"
                 android:backgroundTint="@color/transparant"
                 android:padding="0dp"
-                android:src="@drawable/danger" />
+                android:src="@drawable/icon_deleted" />
 
             <LinearLayout
                 android:id="@+id/linear_icons"
@@ -141,7 +141,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/comment_buttonu"
+                    android:id="@+id/comment_buttonus"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="right"
@@ -155,14 +155,14 @@
 
 
                 <TextView
-                    android:id="@+id/jumlahh_commentu"
+                    android:id="@+id/jumlahh_commentus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="4dp"
-                    android:gravity="left"
                     android:fontFamily="@font/poppins_medium"
+                    android:gravity="left"
                     android:text="121"
                     android:textColor="@color/black"></TextView>
 
@@ -186,8 +186,8 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:text="0"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="0"
                     android:textColor="@color/black">
 
                 </TextView>

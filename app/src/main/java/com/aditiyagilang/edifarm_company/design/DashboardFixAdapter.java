@@ -89,7 +89,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         String textCaption = String.valueOf(item.getCaption());
         String akunname = item.getUsername();
 
-        String tanggals = item.getCreatedAt().split(" ")[0];
+        String tanggals = item.getCreatedAt().substring(0, 10);
         String cap = item.getCaption();
         String email = item.getEmail();
         String name = item.getName();
@@ -550,6 +550,8 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                         });
                     }
                 });
+
+
                 Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
 
 

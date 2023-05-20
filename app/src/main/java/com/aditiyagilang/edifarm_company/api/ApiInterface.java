@@ -10,6 +10,7 @@ import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
 import com.aditiyagilang.edifarm_company.model.CountComment.CountComment;
 import com.aditiyagilang.edifarm_company.model.CountLike.CountLike;
 import com.aditiyagilang.edifarm_company.model.DeleteLike.DeleteLike;
+import com.aditiyagilang.edifarm_company.model.DeletePost.DeletePost;
 import com.aditiyagilang.edifarm_company.model.Download.Download;
 import com.aditiyagilang.edifarm_company.model.FilterActivity.FilterActivity;
 import com.aditiyagilang.edifarm_company.model.GetComment.GetComment;
@@ -280,7 +281,7 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
-    @POST("getPostLike")
+    @POST("getLikesByUserId")
     Call<GetPostLike> getPostlikeResponse(
             @Field("user_id") String user_id
     );
@@ -292,7 +293,13 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
-    @POST("getPostUser")
+    @POST("deletePostByPostId")
+    Call<DeletePost> deletePostByPostIdkResponse(
+            @Field("post_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("getPostsByUserId")
     Call<GetPostUser> getPostUserResponse(
             @Field("user_id") String user_id
     );
