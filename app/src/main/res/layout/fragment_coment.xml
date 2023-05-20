@@ -69,30 +69,30 @@
                                 android:id="@+id/listImagePostComment"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/cardViewPost"
+                                android:layout_below="@+id/comment_captionu"
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="10dp"
-                                android:paddingLeft="50dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/post">
 
                             </com.google.android.material.imageview.ShapeableImageView>
 
+
                             <TextView
                                 android:id="@+id/comment_captionu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/linear_icons"
+                                android:layout_below="@+id/textProfilComment"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="0dp"
-                                android:paddingLeft="50dp"
-                                android:paddingTop="0dp"
-                                android:paddingBottom="10dp"
-                                android:text="allahuakbar"
-                                android:textColor="@color/black" />
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="10dp"
 
+                                android:text="allahuakbar"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_medium"/>
 
                             <TextView
                                 android:id="@+id/textProfilComment"
@@ -101,6 +101,7 @@
                                 android:layout_alignTop="@+id/cardViewPost"
                                 android:layout_alignBottom="@+id/cardViewPost"
                                 android:layout_marginStart="13dp"
+                                android:fontFamily="@font/poppins_bold"
                                 android:layout_marginTop="13dp"
                                 android:layout_marginEnd="13dp"
                                 android:layout_marginBottom="13dp"
@@ -115,7 +116,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/listImagePostComment"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginStart="40dp"
+                                android:layout_marginStart="7dp"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginEnd="74dp"
                                 android:layout_marginRight="13dp"

@@ -14,13 +14,11 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="-10dp"
-
         android:background="@color/backgroun"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/base"
         app:cardCornerRadius="25dp"
         app:cardMaxElevation="210dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -245,18 +243,33 @@
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
 
-            <Button
-                android:id="@+id/tv_login"
+            <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:background="@color/transparant"
-                android:text="Sudah Punya Akun?"
-                android:textColor="@color/app_bar"
-                android:fontFamily="@font/poppins_italic"
-                tools:layout_editor_absoluteX="158dp"
-                tools:layout_editor_absoluteY="391dp"
-                android:textAllCaps="false"
-                android:textSize="12dp"></Button>
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@color/transparant"
+                    android:text="Sudah Punya Akun?"
+                    android:textColor="@color/app_bar"
+                    android:fontFamily="@font/poppins_italic"
+                    tools:layout_editor_absoluteX="158dp"
+                    tools:layout_editor_absoluteY="391dp"
+                    android:textAllCaps="false"
+                    android:textSize="12dp"></Button>
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/baseline_location_on_24">
+                </ImageView>
+            </TableRow>
+
+
 
 
             <Button

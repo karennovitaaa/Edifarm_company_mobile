@@ -89,8 +89,9 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
-                        android:textOff="Posting"
-                        android:textOn="Posting"
+                        android:textOff="Like"
+                        android:textOn="Like"
+                        android:textStyle="bold"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
 
                     <ToggleButton
@@ -101,8 +102,9 @@
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
-                        android:textOff="Like"
-                        android:textOn="Like"
+                        android:textOff="Posting"
+                        android:textOn="Posting"
+                        android:textStyle="bold"
 
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
                 </TableRow>
@@ -116,5 +118,17 @@
         android:id="@+id/cloude"
         layout="@layout/content_biographical" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:itemIconTint="@color/backgroun"
+        app:itemTextColor="@color/backgroun"
+        app:menu="@menu/bottom_navigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
