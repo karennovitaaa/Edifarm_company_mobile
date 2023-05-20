@@ -21,6 +21,7 @@ import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.Download.Download;
 import com.aditiyagilang.edifarm_company.model.History.HistoryDataItem;
+import com.aditiyagilang.edifarm_company.model.PosActivity.PostActivity;
 
 import java.io.File;
 import java.util.List;
@@ -72,6 +73,8 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.AdapterH
         String start = item.getSessionCreatedAt();
         String finish = item.getDocumentationCreatedAt();
         String period = start + " hingga " + finish;
+        String session_id = String.valueOf(item.getSessionId());
+
         String pdf = item.getPdfFile();
         holder.planName.setText(plant);
         holder.tanggal_perion.setText(period);
@@ -122,28 +125,19 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.AdapterH
         holder.upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Call<Download> downloadCall = apiInterface.downloadPDFResponse(id);
+                Call<PostActivity> downloadCall = apiInterface.addPostActivityResponse(User_ID, session_id, pdf);
                 Toast.makeText(context, id, Toast.LENGTH_SHORT).show();
-                downloadCall.enqueue(new Callback<Download>() {
+                downloadCall.enqueue(new Callback<PostActivity>() {
                     @Override
-                    public void onResponse(Call<Download> call, Response<Download> response) {
+                    public void onResponse(Call<PostActivity> call, Response<PostActivity> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                             // Mendapatkan nama file dari URL
-                            String pdfUrl = response.body().getData().getDownloadUrl();
 
-                            // Download file PDF dan simpan dengan nama sesuai pdf_file
-                            DownloadManager downloadManager = (DownloadManager) view.getContext().getSystemService(Context.DOWNLOAD_SERVICE);
-
-                            Uri uri = Uri.parse(pdfUrl);
-                            DownloadManager.Request request = new DownloadManager.Request(uri);
-                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "report.pdf");
-                            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                            downloadManager.enqueue(request);
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Download> call, Throwable t) {
+                    public void onFailure(Call<PostActivity> call, Throwable t) {
                         t.printStackTrace();
                     }
                 });

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:orientation="horizontal"
+    app:cardCornerRadius="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingTop="20dp"
+        android:text="Beri Penilaian"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/button"
+        android:textSize="20dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/load"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="20dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/stars" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="90dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/star11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparant"
+            android:src="@drawable/star_outline" />
+
+        <ImageButton
+            android:id="@+id/star22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparant"
+            android:src="@drawable/star_outline" />
+
+        <ImageButton
+            android:id="@+id/star33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparant"
+            android:src="@drawable/star_outline" />
+
+        <ImageButton
+            android:id="@+id/star44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparant"
+            android:src="@drawable/star_outline" />
+
+        <ImageButton
+            android:id="@+id/star55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparant"
+            android:src="@drawable/star_outline" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+        android:text="Rate"
+        android:textAllCaps="false">
+
+    </Button>
+</androidx.cardview.widget.CardView>

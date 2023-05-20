@@ -121,7 +121,7 @@ public class dashboardfix extends AppCompatActivity {
         binding.act.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                load(new ActivityPost());
+                load(new ActivityPosts());
                 binding.selecte.setBackgroundColor(R.drawable.white_tablayout);
                 binding.selecte.setTextColor(getResources().getColor(R.color.white));
                 binding.act.setBackgroundColor(getResources().getColor(R.color.backgroun));
