@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
@@ -37,13 +38,16 @@ import com.aditiyagilang.edifarm_company.login;
 import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.squareup.picasso.Picasso;
 
 
 public class Biographical extends AppCompatActivity {
     ToggleButton posting;
     ToggleButton likes;
+    ImageView profil;
     Button seting;
     BottomNavigationView bottomNavigationView;
+    SesionManager sesionManager;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityBiographicalBinding binding;
@@ -56,7 +60,12 @@ public class Biographical extends AppCompatActivity {
         setContentView(binding.getRoot());
         bottomNavigationView = findViewById(R.id.bottomNavigationViewBio);
         setSupportActionBar(binding.toolbar); // Menambahkan ini untuk mengatur ActionBar
-
+        sesionManager = new SesionManager(this);
+        profil = findViewById(R.id.imageprofile);
+        String url = "https://82fa-103-160-182-11.ngrok-free.app";
+        String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
+        String imageUrl = url + fotoProfil;
+        Picasso.get().load(imageUrl).into(profil);
         bottomNavigationView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -95,8 +104,7 @@ public class Biographical extends AppCompatActivity {
                 SesionManager sesionManager;
                 sesionManager = new SesionManager(dialog.getContext());
                 Button bio = dialog.findViewById(R.id.bio);
-                Button akun = dialog.findViewById(R.id.akun);
-                Button pass = dialog.findViewById(R.id.pass);
+
                 Button logout = dialog.findViewById(R.id.logouts);
 
                 logout.setOnClickListener(new View.OnClickListener() {
@@ -141,25 +149,9 @@ public class Biographical extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                akun.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Biographical.this, ChangeAcount.class);
-                        startActivity(intent);
-
-                    }
-                });
-                pass.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Biographical.this, ChangePassword.class);
-                        startActivity(intent);
-                    }
-                });
-
 
                 dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSett;
                 dialog.getWindow().setGravity(Gravity.RIGHT | Gravity.TOP);
