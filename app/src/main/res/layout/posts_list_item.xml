@@ -113,7 +113,7 @@
                 android:id="@+id/button_reason"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="222dp"
+                android:layout_marginStart="180dp"
                 android:layout_marginTop="22dp"
                 android:layout_marginRight="10dp"
                 android:layout_toEndOf="@+id/textProfils"
@@ -139,10 +139,9 @@
                 <ImageButton
                     android:id="@+id/comment_button"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_height="29dp"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
-
                     android:background="@color/white"
                     android:onClick="like"
                     android:src="@drawable/coment">
