@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|center"
         android:layout_marginTop="28dp"
-
+        android:fontFamily="@font/poppins_medium"
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
         android:textColor="@color/black" />
@@ -39,16 +39,14 @@
         <EditText
             android:id="@+id/session_field_tanggal"
             android:layout_width="250dp"
-
             android:layout_height="50dp"
             android:layout_gravity="left|center"
-
             android:layout_marginEnd="2dp"
             android:background="@drawable/fieldedit"
-            android:hint="#..."
+            android:hint=""
             android:maxLines="1"
             android:onClick="showDatePickerDialog"
-
+            android:fontFamily="@font/poppins_medium"
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/darker_gray"
@@ -72,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|center"
+        android:fontFamily="@font/poppins_medium"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
@@ -87,16 +86,14 @@
         <EditText
             android:id="@+id/session_field_tanggal_selesai"
             android:layout_width="250dp"
-
+            android:fontFamily="@font/poppins_medium"
             android:layout_height="50dp"
             android:layout_gravity="left|center"
-
             android:layout_marginEnd="2dp"
             android:background="@drawable/fieldedit"
-            android:hint="#..."
+            android:hint=""
             android:maxLines="1"
             android:onClick="showDatePickerDialog"
-
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/darker_gray"
@@ -123,6 +120,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="115dp"
         android:text="Nama Tanaman"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
 
@@ -130,7 +128,7 @@
         android:id="@+id/nameplant"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-
+        android:fontFamily="@font/poppins_medium"
         android:layout_gravity="center|left"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"
@@ -152,6 +150,8 @@
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/backgroun"
         android:src="@drawable/add"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
         android:text="Unggah"></Button>
 
 

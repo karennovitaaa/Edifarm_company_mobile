@@ -46,4 +46,6 @@
             android:id="@+id/action_NewPost_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+
 </navigation>

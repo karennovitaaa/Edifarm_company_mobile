@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_gravity="bottom"
+
+    tools:context=".BottomSheet">
+
+   <TableLayout
+       android:layout_gravity="bottom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+       <TableRow
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent">
+           <ImageButton
+               android:id="@+id/bot_dash"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:src="@drawable/baseline_home_24"
+               android:layout_marginLeft="25dp">
+
+           </ImageButton>
+
+           <ImageButton
+               android:id="@+id/bot_riw"
+               android:layout_marginLeft="30dp"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:src="@drawable/baseline_history_24">
+
+           </ImageButton>
+           <ImageButton
+               android:id="@+id/bot_act"
+               android:layout_marginLeft="30dp"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:src="@drawable/baseline_edit_calendar_24">
+
+           </ImageButton>
+           <ImageButton
+               android:id="@+id/bot_sesi"
+               android:layout_marginLeft="30dp"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:src="@drawable/icon_account">
+           </ImageButton>
+           <ImageButton
+               android:id="@+id/bot_pro"
+               android:layout_marginLeft="30dp"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:src="@drawable/icon_account">
+
+           </ImageButton>
+
+
+       </TableRow>
+   </TableLayout>
+
+</FrameLayout>

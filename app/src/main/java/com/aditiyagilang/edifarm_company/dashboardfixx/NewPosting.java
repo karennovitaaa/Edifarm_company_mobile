@@ -94,7 +94,7 @@ public class NewPosting extends Fragment {
         add_image = getView().findViewById(R.id.addImage);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         String User_Id = sesionManager.getUserDetail().get(SesionManager.ID);
-        Log.d("UUU", User_Id);
+//
         String lokasi;
 
         LocationManager locationManager;

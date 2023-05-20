@@ -14,54 +14,50 @@
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="-10dp"
-
         android:background="@color/backgroun"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/base"
         app:cardCornerRadius="25dp"
         app:cardMaxElevation="210dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:alpha="0.7"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingTop="10dp"
+            android:text="Daftar"
+            android:textColor="@color/black"
+            android:textSize="18dp">
+
+        </TextView>
+
         <LinearLayout
             android:layout_width="318dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:layout_marginLeft="20dp"
             android:alpha="1"
             android:foregroundGravity="center"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Daftar"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                android:textStyle="bold">
-
-            </TextView>
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Username"
-
+                android:alpha="0.6"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_bold">
 
             </TextView>
 
@@ -70,14 +66,12 @@
                 android:id="@+id/username_field"
                 android:layout_width="275dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
+
                 android:background="@drawable/field"
-
+                android:fontFamily="@font/poppins_medium"
                 android:hint="Masukkan Username"
-
-
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp"
@@ -93,9 +87,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Nama"
+                android:alpha="0.6"
+                android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                >
 
             </TextView>
 
@@ -103,12 +99,11 @@
                 android:id="@+id/name_field"
                 android:layout_width="275dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
                 android:background="@drawable/field"
                 android:hint="Masukkan Nama"
-                android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
@@ -120,8 +115,9 @@
                 android:layout_marginTop="10dp"
                 android:text="Tanggal Lahir"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_bold"
+                android:alpha="0.6">
 
             </TextView>
 
@@ -129,12 +125,11 @@
                 android:id="@+id/born_date_field"
                 android:layout_width="275dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
                 android:background="@drawable/field"
                 android:hint="Masukkan Tanggal Lahir"
-                android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
@@ -146,8 +141,9 @@
                 android:layout_marginTop="10dp"
                 android:text="No Telpon"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_bold"
+                android:alpha="0.6">
 
             </TextView>
 
@@ -159,33 +155,13 @@
                 android:background="@drawable/field"
                 android:hint="Masukkan No Telpon"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Alamat"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"></TextView>
 
-
-            <EditText
-                android:id="@+id/address_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan Alamat"
-                android:maxLines="1"
-                android:padding="8dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,8 +169,9 @@
                 android:layout_marginTop="10dp"
                 android:text="Email"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_bold"
+                android:alpha="0.6">
 
             </TextView>
 
@@ -203,11 +180,11 @@
                 android:id="@+id/email_field"
                 android:layout_width="275dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="5dp"
                 android:background="@drawable/field"
                 android:hint="Masukkan email"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
@@ -217,9 +194,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Password"
+                android:fontFamily="@font/poppins_bold"
+                android:alpha="0.6"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp">
 
             </TextView>
 
@@ -230,9 +208,10 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/field"
                 android:hint="Masukkan password"
+                android:fontFamily="@font/poppins_medium"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
@@ -243,8 +222,9 @@
                 android:layout_marginTop="10dp"
                 android:text="Konfirmasi Password"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:textStyle="bold">
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins_bold"
+                android:alpha="0.6">
 
             </TextView>
 
@@ -255,38 +235,57 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/field"
                 android:hint="Ulangi Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/poppins_medium"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="4dp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
 
-            <Button
-                android:id="@+id/tv_login"
+            <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/transparant"
-                android:text="Sudah Punya Akun?"
-                android:textColor="@color/app_bar"
-                android:textStyle="italic"
-                tools:layout_editor_absoluteX="158dp"
-                tools:layout_editor_absoluteY="391dp"></Button>
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@color/transparant"
+                    android:text="Sudah Punya Akun?"
+                    android:textColor="@color/app_bar"
+                    android:fontFamily="@font/poppins_italic"
+                    tools:layout_editor_absoluteX="158dp"
+                    tools:layout_editor_absoluteY="391dp"
+                    android:textAllCaps="false"
+                    android:textSize="12dp"></Button>
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/baseline_location_on_24">
+                </ImageView>
+            </TableRow>
+
+
 
 
             <Button
                 android:id="@+id/daftar"
                 android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="82dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/button"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="Daftar"
                 android:textColor="@android:color/background_light"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textAllCaps="false"/>
 
 
         </LinearLayout>
@@ -297,9 +296,9 @@
         android:id="@+id/power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="15dp"
         android:text="Powered By Edifarm Company"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViews2" />

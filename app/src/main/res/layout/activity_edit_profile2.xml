@@ -37,6 +37,8 @@
                     android:background="@drawable/shape_profil"
                     android:backgroundTint="@color/backgroun"
                     android:textOff="Posting"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppins_medium"
                     android:textOn="Posting"
                     app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
 
@@ -46,6 +48,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="130dp"
                     android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppins_medium"
                     android:background="@drawable/shape_profil"
                     android:backgroundTint="@color/backgroun"
                     android:textOff="Like"
@@ -57,7 +61,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <include layout="@layout/content_edit_profile" />
+<!--    <include layout="@layout/content_edit_profile" />-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

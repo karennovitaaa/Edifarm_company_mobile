@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     android:elevation="0dp"
     tools:context=".Stalking.StalkingAcount">
 
@@ -22,11 +20,11 @@
             android:id="@+id/cancel_stalking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_gravity="left"
+            android:paddingTop="1dp"
+            android:layout_marginLeft="15dp"
             android:background="@color/transparant"
-            android:src="@drawable/icon_cancel">
+            android:src="@drawable/baseline_keyboard_backspace_24">
 
         </ImageButton>
 
@@ -34,13 +32,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="13dp"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-
                 android:layout_gravity="center"
                 app:cardCornerRadius="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -83,8 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_bold"
             android:textAlignment="center"
+            android:text="pppppp"
             android:textColor="@color/white">
 
         </TextView>
@@ -94,6 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:text="yyy"
             android:fontFamily="@font/poppins_medium"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -106,8 +106,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_light"
             android:textAlignment="center"
+            android:text="qqq@gmail.com"
             android:textColor="@color/white"
             android:textSize="10dp">
 
@@ -116,7 +117,6 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
             android:background="@drawable/toolbar"
             android:theme="@style/Theme.Edifarm_Company.AppBarOverlay"
@@ -137,27 +137,26 @@
                         android:id="@+id/posting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:fontFamily="@font/poppins_medium"
+                        android:textAllCaps="false"
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
                         android:textOff="Postingan"
                         android:textOn="Postingan"
-                        android:textStyle="bold"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
 
                     <ToggleButton
                         android:id="@+id/activity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:fontFamily="@font/poppins_medium"
+                        android:textAllCaps="false"
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
                         android:textOff="Aktivitas"
                         android:textOn="Aktivitas"
-                        android:textStyle="bold"
-
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
                 </TableRow>
             </TableLayout>

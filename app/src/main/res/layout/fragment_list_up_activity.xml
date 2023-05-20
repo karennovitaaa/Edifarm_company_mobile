@@ -27,6 +27,7 @@
                 android:background="@drawable/fieldedit"
                 android:hint="Cari Kegiatan Anda"
                 android:padding="5dp"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black">
 

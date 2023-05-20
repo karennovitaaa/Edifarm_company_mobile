@@ -21,6 +21,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="Jenis Tanaman"
+            android:fontFamily="@font/poppins_bold"
             android:textAlignment="center"
             android:textSize="24dp">
 

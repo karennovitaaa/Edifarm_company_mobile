@@ -14,7 +14,8 @@
         android:textStyle="bold"
         android:layout_marginEnd="0dp"
         android:text="Unggah Info Pertanian"
-        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/backgroun"
         />
 
     <TextView
@@ -25,6 +26,7 @@
         android:layout_marginEnd="136dp"
         android:text="Pilih Dokumen"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_medium"
         />
 
     <ImageButton
@@ -46,23 +48,25 @@
         android:layout_marginEnd="115dp"
         android:text="Tuliskan Keterangan"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_medium"
         />
 
 
     <EditText
         android:id="@+id/editusername"
         android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"
         android:hint="keterangan ..."
         android:maxLines="1"
-        android:padding="10dp"
+        android:padding="6dp"
+        android:fontFamily="@font/poppins_medium"
         android:layout_marginLeft="30dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="10sp"
+        android:textSize="12sp"
         >
 
     </EditText>
@@ -75,6 +79,7 @@
         android:layout_marginEnd="115dp"
         android:text="Tambahkan Hashtag"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_medium"
         />
 
 
@@ -82,15 +87,16 @@
         android:id="@+id/editText"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"
-        android:hint="#..."
+        android:hint=""
         android:maxLines="1"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="10sp"
+        android:fontFamily="@font/poppins_medium"
 
         />
 
@@ -99,6 +105,8 @@
         android:layout_height="wrap_content"
         android:text="Unggah"
         android:backgroundTint="@color/backgroun"
+        android:fontFamily="@font/poppins_medium"
+        android:textAllCaps="false"
         android:layout_marginTop="50dp">
 
     </Button>
