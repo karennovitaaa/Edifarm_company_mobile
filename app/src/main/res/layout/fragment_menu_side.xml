@@ -50,9 +50,10 @@
         <Button
             android:id="@+id/bio"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:backgroundTint="@color/white"
+            android:layout_marginTop="30dp"
             android:drawableLeft="@drawable/icon_row"
             android:gravity="center|right"
             android:text="Biodata"
@@ -65,7 +66,7 @@
         <Button
             android:id="@+id/pass"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/icon_row"
@@ -80,7 +81,7 @@
         <Button
             android:id="@+id/akun"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/icon_row"
             android:gravity="center|right"
@@ -97,12 +98,12 @@
     <Button
         android:id="@+id/logouts"
         android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/icon_logout"
-        android:text="Keluar"
         android:fontFamily="@font/poppins_medium"
+        android:text="Keluar"
         android:textAllCaps="false"
         android:textColor="@color/black">
 

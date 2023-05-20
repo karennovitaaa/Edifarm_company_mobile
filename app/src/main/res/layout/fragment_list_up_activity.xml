@@ -22,11 +22,12 @@
             <EditText
                 android:id="@+id/searchedit"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:background="@drawable/fieldedit"
                 android:hint="Cari Kegiatan Anda"
                 android:padding="5dp"
+                android:paddingLeft="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black">
@@ -42,7 +43,7 @@
                 android:layout_marginRight="20dp"
 
                 android:background="@color/transparant"
-                android:src="@drawable/icon_search">
+                android:src="@drawable/search">
 
             </ImageButton>
         </TableRow>
