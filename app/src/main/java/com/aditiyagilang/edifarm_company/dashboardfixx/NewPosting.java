@@ -162,6 +162,7 @@ public class NewPosting extends Fragment {
                 // Membuat dialog untuk memilih sumber gambar
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Select Image Source");
+
                 builder.setItems(new CharSequence[]{"Camera", "Gallery"}, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

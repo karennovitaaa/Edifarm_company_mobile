@@ -17,12 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_bold"
             android:paddingTop="20dp"
-
             android:textAlignment="center"
+            android:text="ppp"
             android:textAllCaps="false"
-            android:textColor="@color/button"
+            android:textColor="@color/backgroun"
             android:textSize="20dp">
 
         </TextView>
@@ -41,11 +41,12 @@
             android:id="@+id/failed"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-
             android:layout_gravity="center|bottom"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/failed"
             android:padding="5dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_bold"
             android:text="Batalkan"
             android:textColor="@color/white"></Button>
 

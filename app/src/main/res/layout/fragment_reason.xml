@@ -22,12 +22,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_bold"
         android:paddingTop="20dp"
         android:text="Ingin Melaporkan Postingan Ini ?"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/button"
+        android:textColor="@color/backgroun"
         android:textSize="20dp">
 
     </TextView>
@@ -37,13 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:fontFamily="@font/poppins_medium"
-
-
-        android:text="Berikan Laporan"
-
-
-        android:textAllCaps="false"
+        android:text="Pilih Kategori Pelaporan"
         android:textColor="@color/subText"
+        android:layout_marginBottom="10dp"
         android:textSize="16dp">
 
     </TextView>
@@ -53,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pencemaran nama baik"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <CheckBox
@@ -60,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Konten tidak pantas"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <CheckBox
@@ -67,6 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pelanggaran privasi"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <CheckBox
@@ -74,6 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Konten ilegal"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <CheckBox
@@ -81,6 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Spam"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <CheckBox
@@ -88,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lainnya"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
     <EditText
@@ -97,6 +99,7 @@
         android:backgroundTint="@color/subText"
         android:hint="Alasan lainnya"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_medium"
         android:textColorHint="@color/subText"
         android:visibility="gone" />
 
@@ -108,6 +111,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/button"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_medium"
         android:text="Laporkan" />
 
 </LinearLayout>

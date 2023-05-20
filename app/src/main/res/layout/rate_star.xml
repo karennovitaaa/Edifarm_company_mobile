@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_bold"
         android:paddingTop="20dp"
         android:text="Beri Penilaian"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/button"
+        android:textColor="@color/backgroun"
         android:textSize="20dp" />
 
     <com.airbnb.lottie.LottieAnimationView
@@ -90,6 +90,7 @@
         android:layout_marginTop="180dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/button"
+        android:fontFamily="@font/poppins_medium"
         android:text="Rate"
         android:textAllCaps="false">
 

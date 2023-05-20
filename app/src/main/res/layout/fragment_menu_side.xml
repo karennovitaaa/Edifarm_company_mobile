@@ -17,8 +17,9 @@
         <Button
             android:id="@+id/bio"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_marginTop="30dp"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/icon_row"
             android:fontFamily="@font/poppins_medium"
@@ -33,7 +34,7 @@
         <Button
             android:id="@+id/logouts"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
             android:backgroundTint="@color/white"
             android:drawableLeft="@drawable/icon_logout"
@@ -43,6 +44,9 @@
             android:textColor="@color/black">
 
         </Button>
+
+
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

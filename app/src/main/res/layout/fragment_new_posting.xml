@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -10,6 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="20dp"
+        android:backgroundTint="@color/white"
         android:paddingRight="20dp"
         tools:context=".dashboardfixx.NewPosting">
 
@@ -27,18 +29,10 @@
 
             />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:paddingTop="20dp"
-            android:background="@color/transparant"
-            android:backgroundTint="@color/transparant"
-            app:cardCornerRadius="20dp">
+
 
             <ImageView
-
-                android:id="@+id/gbr_post"
+                android:id="@+id/addImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -46,10 +40,9 @@
 
             </ImageView>
 
-        </androidx.cardview.widget.CardView>
 
         <ImageButton
-            android:id="@+id/addImage"
+            android:id="@+id/gbr_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -66,14 +59,17 @@
             android:layout_gravity="left|center"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="115dp"
-            android:text="Tuliska Keterangan"
+            android:text="Tuliskan Keterangan"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:alpha="0.7"
             android:textColor="@color/black" />
 
 
         <EditText
             android:id="@+id/add_caption"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:layout_gravity="center|left"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="2dp"
@@ -87,24 +83,32 @@
             android:textColorHint="@android:color/darker_gray"
             android:textSize="10sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="115dp"
+            android:text="Tambahkan Lokasi"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:alpha="0.7"
+            android:textColor="@color/black" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-
-            android:layout_marginTop="30dp"
-
-
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/add_location"
                 android:layout_width="250dp"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:layout_gravity="left|center"
                 android:layout_marginEnd="2dp"
                 android:background="@drawable/fieldedit"
-                android:hint="#..."
+                android:hint=""
                 android:maxLines="4"
                 android:onClick="showDatePickerDialog"
                 android:fontFamily="@font/poppins_medium"
