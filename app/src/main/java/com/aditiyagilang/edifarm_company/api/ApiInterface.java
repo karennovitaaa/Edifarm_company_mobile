@@ -102,10 +102,10 @@ public interface ApiInterface {
 
     );
 
-
+    @FormUrlEncoded
     @POST("getpost")
     Call<DashboardModel> GetPostResponse(
-
+            @Field("user_id") String user_id
     );
 
     @POST("getPostActivity")

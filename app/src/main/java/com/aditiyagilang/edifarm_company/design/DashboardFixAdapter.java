@@ -705,7 +705,6 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 ImageButton cancel = dialog.findViewById(R.id.cancel_stalking);
                 ImageButton loc = dialog.findViewById(R.id.location_stalking);
 
-
                 Picasso.get().load(imageUrl).into(foto);
                 TextView user = dialog.findViewById(R.id.usernameStalk);
                 TextView emails = dialog.findViewById(R.id.emailStalk);
