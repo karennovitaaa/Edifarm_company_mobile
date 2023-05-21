@@ -1,52 +1,100 @@
 package com.aditiyagilang.edifarm_company;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
-import com.aditiyagilang.edifarm_company.model.update.Update;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class edit_profile extends AppCompatActivity implements View.OnClickListener {
+    private static final int CAMERA_REQUEST_CODE = 3;
+    private static final int GALLERY_REQUEST_CODE = 4;
+    String Id, Username, Name, Address, Phone, Email, Born_date;
+    ImageView ephoto;
+    Button updated;
+    SesionManager sesionManager;
+    ApiInterface apiInterface;
+    ImageButton poto;
     private EditText eusername;
     private EditText ename;
     private EditText eaddress;
     private EditText ephone;
-
     private EditText eborn_date;
     private EditText eemail;
 
-    String Id, Username, Name, Address, Phone,  Email, Born_date;
-    Button updated;
-    SesionManager sesionManager;
-    ApiInterface apiInterface;
-
-
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
         sesionManager = new SesionManager(edit_profile.this);
+        poto = findViewById(R.id.editpoto);
+        ephoto = findViewById(R.id.photobio);
 
-        updated= (Button) findViewById(R.id.update);
+
+        updated = findViewById(R.id.update);
         updated.setOnClickListener(this);
 
-        Log.d("ID_USER", sesionManager.getUserDetail().get(SesionManager.ID));
+        poto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Membuat dialog untuk memilih sumber gambar
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_profile.this);
+                builder.setTitle("Select Image Source");
 
-        eusername = (EditText) findViewById(R.id.editusername);
+                builder.setItems(new CharSequence[]{"Camera", "Gallery"}, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        switch (i) {
+                            case 0:
+                                // Memilih gambar dari kamera
+                                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                                startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
+                                break;
+                            case 1:
+                                // Memilih gambar dari galeri
+                                Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                startActivityForResult(galleryIntent, GALLERY_REQUEST_CODE);
+                                break;
+                        }
+                    }
+                });
+                builder.show();
+            }
+        });
+
+        Log.d("ID_USER", sesionManager.getUserDetail().get(SesionManager.ID));
+        eusername = findViewById(R.id.editusername);
         if (SesionManager.USERNAME == null) {
             eusername.setHint("Masukan Username");
         } else {
@@ -54,48 +102,47 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        ename = (EditText) findViewById(R.id.editnama);
-        if(SesionManager.NAME == null){
+        ename = findViewById(R.id.editnama);
+        if (SesionManager.NAME == null) {
             ename.setHint("Masukan Nama");
         } else {
             ename.setHint(sesionManager.getUserDetail().get(SesionManager.NAME));
         }
 
-        eemail = (EditText) findViewById(R.id.editemail);
-        if(SesionManager.EMAIL == null){
+        eemail = findViewById(R.id.editemail);
+        if (SesionManager.EMAIL == null) {
             eemail.setHint("Masukan Email");
         } else {
             eemail.setHint(sesionManager.getUserDetail().get(SesionManager.EMAIL));
         }
 
-        eaddress = (EditText) findViewById(R.id.editalamat);
-        if(SesionManager.ADDRESS == null){
+        eaddress = findViewById(R.id.editalamat);
+        if (SesionManager.ADDRESS == null) {
             eaddress.setHint("Masukan Alamat");
         } else {
             eaddress.setHint(sesionManager.getUserDetail().get(SesionManager.ADDRESS));
         }
 
-        ephone = (EditText) findViewById(R.id.editnohp);
-        if(SesionManager.PHONE == null){
+        ephone = findViewById(R.id.editnohp);
+        if (SesionManager.PHONE == null) {
             ephone.setHint("Masukan Nomer Handphone");
         } else {
             ephone.setHint(sesionManager.getUserDetail().get(SesionManager.PHONE));
         }
 
-        eborn_date = (EditText) findViewById(R.id.edittgllahir);
-        if(SesionManager.BORN_DATE == null){
+        eborn_date = findViewById(R.id.edittgllahir);
+        if (SesionManager.BORN_DATE == null) {
             eborn_date.setHint("Masukan Tanggal Lahir");
         } else {
             eborn_date.setHint(sesionManager.getUserDetail().get(SesionManager.BORN_DATE));
         }
 
 
-
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
 
             case R.id.update:
 
@@ -106,42 +153,91 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
                 Phone = ephone.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.PHONE) : ephone.getText().toString();
                 Born_date = eborn_date.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.BORN_DATE) : eborn_date.getText().toString();
                 Email = eemail.getText().toString().isEmpty() ? sesionManager.getUserDetail().get(SesionManager.EMAIL) : eemail.getText().toString();
-                kirim(Id, Username, Name, Address, Phone, Born_date, Email);
-                break;
 
+                // Mendapatkan foto dari ImageView
+                Bitmap photoBitmap = ((BitmapDrawable) ephoto.getDrawable()).getBitmap();
+
+                // Mengirim data ke API
+                sendDataToApi(Id, Username, Name, Address, Phone, Born_date, Email, photoBitmap);
+
+                break;
 
         }
     }
 
-    private void kirim( String id, String username, String name,
-                        String address, String phone,
-                        String born_date, String email){
-        apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<UpdateBio> Ucall = apiInterface.updateResponse( id, username, name,
-                address,  phone, born_date, email);
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == CAMERA_REQUEST_CODE && data != null) {
+                // Memilih gambar dari kamera
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                ephoto.setImageBitmap(photo);
+                // Mengirim data gambar ke API (lakukan implementasi sendiri)
+                // sendImageToApi(photo);
+            } else if (requestCode == GALLERY_REQUEST_CODE && data != null) {
+                // Memilih gambar dari galeri
+                Uri selectedImage = data.getData();
+                try {
+                    Bitmap photo = MediaStore.Images.Media.getBitmap(edit_profile.this.getContentResolver(), selectedImage);
+                    ephoto.setImageBitmap(photo);
 
-        Ucall.enqueue(new Callback<UpdateBio>() {
+                    // Mengirim data gambar ke API (lakukan implementasi sendiri)
+                    // sendImageToApi(photo);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    private void sendDataToApi(String user_id, String username, String name,
+                               String address, String phone,
+                               String born_date, String email, Bitmap photoBitmap) {
+        apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        RequestBody requestBody;
+        MultipartBody.Part photo = null;
+
+        // Mengecek apakah ada foto yang dipilih
+        if (photoBitmap != null) {
+            // Jika ada foto, mengirim foto tersebut ke API
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            photoBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] imageBytes = baos.toByteArray();
+            requestBody = RequestBody.create(MediaType.parse("image/*"), imageBytes);
+            photo = MultipartBody.Part.createFormData("photo", "photo.jpg", requestBody);
+        } else {
+            // Jika tidak ada foto, menggunakan foto dari session manager
+            String userPhoto = sesionManager.getUserDetail().get(SesionManager.PHOTO);
+            requestBody = RequestBody.create(MediaType.parse("text/plain"), userPhoto);
+        }
+
+        RequestBody requestBodyUserId = RequestBody.create(MediaType.parse("text/plain"), user_id);
+        RequestBody requestBodyUsername = RequestBody.create(MediaType.parse("text/plain"), username);
+        RequestBody requestBodyName = RequestBody.create(MediaType.parse("text/plain"), name);
+        RequestBody requestBodyAddress = RequestBody.create(MediaType.parse("text/plain"), address);
+        RequestBody requestBodyPhone = RequestBody.create(MediaType.parse("text/plain"), phone);
+        RequestBody requestBodyBornDate = RequestBody.create(MediaType.parse("text/plain"), born_date);
+        RequestBody requestBodyEmail = RequestBody.create(MediaType.parse("text/plain"), email);
+
+        Call<UpdateBio> call = apiInterface.updateResponse(requestBodyUserId, requestBodyUsername, requestBodyName, requestBodyAddress, requestBodyPhone, requestBodyBornDate, requestBodyEmail, photo);
+        call.enqueue(new Callback<UpdateBio>() {
             @Override
             public void onResponse(Call<UpdateBio> call, Response<UpdateBio> response) {
-
-
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                    Toast.makeText(edit_profile.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    Log.d("GETDATA" , response.body().getMessage());
+                    Toast.makeText(edit_profile.this, "Update success", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(edit_profile.this, "Update failed: " + response.body().getData(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(edit_profile.this, "Update failed", Toast.LENGTH_SHORT).show();
                 }
-
             }
 
             @Override
             public void onFailure(Call<UpdateBio> call, Throwable throwable) {
-                Toast.makeText(edit_profile.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("SERVER", throwable.toString());
+                Toast.makeText(edit_profile.this, "Update failed: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }); {
-        }
+        });
+    }
 
 
-
-    }}
+}

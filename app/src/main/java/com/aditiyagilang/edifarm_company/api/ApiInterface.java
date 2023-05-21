@@ -71,16 +71,17 @@ public interface ApiInterface {
             @Field("confirm_password") String confirm_password
     );
 
-    @FormUrlEncoded
+    @Multipart
     @POST("update")
     Call<UpdateBio> updateResponse(
-            @Field("id") String id,
-            @Field("username") String username,
-            @Field("name") String name,
-            @Field("address") String address,
-            @Field("phone") String phone,
-            @Field("born_date") String born_date,
-            @Field("email") String email
+            @Part("user_id") RequestBody user_id,
+            @Part("username") RequestBody username,
+            @Part("name") RequestBody name,
+            @Part("address") RequestBody address,
+            @Part("phone") RequestBody phone,
+            @Part("born_date") RequestBody born_date,
+            @Part("email") RequestBody email,
+            @Part MultipartBody.Part photo
     );
 
     @FormUrlEncoded
