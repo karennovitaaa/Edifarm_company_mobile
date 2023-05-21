@@ -73,7 +73,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String textProfil = String.valueOf(item.getUserId());
         String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
         String imageUrl = "https://82fa-103-160-182-11.ngrok-free.app/" + fotoProfil;
-        String url = "https://82fa-103-160-182-11.ngrok-free.app/";
+        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
 
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
@@ -535,7 +535,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                             @Override
                             public void onResponse(Call<DeletePost> call, Response<DeletePost> response) {
                                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                         
+
                                     final Dialog dialog = new Dialog(context);
                                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                     dialog.setContentView(R.layout.pop_up_done);

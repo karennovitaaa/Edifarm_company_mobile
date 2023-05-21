@@ -42,6 +42,7 @@ import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcount;
 import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcountDataItem;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
 import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
+import com.aditiyagilang.edifarm_company.model.sharelink.Share;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
     @Override
     public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
         final DashboardDataItem item = dataList.get(position);
-        String url = "https://82fa-103-160-182-11.ngrok-free.app/";
+        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
         String textProfil = String.valueOf(item.getId());
         String fotoProfil = String.valueOf(item.getPhoto());
         String imageUrl = url + fotoProfil;
@@ -688,6 +689,41 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
             }
         });
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call<Share> countCommentCall = apiInterface.createShareableLinkResponse(post_id);
+
+                countCommentCall.enqueue(new Callback<Share>() {
+                    @Override
+                    public void onResponse(Call<Share> call, Response<Share> response) {
+                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+                            String count = String.valueOf(response.body().getData());
+                            holder.jumlahComment.setText(count);
+
+                            // Menampilkan pilihan aplikasi untuk membagikan link
+                            String shareLink = response.body().getData().getLink();
+                            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                            shareIntent.setType("text/plain");
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, shareLink);
+
+                            // Memeriksa dan menambahkan flag FLAG_ACTIVITY_NEW_TASK jika diperlukan
+                            if ((shareIntent.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK) == 0) {
+                                shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            }
+
+                            view.getContext().startActivity(Intent.createChooser(shareIntent, "Share via"));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Share> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
+
 
         holder.fotoProfil.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -804,7 +840,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
         private final boolean mIsLiked = false;
-        ImageButton fotoProfil;
+        ImageButton fotoProfil, share;
         TextView namaAkun;
         ImageView gambarPosting;
         TextView tanggalPost;
@@ -814,6 +850,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
+            share = itemView.findViewById(R.id.share);
             fotoProfil = itemView.findViewById(R.id.imageProfilPosting);
             namaAkun = itemView.findViewById(R.id.textProfils);
             gambarPosting = itemView.findViewById(R.id.listImagePosting);

@@ -23,8 +23,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            >
+            android:background="@color/white">
 
 
             <androidx.cardview.widget.CardView
@@ -66,11 +65,11 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingTop="0dp"
                 android:text="allahuakbar"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="12dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/textProfils"
@@ -80,12 +79,12 @@
                 android:layout_alignBottom="@+id/cardViewPost"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
-                android:fontFamily="@font/poppins_bold"
                 android:layout_marginEnd="13dp"
                 android:layout_marginBottom="13dp"
                 android:layout_toEndOf="@+id/cardViewPost"
                 android:background="@color/transparant"
                 android:backgroundTint="@color/transparant"
+                android:fontFamily="@font/poppins_bold"
                 android:paddingLeft="10dp"
                 android:text="wishal123"
                 android:textColor="@color/black" />
@@ -100,12 +99,12 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="74dp"
                 android:layout_marginRight="13dp"
-                android:fontFamily="@font/poppins_light"
                 android:layout_marginBottom="11dp"
-                android:textSize="10dp"
+                android:fontFamily="@font/poppins_light"
                 android:paddingLeft="10dp"
                 android:text="1-3-3032"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:textSize="10dp">
 
             </TextView>
 
@@ -137,6 +136,19 @@
 
 
                 <ImageButton
+                    android:id="@+id/share"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+
+                    android:background="@color/white"
+                    android:onClick="like"
+                    android:src="@drawable/coment">
+
+                </ImageButton>
+
+                <ImageButton
                     android:id="@+id/comment_button"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -157,9 +169,9 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="4dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:gravity="left"
                     android:text="0"
-                    android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/black"></TextView>
 
                 <ImageButton
@@ -181,8 +193,8 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:text="0"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="0"
                     android:textColor="@color/black">
 
                 </TextView>

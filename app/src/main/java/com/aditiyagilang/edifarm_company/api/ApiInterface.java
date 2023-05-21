@@ -36,6 +36,7 @@ import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
 import com.aditiyagilang.edifarm_company.model.getSession.GetSession;
 import com.aditiyagilang.edifarm_company.model.login.Login;
 import com.aditiyagilang.edifarm_company.model.register.Register;
+import com.aditiyagilang.edifarm_company.model.sharelink.Share;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 import com.aditiyagilang.edifarm_company.ui.DashboardModel;
 
@@ -295,6 +296,12 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("deletePostByPostId")
     Call<DeletePost> deletePostByPostIdkResponse(
+            @Field("post_id") String user_id
+    );
+
+    @FormUrlEncoded
+    @POST("createShareableLink")
+    Call<Share> createShareableLinkResponse(
             @Field("post_id") String user_id
     );
 
