@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-
     android:elevation="0dp"
     tools:context=".Biographical.Biographical">
 
@@ -34,7 +33,6 @@
             android:id="@+id/cardView3"
             android:layout_width="80dp"
             android:layout_height="80dp"
-
             android:layout_gravity="center"
             app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -64,17 +62,16 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
             android:background="@drawable/toolbar"
             android:theme="@style/Theme.Edifarm_Company.AppBarOverlay"
             app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay">
 
-
             <TableLayout
 
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
 
                 <TableRow
@@ -85,27 +82,26 @@
                         android:id="@+id/posting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
-                        android:textOff="Like"
-                        android:textOn="Like"
-                        android:textStyle="bold"
+                        android:textOff="Disukai"
+                        android:textOn="Disukai"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textAllCaps="false"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
 
                     <ToggleButton
                         android:id="@+id/likes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
                         android:background="@drawable/shape_profil"
                         android:backgroundTint="@color/backgroun"
-                        android:textOff="Posting"
-                        android:textOn="Posting"
-                        android:textStyle="bold"
-
+                        android:textOff="Unggahan"
+                        android:textOn="Unggahan"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textAllCaps="false"
                         app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay" />
                 </TableRow>
             </TableLayout>

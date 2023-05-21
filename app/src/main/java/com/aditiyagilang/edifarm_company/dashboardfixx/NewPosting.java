@@ -86,7 +86,7 @@ public class NewPosting extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        gbr_add = getView().findViewById(R.id.gbr_post);
+        gbr_add = getView().findViewById(R.id.addImage);
         location = getView().findViewById(R.id.callocation);
         text_location = getView().findViewById(R.id.add_location);
         caption = getView().findViewById(R.id.add_caption);

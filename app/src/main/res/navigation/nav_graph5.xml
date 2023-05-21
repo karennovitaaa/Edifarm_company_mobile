@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/BioPost"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/fragment_biopost">
 
         <action
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/MenuSlide"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/fragment_menu_side">
 
 
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/ChangePass"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/fragment_change_pass">
 
 
@@ -51,7 +51,7 @@
     <fragment
         android:id="@+id/PostUserU"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/fragment_get_post_user">
 
 
@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/Pop"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/pop_up_logout">
 
 
@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/ChangeAcount"
         android:name="com.aditiyagilang.edifarm_company.Biographical.BioPost"
-        android:label="@string/first_fragment_label"
+
         tools:layout="@layout/fragment_change_acount">
 
 
@@ -78,7 +78,7 @@
     <fragment
         android:id="@+id/PostUser"
         android:name="com.aditiyagilang.edifarm_company.Biographical.PostingUser"
-        android:label="@string/second_fragment_label"
+
         tools:layout="@layout/fragment_posting_user">
 
         <action

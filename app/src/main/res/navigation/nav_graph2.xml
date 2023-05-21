@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/First2Fragment"
         android:name="com.aditiyagilang.edifarm_company.Activity.First2Fragment"
-        android:label="First Fragment"
+
         tools:layout="@layout/fragment_first2">
 
         <action
@@ -23,13 +23,13 @@
     <fragment
         android:id="@+id/Second2Fragment"
         android:name="com.aditiyagilang.edifarm_company.Activity.Second2Fragment"
-        android:label="Second Fragment"
+
         tools:layout="@layout/fragment_secound_fragmen" />
 
     <fragment
         android:id="@+id/PopButton"
         android:name="com.aditiyagilang.edifarm_company.Activity.PopButton"
-        android:label="Pop Button Fragment"
+
         tools:layout="@layout/fragment_pop_button">
 
 
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/List"
         android:name="com.aditiyagilang.edifarm_company.Activity.ListUpActivity"
-        android:label="List Fragment"
+
         tools:layout="@layout/fragment_list_up_activity">
 
 
@@ -62,13 +62,13 @@
     <fragment
         android:id="@+id/PopEdit"
         android:name="com.aditiyagilang.edifarm_company.Activity.UpdateActivity"
-        android:label="Pop Edit Fragment"
+
         tools:layout="@layout/fragment_update_activity" />
 
     <fragment
         android:id="@+id/Filter"
         android:name="com.aditiyagilang.edifarm_company.Activity.fragment_filterActivity"
-        android:label="Filter Fragment"
+
         tools:layout="@layout/fragment_filter_activity" />
 
 </navigation>

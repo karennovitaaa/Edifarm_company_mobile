@@ -12,12 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Unduh Laporanmu"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/button" />
+        android:textSize="20dp"
+        android:textColor="@color/backgroun" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_history"

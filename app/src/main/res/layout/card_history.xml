@@ -29,7 +29,6 @@
             android:layout_height="wrap_content"
             android:alpha="0.9"
             android:fontFamily="@font/poppins_bold"
-
             android:text="Penyiraman"
             android:textColor="@color/font_card_activity"
             android:textSize="15dp"
