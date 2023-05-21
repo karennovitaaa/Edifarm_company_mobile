@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfile.EditProfile"
-
-    >
+    tools:context=".EditProfile.EditProfile">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/postlist"
@@ -22,9 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="90dp"
         android:background="@color/transparant"
-        android:src="@drawable/icon_plus">
+        android:src="@drawable/icon_plus_baru">
 
     </ImageButton>
 

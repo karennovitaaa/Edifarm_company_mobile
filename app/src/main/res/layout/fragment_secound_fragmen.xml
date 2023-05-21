@@ -38,7 +38,7 @@
         <AutoCompleteTextView
             android:id="@+id/list_session"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:inputType="none"
             android:fontFamily="@font/poppins_medium"
             android:outlineAmbientShadowColor="@color/backgroun"
@@ -156,7 +156,7 @@
     <EditText
         android:id="@+id/nameAct"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_gravity="center|left"
         android:layout_marginEnd="2dp"
         android:background="@drawable/fieldedit"

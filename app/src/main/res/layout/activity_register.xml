@@ -4,50 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroun"
+    android:background="@drawable/background_login"
+
     tools:context=".login">
 
 
     <androidx.cardview.widget.CardView
-
         android:id="@+id/cardViews2"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="-10dp"
-        android:background="@color/backgroun"
         android:foregroundGravity="center"
-        app:cardBackgroundColor="@color/base"
-        app:cardCornerRadius="25dp"
-        app:cardMaxElevation="210dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/transparant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:alpha="0.7"
-            android:fontFamily="@font/poppins_bold"
-            android:paddingTop="10dp"
-            android:text="Daftar"
-            android:textColor="@color/black"
-            android:textSize="18dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:layout_height="match_parent">
 
-        </TextView>
+
 
         <LinearLayout
-            android:layout_width="318dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
             android:alpha="1"
             android:foregroundGravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Daftar"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/backgroun">
+
+            </TextView>
+
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,6 +167,7 @@
 
 
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -243,42 +248,80 @@
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp" />
 
-            <TableRow
+
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:alpha="0.6"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Alamat"
+                android:textColor="@color/black"
+                android:textSize="12dp">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+
+                    android:layout_width="240dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Alamat"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/baseline_location_on_24">
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah Punya Akun?"
+                    android:fontFamily="@font/poppins_italic"
+                    android:textSize="12dp">
+                </TextView>
 
                 <Button
                     android:id="@+id/tv_login"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:background="@color/transparant"
-                    android:text="Sudah Punya Akun?"
-                    android:textColor="@color/app_bar"
-                    android:fontFamily="@font/poppins_italic"
-                    tools:layout_editor_absoluteX="158dp"
-                    tools:layout_editor_absoluteY="391dp"
+                    android:text="Login"
+                    android:textColor="@color/button"
+                    android:fontFamily="@font/poppins_bold"
                     android:textAllCaps="false"
                     android:textSize="12dp"></Button>
 
-                <ImageView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:paddingTop="5dp"
-                    android:src="@drawable/baseline_location_on_24">
-                </ImageView>
-            </TableRow>
-
-
-
+            </LinearLayout>
 
             <Button
                 android:id="@+id/daftar"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="82dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/button"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
@@ -289,19 +332,11 @@
 
 
         </LinearLayout>
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/power"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Powered By Edifarm Company"
-        android:fontFamily="@font/poppins_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViews2" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
