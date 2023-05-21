@@ -49,7 +49,7 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
     GetPostUserDataItem dashboardDataItem;
-    private LottieAnimationView progressBar;
+
     private FragmentPostingUserBinding binding;
 
     @Override
@@ -80,10 +80,7 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
         recyclerView = getView().findViewById(R.id.postuser);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        progressBar = getView().findViewById(R.id.load_titiks);
-        progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
-        progressBar.setVisibility(View.VISIBLE);
-        progressBar.playAnimation();
+
 
         sesionManager = new SesionManager(getContext());
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
@@ -101,8 +98,7 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
                     recyclerView.setAdapter(adapterPostLike);
                     dashboardDataItem = postUserDataItemList.get(0);
                     Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
-                    progressBar.cancelAnimation();
+
                 }
             }
 

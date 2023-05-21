@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.aditiyagilang.edifarm_company.Stalking.FirstFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_stalking">
 
         <action
@@ -18,7 +17,6 @@
     <fragment
         android:id="@+id/Second3Fragment"
         android:name="com.aditiyagilang.edifarm_company.Stalking.Second3Fragment"
-        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_stalking_activity">
 
         <action

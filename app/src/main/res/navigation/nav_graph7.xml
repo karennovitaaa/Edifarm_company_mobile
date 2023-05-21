@@ -18,7 +18,6 @@
     <fragment
         android:id="@+id/Second3Fragment"
         android:name="com.aditiyagilang.edifarm_company.Riwayat.Second3Fragment"
-        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_history">
 
         <action
