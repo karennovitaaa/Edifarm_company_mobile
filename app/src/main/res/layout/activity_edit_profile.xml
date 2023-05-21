@@ -12,61 +12,65 @@
         android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.081">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:padding="16dp"
-                app:cardCornerRadius="50dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.081">
 
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/wishal_profile"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:padding="16dp"
+                    app:cardCornerRadius="50dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0">
+                    app:layout_constraintTop_toTopOf="parent">
 
-                </ImageView>
+                    <ImageView
+                        android:id="@+id/photobio"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:elevation="2dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wishal_profile"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.cardview.widget.CardView>
 
 
-            </androidx.cardview.widget.CardView>
+                <ImageButton
+                    android:id="@+id/editpoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/transparant"
+                    android:elevation="4dp"
+                    android:src="@drawable/icon_pencil"
+                    app:layout_constraintBottom_toBottomOf="@id/cardView3"
+                    app:layout_constraintEnd_toEndOf="@id/cardView3"
+                    app:layout_constraintStart_toStartOf="@id/cardView3"
+                    app:layout_constraintTop_toTopOf="@id/cardView3" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/new_image"-->
-<!--                android:layout_width="25dp"-->
-<!--                android:layout_height="29dp"-->
-<!--                android:layout_marginLeft="50dp"-->
-<!--                android:layout_marginTop="50dp"-->
-<!--                android:src="@drawable/icon_camera"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            </ImageView>-->
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <TableLayout
             android:id="@+id/tableLayout2"
@@ -105,8 +109,8 @@
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/fieldedit"
-                    android:hint="Masukkan Username Anda"
                     android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Username Anda"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:textColor="@android:color/black"
@@ -131,8 +135,8 @@
                     android:id="@+id/nama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="Nama"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -147,9 +151,9 @@
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/fieldedit"
+                    android:fontFamily="@font/poppins_medium"
                     android:hint="Masukkan Nama Anda"
                     android:maxLines="1"
-                    android:fontFamily="@font/poppins_medium"
                     android:padding="10dp"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/darker_gray"
@@ -173,8 +177,8 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="Email"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -189,8 +193,8 @@
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/fieldedit"
-                    android:hint="Masukkan Email Anda"
                     android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Email Anda"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:textColor="@android:color/black"
@@ -230,8 +234,8 @@
                     android:layout_width="243dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins_medium"
                     android:background="@drawable/fieldedit"
+                    android:fontFamily="@font/poppins_medium"
                     android:hint="Masukkan Alamat Anda"
                     android:maxLines="1"
                     android:padding="10dp"
@@ -257,8 +261,8 @@
                     android:id="@+id/nohp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No. HP"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="No. HP"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -272,8 +276,8 @@
                     android:layout_width="243dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
-                    android:fontFamily="@font/poppins_medium"
                     android:background="@drawable/fieldedit"
+                    android:fontFamily="@font/poppins_medium"
                     android:hint="Masukkan No. HP Anda"
                     android:maxLines="1"
                     android:padding="10dp"
@@ -299,8 +303,8 @@
                     android:id="@+id/tgllahir"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tanggal Lahir"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="Tanggal Lahir"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -315,8 +319,8 @@
                     android:layout_height="34dp"
                     android:layout_marginLeft="16dp"
                     android:background="@drawable/fieldedit"
-                    android:hint="Masukkan Tanggal Lahir Anda"
                     android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Tanggal Lahir Anda"
                     android:maxLines="1"
                     android:padding="10dp"
                     android:textColor="@android:color/black"
@@ -337,18 +341,17 @@
             android:id="@+id/textview_editprofil1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_extrabold"
-            android:text="Edit Profil"
-            android:layout_marginBottom="20dp"
-            android:paddingTop="20dp"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="20dp"
-            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:paddingTop="20dp"
+            android:text="Edit Profil"
             android:textColor="@color/backgroun"
+            android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <TableRow
@@ -364,8 +367,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Lokasi"
                 android:paddingLeft="5dp"
+                android:text="Lokasi"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -4,80 +4,168 @@ import com.google.gson.annotations.SerializedName;
 
 public class UpdateBioData {
 
-	@SerializedName("address")
-	private String address;
+    @SerializedName("address")
+    private String address;
 
-	@SerializedName("phone")
-	private String phone;
+    @SerializedName("gender")
+    private String gender;
 
-	@SerializedName("name")
-	private String name;
+    @SerializedName("level")
+    private String level;
 
-	@SerializedName("id")
-	private String id;
+    @SerializedName("latitude")
+    private String latitude;
 
-	@SerializedName("email")
-	private String email;
+    @SerializedName("photo")
+    private String photo;
 
-	@SerializedName("born_date")
-	private String bornDate;
+    @SerializedName("bio")
+    private Object bio;
 
-	@SerializedName("username")
-	private String username;
+    @SerializedName("created_at")
+    private String createdAt;
 
-	public void setAddress(String address){
-		this.address = address;
-	}
+    @SerializedName("updated_at")
+    private String updatedAt;
 
-	public String getAddress(){
-		return address;
-	}
+    @SerializedName("phone")
+    private String phone;
 
-	public void setPhone(String phone){
-		this.phone = phone;
-	}
+    @SerializedName("name")
+    private String name;
 
-	public String getPhone(){
-		return phone;
-	}
+    @SerializedName("id")
+    private int id;
 
-	public void setName(String name){
-		this.name = name;
-	}
+    @SerializedName("born_date")
+    private String bornDate;
 
-	public String getName(){
-		return name;
-	}
+    @SerializedName("email")
+    private String email;
 
-	public void setId(String id){
-		this.id = id;
-	}
+    @SerializedName("username")
+    private String username;
 
-	public String getId(){
-		return id;
-	}
+    @SerializedName("longitude")
+    private String longitude;
 
-	public void setEmail(String email){
-		this.email = email;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public String getEmail(){
-		return email;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setBornDate(String bornDate){
-		this.bornDate = bornDate;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public String getBornDate(){
-		return bornDate;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public void setUsername(String username){
-		this.username = username;
-	}
+    public String getLevel() {
+        return level;
+    }
 
-	public String getUsername(){
-		return username;
-	}
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Object getBio() {
+        return bio;
+    }
+
+    public void setBio(Object bio) {
+        this.bio = bio;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBornDate() {
+        return bornDate;
+    }
+
+    public void setBornDate(String bornDate) {
+        this.bornDate = bornDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
 }

@@ -707,11 +707,6 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                             shareIntent.setType("text/plain");
                             shareIntent.putExtra(Intent.EXTRA_TEXT, shareLink);
 
-                            // Memeriksa dan menambahkan flag FLAG_ACTIVITY_NEW_TASK jika diperlukan
-                            if ((shareIntent.getFlags() & Intent.FLAG_ACTIVITY_NEW_TASK) == 0) {
-                                shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            }
-
                             view.getContext().startActivity(Intent.createChooser(shareIntent, "Share via"));
                         }
                     }
