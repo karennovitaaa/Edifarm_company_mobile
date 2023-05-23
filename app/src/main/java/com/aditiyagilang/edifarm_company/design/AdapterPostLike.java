@@ -147,7 +147,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id);
+                            Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id, user_id);
                             deleteLikeCall.enqueue(new Callback<DeleteLike>() {
                                 @Override
                                 public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
@@ -403,7 +403,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                             like.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id);
+                                    Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id, user_id);
                                     deleteLikeCall.enqueue(new Callback<DeleteLike>() {
                                         @Override
                                         public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
