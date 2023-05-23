@@ -40,7 +40,6 @@
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:itemIconTint="@color/backgroun"
-
         app:itemTextColor="@color/backgroun"
         app:menu="@menu/bottom_navigation">
 
