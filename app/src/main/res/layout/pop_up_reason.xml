@@ -26,7 +26,6 @@
             android:textAllCaps="false"
             android:textColor="@color/backgroun"
             android:textSize="20dp">
-
         </TextView>
 
         <com.airbnb.lottie.LottieAnimationView

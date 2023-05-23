@@ -48,7 +48,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
                 android:src="@drawable/post"></com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
@@ -89,15 +89,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="27dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="74dp"
                 android:layout_marginRight="13dp"
                 android:layout_marginBottom="11dp"
                 android:layout_toEndOf="@+id/textProfils"
                 android:alpha="0.7"
                 android:fontFamily="@font/poppins_light"
-                android:paddingLeft="10dp"
                 android:text="1-3-3032"
                 android:textColor="@color/black"
                 android:textSize="10dp">

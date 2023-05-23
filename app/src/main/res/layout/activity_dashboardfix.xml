@@ -52,6 +52,19 @@
                 app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:id="@+id/action_search"
+                android:icon="@drawable/search_p"
+                android:title="Search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </SearchView>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
