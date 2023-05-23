@@ -35,7 +35,7 @@
                     android:id="@+id/imageProfilPosting"
                     android:layout_width="50dp"
                     android:layout_height="53dp"
-                    android:scaleType="centerCrop"
+                    android:scaleType="center"
                     android:src="@drawable/wishal_profile" />
 
             </androidx.cardview.widget.CardView>
@@ -48,7 +48,12 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
+<<<<<<< HEAD
                 android:scaleType="center"
+=======
+                android:scaleType="centerCrop"
+
+>>>>>>> abbbff637735ac5e796b2e24a80a733749194b1a
                 android:src="@drawable/post"></com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
@@ -59,9 +64,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
+                android:alpha="0.7"
                 android:fontFamily="@font/poppins_medium"
                 android:paddingTop="0dp"
-                android:alpha="0.7"
                 android:text="allahuakbar"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
@@ -151,8 +156,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/new_comment">
-                </ImageButton>
+                    android:src="@drawable/new_comment"></ImageButton>
 
                 <TextView
                     android:id="@+id/jumlahh_comment"
@@ -161,11 +165,12 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="4dp"
+                    android:alpha="0.7"
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="left"
                     android:text="0"
-                    android:alpha="0.7"
                     android:textColor="@color/black"></TextView>
+
                 <ImageButton
                     android:id="@+id/like_button"
                     android:layout_width="wrap_content"
@@ -174,8 +179,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/heart77"
-                    android:onClick="coment">
+                    android:onClick="coment"
+                    android:src="@drawable/heart77">
 
                 </ImageButton>
 
@@ -186,9 +191,9 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
+                    android:alpha="0.7"
                     android:fontFamily="@font/poppins_medium"
                     android:text="0"
-                    android:alpha="0.7"
                     android:textColor="@color/black">
 
                 </TextView>
