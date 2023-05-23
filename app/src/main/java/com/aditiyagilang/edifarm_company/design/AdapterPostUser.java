@@ -72,8 +72,8 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         final GetPostUserDataItem item = dataList.get(position);
         String textProfil = String.valueOf(item.getUserId());
         String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
-        String imageUrl = "https://82fa-103-160-182-11.ngrok-free.app/" + fotoProfil;
-        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
+        String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
+        String url = "http://edifarm.yoganova.my.id/";
 
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());

@@ -15,9 +15,9 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-10dp"
         android:foregroundGravity="center"
+        app:cardBackgroundColor="@color/transparant"
         app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/transparant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,317 +26,309 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:paddingTop="20dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="20dp">
 
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:alpha="1"
-            android:foregroundGravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Daftar"
-                android:fontFamily="@font/poppins_bold"
-                android:layout_marginBottom="20dp"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:textColor="@color/backgroun">
-
-            </TextView>
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Username"
-                android:alpha="0.6"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_bold">
-
-            </TextView>
-
-
-            <EditText
-                android:id="@+id/username_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-
-                android:background="@drawable/field"
-                android:fontFamily="@font/poppins_medium"
-                android:hint="Masukkan Username"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.22" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Nama"
-                android:alpha="0.6"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                >
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/name_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan Nama"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Tanggal Lahir"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:alpha="0.6">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/born_date_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan Tanggal Lahir"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="No Telpon"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:alpha="0.6">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/phone_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan No Telpon"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Email"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:alpha="0.6">
-
-            </TextView>
-
-
-            <EditText
-                android:id="@+id/email_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan email"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Password"
-                android:fontFamily="@font/poppins_bold"
-                android:alpha="0.6"
-                android:textColor="@color/black"
-                android:textSize="12dp">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/password_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/field"
-                android:hint="Masukkan password"
-                android:fontFamily="@font/poppins_medium"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Konfirmasi Password"
-                android:textColor="@color/black"
-                android:textSize="12dp"
-                android:fontFamily="@font/poppins_bold"
-                android:alpha="0.6">
-
-            </TextView>
-
-            <EditText
-                android:id="@+id/cpassword_field"
-                android:layout_width="275dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/field"
-                android:hint="Ulangi Password"
-                android:inputType="textPassword"
-                android:fontFamily="@font/poppins_medium"
-                android:maxLines="1"
-                android:padding="4dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/darker_gray"
-                android:textSize="10sp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:alpha="0.6"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Alamat"
-                android:textColor="@color/black"
-                android:textSize="12dp">
-
-            </TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:alpha="1"
+                android:foregroundGravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:text="Daftar"
+                    android:textColor="@color/backgroun"
+                    android:textSize="20dp">
+
+                </TextView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Username"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
 
                 <EditText
-
-                    android:layout_width="240dp"
+                    android:id="@+id/username_field"
+                    android:layout_width="275dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="5dp"
+
                     android:background="@drawable/field"
                     android:fontFamily="@font/poppins_medium"
-                    android:hint="Masukkan Alamat"
+                    android:hint="Masukkan Username"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.22" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Nama"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/name_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Nama"
                     android:maxLines="1"
                     android:padding="4dp"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/darker_gray"
                     android:textSize="10sp" />
 
-                <ImageView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="5dp"
-                    android:src="@drawable/baseline_location_on_24">
-                </ImageView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sudah Punya Akun?"
-                    android:fontFamily="@font/poppins_italic"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Tanggal Lahir"
+                    android:textColor="@color/black"
                     android:textSize="12dp">
+
                 </TextView>
 
-                <Button
-                    android:id="@+id/tv_login"
+                <EditText
+                    android:id="@+id/born_date_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan Tanggal Lahir"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:background="@color/transparant"
-                    android:text="Login"
-                    android:textColor="@color/button"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
                     android:fontFamily="@font/poppins_bold"
+                    android:text="No Telpon"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/phone_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan No Telpon"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+
+                <EditText
+                    android:id="@+id/email_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan email"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Password"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/password_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Masukkan password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Konfirmasi Password"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/cpassword_field"
+                    android:layout_width="275dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/field"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Ulangi Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="4dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textSize="10sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.6"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Alamat"
+                    android:textColor="@color/black"
+                    android:textSize="12dp">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="240dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/field"
+                        android:fontFamily="@font/poppins_medium"
+                        android:hint="Masukkan Alamat"
+                        android:maxLines="1"
+                        android:padding="4dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:textSize="10sp" />
+
+                    <ImageButton
+                        android:id="@+id/baddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:src="@drawable/baseline_location_on_24"></ImageButton>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_italic"
+                        android:text="Sudah Punya Akun?"
+                        android:textSize="12dp"></TextView>
+
+                    <Button
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:background="@color/transparant"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/button"
+                        android:textSize="12dp"></Button>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/daftar"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="82dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/button"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Daftar"
                     android:textAllCaps="false"
-                    android:textSize="12dp"></Button>
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp" />
+
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/daftar"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="82dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/button"
-                android:fontFamily="@font/poppins_medium"
-                android:gravity="center"
-                android:text="Daftar"
-                android:textColor="@android:color/background_light"
-                android:textSize="14sp"
-                android:textAllCaps="false"/>
-
-
-        </LinearLayout>
         </ScrollView>
 
     </androidx.cardview.widget.CardView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

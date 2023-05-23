@@ -1,2 +1,4 @@
-package com.aditiyagilang.edifarm_company;public class Notivication {
+package com.aditiyagilang.edifarm_company;
+
+public class Notivication {
 }

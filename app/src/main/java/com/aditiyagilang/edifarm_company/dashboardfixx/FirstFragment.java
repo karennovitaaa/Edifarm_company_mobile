@@ -92,6 +92,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
         progressBar.setVisibility(View.VISIBLE);
         progressBar.playAnimation();
+
 //        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
 
 
@@ -139,13 +140,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     public void onClick(View v) {
 
 
-//        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(FirstFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
     }
 
     @Override

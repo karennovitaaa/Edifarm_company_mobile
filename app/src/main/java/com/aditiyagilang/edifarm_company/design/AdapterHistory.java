@@ -169,7 +169,7 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.AdapterH
 
     private void downloadReport(String reportId, String pdf) {
         // Buat URL endpoint untuk mengunduh laporan
-        String baseUrl = "https://82fa-103-160-182-11.ngrok-free.app/api/reports/";
+        String baseUrl = "http://edifarm.yoganova.my.id/api/reports/";
         String downloadUrl = baseUrl + reportId;
 
         // Buat permintaan pengunduhan menggunakan DownloadManager

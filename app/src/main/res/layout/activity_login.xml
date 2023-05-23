@@ -39,9 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="Masuk"
-                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textSize="24dp"
                 android:textStyle="bold"
@@ -57,11 +57,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:alpha="0.7"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="Username"
-                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
-                android:alpha="0.7"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -79,8 +79,8 @@
                 android:layout_height="40dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/field"
-                android:hint="             Masukkan Username"
                 android:fontFamily="@font/poppins_light"
+                android:hint="             Masukkan Username"
                 android:maxLines="1"
                 android:padding="5dp"
                 android:textColor="@android:color/black"
@@ -105,10 +105,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:alpha="0.7"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="Password"
-                android:fontFamily="@font/poppins_medium"
-                android:alpha="0.7"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:textStyle="bold"
@@ -127,6 +127,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/field"
+                android:fontFamily="@font/poppins_light"
                 android:hint="            Masukkan Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
@@ -134,7 +135,6 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:textSize="10sp"
-                android:fontFamily="@font/poppins_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.513"
@@ -146,37 +146,54 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.872"
-                android:layout_marginTop="50dp">
+                app:layout_constraintVertical_bias="0.872">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="Belum Punya Akun?"
                     android:fontFamily="@font/poppins_light"
-                    android:textSize="12dp"
-                    android:textColor="@color/black"></TextView>
+                    android:text="Belum Punya Akun?"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"></TextView>
+
 
                 <TextView
                     android:id="@+id/daftar1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/poppins_mediumitalic"
                     android:onClick="daftar"
                     android:text="Daftar"
-                    android:textSize="12dp"
                     android:textColor="@color/button"
-                    android:fontFamily="@font/poppins_mediumitalic">
+                    android:textSize="12dp">
 
                 </TextView>
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/lupapas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/transparant"
+                android:text="Lupa Password"
+                android:textColor="@color/button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.948">
+
+            </Button>
 
             <ImageView
                 android:id="@+id/view"
@@ -184,8 +201,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/view1"
                 tools:layout_editor_absoluteX="47dp"
-                tools:layout_editor_absoluteY="255dp"
-                ></ImageView>
+                tools:layout_editor_absoluteY="255dp"></ImageView>
 
             <Button
                 android:id="@+id/login"
@@ -195,8 +211,8 @@
                 android:backgroundTint="@color/button"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:textAllCaps="false"
                 android:text="Masuk"
+                android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -230,22 +246,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Powered By Edifarm Company"
         android:fontFamily="@font/poppins_medium"
+        android:text="Powered By Edifarm Company"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViews2" />
 
-<!--    <com.airbnb.lottie.LottieAnimationView-->
-<!--        android:id="@+id/load_titik"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_gravity="center"-->
-<!--        app:lottie_autoPlay="true"-->
-<!--        app:lottie_loop="true"-->
-<!--        app:lottie_rawRes="@raw/load_titik">-->
+    <!--    <com.airbnb.lottie.LottieAnimationView-->
+    <!--        android:id="@+id/load_titik"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        app:lottie_autoPlay="true"-->
+    <!--        app:lottie_loop="true"-->
+    <!--        app:lottie_rawRes="@raw/load_titik">-->
 
-<!--    </com.airbnb.lottie.LottieAnimationView>-->
+    <!--    </com.airbnb.lottie.LottieAnimationView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

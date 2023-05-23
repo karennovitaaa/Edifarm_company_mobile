@@ -62,7 +62,7 @@ public class Biographical extends AppCompatActivity {
         setSupportActionBar(binding.toolbar); // Menambahkan ini untuk mengatur ActionBar
         sesionManager = new SesionManager(this);
         profil = findViewById(R.id.imageprofile);
-        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
+        String url = "http://edifarm.yoganova.my.id/";
         String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
         String imageUrl = url + fotoProfil;
         Picasso.get().load(imageUrl).into(profil);

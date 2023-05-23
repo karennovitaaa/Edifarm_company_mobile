@@ -79,18 +79,18 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
         final GetPostLikeDataItem item = dataList.get(position);
         String textProfil = String.valueOf(item.getUserId());
         String fotoProfil = item.getPhoto();
-        String imageUrl = "https://40a3-118-99-83-51.ngrok-free.app/" + fotoProfil;
+        String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
 
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
-        String imageUrlP = "https://40a3-118-99-83-51.ngrok-free.app/" + gambarpost;
+        String imageUrlP = "http://edifarm.yoganova.my.id/" + gambarpost;
         String textCaption = String.valueOf(item.getCaption());
         String akunname = item.getUsername();
         String tanggals = item.getCreatedAt().substring(0, 10);
         String cap = item.getCaption();
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         String post_id = String.valueOf(dataList.get(position).getId());
-        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
+        String url = "http://edifarm.yoganova.my.id/";
         String email = item.getEmail();
         String name = item.getName();
         String latitude = item.getLatitude();

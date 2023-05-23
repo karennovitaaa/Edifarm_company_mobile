@@ -6,6 +6,7 @@ import com.aditiyagilang.edifarm_company.model.AddComment.AddComment;
 import com.aditiyagilang.edifarm_company.model.AddRating.AddRating;
 import com.aditiyagilang.edifarm_company.model.AddReason.AddReason;
 import com.aditiyagilang.edifarm_company.model.CekUserRating.CekUserRating;
+import com.aditiyagilang.edifarm_company.model.ChangePassword;
 import com.aditiyagilang.edifarm_company.model.ClearSession.ClearSession;
 import com.aditiyagilang.edifarm_company.model.CountComment.CountComment;
 import com.aditiyagilang.edifarm_company.model.CountLike.CountLike;
@@ -20,6 +21,7 @@ import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUser;
 import com.aditiyagilang.edifarm_company.model.GetRate.GetRating;
 import com.aditiyagilang.edifarm_company.model.History.History;
 import com.aditiyagilang.edifarm_company.model.Like.Like;
+import com.aditiyagilang.edifarm_company.model.OTP.OTP;
 import com.aditiyagilang.edifarm_company.model.PosActivity.PostActivity;
 import com.aditiyagilang.edifarm_company.model.Posting.Posting;
 import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcount;
@@ -35,6 +37,7 @@ import com.aditiyagilang.edifarm_company.model.documentation.Documentation;
 import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
 import com.aditiyagilang.edifarm_company.model.getSession.GetSession;
 import com.aditiyagilang.edifarm_company.model.login.Login;
+import com.aditiyagilang.edifarm_company.model.pass.Pas;
 import com.aditiyagilang.edifarm_company.model.register.Register;
 import com.aditiyagilang.edifarm_company.model.sharelink.Share;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
@@ -68,7 +71,9 @@ public interface ApiInterface {
             @Field("password") String password,
             @Field("born_date") String born_date,
             @Field("email") String email,
-            @Field("confirm_password") String confirm_password
+            @Field("confirm_password") String confirm_password,
+            @Field("latitude") String latitude,
+            @Field("longitude") String longitude
     );
 
     @Multipart
@@ -103,6 +108,26 @@ public interface ApiInterface {
     Call<GetFullActivity> actFullResponse(
             @Field("user_id") String user_id
 
+    );
+
+    @FormUrlEncoded
+    @POST("checkEmail")
+    Call<Pas> checkEmailResponse(
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("checkOtp")
+    Call<OTP> checkOtpResponse(
+            @Field("otp") String otp
+    );
+
+    @FormUrlEncoded
+    @POST("gantiPassword")
+    Call<ChangePassword> gantiPasswordResponse(
+            @Field("otp") String otp,
+            @Field("password") String password,
+            @Field("confirm_password") String confirm_password
     );
 
     @FormUrlEncoded
