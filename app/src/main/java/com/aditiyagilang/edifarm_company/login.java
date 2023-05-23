@@ -30,6 +30,7 @@ import com.aditiyagilang.edifarm_company.model.pass.Pas;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -157,6 +158,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                                     String pass = changepass.getText().toString();
                                     String confpass = changepassconfirm.getText().toString();
                                     String otp = otps;
+
                                     apiInterface = ApiClient.getClient().create(ApiInterface.class);
                                     Call<ChangePassword> loginCall = apiInterface.gantiPasswordResponse(otp, pass, confpass);
                                     loginCall.enqueue(new Callback<ChangePassword>() {

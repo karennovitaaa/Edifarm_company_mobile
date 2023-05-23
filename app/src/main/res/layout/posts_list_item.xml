@@ -48,7 +48,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
 
                 android:src="@drawable/post"></com.google.android.material.imageview.ShapeableImageView>
 
@@ -176,8 +176,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
-                    android:onClick="coment"
-                    android:src="@drawable/heart77">
+                    android:onClick="coment">
 
                 </ImageButton>
 

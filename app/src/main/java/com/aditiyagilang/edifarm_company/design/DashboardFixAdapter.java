@@ -148,7 +148,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                     // update the activity status locally
                     ImageButton likeButton = holder.like.findViewById(R.id.like_button);
-                    likeButton.setBackgroundResource(R.drawable.like_red);
+                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -157,7 +157,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                             deleteLikeCall.enqueue(new Callback<DeleteLike>() {
                                 @Override
                                 public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_white);
+                                    likeButton.setBackgroundResource(R.drawable.heart77);
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
@@ -165,7 +165,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                                                     reloadData();
                                                 }
@@ -207,7 +207,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 } else {
 
                     ImageButton likeButton = holder.like.findViewById(R.id.like_button);
-                    likeButton.setBackgroundResource(R.drawable.like_white);
+                    likeButton.setBackgroundResource(R.drawable.heart77);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -216,7 +216,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                    likeButton.setBackgroundResource(R.drawable.heart7);
                                     Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
                                     countLikeCall.enqueue(new Callback<CountLike>() {
                                         @Override
@@ -576,7 +576,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                     public void onResponse(Call<GetLike> call, Response<GetLike> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                             // update the activity status locally
-                            like.setBackgroundResource(R.drawable.like_red);
+                            like.setBackgroundResource(R.drawable.heart7);
 
                             like.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -593,7 +593,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                                         @Override
                                                         public void onResponse(Call<Like> call, Response<Like> response) {
-                                                            like.setBackgroundResource(R.drawable.like_red);
+                                                            like.setBackgroundResource(R.drawable.heart7);
 
                                                             reloadData();
                                                         }
@@ -642,7 +642,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                         @Override
                                         public void onResponse(Call<Like> call, Response<Like> response) {
-                                            like.setBackgroundResource(R.drawable.like_red);
+                                            like.setBackgroundResource(R.drawable.heart7);
                                             Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
                                             countLikeCall.enqueue(new Callback<CountLike>() {
                                                 @Override
