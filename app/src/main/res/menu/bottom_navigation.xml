@@ -17,7 +17,7 @@
     <item
         android:id="@+id/bottom_plus"
 
-        android:icon="@drawable/icon_nature"
+        android:icon="@drawable/leaves"
         android:tint="@color/backgroun"
         android:title="Sesi" />
 

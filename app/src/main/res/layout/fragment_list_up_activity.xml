@@ -12,8 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-
-        >
+        android:layout_marginRight="15dp">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -22,11 +21,12 @@
             <EditText
                 android:id="@+id/searchedit"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@drawable/fieldedit"
                 android:hint="Cari Kegiatan Anda"
                 android:padding="5dp"
+                android:textSize="12dp"
                 android:paddingLeft="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
@@ -36,14 +36,12 @@
 
             <ImageButton
                 android:id="@+id/search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center|right"
-
-                android:layout_marginRight="20dp"
-
+                android:layout_marginRight="10dp"
                 android:background="@color/transparant"
-                android:src="@drawable/search">
+                android:src="@drawable/search_p">
 
             </ImageButton>
         </TableRow>

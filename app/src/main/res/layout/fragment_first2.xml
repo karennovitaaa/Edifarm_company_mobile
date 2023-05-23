@@ -26,67 +26,86 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView6"
-                android:layout_width="330dp"
-                android:layout_height="145dp"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="@color/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.14">
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="true">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:alpha="0.8"
+                        android:alpha="0.9"
+                        android:layout_marginLeft="20dp"
                         android:fontFamily="@font/poppins_bold"
                         android:text="Segera dilakukan:"
-                        android:textColor="@color/white"
-                        android:textSize="11dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.031"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.09">
+                        android:textColor="@color/backgroun"
+                        android:textSize="20dp">
 
                     </TextView>
+                    <TextView
+                        android:id="@+id/jam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="23:50 WIB"
+                        android:textColor="@color/backgroun"
+                        android:textSize="10dp"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/rec"
+                        android:layout_gravity="center"
+                        android:paddingTop="30dp"
+                        android:paddingLeft="20dp">
+                    </ImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.9"
                         android:fontFamily="@font/poppins_bold"
-
                         android:text="Penyiraman"
                         android:textColor="@color/font_card_activity"
-                        android:textSize="15dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.112"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.442">
+                        android:textSize="18dp"
+                        >
 
                     </TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:alpha="0.7"
+                        android:alpha="0.5"
                         android:fontFamily="@font/poppins_bold"
-
-                        android:text="Penyiraman dilakukan \n menggunakan air danau suci"
+                        android:text="Penyiraman dilakukan \nmenggunakan air danau suci"
                         android:textColor="@color/font_card_activity"
-                        android:textSize="9dp"
+                        android:textSize="11dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.147"
@@ -95,45 +114,29 @@
                         app:layout_constraintVertical_bias="0.78">
 
                     </TextView>
+                </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/jam"
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:alpha="0.7"
-                        android:fontFamily="@font/poppins_bold"
-
-                        android:text="23:50 WIB"
-                        android:textColor="@color/font_card_activity"
-                        android:textSize="9dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.877"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.116">
-
-                    </TextView>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+                        android:src="@drawable/farmss"
+                        android:layout_gravity="bottom"
+                        android:alpha="0.5"
+                        android:layout_marginLeft="40dp"
+                        android:elevation="10dp">
+                    </ImageView>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView7"
-                android:layout_width="317dp"
+                android:layout_width="370dp"
                 android:layout_height="70dp"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="@color/app_bar"
+                app:cardBackgroundColor="@color/backgroun"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.29">
+                app:cardUseCompatPadding="true">
 
                 <TextView
                     android:id="@+id/tanggal"
@@ -142,7 +145,8 @@
                     android:fontFamily="@font/poppins_bold"
                     android:gravity="center"
                     android:text="1 Oktober 2021"
-                    android:textColor="@color/font_card_activity"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
                     android:textSize="15dp">
 
                 </TextView>
