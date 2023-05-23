@@ -30,7 +30,6 @@ import com.aditiyagilang.edifarm_company.model.pass.Pas;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

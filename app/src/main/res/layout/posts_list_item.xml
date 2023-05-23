@@ -13,18 +13,15 @@
         android:layout_marginVertical="2dp"
         android:background="@color/white"
         app:cardCornerRadius="5dp"
-        app:cardElevation="8dp"
+        app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="12dp">
 
-
         <RelativeLayout
-
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@color/white">
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewPost"
@@ -37,12 +34,11 @@
                 <ImageButton
                     android:id="@+id/imageProfilPosting"
                     android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_height="53dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/wishal_profile" />
 
             </androidx.cardview.widget.CardView>
-
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/listImagePosting"
@@ -53,9 +49,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/post">
-
-            </com.google.android.material.imageview.ShapeableImageView>
+                android:src="@drawable/post"></com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
                 android:id="@+id/text_caption"
@@ -67,6 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:paddingTop="0dp"
+                android:alpha="0.7"
                 android:text="allahuakbar"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
@@ -93,13 +88,14 @@
                 android:id="@+id/text_tanggal_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/listImagePosting"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="27dp"
                 android:layout_marginEnd="74dp"
                 android:layout_marginRight="13dp"
                 android:layout_marginBottom="11dp"
+                android:layout_toEndOf="@+id/textProfils"
+                android:alpha="0.7"
                 android:fontFamily="@font/poppins_light"
                 android:paddingLeft="10dp"
                 android:text="1-3-3032"
@@ -110,15 +106,15 @@
 
             <ImageButton
                 android:id="@+id/button_reason"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="180dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="17dp"
                 android:layout_marginTop="22dp"
                 android:layout_marginRight="10dp"
-                android:layout_toEndOf="@+id/textProfils"
+                android:layout_toEndOf="@+id/text_tanggal_post"
                 android:backgroundTint="@color/transparant"
                 android:paddingRight="10dp"
-                android:src="@drawable/danger" />
+                android:src="@drawable/report3" />
 
             <LinearLayout
                 android:id="@+id/linear_icons"
@@ -128,7 +124,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="right"
                 android:layout_marginLeft="6dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="23dp"
                 android:layout_marginBottom="10dp"
@@ -141,10 +137,10 @@
                     android:layout_height="30dp"
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
-
+                    android:layout_marginRight="20dp"
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/coment">
+                    android:src="@drawable/share_link">
 
                 </ImageButton>
 
@@ -156,10 +152,8 @@
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/coment">
-
+                    android:src="@drawable/new_comment">
                 </ImageButton>
-
 
                 <TextView
                     android:id="@+id/jumlahh_comment"
@@ -171,8 +165,8 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="left"
                     android:text="0"
+                    android:alpha="0.7"
                     android:textColor="@color/black"></TextView>
-
                 <ImageButton
                     android:id="@+id/like_button"
                     android:layout_width="wrap_content"
@@ -181,6 +175,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/white"
+                    android:src="@drawable/heart77"
                     android:onClick="coment">
 
                 </ImageButton>
@@ -194,6 +189,7 @@
                     android:layout_marginRight="5dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="0"
+                    android:alpha="0.7"
                     android:textColor="@color/black">
 
                 </TextView>
