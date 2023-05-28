@@ -2,6 +2,7 @@ package com.aditiyagilang.edifarm_company.design;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,12 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
 
         holder.nama_kegiatan.setText(activity_name);
         holder.status.setText(status1);
+        if (status1.equals("selesai")) {
+            holder.status.setBackgroundColor(Color.WHITE);
+            holder.status.setTextColor(Color.BLACK);
+
+            holder.status.setEnabled(false);
+        }
         holder.planName.setText(plantname);
         holder.activityDataItem = item;
 
@@ -83,6 +90,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
                 if (listener != null) {
                     listener.onStatusClick(ActivityAdapter.this, view, position, item);
                     klaim(Id);
+                    holder.status.setBackgroundColor(Color.WHITE);
                 }
             }
         });
@@ -97,6 +105,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
                     // update the activity status locally
 
                     notifyDataSetChanged();
+
                     Toast.makeText(context, response.body().getMessage() + "Mari Gess", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();

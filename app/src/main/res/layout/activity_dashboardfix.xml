@@ -15,26 +15,26 @@
         android:background="@drawable/shape_rectangle_dashboard"
         android:elevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:elevation="0dp">
+        app:layout_constraintTop_toTopOf="parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="17dp"
-                android:text="Edifarm"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="16dp"
                 android:gravity="center"
+                android:textAlignment="center"
+                android:text="Edifarm"
                 android:textColor="@color/white"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
@@ -43,26 +43,16 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
+                android:textAlignment="center"
                 android:src="@drawable/logo_baru"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
 
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:id="@+id/action_search"
-                android:icon="@drawable/search_p"
-                android:title="Search"
-                android:layout_marginLeft="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </SearchView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -76,26 +66,27 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_margin="40dp"
-                >
+                android:layout_margin="40dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:background="@color/transparant">
+                    android:background="@color/transparant"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/selecte"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Dashboard"
                         android:background="@color/transparant"
+                        android:backgroundTint="@color/backgroun"
+                        android:elevation="0dp"
+                        android:text="Dashboard"
                         android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:backgroundTint="@color/transparant"
-                        android:elevation="0dp">
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/white">
+
 
                     </Button>
 
@@ -105,14 +96,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        android:elevation="0dp"
                         android:gravity="center"
                         android:text="feeds"
                         android:textAllCaps="false"
-                        android:elevation="0dp"
-                        android:background="@color/transparant"
-                        android:layout_marginLeft="30dp"
-                        android:backgroundTint="@color/transparant"
-                        android:textColor="@color/base">
+                        android:textColor="@color/white">
+
 
                     </Button>
 

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/background_login"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Splash2">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -13,13 +15,14 @@
         android:layout_gravity="center|top">
     </ImageView>
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Powered by Edifarm Company"
         android:fontFamily="@font/poppins_medium"
+        android:text="Powered by Edifarm Company"
         android:textColor="@color/base"
-        android:paddingTop="190dp"
+        android:paddingTop="100dp"
         android:textSize="15dp">
 
     </TextView>

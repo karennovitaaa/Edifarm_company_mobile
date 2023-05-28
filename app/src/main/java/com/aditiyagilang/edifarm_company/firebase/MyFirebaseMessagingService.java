@@ -21,6 +21,7 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+    private String fcmToken;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -42,7 +43,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(@NonNull String token) {
         Log.d(TAG, "Refreshed token: " + token);
+        fcmToken = token;
 
+    }
+
+    public String getToken() {
+        return fcmToken;
     }
 
     private void sendNotification(String messageBody) {

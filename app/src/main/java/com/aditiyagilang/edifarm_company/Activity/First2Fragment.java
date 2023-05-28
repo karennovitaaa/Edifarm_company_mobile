@@ -156,6 +156,8 @@ public class First2Fragment extends Fragment implements View.OnClickListener, Ac
 
 
         addAct.setOnClickListener(this);
+
+
     }
 
 //    String Id;

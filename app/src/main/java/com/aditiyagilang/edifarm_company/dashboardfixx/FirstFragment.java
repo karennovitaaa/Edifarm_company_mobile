@@ -1,11 +1,15 @@
 package com.aditiyagilang.edifarm_company.dashboardfixx;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +45,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     ImageButton likeButton;
     TextView jumlahLike;
     TextView jumlahComment;
+    EditText filter;
     TextView caption;
     RecyclerView recyclerView;
     SesionManager sesionManager;
@@ -48,10 +53,11 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
     ApiInterface apiInterface;
     DashboardDataItem dashboardDataItem;
     ImageButton add_post;
+    SearchView search;
+    ImageButton searching;
+    private DashboardFixAdapter dashboardFixAdapter;
     private FragmentPostingSosmedBinding binding;
     private LottieAnimationView progressBar;
-
-// Dalam metode onViewCreated, dapatkan referensi ke LottieAnimationView dan atur animasi dan opsi lainnya
 
     @Override
     public View onCreateView(
@@ -62,19 +68,12 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         binding = FragmentPostingSosmedBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
-//        binding = FragmentFirstBinding.inflate(inflater, container, false);
-//        return binding.getRoot();
-
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         add_post = getView().findViewById(R.id.add_postings);
-//        fotoProfil = getView().findViewById(R.id.imageProfilPost);
-//        namaAkun = getView().findViewById(R.id.textProfil);
         reportButton = getView().findViewById(R.id.button_reason);
-//        gambarPosting = getView().findViewById(R.id.listImagePost);
         tanggalPost = getView().findViewById(R.id.text_tanggal_post);
         commentButton = getView().findViewById(R.id.comment_button);
         likeButton = getView().findViewById(R.id.like_button);
@@ -87,6 +86,26 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        filter = getView().findViewById(R.id.action_search);
+
+
+//        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String key) {
+//                key = search.getQuery().toString();
+//                // Panggil metode filter dengan kata kunci pencarian
+//                dashboardFixAdapter.filter(key);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                // Tidak perlu melakukan apa-apa saat teks berubah
+//                return false;
+//            }
+//        });
+
+
 //        loadingIndicator = getView().findViewById(R.id.load_titiks);
         progressBar = getView().findViewById(R.id.load_titiku);
         progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
@@ -94,8 +113,25 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
         progressBar.playAnimation();
 
 //        String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
+        filter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                dashboardFixAdapter.getfilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
+        list();
         binding.addPostings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,23 +139,22 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
                         .navigate(R.id.action_FirstFragment_to_NewPost);
             }
         });
-        // Panggil kembali API setiap 5 detik
 
+    }
 
+    private void list() {
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         Call<DashboardModel> dashCall = apiInterface.GetPostResponse(user_id);
         dashCall.enqueue(new Callback<DashboardModel>() {
             @Override
             public void onResponse(Call<DashboardModel> call, Response<DashboardModel> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-
-
                     List<DashboardDataItem> dashboardDataItemList = response.body().getData();
-                    DashboardFixAdapter dashboardfixAdapter = new DashboardFixAdapter(requireContext(), dashboardDataItemList, FirstFragment.this);
+                    dashboardFixAdapter = new DashboardFixAdapter(requireContext(), dashboardDataItemList, FirstFragment.this);
+                    recyclerView.setAdapter(dashboardFixAdapter);
 
-
-                    recyclerView.setAdapter(dashboardfixAdapter);
-                    dashboardDataItem = dashboardDataItemList.get(0);
+                    // Setelah mengatur adapter, tambahkan pemanggilan metode getfilter()
+                    dashboardFixAdapter.getfilter();
 
                     progressBar.setVisibility(View.GONE);
                     progressBar.cancelAnimation();
@@ -131,8 +166,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
 
             }
         });
-
-
     }
 
 

@@ -46,7 +46,7 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
     SesionManager sesionManager;
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
-    GetPostLikeDataItem dashboardDataItem;
+    GetPostLikeDataItem dgetPostDataItem;
     private FragmentPostingSosmedBinding binding;
 
     @Override
@@ -77,11 +77,17 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
 
                     List<GetPostLikeDataItem> postLikeDataItemList = response.body().getData();
-                    AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), postLikeDataItemList, PostingUser.this);
+//                    AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), postLikeDataItemList, PostingUser.this);
 
 
-                    recyclerView.setAdapter(adapterPostLike);
-                    dashboardDataItem = postLikeDataItemList.get(0);
+//                    recyclerView.setAdapter(adapterPostLike);
+                    if (!postLikeDataItemList.isEmpty()) {
+                        AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), postLikeDataItemList, PostingUser.this);
+                        recyclerView.setAdapter(adapterPostLike);
+                        dgetPostDataItem = postLikeDataItemList.get(0);
+                    } else {
+                        Toast.makeText(getContext(), "Ga Posting Paling", Toast.LENGTH_SHORT).show();
+                    }
                     Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -91,13 +97,8 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
 
             }
         });
-//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(PostingUser.this)
-//                        .navigate(com.aditiyagilang.edifarm_company.R.id.action_Second3Fragment_to_First3Fragment);
-//            }
-//        });
+
+
     }
 
     @Override

@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
+import com.aditiyagilang.edifarm_company.firebase.MyFirebaseMessagingService;
 import com.aditiyagilang.edifarm_company.model.ChangePassword;
 import com.aditiyagilang.edifarm_company.model.OTP.OTP;
 import com.aditiyagilang.edifarm_company.model.login.Login;
@@ -30,6 +31,7 @@ import com.aditiyagilang.edifarm_company.model.pass.Pas;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,9 +43,11 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     TextView tv_daftar;
     ApiInterface apiInterface;
     SesionManager sesionManager;
+    MyFirebaseMessagingService myFirebaseMessagingService;
     Button lupapass;
 
     Button btn_login;
+    private String token;
 
 
     @SuppressLint("MissingInflatedId")
@@ -52,7 +56,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        myFirebaseMessagingService = new MyFirebaseMessagingService();
         // Mendapatkan referensi ke EditText untuk username dan password
         usernameField = findViewById(R.id.username);
         passwordField = findViewById(R.id.password);
@@ -62,6 +66,23 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         tv_daftar.setOnClickListener(this);
         btn_login.setOnClickListener(this);
         lupapass.setOnClickListener(this);
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("FOM", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        token = task.getResult();
+
+
+                        Log.d("FOM", token);
+                        Toast.makeText(login.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
@@ -70,7 +91,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login:
                 Username = usernameField.getText().toString();
                 Password = passwordField.getText().toString();
-                login(Username, Password);
+                String Fcm_token = token;
+                login(Username, Password, Fcm_token);
                 break;
 
             case R.id.daftar1:
@@ -156,6 +178,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                                     String pass = changepass.getText().toString();
                                     String confpass = changepassconfirm.getText().toString();
                                     String otp = otps;
+
                                     apiInterface = ApiClient.getClient().create(ApiInterface.class);
                                     Call<ChangePassword> loginCall = apiInterface.gantiPasswordResponse(otp, pass, confpass);
                                     loginCall.enqueue(new Callback<ChangePassword>() {
@@ -205,10 +228,10 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    private void login(String username, String password) {
+    private void login(String username, String password, String fcm_token) {
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<Login> loginCall = apiInterface.loginresponse(username, password);
+        Call<Login> loginCall = apiInterface.loginresponse(username, password, fcm_token);
         loginCall.enqueue(new Callback<Login>() {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
@@ -217,23 +240,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                     LoginData loginData = response.body().getData();
                     sesionManager.createLoginSession(loginData);
 
-                    FirebaseMessaging.getInstance().getToken()
-                            .addOnCompleteListener(new OnCompleteListener<String>() {
-                                @Override
-                                public void onComplete(@NonNull Task<String> task) {
-                                    if (!task.isSuccessful()) {
-                                        Log.w("FOM", "Fetching FCM registration token failed", task.getException());
-                                        return;
-                                    }
 
-                                    // Get new FCM registration token
-                                    String token = task.getResult();
-
-
-                                    Log.d("FOM", token);
-                                    Toast.makeText(login.this, token, Toast.LENGTH_SHORT).show();
-                                }
-                            });
                     Toast.makeText(login.this, response.body().getData().getUsername(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(login.this, dashboardfix.class);
 

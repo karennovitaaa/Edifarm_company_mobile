@@ -116,6 +116,8 @@ public class First3Fragment extends Fragment implements View.OnClickListener, Se
 //                        .navigate(R.id.action_First3Fragment_to_Second2Fragment);
             }
         });
+
+ 
     }
 
     private void addSession() {

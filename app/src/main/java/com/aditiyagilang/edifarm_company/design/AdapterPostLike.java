@@ -80,7 +80,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
         String textProfil = String.valueOf(item.getUserId());
         String fotoProfil = item.getPhoto();
         String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
-
+        String token = item.getFcmToken().toString();
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
         String imageUrlP = "http://edifarm.yoganova.my.id/" + gambarpost;
@@ -155,7 +155,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -205,7 +205,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -259,26 +259,15 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                 recyclerView = dialog.findViewById(R.id.comentar);
                 linearLayoutManager = new LinearLayoutManager(dialog.getContext());
                 recyclerView.setLayoutManager(linearLayoutManager);
-                ImageView foto = dialog.findViewById(R.id.listImagePostComment);
-                ImageView profil = dialog.findViewById(R.id.imageProfilComment);
+
                 String imagesUrl = url + gambarpost;
                 String imageUrl = url + fotoProfil;
-                Picasso.get().load(imageUrl).into(profil);
-                Picasso.get().load(imagesUrl).into(foto);
-                TextView caption = dialog.findViewById(R.id.comment_captionu);
+
                 SesionManager sesionManager;
                 sesionManager = new SesionManager(dialog.getContext());
                 ImageButton sendComment = dialog.findViewById(R.id.send_coment);
-                ImageButton like = dialog.findViewById(R.id.like_button_comment);
-                TextView likes = dialog.findViewById(R.id.jumlah_like_comment);
 
 
-                caption.setText(cap);
-                TextView username = dialog.findViewById(R.id.textProfilComment);
-                username.setText(akunname);
-
-                TextView tanggal = dialog.findViewById(R.id.text_tanggal_post_comment);
-                tanggal.setText(tanggals);
                 TextView jumlahComment = dialog.findViewById(R.id.jumlahh_commentu);
                 Call<CountComment> countCommentCall = apiInterface.countUserByPostResponse(post_id);
 
@@ -329,7 +318,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                     public void onClick(View view) {
                         EditText comments = dialog.findViewById(R.id.text_coment);
                         String comment = comments.getText().toString();
-                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id);
+                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
                         Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
                         countCommentCall.enqueue(new Callback<AddComment>() {
@@ -374,135 +363,6 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                     }
                 });
 
-
-                Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
-
-
-                countLikeCall.enqueue(new Callback<CountLike>() {
-                    @Override
-                    public void onResponse(Call<CountLike> call, Response<CountLike> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            String count = String.valueOf(response.body().getData());
-                            likes.setText(count);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<CountLike> call, Throwable t) {
-
-                    }
-                });
-                Call<GetLike> UpActCall = apiInterface.GetLikeResponse(user_id, post_id);
-                UpActCall.enqueue(new Callback<GetLike>() {
-                    @Override
-                    public void onResponse(Call<GetLike> call, Response<GetLike> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            // update the activity status locally
-                            like.setBackgroundResource(R.drawable.like_red);
-
-                            like.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id, user_id);
-                                    deleteLikeCall.enqueue(new Callback<DeleteLike>() {
-                                        @Override
-                                        public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
-                                            like.setBackgroundResource(R.drawable.like_white);
-                                            like.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
-                                                    deleteLikeCall.enqueue(new Callback<Like>() {
-                                                        @Override
-                                                        public void onResponse(Call<Like> call, Response<Like> response) {
-                                                            like.setBackgroundResource(R.drawable.like_red);
-
-                                                            reloadData();
-                                                        }
-
-                                                        @Override
-                                                        public void onFailure(Call<Like> call, Throwable t) {
-
-                                                        }
-                                                    });
-                                                    reloadData();
-                                                }
-                                            });
-                                            Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
-                                            countLikeCall.enqueue(new Callback<CountLike>() {
-                                                @Override
-                                                public void onResponse(Call<CountLike> call, Response<CountLike> response) {
-                                                    if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                                                        String count = String.valueOf(response.body().getData());
-                                                        likes.setText(count);
-                                                        reloadData();
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onFailure(Call<CountLike> call, Throwable t) {
-
-                                                }
-                                            });
-
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<DeleteLike> call, Throwable t) {
-
-                                        }
-                                    });
-                                }
-                            });
-                        } else {
-
-                            like.setBackgroundResource(R.drawable.like_white);
-                            like.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
-                                    deleteLikeCall.enqueue(new Callback<Like>() {
-                                        @Override
-                                        public void onResponse(Call<Like> call, Response<Like> response) {
-                                            like.setBackgroundResource(R.drawable.like_red);
-                                            Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
-                                            countLikeCall.enqueue(new Callback<CountLike>() {
-                                                @Override
-                                                public void onResponse(Call<CountLike> call, Response<CountLike> response) {
-                                                    if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                                                        String count = String.valueOf(response.body().getData());
-                                                        likes.setText(count);
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onFailure(Call<CountLike> call, Throwable t) {
-
-                                                }
-                                            });
-                                            reloadData();
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<Like> call, Throwable t) {
-
-                                        }
-                                    });
-
-
-                                }
-                            });
-                        }
-
-
-                    }
-
-
-                    @Override
-                    public void onFailure(Call<GetLike> call, Throwable t) {
-                        Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
 
                 dialog.show();
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

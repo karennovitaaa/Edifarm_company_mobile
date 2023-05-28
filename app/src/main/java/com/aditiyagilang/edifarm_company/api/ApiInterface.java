@@ -24,6 +24,7 @@ import com.aditiyagilang.edifarm_company.model.Like.Like;
 import com.aditiyagilang.edifarm_company.model.OTP.OTP;
 import com.aditiyagilang.edifarm_company.model.PosActivity.PostActivity;
 import com.aditiyagilang.edifarm_company.model.Posting.Posting;
+import com.aditiyagilang.edifarm_company.model.SearchingUser.SearchibUser;
 import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcount;
 import com.aditiyagilang.edifarm_company.model.UpActivity.UpActivity;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
@@ -58,7 +59,9 @@ public interface ApiInterface {
     @POST("login")
     Call<Login> loginresponse(
             @Field("username") String username,
-            @Field("password") String password
+            @Field("password") String password,
+            @Field("fcm_token") String fcm_token
+
     );
 
     @FormUrlEncoded
@@ -93,8 +96,8 @@ public interface ApiInterface {
     @POST("getact")
     Call<Activity> actResponse(
             @Field("user_id") String user_id
-
     );
+
 
     @FormUrlEncoded
     @POST("deleteData")
@@ -208,6 +211,12 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("getPostsByUsername")
+    Call<SearchibUser> getPostsByUsernameResponse(
+            @Field("search") String search
+    );
+
+    @FormUrlEncoded
     @POST("updateActivity")
     Call<UpdateActivitys> UpdateActResponse(
             @Field("id") String id,
@@ -257,7 +266,8 @@ public interface ApiInterface {
     @POST("addLike")
     Call<Like> LikeResponse(
             @Field("user_id") String user_id,
-            @Field("post_id") String post_id
+            @Field("post_id") String post_id,
+            @Field("fcm_token") String fcm_token
     );
 
     @FormUrlEncoded
@@ -297,7 +307,8 @@ public interface ApiInterface {
     Call<AddComment> addCommentResponse(
             @Field("post_id") String post_id,
             @Field("comment") String comment,
-            @Field("user_id") String user_id
+            @Field("user_id") String user_id,
+            @Field("fcm_token") String fcm_token
     );
 
     @FormUrlEncoded

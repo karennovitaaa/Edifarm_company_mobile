@@ -22,7 +22,6 @@ import com.aditiyagilang.edifarm_company.databinding.FragmentPostingUserBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostUser;
 import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUser;
 import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUserDataItem;
-import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.List;
 
@@ -114,6 +113,8 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
 //                        .navigate(com.aditiyagilang.edifarm_company.R.id.action_Second3Fragment_to_First3Fragment);
 //            }
 //        });
+
+
     }
 
     @Override
