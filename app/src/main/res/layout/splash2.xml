@@ -11,8 +11,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/logo_baru"></ImageView>
+        android:src="@drawable/logo_baru"
+        android:layout_gravity="center|top">
+    </ImageView>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,6 +22,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="Powered by Edifarm Company"
         android:textColor="@color/base"
+        android:paddingTop="100dp"
         android:textSize="15dp">
 
     </TextView>

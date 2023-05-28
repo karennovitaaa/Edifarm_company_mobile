@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="none"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:outlineAmbientShadowColor="@color/backgroun"
             android:outlineSpotShadowColor="@color/backgroun"

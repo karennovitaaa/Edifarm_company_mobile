@@ -172,7 +172,6 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                             EditText changepass = dialog.findViewById(R.id.changepass);
                             EditText changepassconfirm = dialog.findViewById(R.id.changepassconfirm);
 
-
                             sendotp.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {

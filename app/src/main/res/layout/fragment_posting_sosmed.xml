@@ -4,11 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".EditProfile.EditProfile">
+    <EditText
+        android:id="@+id/action_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/field"
+        android:fontFamily="@font/poppins_light"
+        android:hint="cari .."
+        android:maxLines="1"
+        android:padding="5dp"
+        android:paddingLeft="20dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="10sp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/postlist"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp">
@@ -27,19 +43,7 @@
 
     </ImageButton>
 
-    <EditText
-        android:id="@+id/action_search"
-        android:layout_width="242dp"
-        android:layout_height="40dp"
-        android:layout_margin="16dp"
-        android:background="@drawable/field"
-        android:fontFamily="@font/poppins_light"
-        android:hint="             Masukkan Username"
-        android:maxLines="1"
-        android:padding="5dp"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray"
-        android:textSize="10sp" />
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/load_titiku"

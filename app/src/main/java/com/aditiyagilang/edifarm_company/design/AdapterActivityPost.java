@@ -470,7 +470,7 @@ public class AdapterActivityPost extends RecyclerView.Adapter<AdapterActivityPos
             tanggal_periode = itemView.findViewById(R.id.tanggal_periode);
             username = itemView.findViewById(R.id.nama_user);
             vrgrate = itemView.findViewById(R.id.vrgrate);
-            open = itemView.findViewById(R.id.open);
+//            open = itemView.findViewById(R.id.open);
             rates = itemView.findViewById(R.id.rate);
             star1 = itemView.findViewById(R.id.star1);
             star2 = itemView.findViewById(R.id.star2);
