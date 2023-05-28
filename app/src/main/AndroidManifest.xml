@@ -37,7 +37,7 @@
         <activity
             android:name=".Riwayat.Historys"
             android:exported="false"
-            android:label="@string/title_activity_history"
+
             android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".Stalking.StalkingAcount"
@@ -102,7 +102,7 @@
         <activity
             android:name=".activitys"
             android:exported="true"
-            android:label=""
+
             android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".profile"
@@ -115,7 +115,8 @@
             android:exported="true" />
         <activity
             android:name=".edit_profile"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".dashboard"
             android:exported="true" />

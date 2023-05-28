@@ -46,7 +46,7 @@ public class AdapterComen extends RecyclerView.Adapter<AdapterComen.AdapterHolde
     @Override
     public void onBindViewHolder(@NonNull AdapterHolder holder, @SuppressLint("RecyclerView") int position) {
         final GetCommentDataItem item = dataList.get(position);
-        String url = "https://40a3-118-99-83-51.ngrok-free.app/";
+        String url = "http://edifarm.yoganova.my.id/";
         String textProfil = String.valueOf(item.getId());
         String fotoProfil = String.valueOf(item.getPhoto());
         String username = String.valueOf(item.getUsername());

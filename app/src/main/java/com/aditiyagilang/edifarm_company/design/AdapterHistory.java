@@ -70,8 +70,8 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.AdapterH
         final String id = String.valueOf(dataList.get(position).getId());
         final HistoryDataItem item = dataList.get(position);
         String plant = item.getPlantName();
-        String start = item.getSessionCreatedAt();
-        String finish = item.getDocumentationCreatedAt();
+        String start = item.getSessionCreatedAt().substring(0, 10);
+        String finish = item.getDocumentationCreatedAt().substring(0, 10);
         String period = start + " hingga " + finish;
         String session_id = String.valueOf(item.getSessionId());
 
