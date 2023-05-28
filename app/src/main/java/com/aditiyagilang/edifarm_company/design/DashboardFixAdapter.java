@@ -43,7 +43,6 @@ import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcount;
 import com.aditiyagilang.edifarm_company.model.Stalking.StalkingAcountDataItem;
 import com.aditiyagilang.edifarm_company.model.dashboard_model.DashboardDataItem;
 import com.aditiyagilang.edifarm_company.model.getLike.GetLike;
-import com.aditiyagilang.edifarm_company.model.sharelink.Share;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -135,6 +134,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         String latitude = item.getLatitude();
         String longitude = item.getLongitude();
         String token = item.getFcmToken().toString();
+
 
         Picasso.get().load(imageUrl).into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).into(holder.gambarPosting);
@@ -476,70 +476,18 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 recyclerView = dialog.findViewById(R.id.comentar);
                 linearLayoutManager = new LinearLayoutManager(dialog.getContext());
                 recyclerView.setLayoutManager(linearLayoutManager);
-                ImageView foto = dialog.findViewById(R.id.listImagePostComment);
-                ImageView profil = dialog.findViewById(R.id.imageProfilComment);
+//                ImageView foto = dialog.findViewById(R.id.listImagePostComment);
+//                ImageView profil = dialog.findViewById(R.id.imageProfilComment);
                 String imagesUrl = url + gambarpost;
                 String imageUrl = url + fotoProfil;
-                Picasso.get().load(imageUrl).into(profil);
-                Picasso.get().load(imagesUrl).into(foto);
-                TextView caption = dialog.findViewById(R.id.comment_captionu);
+//                Picasso.get().load(imageUrl).into(profil);
+//                Picasso.get().load(imagesUrl).into(foto);
+//                TextView caption = dialog.findViewById(R.id.comment_captionu);
                 SesionManager sesionManager;
                 sesionManager = new SesionManager(dialog.getContext());
                 ImageButton sendComment = dialog.findViewById(R.id.send_coment);
-                ImageButton like = dialog.findViewById(R.id.like_button_comment);
-                TextView likes = dialog.findViewById(R.id.jumlah_like_comment);
-
-
-                caption.setText(cap);
-                TextView username = dialog.findViewById(R.id.textProfilComment);
-                username.setText(akunname);
-
-                TextView tanggal = dialog.findViewById(R.id.text_tanggal_post_comment);
-                tanggal.setText(tanggals);
-                TextView jumlahComment = dialog.findViewById(R.id.jumlahh_comment_comment);
-                Call<CountComment> countCommentCall = apiInterface.countUserByPostResponse(post_id);
-
-                Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
-                countCommentCall.enqueue(new Callback<CountComment>() {
-                    @Override
-                    public void onResponse(Call<CountComment> call, Response<CountComment> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            String count = String.valueOf(response.body().getData());
-                            jumlahComment.setText(count);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<CountComment> call, Throwable t) {
-
-                    }
-                });
-
-                GetCommentDataItem getCommentDataItem;
-                Call<GetComment> dashCall = apiInterface.getCommentsByPostIdResponse(post_id);
-                dashCall.enqueue(new Callback<GetComment>() {
-                    @Override
-                    public void onResponse(Call<GetComment> call, Response<GetComment> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            List<GetCommentDataItem> activityDataItemList = response.body().getData();
-                            Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                            AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
-
-                                @Override
-                                public void onItemClick(View view, int position, GetCommentDataItem item) {
-
-                                }
-                            });
-                            recyclerView.setAdapter(activityAdapter);
-                            activityAdapter.setCommentDataList(activityDataItemList);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<GetComment> call, Throwable t) {
-                        // Handle failure
-                    }
-                });
+//                ImageButton like = dialog.findViewById(R.id.like_button_comment);
+//                TextView likes = dialog.findViewById(R.id.jumlah_like_comment);
 
                 sendComment.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -592,134 +540,44 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 });
 
 
-                Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
+//                caption.setText(cap);
+//                TextView username = dialog.findViewById(R.id.textProfilComment);
+//                username.setText(akunname);
+//
+//                TextView tanggal = dialog.findViewById(R.id.text_tanggal_post_comment);
+//                tanggal.setText(tanggals);
+//                TextView jumlahComment = dialog.findViewById(R.id.jumlahh_comment_comment);
 
 
-                countLikeCall.enqueue(new Callback<CountLike>() {
+                Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
+
+
+                GetCommentDataItem getCommentDataItem;
+                Call<GetComment> dashCall = apiInterface.getCommentsByPostIdResponse(post_id);
+                dashCall.enqueue(new Callback<GetComment>() {
                     @Override
-                    public void onResponse(Call<CountLike> call, Response<CountLike> response) {
+                    public void onResponse(Call<GetComment> call, Response<GetComment> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            String count = String.valueOf(response.body().getData());
-                            likes.setText(count);
+                            List<GetCommentDataItem> activityDataItemList = response.body().getData();
+                            Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
+
+                                @Override
+                                public void onItemClick(View view, int position, GetCommentDataItem item) {
+
+                                }
+                            });
+                            recyclerView.setAdapter(activityAdapter);
+                            activityAdapter.setCommentDataList(activityDataItemList);
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<CountLike> call, Throwable t) {
-
+                    public void onFailure(Call<GetComment> call, Throwable t) {
+                        // Handle failure
                     }
                 });
-                Call<GetLike> UpActCall = apiInterface.GetLikeResponse(user_id, post_id);
-                UpActCall.enqueue(new Callback<GetLike>() {
-                    @Override
-                    public void onResponse(Call<GetLike> call, Response<GetLike> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            // update the activity status locally
-                            like.setBackgroundResource(R.drawable.heart7);
 
-                            like.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Call<DeleteLike> deleteLikeCall = apiInterface.DeleteLikeResponse(post_id, user_id);
-                                    deleteLikeCall.enqueue(new Callback<DeleteLike>() {
-                                        @Override
-                                        public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
-                                            like.setBackgroundResource(R.drawable.like_white);
-                                            like.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
-                                                    deleteLikeCall.enqueue(new Callback<Like>() {
-                                                        @Override
-                                                        public void onResponse(Call<Like> call, Response<Like> response) {
-                                                            like.setBackgroundResource(R.drawable.heart7);
-
-                                                            reloadData();
-                                                        }
-
-                                                        @Override
-                                                        public void onFailure(Call<Like> call, Throwable t) {
-
-                                                        }
-                                                    });
-                                                    reloadData();
-                                                }
-                                            });
-                                            Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
-                                            countLikeCall.enqueue(new Callback<CountLike>() {
-                                                @Override
-                                                public void onResponse(Call<CountLike> call, Response<CountLike> response) {
-                                                    if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                                                        String count = String.valueOf(response.body().getData());
-                                                        likes.setText(count);
-                                                        reloadData();
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onFailure(Call<CountLike> call, Throwable t) {
-
-                                                }
-                                            });
-
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<DeleteLike> call, Throwable t) {
-
-                                        }
-                                    });
-                                }
-                            });
-                        } else {
-
-                            like.setBackgroundResource(R.drawable.like_white);
-                            like.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
-                                    deleteLikeCall.enqueue(new Callback<Like>() {
-                                        @Override
-                                        public void onResponse(Call<Like> call, Response<Like> response) {
-                                            like.setBackgroundResource(R.drawable.heart7);
-                                            Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
-                                            countLikeCall.enqueue(new Callback<CountLike>() {
-                                                @Override
-                                                public void onResponse(Call<CountLike> call, Response<CountLike> response) {
-                                                    if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                                                        String count = String.valueOf(response.body().getData());
-                                                        likes.setText(count);
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onFailure(Call<CountLike> call, Throwable t) {
-
-                                                }
-                                            });
-                                            reloadData();
-                                        }
-
-                                        @Override
-                                        public void onFailure(Call<Like> call, Throwable t) {
-
-                                        }
-                                    });
-
-
-                                }
-                            });
-                        }
-
-
-                    }
-
-
-                    @Override
-                    public void onFailure(Call<GetLike> call, Throwable t) {
-                        Toast.makeText(context, t.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
 
                 dialog.show();
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -728,35 +586,35 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
             }
         });
-        holder.share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Call<Share> countCommentCall = apiInterface.createShareableLinkResponse(post_id);
-
-                countCommentCall.enqueue(new Callback<Share>() {
-                    @Override
-                    public void onResponse(Call<Share> call, Response<Share> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            String count = String.valueOf(response.body().getData());
-                            holder.jumlahComment.setText(count);
-
-                            // Menampilkan pilihan aplikasi untuk membagikan link
-                            String shareLink = response.body().getData().getLink();
-                            Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                            shareIntent.setType("text/plain");
-                            shareIntent.putExtra(Intent.EXTRA_TEXT, shareLink);
-
-                            view.getContext().startActivity(Intent.createChooser(shareIntent, "Share via"));
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Share> call, Throwable t) {
-
-                    }
-                });
-            }
-        });
+//        holder.share.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Call<Share> countCommentCall = apiInterface.createShareableLinkResponse(post_id);
+//
+//                countCommentCall.enqueue(new Callback<Share>() {
+//                    @Override
+//                    public void onResponse(Call<Share> call, Response<Share> response) {
+//                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+//                            String count = String.valueOf(response.body().getData());
+//                            holder.jumlahComment.setText(count);
+//
+//                            // Menampilkan pilihan aplikasi untuk membagikan link
+//                            String shareLink = response.body().getData().getLink();
+//                            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+//                            shareIntent.setType("text/plain");
+//                            shareIntent.putExtra(Intent.EXTRA_TEXT, shareLink);
+//
+//                            view.getContext().startActivity(Intent.createChooser(shareIntent, "Share via"));
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<Share> call, Throwable t) {
+//
+//                    }
+//                });
+//            }
+//        });
 
 
         holder.fotoProfil.setOnClickListener(new View.OnClickListener() {
@@ -886,7 +744,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
-            share = itemView.findViewById(R.id.share);
+
             fotoProfil = itemView.findViewById(R.id.imageProfilPosting);
             namaAkun = itemView.findViewById(R.id.textProfils);
             gambarPosting = itemView.findViewById(R.id.listImagePosting);

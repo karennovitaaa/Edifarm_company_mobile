@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -64,7 +65,13 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                     AdapterHistory adapterHistory = new AdapterHistory(getContext(), historyDataItemList, HistoryList.this);
 
                     recyclerView.setAdapter(adapterHistory);
-                    historyDataItem = historyDataItemList.get(0);
+
+                    if (response.body().getData() != null) {
+                        historyDataItem = historyDataItemList.get(0);
+                    } else {
+                        Toast.makeText(getContext(), "Kosong", Toast.LENGTH_SHORT).show();
+                    }
+                  
                 }
             }
 

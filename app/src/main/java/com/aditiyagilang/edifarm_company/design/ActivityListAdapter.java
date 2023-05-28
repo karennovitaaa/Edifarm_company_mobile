@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ import com.aditiyagilang.edifarm_company.model.activity.ActivityDataItem;
 import com.aditiyagilang.edifarm_company.model.deleteActivity.DeleteActivity;
 import com.aditiyagilang.edifarm_company.model.updateactivity.UpdateActivitys;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -42,6 +44,7 @@ import retrofit2.Response;
 public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapter.AdapterHolder> {
     private final Context context;
     private final List<GetFullActivityDataItem> dataList;
+    private final List<GetFullActivityDataItem> filter;
     GetFullActivityDataItem getFullActivityDataItem;
     SesionManager sesionManager;
     ApiInterface apiInterface;
@@ -53,6 +56,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         this.context = context;
         this.dataList = dataList;
         this.listener = listener;
+        filter = dataList;
         sesionManager = new SesionManager(context);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
@@ -66,6 +70,36 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         this.editClickListener = listener;
     }
 
+    public Filter getfilters() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String keyword = charSequence.toString().toLowerCase().trim();
+                List<GetFullActivityDataItem> filteredDataList = new ArrayList<>();
+
+                if (keyword.isEmpty()) {
+                    filteredDataList.addAll(dataList);
+                } else {
+                    for (GetFullActivityDataItem data : dataList) {
+                        if (data.getActivityName().toLowerCase().contains(keyword) || data.getStatus().toLowerCase().contains(keyword)) {
+                            filteredDataList.add(data);
+                        }
+                    }
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filteredDataList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filter.clear();
+                filter.addAll((List<GetFullActivityDataItem>) filterResults.values);
+                notifyDataSetChanged();
+            }
+        };
+    }
 
     @NonNull
     @Override
@@ -300,7 +334,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return filter.size();
     }
 
     public interface OnItemClickListener {

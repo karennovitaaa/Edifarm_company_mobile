@@ -153,7 +153,7 @@ public class AdapterActivityPost extends RecyclerView.Adapter<AdapterActivityPos
                             holder.star3.setImageResource(R.drawable.star_outline);
                             holder.star4.setImageResource(R.drawable.star_outline);
                             holder.star5.setImageResource(R.drawable.star_outline);
-                        } else {
+                        } else if (rating == 5) {
                             holder.star1.setImageResource(R.drawable.star_fild);
                             holder.star2.setImageResource(R.drawable.star_fild);
                             holder.star3.setImageResource(R.drawable.star_fild);
@@ -475,7 +475,7 @@ public class AdapterActivityPost extends RecyclerView.Adapter<AdapterActivityPos
             star1 = itemView.findViewById(R.id.star1);
             star2 = itemView.findViewById(R.id.star2);
             star3 = itemView.findViewById(R.id.star3);
-            star4 = itemView.findViewById(R.id.star5);
+            star4 = itemView.findViewById(R.id.star4);
             star5 = itemView.findViewById(R.id.star5);
 
             download.setOnClickListener(new View.OnClickListener() {
