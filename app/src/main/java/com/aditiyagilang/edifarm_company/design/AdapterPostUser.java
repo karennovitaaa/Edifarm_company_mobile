@@ -74,7 +74,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
         String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
         String url = "http://edifarm.yoganova.my.id/";
-
+        String token = item.getFcmToken().toString();
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
         String imageUrlP = "https://82fa-103-160-182-11.ngrok-free.app/" + gambarpost;
@@ -84,6 +84,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String cap = item.getCaption();
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         String post_id = String.valueOf(dataList.get(position).getId());
+
 
         Picasso.get().load(imageUrl).into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).into(holder.gambarPosting);
@@ -146,7 +147,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -196,7 +197,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -331,7 +332,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                     public void onClick(View view) {
                         EditText comments = dialog.findViewById(R.id.text_coment);
                         String comment = comments.getText().toString();
-                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id);
+                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
                         Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
                         countCommentCall.enqueue(new Callback<AddComment>() {
@@ -413,7 +414,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                                             like.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
-                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                                         @Override
                                                         public void onResponse(Call<Like> call, Response<Like> response) {
@@ -462,7 +463,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                             like.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                         @Override
                                         public void onResponse(Call<Like> call, Response<Like> response) {

@@ -86,7 +86,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
         String akunname = item.getUsername();
         String tanggals = item.getCreatedAt().split(" ")[0];
         String cap = item.getCaption();
-
+        String token = item.getFcmToken().toString();
         Picasso.get().load(imageUrl).into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
@@ -150,7 +150,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -201,7 +201,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -496,7 +496,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
                     public void onClick(View view) {
                         EditText comments = dialog.findViewById(R.id.text_coment);
                         String comment = comments.getText().toString();
-                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id);
+                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
                         Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
                         countCommentCall.enqueue(new Callback<AddComment>() {
@@ -576,7 +576,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
                                             like.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
-                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                                         @Override
                                                         public void onResponse(Call<Like> call, Response<Like> response) {
@@ -625,7 +625,7 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
                             like.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                         @Override
                                         public void onResponse(Call<Like> call, Response<Like> response) {

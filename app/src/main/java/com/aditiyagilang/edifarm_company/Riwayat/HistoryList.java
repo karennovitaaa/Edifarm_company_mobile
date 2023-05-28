@@ -74,6 +74,7 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
             }
         });
 
+
     }
 
     @Override

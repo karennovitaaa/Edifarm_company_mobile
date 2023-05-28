@@ -37,6 +37,8 @@ public class Second3Fragment extends Fragment {
                         .navigate(R.id.action_Second3Fragment_to_FirstFragment);
             }
         });
+
+  
     }
 
     @Override

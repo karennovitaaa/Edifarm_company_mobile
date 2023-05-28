@@ -1,16 +1,14 @@
-package com.aditiyagilang.edifarm_company.model.GetPostUser;
+package com.aditiyagilang.edifarm_company.model.SearchingUser;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GetPostUserDataItem {
+public class SearchingUserDataItem {
 
     @SerializedName("image")
     private String image;
 
     @SerializedName("address")
     private String address;
-    @SerializedName("fcm_token")
-    private Object fcmToken;
 
     @SerializedName("post_latitude")
     private String postLatitude;
@@ -65,14 +63,6 @@ public class GetPostUserDataItem {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Object getFcmToken() {
-        return fcmToken;
-    }
-
-    public void setFcmToken(Object fcmToken) {
-        this.fcmToken = fcmToken;
     }
 
     public String getPostLatitude() {

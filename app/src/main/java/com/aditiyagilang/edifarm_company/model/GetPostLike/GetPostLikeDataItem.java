@@ -9,6 +9,8 @@ public class GetPostLikeDataItem {
 
     @SerializedName("address")
     private String address;
+    @SerializedName("fcm_token")
+    private Object fcmToken;
 
     @SerializedName("post_latitude")
     private String postLatitude;
@@ -63,6 +65,14 @@ public class GetPostLikeDataItem {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Object getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(Object fcmToken) {
+        this.fcmToken = fcmToken;
     }
 
     public String getPostLatitude() {

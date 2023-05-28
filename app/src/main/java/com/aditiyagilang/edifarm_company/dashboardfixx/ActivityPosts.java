@@ -28,7 +28,7 @@ import retrofit2.Response;
 public class ActivityPosts extends Fragment implements AdapterActivityPost.OnItemClickListener {
     SesionManager sesionManager;
     ApiInterface apiInterface;
-   
+
     LinearLayoutManager linearLayoutManager;
     RecyclerView recyclerView;
     ActivityPostDataItem activityPostDataItem;
@@ -74,6 +74,7 @@ public class ActivityPosts extends Fragment implements AdapterActivityPost.OnIte
                 t.printStackTrace();
             }
         });
+
 
     }
 

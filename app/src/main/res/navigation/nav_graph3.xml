@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_search"
+            app:destination="@id/search" />
     </fragment>
 
     <fragment
@@ -44,6 +47,14 @@
         <action
             android:id="@+id/action_NewPost_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.aditiyagilang.edifarm_company.dashboardfixx.NewPosting"
+        tools:layout="@layout/fragment_list_user">
+
+
     </fragment>
 
 

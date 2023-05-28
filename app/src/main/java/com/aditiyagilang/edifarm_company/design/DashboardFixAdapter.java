@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,8 +58,11 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
     private final OnItemClickListener listener;
     private final Context context;
     private final List<DashboardDataItem> dataList;
+
     private final SesionManager sesionManager;
     private final ApiInterface apiInterface;
+
+    private final List<DashboardDataItem> filteredDataList;
 
     public DashboardFixAdapter(Context context, List<DashboardDataItem> dataList, OnItemClickListener listener) {
         this.context = context;
@@ -66,6 +70,40 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         this.listener = listener;
         sesionManager = new SesionManager(context);
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+        filteredDataList = dataList;
+
+    }
+
+    public Filter getfilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String keyword = charSequence.toString().toLowerCase().trim();
+                List<DashboardDataItem> filteredDataList = new ArrayList<>();
+
+                if (keyword.isEmpty()) {
+                    filteredDataList.addAll(dataList);
+                } else {
+                    for (DashboardDataItem data : dataList) {
+                        if (data.getUsername().toLowerCase().contains(keyword) || data.getCaption().toLowerCase().contains(keyword)) {
+                            filteredDataList.add(data);
+                        }
+                    }
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filteredDataList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                filteredDataList.clear();
+                filteredDataList.addAll((List<DashboardDataItem>) filterResults.values);
+                notifyDataSetChanged();
+            }
+        };
     }
 
 
@@ -96,6 +134,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         String name = item.getName();
         String latitude = item.getLatitude();
         String longitude = item.getLongitude();
+        String token = item.getFcmToken().toString();
 
         Picasso.get().load(imageUrl).into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).into(holder.gambarPosting);
@@ -161,7 +200,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -212,7 +251,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                            Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
@@ -507,7 +546,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                     public void onClick(View view) {
                         EditText comments = dialog.findViewById(R.id.text_coment);
                         String comment = comments.getText().toString();
-                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id);
+                        Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
                         Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
                         countCommentCall.enqueue(new Callback<AddComment>() {
@@ -589,7 +628,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                             like.setOnClickListener(new View.OnClickListener() {
                                                 @Override
                                                 public void onClick(View view) {
-                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                                         @Override
                                                         public void onResponse(Call<Like> call, Response<Like> response) {
@@ -638,7 +677,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                             like.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id);
+                                    Call<Like> deleteLikeCall = apiInterface.LikeResponse(user_id, post_id, token);
                                     deleteLikeCall.enqueue(new Callback<Like>() {
                                         @Override
                                         public void onResponse(Call<Like> call, Response<Like> response) {
@@ -824,8 +863,9 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return filteredDataList.size();
     }
+
 
     public interface OnItemClickListener {
 
@@ -840,6 +880,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         ImageView gambarPosting;
         TextView tanggalPost;
         ImageButton likeButton;
+
         TextView caption, jumlahLike, jumlahComment;
         ImageButton like, coment, reason;
 
@@ -856,6 +897,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
             coment = itemView.findViewById(R.id.comment_button);
             jumlahComment = itemView.findViewById(R.id.jumlahh_comment);
             reason = itemView.findViewById(R.id.button_reason);
+
 
         }
     }

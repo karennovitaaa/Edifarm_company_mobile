@@ -12,6 +12,8 @@ public class StalkingAcountDataItem {
 
     @SerializedName("post_latitude")
     private String postLatitude;
+    @SerializedName("fcm_token")
+    private Object fcmToken;
 
     @SerializedName("post_longitude")
     private String postLongitude;
@@ -57,6 +59,14 @@ public class StalkingAcountDataItem {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Object getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(Object fcmToken) {
+        this.fcmToken = fcmToken;
     }
 
     public String getPostLatitude() {

@@ -37,6 +37,9 @@ public class DashboardDataItem {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("fcm_token")
+    private Object fcmToken;
+
     @SerializedName("id")
     private int id;
 
@@ -135,6 +138,14 @@ public class DashboardDataItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Object getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(Object fcmToken) {
+        this.fcmToken = fcmToken;
     }
 
     public int getId() {

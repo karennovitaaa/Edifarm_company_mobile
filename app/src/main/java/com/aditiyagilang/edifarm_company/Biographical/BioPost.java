@@ -35,6 +35,8 @@ public class BioPost extends Fragment {
 //                        .navigate(com.aditiyagilang.edifarm_company.R.id.action_First3Fragment_to_Second3Fragment);
 //            }
 //        });
+
+ 
     }
 
     @Override

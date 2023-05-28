@@ -134,6 +134,8 @@ public class ListUpActivity extends Fragment implements View.OnClickListener, Ac
                 }
             }
         });
+
+
     }
 
     private void Searching(String user_id, String search) {

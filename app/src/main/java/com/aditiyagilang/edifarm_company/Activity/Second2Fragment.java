@@ -154,6 +154,8 @@ public class Second2Fragment extends Fragment {
         });
 
         binding.nameAct.setText("ABA");
+
+
     }
 
 

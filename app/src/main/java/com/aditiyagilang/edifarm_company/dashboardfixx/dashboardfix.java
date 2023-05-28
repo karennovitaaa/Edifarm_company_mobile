@@ -1,5 +1,7 @@
 package com.aditiyagilang.edifarm_company.dashboardfixx;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,19 +22,22 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.aditiyagilang.edifarm_company.Biographical.Biographical;
 import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.Riwayat.Historys;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.activitys;
-
+import com.aditiyagilang.edifarm_company.api.ApiClient;
+import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.databinding.ActivityDashboardfixBinding;
 import com.aditiyagilang.edifarm_company.login;
+import com.aditiyagilang.edifarm_company.model.SearchingUser.SearchingUserDataItem;
 import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
 
 public class dashboardfix extends AppCompatActivity {
 
@@ -41,19 +47,26 @@ public class dashboardfix extends AppCompatActivity {
     SesionManager sesionManager;
     ImageButton add, prof, history, homes;
     BottomNavigationView bottomNavigationView;
+    SearchView searching;
+    RecyclerView recyclerView;
+
+    LinearLayoutManager linearLayoutManager;
+    Dialog dialog;
+    Context context;
+
+    ApiInterface apiInterface;
+    SearchingUserDataItem searchingUserDataItem;
     private AppBarConfiguration appBarConfiguration;
     private ActivityDashboardfixBinding binding;
 
-
-// ...
-
-
+    @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDashboardfixBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+//        searching = findViewById(R.id.action_search);
 
         setSupportActionBar(binding.toolbar);
 
@@ -66,6 +79,85 @@ public class dashboardfix extends AppCompatActivity {
             movetoLogin();
         }
         bottomNavigationView.getMenu().findItem(R.id.bottom_dash).setChecked(true);
+// ... Rest of the code
+
+
+        apiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+//        searching.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String search) {
+//                search = searching.getQuery().toString();
+//                final Dialog dialog = new Dialog(dashboardfix.this);
+//                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//                dialog.setContentView(R.layout.fragment_list_user);
+//                RecyclerView dialogRecyclerView = dialog.findViewById(R.id.list_user);
+//                LinearLayoutManager dialogLinearLayoutManager = new LinearLayoutManager(dialog.getContext());
+//                dialogRecyclerView.setLayoutManager(dialogLinearLayoutManager);
+//
+//                Call<SearchibUser> dashCall = apiInterface.getPostsByUsernameResponse(search);
+//                dashCall.enqueue(new Callback<SearchibUser>() {
+//                    @Override
+//                    public void onResponse(Call<SearchibUser> call, Response<SearchibUser> response) {
+//                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
+//                            List<SearchingUserDataItem> searchingUserDataItems = response.body().getData();
+//                            SearchingAcount searchingAcount = new SearchingAcount(dashboardfix.this, searchingUserDataItems, new SearchingAcount.OnItemClickListener() {
+//                                @Override
+//                                public void onItemClick(SearchingAcount adapter, View view, int position, SearchingUserDataItem item) {
+//
+//                                }
+//
+//                                @Override
+//                                public void onStatusClick(SearchingAcount adapter, View view, int position, SearchingUserDataItem item) {
+//
+//                                }
+//                            });
+//
+//                            dialogRecyclerView.setAdapter(searchingAcount);
+//                            searchingUserDataItem = searchingUserDataItems.get(0);
+//                        } else {
+//                            final Dialog dialog = new Dialog(dashboardfix.this);
+//                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//                            dialog.setContentView(R.layout.pop_up_failed);
+//                            Button failed = dialog.findViewById(R.id.failed);
+//                            TextView massage = dialog.findViewById(R.id.massegedone);
+//                            massage.setText("Tidak Ada User");
+//                            failed.setOnClickListener(new View.OnClickListener() {
+//                                @Override
+//                                public void onClick(View view) {
+//                                    dialog.dismiss();
+//                                }
+//                            });
+//                            dialog.show();
+//                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                            dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+//                            dialog.getWindow().setGravity(Gravity.CENTER);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<SearchibUser> call, Throwable t) {
+//                        // Implementasikan tindakan saat permintaan gagal di sini
+//                    }
+//                });
+//
+//                dialog.show();
+//                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+//                dialog.getWindow().setGravity(Gravity.BOTTOM);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                return false;
+//            }
+//
+//            // ... Rest of the code
+//        });
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
