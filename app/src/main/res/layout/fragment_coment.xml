@@ -7,15 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,6 +53,12 @@
                             android:layout_height="wrap_content"
                             android:background="@color/white">
 
+                            <LinearLayout
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/lineargroup2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"></LinearLayout>
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/cardViewPost"
@@ -72,8 +84,8 @@
                                 android:layout_below="@+id/comment_captionu"
                                 android:layout_centerInParent="true"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginRight="10dp"
                                 android:layout_marginTop="10dp"
+                                android:layout_marginRight="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/post">
@@ -89,10 +101,10 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="10dp"
-
+                                android:alpha="0.7"
+                                android:fontFamily="@font/poppins_medium"
                                 android:text="allahuakbar"
-                                android:textColor="@color/black"
-                                android:fontFamily="@font/poppins_medium"/>
+                                android:textColor="@color/black" />
 
                             <TextView
                                 android:id="@+id/textProfilComment"
@@ -101,11 +113,11 @@
                                 android:layout_alignTop="@+id/cardViewPost"
                                 android:layout_alignBottom="@+id/cardViewPost"
                                 android:layout_marginStart="13dp"
-                                android:fontFamily="@font/poppins_bold"
                                 android:layout_marginTop="13dp"
                                 android:layout_marginEnd="13dp"
                                 android:layout_marginBottom="13dp"
                                 android:layout_toEndOf="@+id/cardViewPost"
+                                android:fontFamily="@font/poppins_bold"
                                 android:paddingLeft="10dp"
                                 android:text="wishal123"
                                 android:textColor="@color/black" />
@@ -129,18 +141,6 @@
 
                             </TextView>
 
-                            <ImageButton
-                                android:id="@+id/button_repostu"
-                                android:layout_width="22dp"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentTop="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="22dp"
-                                android:layout_marginEnd="203dp"
-                                android:layout_toEndOf="@+id/textProfilComment"
-                                android:backgroundTint="@color/transparant"
-                                android:padding="0dp"
-                                android:src="@drawable/danger" />
 
                             <LinearLayout
                                 android:id="@+id/linear_icons"
@@ -162,10 +162,9 @@
                                     android:layout_height="30dp"
                                     android:layout_gravity="right"
                                     android:layout_marginTop="10dp"
-
                                     android:background="@color/white"
                                     android:onClick="like"
-                                    android:src="@drawable/coment">
+                                    android:src="@drawable/new_comment">
 
                                 </ImageButton>
 
@@ -225,15 +224,14 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/comentar"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-
-                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content"
                         android:background="@color/white"></androidx.recyclerview.widget.RecyclerView>
                 </FrameLayout>
             </LinearLayout>
 
-        </ScrollView>
-    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -249,6 +247,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <EditText
@@ -259,7 +258,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Tuliskan Komentar disini">
+                android:hint="Tuliskan Komentar disini"
+                android:textColorHint="@color/black"
+                android:alpha="0.7"
+                android:textColor="@color/black">
 
             </EditText>
 
@@ -270,7 +272,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/transparant"
-                android:src="@drawable/icon_send">
+                android:src="@drawable/icon_sendd">
 
             </ImageButton>
 

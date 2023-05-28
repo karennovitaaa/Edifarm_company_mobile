@@ -5,169 +5,202 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="20dp"
-    android:background="@drawable/shape_card_session">
+    android:layout_marginRight="10dp">
 
-    <TableLayout
-        android:id="@+id/tableLayout"
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center|top"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Tanggal Mulai "
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_medium"
-
-                ></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textColor="@color/black">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tanggal_start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="70dp"
-                android:layout_weight="1"
-                android:text="01 Oktober 2023"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/black"></TextView>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Tanggal Selesai "
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_medium"
-                ></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="7dp"
-                android:text=":"
-                android:textColor="@color/black">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tanggal_finish"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="70dp"
-                android:layout_weight="1"
-                android:text="01 Oktober 2023"
-                android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/black"></TextView>
-        </TableRow>
-
-        <TextView
-            android:id="@+id/plant_name"
-            android:layout_width="97dp"
-            android:layout_height="21dp"
-            android:text="Nama Kegiatan"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3">
-
-        </TextView>
-    </TableLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
+        <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center|top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
 
-            <ImageButton
-                android:id="@+id/buttonedit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparant"
-                android:src="@drawable/icon_edit"
+            <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/plant_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Nama Kegiatan"
+                android:paddingTop="7dp"
+                android:textColor="@color/backgroun"
+                android:layout_marginBottom="15dp"
+                android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.92" />
+                app:layout_constraintVertical_bias="0.3">
 
-            <ImageButton
-                android:id="@+id/buttondelete"
+            </TextView>
+
+                <TextView>
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@color/transparant"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="top|right"
+                    android:text="Berjalan"
+                    android:layout_marginLeft="30dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.9">
+
+                </Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Tanggal Mulai "
+                    android:textColor="@color/black"
+
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tanggal_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="70dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="01 Oktober 2023"
+                    android:textColor="@color/black"></TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Tanggal Selesai "
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:text=":"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tanggal_finish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="70dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="01 Oktober 2023"
+                    android:textColor="@color/black"></TextView>
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9">
+
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/transparant"
-                android:src="@drawable/icon_delete"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.92" />
+                android:layout_marginLeft="260dp"
+                android:layout_marginTop="140dp">
 
-            <Button
-                android:id="@+id/clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:layout_gravity="center|right"
-                android:textAllCaps="false"
+                <ImageButton
+                    android:id="@+id/buttonedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/transparant"
+                    android:src="@drawable/icon_edit_square"
+                    android:alpha="0.5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.92" />
 
-                android:layout_marginRight="20dp"
-                android:backgroundTint="@color/backgroun"
-                android:gravity="center|right"
-                android:text="Berjalan"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.9"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9">
+                <ImageButton
+                    android:id="@+id/buttondelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    android:background="@color/transparant"
+                    android:src="@drawable/icon_trash_grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.92" />
 
-            </Button>
-        </TableRow>
-    </TableLayout>
+
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

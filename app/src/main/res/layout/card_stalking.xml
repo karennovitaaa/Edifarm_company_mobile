@@ -39,7 +39,7 @@
                     android:id="@+id/imageProfilStalk"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/wishal_profile" />
+                   />
 
             </androidx.cardview.widget.CardView>
 
@@ -48,12 +48,10 @@
                 android:id="@+id/listImagePostStalk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cardViewPost"
-                android:layout_centerInParent="true"
+                android:layout_below="@+id/text_captionStalk"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:paddingLeft="50dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/post">
 
@@ -63,15 +61,16 @@
                 android:id="@+id/text_captionStalk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/linear_icons"
+                android:layout_below="@+id/cardViewPost"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
-                android:paddingLeft="50dp"
+                android:layout_marginTop="20dp"
                 android:paddingTop="0dp"
-                android:paddingBottom="10dp"
+                android:alpha="0.7"
+                android:paddingLeft="10dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="allahuakbar"
                 android:textColor="@color/black" />
-
 
             <TextView
                 android:id="@+id/textProfilStalk"
@@ -79,30 +78,30 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/cardViewPost"
                 android:layout_alignBottom="@+id/cardViewPost"
-                android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_marginBottom="13dp"
                 android:layout_toEndOf="@+id/cardViewPost"
                 android:paddingLeft="10dp"
+                android:alpha="0.7"
                 android:text="wishal123"
+                android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/text_tanggal_postStalk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/listImagePostStalk"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
+
                 android:layout_marginEnd="74dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginRight="13dp"
-
+                android:fontFamily="@font/poppins_medium"
+                android:alpha="0.7"
                 android:layout_marginBottom="11dp"
-
-                android:paddingLeft="10dp"
+                android:layout_toEndOf="@+id/textProfilStalk"
                 android:text="1-3-3032"
+                android:textSize="10dp"
                 android:textColor="@color/black">
 
             </TextView>
@@ -111,13 +110,12 @@
                 android:id="@+id/button_reasonStalk"
                 android:layout_width="22dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="22dp"
-                android:layout_marginEnd="203dp"
-                android:layout_toEndOf="@+id/textProfilStalk"
+                android:layout_toEndOf="@+id/text_tanggal_postStalk"
                 android:backgroundTint="@color/transparant"
                 android:padding="0dp"
+                android:paddingTop="10dp"
                 android:src="@drawable/danger" />
 
             <LinearLayout
@@ -144,7 +142,7 @@
 
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/coment">
+                    android:src="@drawable/new_comment">
 
                 </ImageButton>
 

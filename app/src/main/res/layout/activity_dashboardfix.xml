@@ -22,15 +22,14 @@
             android:id="@+id/constraint_appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="100dp">
-
+            >
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="17dp"
                 android:text="Edifarm"
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="16dp"
@@ -39,36 +38,31 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
-
-
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/logo_baru"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
+
             <SearchView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="50dp"
                 android:id="@+id/action_search"
                 android:icon="@drawable/search_p"
                 android:title="Search"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
             </SearchView>
 
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -97,11 +91,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Dashboard"
-                        android:background="@drawable/base_tablayout"
+                        android:background="@color/transparant"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:backgroundTint="@color/backgroun"
-
+                        android:backgroundTint="@color/transparant"
                         android:elevation="0dp">
 
                     </Button>
@@ -115,10 +108,11 @@
                         android:gravity="center"
                         android:text="feeds"
                         android:textAllCaps="false"
-                        android:background="@drawable/back_tablayout"
                         android:elevation="0dp"
-                        android:backgroundTint="@color/white"
-                        android:textColor="@color/backgroun">
+                        android:background="@color/transparant"
+                        android:layout_marginLeft="30dp"
+                        android:backgroundTint="@color/transparant"
+                        android:textColor="@color/base">
 
                     </Button>
 

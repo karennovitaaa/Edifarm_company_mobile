@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/poppins_bold"
-            android:paddingTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="Masukan email"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -31,10 +32,12 @@
             android:id="@+id/esendemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
             android:hint="Masukan Email"
             android:inputType="textEmailAddress"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@color/subText"
-
             android:textColorHint="@color/subText">
 
         </EditText>
@@ -45,9 +48,9 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/failed"
-            android:fontFamily="@font/poppins_bold"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/button"
+            android:fontFamily="@font/poppins_medium"
             android:padding="5dp"
             android:text="Kirim"
             android:textAllCaps="false"

@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:paddingTop="15dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
 
     <ImageButton
         android:id="@+id/cancel_reason_lose"
@@ -12,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:background="@color/transparant"
-        android:src="@drawable/icon_cancel">
+        android:src="@drawable/close">
 
     </ImageButton>
 
@@ -23,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/poppins_bold"
-        android:paddingTop="20dp"
+
         android:text="Ingin Melaporkan Postingan Ini ?"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -49,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pencemaran nama baik"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
@@ -57,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Konten tidak pantas"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
@@ -64,6 +68,7 @@
         android:id="@+id/checkBox3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha="0.7"
         android:text="Pelanggaran privasi"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
@@ -73,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Konten ilegal"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
@@ -81,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Spam"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
@@ -89,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lainnya"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
 
@@ -99,6 +107,7 @@
         android:backgroundTint="@color/subText"
         android:hint="Alasan lainnya"
         android:textColor="@color/black"
+        android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColorHint="@color/subText"
         android:visibility="gone" />
