@@ -37,7 +37,7 @@
         <activity
             android:name=".Riwayat.Historys"
             android:exported="false"
-            android:label="@string/title_activity_history"
+            android:label=" "
             android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".Stalking.StalkingAcount"
