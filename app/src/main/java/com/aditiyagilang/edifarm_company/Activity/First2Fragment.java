@@ -181,7 +181,6 @@ public class First2Fragment extends Fragment implements View.OnClickListener, Ac
         final Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.fragment_pop_button);
-        ImageButton info = dialog.findViewById(R.id.button_inpo);
         ImageButton add = dialog.findViewById(R.id.button_add);
         ImageButton edit = dialog.findViewById(R.id.button_edtit);
         edit.setOnClickListener(new View.OnClickListener() {

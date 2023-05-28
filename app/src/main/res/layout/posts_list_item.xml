@@ -23,22 +23,75 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewPost"
+            <LinearLayout
+                android:id="@+id/lineargroup1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginTop="10sp"
-                app:cardCornerRadius="100dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/imageProfilPosting"
-                    android:layout_width="50dp"
-                    android:layout_height="53dp"
-                    android:scaleType="center"
-                    android:src="@drawable/wishal_profile" />
 
-            </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    app:cardCornerRadius="100dp">
+
+                    <ImageButton
+                        android:id="@+id/imageProfilPosting"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="center" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textProfils"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@color/transparant"
+                    android:backgroundTint="@color/transparant"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingLeft="10dp"
+                    android:text="wishal123"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/text_tanggal_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="74dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_toEndOf="@+id/textProfils"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="1-3-3032"
+                    android:textColor="@color/black"
+                    android:textSize="10dp">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/button_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_toEndOf="@+id/lineargroup1"
+                android:backgroundTint="@color/transparant"
+                android:src="@drawable/report3" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/listImagePosting"
@@ -48,17 +101,14 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginRight="10dp"
-
-                android:scaleType="center"
-
-
+                android:scaleType="centerCrop"
                 android:src="@drawable/post"></com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
                 android:id="@+id/text_caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cardViewPost"
+                android:layout_below="@+id/lineargroup1"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="10dp"
@@ -69,54 +119,6 @@
                 android:textColor="@color/black"
                 android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/textProfils"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/cardViewPost"
-                android:layout_alignBottom="@+id/cardViewPost"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginBottom="13dp"
-                android:layout_toEndOf="@+id/cardViewPost"
-                android:background="@color/transparant"
-                android:backgroundTint="@color/transparant"
-                android:fontFamily="@font/poppins_bold"
-                android:paddingLeft="10dp"
-                android:text="wishal123"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/text_tanggal_post"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="74dp"
-                android:layout_marginRight="13dp"
-                android:layout_marginBottom="11dp"
-                android:layout_toEndOf="@+id/textProfils"
-                android:alpha="0.7"
-                android:fontFamily="@font/poppins_light"
-                android:text="1-3-3032"
-                android:textColor="@color/black"
-                android:textSize="10dp">
-
-            </TextView>
-
-            <ImageButton
-                android:id="@+id/button_reason"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginRight="10dp"
-                android:layout_toEndOf="@+id/text_tanggal_post"
-                android:backgroundTint="@color/transparant"
-                android:paddingRight="10dp"
-                android:src="@drawable/report3" />
 
             <LinearLayout
                 android:id="@+id/linear_icons"

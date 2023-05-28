@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Username"
+                android:alpha="0.7"
                 android:textColor="@color/black" />
 
             <EditText
@@ -89,6 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password Baru"
+                android:alpha="0.7"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black" />
 
@@ -121,6 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Konfirmasi Password"
+                android:alpha="0.7"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black" />
 
@@ -151,6 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password"
+                android:alpha="0.7"
                 android:textColor="@color/black" />
 
             <EditText

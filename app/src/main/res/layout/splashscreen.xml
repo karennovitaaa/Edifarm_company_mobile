@@ -12,8 +12,6 @@
         android:id="@+id/bulet"
         android:layout_width="419dp"
         android:layout_height="415dp"
-
-
         android:layout_marginStart="72dp"
         android:layout_marginBottom="110dp"
         android:alpha="0.54"

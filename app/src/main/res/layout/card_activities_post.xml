@@ -2,38 +2,40 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:backgroundTint="@color/white"
-
-
-    >
-
-    <ImageView
+    android:layout_height="176dp"
+    android:backgroundTint="@color/white">
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        android:backgroundTint="@color/white">
+
+
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_gravity="center|left|top"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/gbr_file">
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_pdf2">
 
     </ImageView>
 
-    <Button
-        android:id="@+id/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginRight="70dp"
-        android:backgroundTint="@color/button"
-        android:text="Rate"
-        android:textAllCaps="false"
-        android:textSize="16dp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp">
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp">
+
 
         <TextView
             android:id="@+id/plant_name_post"
@@ -41,47 +43,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:alpha="0.9"
-
-            android:fontFamily="@font/poppins_bold"
-            android:text="Penyiraman"
-            android:textColor="@color/font_card_activity"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.112"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0">
+            android:fontFamily="@font/poppins_medium"
+            android:text="Singkong"
+            android:textColor="@color/backgroun"
+            android:textSize="20dp">
 
         </TextView>
-
         <TextView
+
+            android:id="@+id/nama_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_italic"
-            android:text="Ratting"
-            android:textColor="@color/button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:alpha="0.9"
+            android:fontFamily="@font/poppins_medium"
+            android:text="zayn malik"
+            android:textColor="@color/font_card_activity"
+            android:textSize="12dp"></TextView>
 
-            />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7">
+            android:layout_marginLeft="60dp"
+            android:paddingTop="12dp">
 
             <ImageView
                 android:id="@+id/star1"
@@ -130,50 +125,51 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/poppins_medium"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:text="3"
-                android:textColor="@color/subText" />
+                android:text="3000"
+                android:textColor="@color/button" />
+        </LinearLayout>
+
+            <Button
+                android:id="@+id/rate"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:layout_marginLeft="40dp"
+                android:backgroundTint="@color/backgroun"
+                android:text="Rate"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
 
 
         </LinearLayout>
 
-        <TextView
-
-            android:id="@+id/tanggal_periode"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
 
-            android:alpha="0.9"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Penyiraman pakek air"
-            android:textColor="@color/font_card_activity"
-            android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.897"></TextView>
+            <TextView
 
-        <TextView
+                android:id="@+id/tanggal_periode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="100dp"
+                android:alpha="0.9"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:text="1-2-2001"
+                android:textColor="@color/backgroun"
+                android:textSize="9dp"></TextView>
 
-            android:id="@+id/nama_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-
-            android:alpha="0.9"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Penyiraman pakek air"
-            android:textColor="@color/font_card_activity"
-            android:textSize="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.894"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"></TextView>
 
         <ImageButton
             android:id="@+id/downloadsu"
@@ -181,13 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:background="@color/transparant"
-            android:src="@drawable/icon_download"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.85"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            android:src="@drawable/icon_download" />
 
         <ImageButton
             android:id="@+id/open"
@@ -195,15 +185,11 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:background="@color/transparant"
-            android:src="@drawable/icon_share"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.96"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            android:src="@drawable/icon_share" />
+        </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.cardview.widget.CardView>

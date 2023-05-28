@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Unduh Laporanmu"
+        android:text="Unduh Laporan"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="20dp"
