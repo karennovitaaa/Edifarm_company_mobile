@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -199,15 +200,16 @@ public class dashboardfix extends AppCompatActivity {
                 return true;
             }
         });
-
+        binding.selecte.setBackgroundColor(Color.WHITE);
+        binding.selecte.setTextColor(Color.BLACK);
         binding.selecte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 load(new FirstFragment());
-                binding.selecte.setBackgroundColor(R.drawable.back_tablayout);
-                binding.selecte.setTextColor(getResources().getColor(R.color.white));
-                binding.act.setBackgroundColor(getResources().getColor(R.color.white));
-                binding.act.setTextColor(R.drawable.white_tablayout);
+                binding.selecte.setBackgroundColor(Color.WHITE);
+                binding.selecte.setTextColor(Color.BLACK);
+                binding.act.setBackgroundColor(Color.TRANSPARENT);
+                binding.act.setTextColor(Color.WHITE);
             }
         });
 
@@ -215,10 +217,10 @@ public class dashboardfix extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 load(new ActivityPosts());
-                binding.selecte.setBackgroundColor(R.drawable.white_tablayout);
-                binding.selecte.setTextColor(getResources().getColor(R.color.white));
-                binding.act.setBackgroundColor(getResources().getColor(R.color.backgroun));
-                binding.act.setTextColor(R.drawable.back_tablayout);
+                binding.selecte.setBackgroundColor(Color.TRANSPARENT);
+                binding.selecte.setTextColor(Color.WHITE);
+                binding.act.setBackgroundColor(Color.WHITE);
+                binding.act.setTextColor(Color.BLACK);
             }
         });
 

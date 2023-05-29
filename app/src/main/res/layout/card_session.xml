@@ -60,12 +60,12 @@
 
                 <Button
                     android:id="@+id/clear"
-                    android:layout_width="167dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:backgroundTint="@color/backgroun"
                     android:fontFamily="@font/poppins_medium"
-                    android:gravity="top|right"
+                    android:gravity="center"
                     android:text="Berjalan"
                     android:layout_marginLeft="30dp"
                     android:textAllCaps="false"
