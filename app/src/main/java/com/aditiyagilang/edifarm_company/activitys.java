@@ -98,14 +98,6 @@ public class activitys extends AppCompatActivity {
         });
 
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
 
 //        add = findViewById(R.id.add);
 //        prof = findViewById(R.id.prof);

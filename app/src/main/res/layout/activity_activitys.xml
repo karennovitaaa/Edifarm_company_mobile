@@ -30,15 +30,6 @@
             </TextView>
 
 
-            <ImageButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|right"
-                android:layout_marginRight="30dp"
-                android:background="@color/app_bar"
-                android:src="@drawable/search_p"
-             />
 
         </androidx.appcompat.widget.Toolbar>
 

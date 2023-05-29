@@ -55,7 +55,7 @@
             android:background="@color/transparant"
             android:src="@drawable/icon_edit_pen"
             android:layout_gravity="center"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="130dp"
             />
 
         <ImageButton
