@@ -16,8 +16,11 @@ public class GetFullActivityDataItem {
     @SerializedName("start")
     private String start;
 
+    @SerializedName("session_id")
+    private int sessionId;
+
     @SerializedName("created_at")
-    private Object createdAt;
+    private String createdAt;
 
     @SerializedName("end")
     private String end;
@@ -27,6 +30,9 @@ public class GetFullActivityDataItem {
 
     @SerializedName("status")
     private String status;
+
+    @SerializedName("plant_name")
+    private String plantName;
 
     public String getActivityName() {
         return activityName;
@@ -60,11 +66,19 @@ public class GetFullActivityDataItem {
         this.start = start;
     }
 
-    public Object getCreatedAt() {
+    public int getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(int sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Object createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -90,5 +104,13 @@ public class GetFullActivityDataItem {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getPlantName() {
+        return plantName;
+    }
+
+    public void setPlantName(String plantName) {
+        this.plantName = plantName;
     }
 }

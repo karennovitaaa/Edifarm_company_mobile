@@ -1,10 +1,16 @@
 package com.aditiyagilang.edifarm_company.Riwayat;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -69,7 +75,24 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                     if (response.body().getData() != null) {
                         historyDataItem = historyDataItemList.get(0);
                     } else {
-                        Toast.makeText(getContext(), "Kosong", Toast.LENGTH_SHORT).show();
+                        final Dialog dialog = new Dialog(getContext());
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.pop_tryagain);
+                        Button oke = dialog.findViewById(R.id.dones);
+                        TextView massage = dialog.findViewById(R.id.massegedone);
+
+                        oke.setText("Coba");
+                        oke.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                        dialog.getWindow().setGravity(Gravity.CENTER);
                     }
 
                 }
@@ -78,7 +101,24 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
             @Override
             public void onFailure(Call<History> call, Throwable t) {
                 t.printStackTrace();
-                Toast.makeText(getContext(), "Coba Beberapa Saat Lagi", Toast.LENGTH_SHORT).show();
+                final Dialog dialog = new Dialog(getContext());
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.pop_tryagain);
+                Button oke = dialog.findViewById(R.id.dones);
+                TextView massage = dialog.findViewById(R.id.massegedone);
+
+                oke.setText("Coba");
+                oke.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                dialog.getWindow().setGravity(Gravity.CENTER);
             }
         });
 

@@ -202,6 +202,8 @@ public class dashboardfix extends AppCompatActivity {
         });
         binding.selecte.setBackgroundColor(Color.WHITE);
         binding.selecte.setTextColor(Color.BLACK);
+        binding.act.setBackgroundColor(Color.TRANSPARENT);
+        binding.act.setTextColor(Color.WHITE);
         binding.selecte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -249,15 +249,48 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
 
                 } else {
-                    Toast.makeText(login.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(login.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_tryagain);
+                    Button oke = dialog.findViewById(R.id.dones);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Login");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
 
                 }
             }
 
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
-                Toast.makeText(login.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                Log.d("DATA", t.toString());
+                final Dialog dialog = new Dialog(login.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.pop_tryagain);
+                Button oke = dialog.findViewById(R.id.dones);
+                TextView massage = dialog.findViewById(R.id.massegedone);
+
+                oke.setText("Coba");
+                oke.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                dialog.getWindow().setGravity(Gravity.CENTER);
             }
         });
 

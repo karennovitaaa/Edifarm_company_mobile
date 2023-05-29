@@ -56,7 +56,6 @@
         android:layout_marginEnd="136dp"
         android:text="Pilih Tanggal"
         android:textColor="@color/black" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

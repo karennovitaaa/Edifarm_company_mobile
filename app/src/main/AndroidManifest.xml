@@ -124,7 +124,8 @@
 
         <activity
             android:name=".register"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".login"
             android:exported="true"

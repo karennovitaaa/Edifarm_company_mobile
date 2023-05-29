@@ -496,7 +496,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                         String comment = comments.getText().toString();
                         Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
-                        Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
+
                         countCommentCall.enqueue(new Callback<AddComment>() {
                             @Override
                             public void onResponse(Call<AddComment> call, Response<AddComment> response) {
@@ -510,7 +510,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                         public void onResponse(Call<GetComment> call, Response<GetComment> response) {
                                             if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                                                 List<GetCommentDataItem> activityDataItemList = response.body().getData();
-                                                Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                                                 AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
 
                                                     @Override
@@ -549,9 +549,6 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 //                TextView jumlahComment = dialog.findViewById(R.id.jumlahh_comment_comment);
 
 
-                Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
-
-
                 GetCommentDataItem getCommentDataItem;
                 Call<GetComment> dashCall = apiInterface.getCommentsByPostIdResponse(post_id);
                 dashCall.enqueue(new Callback<GetComment>() {
@@ -559,7 +556,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                     public void onResponse(Call<GetComment> call, Response<GetComment> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                             List<GetCommentDataItem> activityDataItemList = response.body().getData();
-                            Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                             AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
 
                                 @Override

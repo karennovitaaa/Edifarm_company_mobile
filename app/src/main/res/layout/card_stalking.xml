@@ -116,7 +116,7 @@
                 android:backgroundTint="@color/transparant"
                 android:padding="0dp"
                 android:paddingTop="10dp"
-                android:src="@drawable/danger" />
+                android:src="@drawable/icon_trash2" />
 
             <LinearLayout
                 android:id="@+id/linear_icons"
