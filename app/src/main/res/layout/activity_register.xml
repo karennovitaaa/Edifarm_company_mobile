@@ -284,7 +284,7 @@
                         android:paddingTop="5dp"
                         android:elevation="9dp"
                         android:background="@color/transparant"
-                        android:src="@drawable/baseline_location_on_24"></ImageButton>
+                        android:src="@drawable/loc_round"></ImageButton>
 
                 </LinearLayout>
 
@@ -305,7 +305,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
                         android:background="@color/transparant"
-                        android:fontFamily="@font/poppins_bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Login"
                         android:textAllCaps="false"
                         android:textColor="@color/button"

@@ -8,7 +8,15 @@
     android:background="@color/white"
     android:backgroundTint="@color/white">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="@color/transparant">
+
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -37,7 +45,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:alpha="0.9"
+            android:alpha="0.7"
             android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
             android:fontFamily="@font/poppins_medium"
@@ -52,24 +60,27 @@
             android:id="@+id/buttonedit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/transparant"
-            android:src="@drawable/icon_edit_pen"
             android:layout_gravity="center"
-            android:layout_marginLeft="130dp"
-            />
+            android:layout_toStartOf="@+id/buttondelete"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/transparant"
+            android:src="@drawable/icon_edit_pen" />
 
         <ImageButton
             android:id="@+id/buttondelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
             android:background="@color/transparant"
             android:src="@drawable/icon_trash2"
             tools:layout_editor_absoluteX="286dp"
-            android:layout_gravity="center"
             tools:layout_editor_absoluteY="33dp" />
 
 
-    </LinearLayout>
-
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.cardview.widget.CardView>

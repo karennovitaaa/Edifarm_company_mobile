@@ -148,7 +148,7 @@
 
                     android:background="@color/white"
                     android:onClick="like"
-                    android:src="@drawable/coment">
+                    android:src="@drawable/new_comment">
 
                 </ImageButton>
 
@@ -163,6 +163,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:gravity="left"
                     android:text="121"
+                    android:alpha="0.7"
                     android:textColor="@color/black"></TextView>
 
                 <ImageButton
@@ -187,6 +188,7 @@
                     android:layout_marginRight="5dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="0"
+                    android:alpha="0.7"
                     android:textColor="@color/black">
 
                 </TextView>
@@ -196,7 +198,6 @@
 
 
         </RelativeLayout>
-
 
     </androidx.cardview.widget.CardView>
 

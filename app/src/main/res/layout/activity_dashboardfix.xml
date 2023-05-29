@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <LinearLayout
             android:id="@+id/constraint_appbar"
             android:layout_width="match_parent"
@@ -29,7 +28,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/logo_baru2"
                 android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,8 +64,6 @@
                         android:layout_weight="1"
                         android:elevation="0dp"
                         android:text="Unggahan"
-                        android:backgroundTint="@color/backgroun"
-                        android:background="@color/transparant"
                         android:textSize="10dp"
                         android:textAllCaps="false"
                         android:fontFamily="@font/poppins_bold"
@@ -81,9 +78,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/backgroun"
+
                         android:gravity="center"
-                        android:background="@color/transparant"
                         android:text="Aktivitas"
                         android:textSize="10dp"
                         android:fontFamily="@font/poppins_bold"
