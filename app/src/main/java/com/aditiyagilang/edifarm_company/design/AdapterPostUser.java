@@ -77,10 +77,11 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String token = item.getFcmToken().toString();
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
-        String imageUrlP = "https://82fa-103-160-182-11.ngrok-free.app/" + gambarpost;
+        String imageUrlP = "http://edifarm.yoganova.my.id/" + gambarpost;
         String textCaption = String.valueOf(item.getCaption());
         String akunname = sesionManager.getUserDetail().get(SesionManager.USERNAME);
-        String tanggals = item.getCreatedAt();
+        String tanggals = item.getCreatedAt().substring(0, 10);
+
         String cap = item.getCaption();
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         String post_id = String.valueOf(dataList.get(position).getId());
@@ -134,7 +135,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                     // update the activity status locally
                     ImageButton likeButton = holder.like.findViewById(R.id.loves);
-                    likeButton.setBackgroundResource(R.drawable.like_red);
+                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -143,7 +144,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                             deleteLikeCall.enqueue(new Callback<DeleteLike>() {
                                 @Override
                                 public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_white);
+                                    likeButton.setBackgroundResource(R.drawable.heart77);
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
@@ -151,7 +152,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                                                     reloadData();
                                                 }
@@ -192,7 +193,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                     });
                 } else {
                     ImageButton likeButton = holder.like.findViewById(R.id.loves);
-                    likeButton.setBackgroundResource(R.drawable.like_white);
+                    likeButton.setBackgroundResource(R.drawable.heart77);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -201,7 +202,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                    likeButton.setBackgroundResource(R.drawable.heart7);
                                     Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
                                     countLikeCall.enqueue(new Callback<CountLike>() {
                                         @Override

@@ -8,6 +8,7 @@
     tools:context=".session.Sesession_jenis">
 
     <com.google.android.material.appbar.AppBarLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/toolbar"
@@ -19,9 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="Jenis Tanaman"
-            android:fontFamily="@font/poppins_bold"
             android:textAlignment="center"
             android:textSize="24dp">
 

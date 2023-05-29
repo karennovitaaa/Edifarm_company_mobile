@@ -210,7 +210,7 @@ public class NewPosting extends Fragment {
 
                 RequestBody imageBody = RequestBody.create(MediaType.parse("image/*"), imageBytes);
                 MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", "image.jpg", imageBody);
-                Toast.makeText(getContext(), captionBody.toString() + latitudeBody + longitudeBody + user_idBody, Toast.LENGTH_SHORT).show();
+                
                 // Panggil kembali API setiap 5 detik
                 Call<Posting> ActCall = apiInterface.postResponse(captionBody, latitudeBody, longitudeBody, user_idBody, imagePart);
 
@@ -218,12 +218,12 @@ public class NewPosting extends Fragment {
                     @Override
                     public void onResponse(Call<Posting> call, Response<Posting> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            Toast.makeText(getContext(), response.body().getMessage() + "Ihiy Update Status", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                             NavHostFragment.findNavController(NewPosting.this)
                                     .navigate(R.id.action_NewPost_to_FirstFragment);
 
                         } else {
-                            Toast.makeText(getContext(), "Goblok", Toast.LENGTH_SHORT).show();
+
                             Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -231,6 +231,7 @@ public class NewPosting extends Fragment {
                     @Override
                     public void onFailure(Call<Posting> call, Throwable t) {
                         t.printStackTrace();
+                        Toast.makeText(getContext(), "Coba Beberapa Saat Lagi", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -238,7 +239,7 @@ public class NewPosting extends Fragment {
             }
         });
 
-     
+
     }
 
 

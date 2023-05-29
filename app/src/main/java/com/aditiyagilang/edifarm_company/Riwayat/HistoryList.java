@@ -71,13 +71,14 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                     } else {
                         Toast.makeText(getContext(), "Kosong", Toast.LENGTH_SHORT).show();
                     }
-                  
+
                 }
             }
 
             @Override
             public void onFailure(Call<History> call, Throwable t) {
                 t.printStackTrace();
+                Toast.makeText(getContext(), "Coba Beberapa Saat Lagi", Toast.LENGTH_SHORT).show();
             }
         });
 

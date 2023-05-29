@@ -99,7 +99,7 @@ public class First3Fragment extends Fragment implements View.OnClickListener, Se
                         Toast.makeText(requireContext(), "Kosong", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Cok", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -117,7 +117,7 @@ public class First3Fragment extends Fragment implements View.OnClickListener, Se
             }
         });
 
- 
+
     }
 
     private void addSession() {

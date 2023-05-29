@@ -142,7 +142,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                     // update the activity status locally
                     ImageButton likeButton = holder.like.findViewById(R.id.like_buttonu);
-                    likeButton.setBackgroundResource(R.drawable.like_red);
+                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -151,7 +151,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                             deleteLikeCall.enqueue(new Callback<DeleteLike>() {
                                 @Override
                                 public void onResponse(Call<DeleteLike> call, Response<DeleteLike> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_white);
+                                    likeButton.setBackgroundResource(R.drawable.heart77);
                                     holder.like.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
@@ -159,7 +159,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                                             deleteLikeCall.enqueue(new Callback<Like>() {
                                                 @Override
                                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                                    likeButton.setBackgroundResource(R.drawable.heart7);
 
                                                     reloadData();
                                                 }
@@ -200,7 +200,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                     });
                 } else {
                     ImageButton likeButton = holder.like.findViewById(R.id.like_buttonu);
-                    likeButton.setBackgroundResource(R.drawable.like_white);
+                    likeButton.setBackgroundResource(R.drawable.heart77);
 
                     holder.like.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -209,7 +209,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
                             deleteLikeCall.enqueue(new Callback<Like>() {
                                 @Override
                                 public void onResponse(Call<Like> call, Response<Like> response) {
-                                    likeButton.setBackgroundResource(R.drawable.like_red);
+                                    likeButton.setBackgroundResource(R.drawable.heart7);
                                     Call<CountLike> countLikeCall = apiInterface.CountLikeResponse(post_id);
                                     countLikeCall.enqueue(new Callback<CountLike>() {
                                         @Override

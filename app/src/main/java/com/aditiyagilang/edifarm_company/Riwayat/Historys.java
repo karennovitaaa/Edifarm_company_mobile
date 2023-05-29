@@ -36,7 +36,7 @@ public class Historys extends AppCompatActivity {
         binding = ActivityHistoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         bottomNavigationView = findViewById(R.id.bottomNavigationViewHis);
-        setSupportActionBar(binding.toolbar);
+
         bottomNavigationView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -48,7 +48,7 @@ public class Historys extends AppCompatActivity {
         });
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_history);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
 //        binding.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
