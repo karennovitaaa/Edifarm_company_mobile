@@ -1,6 +1,7 @@
 package com.aditiyagilang.edifarm_company.Riwayat;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.aditiyagilang.edifarm_company.databinding.FragmentListHistoryBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterHistory;
 import com.aditiyagilang.edifarm_company.model.History.History;
 import com.aditiyagilang.edifarm_company.model.History.HistoryDataItem;
+import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 
 import java.util.List;
 
@@ -73,7 +75,27 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                     recyclerView.setAdapter(adapterHistory);
 
                     if (response.body().getData() != null) {
-                        historyDataItem = historyDataItemList.get(0);
+                        final Dialog dialog = new Dialog(getContext());
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.pop_tryagain);
+                        Button oke = dialog.findViewById(R.id.dones);
+                        TextView massage = dialog.findViewById(R.id.masseges);
+                        massage.setText("Belum Ada Laporan \n Silahkan Membuat Sesi");
+
+                        oke.setText("Buat Sesi");
+                        oke.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                                Intent intent2 = new Intent(getContext(), Sesession_jenis.class);
+                                startActivity(intent2);
+                            }
+                        });
+                        dialog.show();
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                        dialog.getWindow().setGravity(Gravity.CENTER);
                     } else {
                         final Dialog dialog = new Dialog(getContext());
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -95,6 +117,27 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                         dialog.getWindow().setGravity(Gravity.CENTER);
                     }
 
+                } else {
+                    final Dialog dialog = new Dialog(getContext());
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_tryagain);
+                    Button oke = dialog.findViewById(R.id.dones);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Belum Ada Laporan \n Silahkan Membuat Sesi");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                            Intent intent2 = new Intent(getContext(), Sesession_jenis.class);
+                            startActivity(intent2);
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
                 }
             }
 
@@ -112,6 +155,8 @@ public class HistoryList extends Fragment implements AdapterHistory.OnItemClickL
                     @Override
                     public void onClick(View view) {
                         dialog.dismiss();
+                        Intent intent2 = new Intent(getContext(), Sesession_jenis.class);
+                        startActivity(intent2);
                     }
                 });
                 dialog.show();
