@@ -54,7 +54,7 @@
         android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:layout_marginEnd="136dp"
-        android:text="Pilih Tanggal"
+        android:text="Tanggal Mulai"
         android:textColor="@color/black" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,7 +97,7 @@
         android:layout_gravity="left|center"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="136dp"
-        android:text="Pilih Tanggal"
+        android:text="Tanggal Akhir"
         android:alpha="0.7"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/black" />
