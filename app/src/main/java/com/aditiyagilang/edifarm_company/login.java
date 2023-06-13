@@ -164,7 +164,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onResponse(Call<OTP> call, Response<OTP> response) {
                         if (response.body() != null && response.body().isSuccess() && response.isSuccessful()) {
-
+                            dialog.dismiss();
                             final Dialog dialog = new Dialog(login.this);
                             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                             dialog.setContentView(R.layout.pop_change_pass);
@@ -177,16 +177,32 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                                 public void onClick(View view) {
                                     String pass = changepass.getText().toString();
                                     String confpass = changepassconfirm.getText().toString();
-                                    String otp = otps;
+                                    String otps = otp.getText().toString();
 
                                     apiInterface = ApiClient.getClient().create(ApiInterface.class);
-                                    Call<ChangePassword> loginCall = apiInterface.gantiPasswordResponse(otp, pass, confpass);
+                                    Call<ChangePassword> loginCall = apiInterface.gantiPasswordResponse(otps, pass, confpass);
                                     loginCall.enqueue(new Callback<ChangePassword>() {
                                         @Override
                                         public void onResponse(Call<ChangePassword> call, Response<ChangePassword> response) {
                                             if (response.body() != null && response.body().isSuccess() && response.isSuccessful()) {
-
-
+                                                dialog.dismiss();
+                                                final Dialog dialog = new Dialog(login.this);
+                                                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                                dialog.setContentView(R.layout.pop_up_done);
+                                                Button done = dialog.findViewById(R.id.done);
+                                                TextView massage = dialog.findViewById(R.id.massegedone);
+                                                massage.setText(response.body().getMessage());
+                                                done.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View view) {
+                                                        dialog.dismiss();
+                                                    }
+                                                });
+                                                dialog.show();
+                                                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                                                dialog.getWindow().setGravity(Gravity.CENTER);
                                             } else {
                                                 Toast.makeText(login.this, "Invalid OTP", Toast.LENGTH_SHORT).show();
                                             }

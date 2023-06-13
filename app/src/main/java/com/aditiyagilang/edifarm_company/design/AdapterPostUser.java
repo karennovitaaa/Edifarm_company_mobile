@@ -385,7 +385,8 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
                 Button reason = dialog.findViewById(R.id.reason);
                 Button cancel = dialog.findViewById(R.id.cancel_reason);
                 TextView urgent = dialog.findViewById(R.id.urgent);
-                urgent.setText("Yakin DiHapus Dek \n Nanti Nyesel Kalu ilang ;(");
+                urgent.setText("Apkah Anda Yakin \n Untuk Menghapus Postingan Ini");
+                reason.setText("Hapus");
 
                 reason.setOnClickListener(new View.OnClickListener() {
                     @Override

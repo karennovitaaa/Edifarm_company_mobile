@@ -8,66 +8,78 @@
     android:backgroundTint="@color/white"
     app:cardElevation="10dp">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="@color/transparant">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/nama_kegiatans"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/nama_kegiatans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.9"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingLeft="20dp"
+                    android:text="Penyiraman"
+                    android:textColor="@color/backgroun"
+                    android:textSize="15dp">
+
+                </TextView>
+
+                <TextView
+
+                    android:id="@+id/plant_names"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingLeft="20dp"
+                    android:text="Penyiraman pakek air"
+                    android:textColor="@color/font_card_activity"
+                    android:textSize="10dp"></TextView>
+
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/buttonedit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.9"
-                android:fontFamily="@font/poppins_bold"
-                android:paddingLeft="20dp"
-                android:text="Penyiraman"
-                android:textColor="@color/backgroun"
-                android:textSize="15dp">
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_toStartOf="@+id/buttondelete"
+                android:background="@color/transparant"
+                android:src="@drawable/icon_edit_pen" />
 
-            </TextView>
-
-            <TextView
-
-                android:id="@+id/plant_names"
+            <ImageButton
+                android:id="@+id/buttondelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:alpha="0.9"
-                android:fontFamily="@font/poppins_medium"
-                android:paddingLeft="20dp"
-                android:text="Penyiraman pakek air"
-                android:textColor="@color/font_card_activity"
-                android:textSize="10dp"></TextView>
-
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/buttonedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="130dp"
-            android:background="@color/transparant"
-            android:src="@drawable/icon_edit_pen" />
-
-        <ImageButton
-            android:id="@+id/buttondelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:background="@color/transparant"
-            android:src="@drawable/icon_trash2"
-            tools:layout_editor_absoluteX="286dp"
-            tools:layout_editor_absoluteY="33dp" />
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/transparant"
+                android:src="@drawable/icon_trash2"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="33dp" />
 
 
-    </LinearLayout>
-
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.cardview.widget.CardView>

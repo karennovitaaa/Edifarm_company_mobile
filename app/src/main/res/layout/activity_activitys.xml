@@ -11,27 +11,19 @@
         android:background="@drawable/toolbar"
         android:theme="@style/Theme.Edifarm_Company.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/toolbar"
-            app:popupTheme="@style/Theme.Edifarm_Company.PopupOverlay">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Aktivitas"
-                android:fontFamily="@font/poppins_bold"
-                android:textSize="20dp"
-                android:paddingLeft="20dp"
-                android:paddingTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:text="Aktivitas"
+            android:textSize="20dp">
 
-            </TextView>
+        </TextView>
 
-
-
-        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

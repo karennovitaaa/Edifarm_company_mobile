@@ -84,10 +84,11 @@ public class AdapterStalking extends RecyclerView.Adapter<AdapterStalking.Adapte
         String imageUrlP = url + gambarpost;
         String textCaption = String.valueOf(item.getCaption());
         String akunname = item.getUsername();
-        String tanggals = item.getCreatedAt().split(" ")[0];
+        String tanggals = item.getCreatedAt().substring(0, 10);
         String cap = item.getCaption();
         String token = item.getFcmToken().toString();
-        Picasso.get().load(imageUrl).into(holder.fotoProfil);
+        Picasso.get().load(imageUrl).resize(50, 50)
+                .centerCrop().into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);

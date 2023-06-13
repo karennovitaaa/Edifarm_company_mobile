@@ -23,9 +23,10 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
+
             <LinearLayout
                 android:id="@+id/lineargroup1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
@@ -33,16 +34,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewPost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="10sp"
-                    app:cardCornerRadius="100dp">
+
+                    android:elevation="0dp"
+                    app:cardCornerRadius="1000dp"
+                    app:cardElevation="0dp">
 
                     <ImageButton
                         android:id="@+id/imageProfilPosting"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:scaleType="center" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+
+                        android:scaleType="centerCrop" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -79,18 +85,17 @@
 
                 </TextView>
 
+                <ImageButton
+                    android:id="@+id/button_reason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center|right"
+                    android:layout_toEndOf="@+id/lineargroup1"
+                    android:backgroundTint="@color/transparant"
+                    android:src="@drawable/report3" />
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/button_reason"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_toEndOf="@+id/lineargroup1"
-                android:backgroundTint="@color/transparant"
-                android:src="@drawable/report3" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/listImagePosting"

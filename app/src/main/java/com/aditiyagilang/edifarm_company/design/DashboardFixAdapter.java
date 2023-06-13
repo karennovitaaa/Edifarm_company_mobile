@@ -131,13 +131,15 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         String cap = item.getCaption();
         String email = item.getEmail();
         String name = item.getName();
-        String latitude = item.getLatitude();
-        String longitude = item.getLongitude();
-        String token = item.getFcmToken().toString();
+        String latitude = String.valueOf(item.getLatitude());
+        String longitude = String.valueOf(item.getLongitude());
+        String token = String.valueOf(item.getFcmToken());
 
 
-        Picasso.get().load(imageUrl).into(holder.fotoProfil);
-        Picasso.get().load(imageUrlP).into(holder.gambarPosting);
+        Picasso.get().load(imageUrl).resize(50, 50)
+                .centerCrop().into(holder.fotoProfil);
+        Picasso.get().load(imageUrlP).resize(900, 600)
+                .centerCrop().into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);
         holder.caption.setText(item.getCaption());
@@ -685,8 +687,8 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 loc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String latitude = item.getLatitude();
-                        String longitude = item.getLongitude();
+                        String latitude = String.valueOf(item.getLatitude());
+                        String longitude = String.valueOf(item.getLongitude());
 
                         // Buat URI dengan data longitude dan latitude
                         String uri = "geo:" + latitude + "," + longitude + "?q=" + latitude + "," + longitude;

@@ -3,13 +3,16 @@ package com.aditiyagilang.edifarm_company.dashboardfixx;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -18,13 +21,16 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -210,7 +216,7 @@ public class NewPosting extends Fragment {
 
                 RequestBody imageBody = RequestBody.create(MediaType.parse("image/*"), imageBytes);
                 MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image", "image.jpg", imageBody);
-                
+
                 // Panggil kembali API setiap 5 detik
                 Call<Posting> ActCall = apiInterface.postResponse(captionBody, latitudeBody, longitudeBody, user_idBody, imagePart);
 
@@ -224,7 +230,24 @@ public class NewPosting extends Fragment {
 
                         } else {
 
-                            Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                            final Dialog dialog = new Dialog(getContext());
+                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                            dialog.setContentView(R.layout.pop_tryagain);
+                            Button oke = dialog.findViewById(R.id.dones);
+                            TextView massage = dialog.findViewById(R.id.massegedone);
+
+                            oke.setText("Coba");
+                            oke.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            dialog.show();
+                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                            dialog.getWindow().setGravity(Gravity.CENTER);
                         }
                     }
 

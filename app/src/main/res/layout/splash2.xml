@@ -26,5 +26,15 @@
         android:textSize="15dp">
 
     </TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Version 1.0"
+        android:paddingTop="10dp"
+        android:textColor="@color/base"
+        android:textSize="15dp">
+
+    </TextView>
 
 </LinearLayout>

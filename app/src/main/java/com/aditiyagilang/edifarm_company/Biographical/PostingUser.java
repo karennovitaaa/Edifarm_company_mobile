@@ -18,6 +18,7 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.databinding.FragmentLikeUserBinding;
 import com.aditiyagilang.edifarm_company.databinding.FragmentPostingSosmedBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
@@ -47,7 +48,7 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
     LinearLayoutManager linearLayoutManager;
     ApiInterface apiInterface;
     GetPostLikeDataItem dgetPostDataItem;
-    private FragmentPostingSosmedBinding binding;
+    private FragmentLikeUserBinding binding;
 
     @Override
     public View onCreateView(
@@ -55,7 +56,7 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentPostingSosmedBinding.inflate(inflater, container, false);
+        binding = FragmentLikeUserBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -65,7 +66,7 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
 
         sesionManager = new SesionManager(requireContext());
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        recyclerView = getView().findViewById(R.id.postlist);
+        recyclerView = getView().findViewById(R.id.listu);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
