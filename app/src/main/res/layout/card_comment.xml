@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/white"
-    >
+    android:backgroundTint="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewPost"
             android:layout_width="wrap_content"
@@ -25,10 +25,11 @@
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+
     <androidx.cardview.widget.CardView
-        android:layout_marginLeft="65dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
         android:backgroundTint="@color/white"
         android:elevation="6dp"
         android:padding="10dp"
@@ -36,71 +37,84 @@
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+
+                <TextView
+
+                    android:id="@+id/username_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="lusyy123"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tanggal_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/poppins_light"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="12-12-20025"
+                    android:textColor="@color/backgroun"
+                    android:textSize="11dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/jam_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/poppins_light"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="12-12-20025"
+                    android:textColor="@color/backgroun"
+                    android:textSize="11dp">
+
+                </TextView>
+
+            </LinearLayout>
 
             <TextView
-
-                android:id="@+id/username_comment"
-                android:layout_width="wrap_content"
+                android:id="@+id/isi_comment"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="lusyy123"
-                android:textColor="@color/black"
-                android:alpha="0.5"
-                android:fontFamily="@font/poppins_bold">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tanggal_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:paddingTop="20dp"
-                android:paddingLeft="20dp"
-                android:textSize="11dp"
-                android:alpha="0.7"
-                android:textColor="@color/backgroun"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/poppins_light"
-                android:text="12-12-20025">
+                android:text="halo apakabar semua Dengan generator teks online Anda dapat memproses Lorem Ipsum pribadi Anda dengan memperkayanya dengan elemen html yang menentukan strukturnya"
+                android:textColor="@color/black"
+
+                android:textSize="12dp">
 
             </TextView>
 
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/isi_comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_light"
-            android:textSize="12dp"
-            android:textColor="@color/black"
-
-            android:text="halo apakabar semua Dengan generator teks online Anda dapat memproses Lorem Ipsum pribadi Anda dengan memperkayanya dengan elemen html yang menentukan strukturnya">
-
-        </TextView>
-
-
-
-    </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.cardview.widget.CardView>

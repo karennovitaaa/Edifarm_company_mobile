@@ -131,13 +131,15 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
         String cap = item.getCaption();
         String email = item.getEmail();
         String name = item.getName();
-        String latitude = item.getLatitude();
-        String longitude = item.getLongitude();
-        String token = item.getFcmToken().toString();
+        String latitude = String.valueOf(item.getLatitude());
+        String longitude = String.valueOf(item.getLongitude());
+        String token = String.valueOf(item.getFcmToken());
 
 
-        Picasso.get().load(imageUrl).into(holder.fotoProfil);
-        Picasso.get().load(imageUrlP).into(holder.gambarPosting);
+        Picasso.get().load(imageUrl).resize(50, 50)
+                .centerCrop().into(holder.fotoProfil);
+        Picasso.get().load(imageUrlP).resize(900, 600)
+                .centerCrop().into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);
         holder.caption.setText(item.getCaption());
@@ -496,7 +498,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                         String comment = comments.getText().toString();
                         Call<AddComment> countCommentCall = apiInterface.addCommentResponse(post_id, comment, user_id, token);
 
-                        Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
+
                         countCommentCall.enqueue(new Callback<AddComment>() {
                             @Override
                             public void onResponse(Call<AddComment> call, Response<AddComment> response) {
@@ -510,7 +512,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                                         public void onResponse(Call<GetComment> call, Response<GetComment> response) {
                                             if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                                                 List<GetCommentDataItem> activityDataItemList = response.body().getData();
-                                                Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                                                 AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
 
                                                     @Override
@@ -549,9 +551,6 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 //                TextView jumlahComment = dialog.findViewById(R.id.jumlahh_comment_comment);
 
 
-                Toast.makeText(context, post_id, Toast.LENGTH_SHORT).show();
-
-
                 GetCommentDataItem getCommentDataItem;
                 Call<GetComment> dashCall = apiInterface.getCommentsByPostIdResponse(post_id);
                 dashCall.enqueue(new Callback<GetComment>() {
@@ -559,7 +558,7 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                     public void onResponse(Call<GetComment> call, Response<GetComment> response) {
                         if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                             List<GetCommentDataItem> activityDataItemList = response.body().getData();
-                            Toast.makeText(context, post_id + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
                             AdapterComen activityAdapter = new AdapterComen(dialog.getContext(), activityDataItemList, new AdapterComen.OnItemClickListener() {
 
                                 @Override
@@ -688,8 +687,8 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
                 loc.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String latitude = item.getLatitude();
-                        String longitude = item.getLongitude();
+                        String latitude = String.valueOf(item.getLatitude());
+                        String longitude = String.valueOf(item.getLongitude());
 
                         // Buat URI dengan data longitude dan latitude
                         String uri = "geo:" + latitude + "," + longitude + "?q=" + latitude + "," + longitude;

@@ -322,9 +322,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.AdapterH
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
                     // update the activity status locally
 
-                    notifyDataSetChanged();
-                    Toast.makeText(context, response.body().getMessage() + "Mari Gess", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, Sesession_jenis.class);
+               
                     Call<Documentation> UpActCall = apiInterface.generateReportResponse(user_id, id);
                     UpActCall.enqueue(new Callback<Documentation>() {
                         @Override
@@ -337,7 +335,7 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.AdapterH
                                 Intent intent = new Intent(context, Sesession_jenis.class);
 
                             } else {
-                                Toast.makeText(context, response.body().getMessage() + "Salah", Toast.LENGTH_SHORT).show();
+
                             }
                         }
 

@@ -13,8 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -383,56 +381,7 @@ public class AdapterActivityPost extends RecyclerView.Adapter<AdapterActivityPos
             }
         });
 
-        holder.open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Dialog dialog = new Dialog(context);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.web_view_pdf);
 
-                WebView webView = dialog.findViewById(R.id.web);
-
-                Call<Download> downloadCall = apiInterface.downloadPDFResponse(id);
-                Toast.makeText(context, id, Toast.LENGTH_SHORT).show();
-                downloadCall.enqueue(new Callback<Download>() {
-                    @Override
-                    public void onResponse(Call<Download> call, Response<Download> response) {
-                        if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                            // Mendapatkan URL file PDF
-                            String pdfUrl = response.body().getData().getDownloadUrl();
-
-                            // Mengatur WebViewClient
-                            webView.setWebViewClient(new WebViewClient() {
-                                @Override
-                                public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                                    // Menggunakan WebView bawaan untuk membuka URL PDF
-                                    view.loadUrl(url);
-                                    return true;
-                                }
-                            });
-
-                            // Mengaktifkan fitur zoom dan JavaScript pada WebView
-                            webView.getSettings().setSupportZoom(true);
-                            webView.getSettings().setJavaScriptEnabled(true);
-
-                            // Load URL PDF menggunakan Google Docs Viewer
-                            webView.loadUrl(pdfUrl);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<Download> call, Throwable t) {
-                        t.printStackTrace();
-                    }
-                });
-
-                dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-            }
-        });
     }
 
     private void reloadData() {

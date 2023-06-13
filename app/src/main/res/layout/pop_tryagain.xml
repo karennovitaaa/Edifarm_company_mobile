@@ -10,17 +10,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/massegedone"
+            android:id="@+id/masseges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Buat Password Baru"
+            android:paddingTop="20dp"
+            android:text="Coba Beberapa  \n Saat Lagi"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/backgroun"
@@ -28,41 +27,27 @@
 
         </TextView>
 
-        <EditText
-            android:id="@+id/changepass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_medium"
-            android:hint="Masukan Password Baru"
-            android:textColor="@color/subText"
-            android:textColorHint="@color/subText">
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/changepassconfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_medium"
-            android:hint="Konfirmasi Password Baru"
-            android:textColor="@color/subText"
-            android:textColorHint="@color/subText">
-
-        </EditText>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loads"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/tryagain" />
 
 
         <Button
-            android:id="@+id/sendpass"
+            android:id="@+id/dones"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/button"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/poppins_medium"
             android:padding="5dp"
-            android:text="Ganti"
+            android:text="Selesai"
             android:textAllCaps="false"
             android:textColor="@color/white"></Button>
 

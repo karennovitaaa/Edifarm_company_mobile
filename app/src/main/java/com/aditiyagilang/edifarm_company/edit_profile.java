@@ -3,19 +3,26 @@ package com.aditiyagilang.edifarm_company;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
 import com.aditiyagilang.edifarm_company.model.UpdateBio.UpdateBio;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -60,6 +68,9 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
         sesionManager = new SesionManager(edit_profile.this);
         poto = findViewById(R.id.editpoto);
         ephoto = findViewById(R.id.photobio);
+        String po = sesionManager.getUserDetail().get(SesionManager.PHOTO);
+        String imageUrl = "http://edifarm.yoganova.my.id/" + po;
+        Picasso.get().load(imageUrl).into(ephoto);
 
 
         updated = findViewById(R.id.update);
@@ -93,12 +104,12 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        Log.d("ID_USER", sesionManager.getUserDetail().get(SesionManager.ID));
+        Log.d("ID_USER", sesionManager.getUserDetail().get(SesionManager.USERNAME));
         eusername = findViewById(R.id.editusername);
         if (SesionManager.USERNAME == null) {
             eusername.setHint("Masukan Username");
         } else {
-            eusername.setHint(sesionManager.getUserDetail().get(SesionManager.ID));
+            eusername.setHint(sesionManager.getUserDetail().get(SesionManager.USERNAME));
         }
 
 
@@ -226,9 +237,47 @@ public class edit_profile extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<UpdateBio> call, Response<UpdateBio> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isSuccess()) {
-                    Toast.makeText(edit_profile.this, "Update success", Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(edit_profile.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_up_done);
+                    Button oke = dialog.findViewById(R.id.done);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Oke");
+                    massage.setText("Berhasil Merubah Data");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            sesionManager.logoutSession();
+                            Intent intent = new Intent(edit_profile.this, login.class);
+
+                            startActivity(intent);
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
                 } else {
-                    Toast.makeText(edit_profile.this, "Update failed", Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(edit_profile.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_tryagain);
+                    Button oke = dialog.findViewById(R.id.dones);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Coba");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
                 }
             }
 

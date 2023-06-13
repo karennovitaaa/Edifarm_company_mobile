@@ -96,10 +96,46 @@ public class First3Fragment extends Fragment implements View.OnClickListener, Se
                     if (!getSessionDataItemList.isEmpty()) {
                         getSessionDataItem = getSessionDataItemList.get(0);
                     } else {
-                        Toast.makeText(requireContext(), "Kosong", Toast.LENGTH_SHORT).show();
+                        final Dialog dialog = new Dialog(getContext());
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.pop_tryagain);
+                        Button oke = dialog.findViewById(R.id.dones);
+                        TextView massage = dialog.findViewById(R.id.masseges);
+                        massage.setText("Buat Sesi Baru");
+
+                        oke.setText("Oke");
+                        
+                        oke.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                        dialog.getWindow().setGravity(Gravity.CENTER);
                     }
                 } else {
-                    Toast.makeText(getContext(), "Cok", Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(getContext());
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_tryagain);
+                    Button oke = dialog.findViewById(R.id.dones);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Coba");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
                 }
             }
 
@@ -117,7 +153,7 @@ public class First3Fragment extends Fragment implements View.OnClickListener, Se
             }
         });
 
- 
+
     }
 
     private void addSession() {

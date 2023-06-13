@@ -62,6 +62,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
     }
 
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
@@ -81,7 +82,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
                     filteredDataList.addAll(dataList);
                 } else {
                     for (GetFullActivityDataItem data : dataList) {
-                        if (data.getActivityName().toLowerCase().contains(keyword) || data.getStatus().toLowerCase().contains(keyword)) {
+                        if (data.getActivityName().toLowerCase().contains(keyword) || data.getStatus().toLowerCase().contains(keyword) || data.getPlantName().toLowerCase().contains(keyword)) {
                             filteredDataList.add(data);
                         }
                     }
@@ -116,6 +117,9 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
         final GetFullActivityDataItem item = dataList.get(position);
         String activity_name = item.getActivityName();
         String status1 = item.getStatus();
+        String plan = String.valueOf(item.getPlantName());
+
+        holder.plantname.setText(plan);
 
 
         holder.nama_kegiatans.setText(activity_name);
@@ -353,7 +357,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
 
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
-        TextView nama_kegiatans;
+        TextView nama_kegiatans, plantname;
         ImageButton buttonedit;
         ImageButton buttondelete;
 
@@ -367,6 +371,7 @@ public class ActivityListAdapter extends RecyclerView.Adapter<ActivityListAdapte
             nama_kegiatans = itemView.findViewById(R.id.nama_kegiatans);
             buttondelete = itemView.findViewById(R.id.buttondelete);
             buttonedit = itemView.findViewById(R.id.buttonedit);
+            plantname = itemView.findViewById(R.id.plant_names);
             sesionManager = new SesionManager(itemView.getContext());
             apiInterface = ApiClient.getClient().create(ApiInterface.class);
 

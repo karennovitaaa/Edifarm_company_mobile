@@ -50,7 +50,8 @@ public class AdapterComen extends RecyclerView.Adapter<AdapterComen.AdapterHolde
         String textProfil = String.valueOf(item.getId());
         String fotoProfil = String.valueOf(item.getPhoto());
         String username = String.valueOf(item.getUsername());
-        String tanggal = String.valueOf(item.getCreatedAt());
+        String tanggal = String.valueOf(item.getCreatedAt()).substring(0, 10);
+        String jam = String.valueOf(item.getCreatedAt()).substring(12, 16);
         String comment = String.valueOf(item.getComment());
         String imgUrl = url + fotoProfil;
 
@@ -58,6 +59,7 @@ public class AdapterComen extends RecyclerView.Adapter<AdapterComen.AdapterHolde
         holder.comment.setText(comment);
         holder.username.setText(username);
         holder.tanggal_coment.setText(tanggal);
+        holder.jam_posting.setText(jam);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +88,7 @@ public class AdapterComen extends RecyclerView.Adapter<AdapterComen.AdapterHolde
 
     public class AdapterHolder extends RecyclerView.ViewHolder {
         ImageView fotoProfil;
-        TextView comment, tanggal_coment, username;
+        TextView comment, tanggal_coment, username, jam_posting;
 
         public AdapterHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,6 +96,7 @@ public class AdapterComen extends RecyclerView.Adapter<AdapterComen.AdapterHolde
             tanggal_coment = itemView.findViewById(R.id.tanggal_comment);
             username = itemView.findViewById(R.id.username_comment);
             fotoProfil = itemView.findViewById(R.id.imagecomment);
+            jam_posting = itemView.findViewById(R.id.jam_comment);
         }
     }
 }

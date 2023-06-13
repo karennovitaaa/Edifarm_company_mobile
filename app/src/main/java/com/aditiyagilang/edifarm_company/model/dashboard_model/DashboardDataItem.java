@@ -17,7 +17,7 @@ public class DashboardDataItem {
     private String postLongitude;
 
     @SerializedName("latitude")
-    private String latitude;
+    private Object latitude;
 
     @SerializedName("caption")
     private String caption;
@@ -50,7 +50,7 @@ public class DashboardDataItem {
     private String username;
 
     @SerializedName("longitude")
-    private String longitude;
+    private Object longitude;
 
     public String getImage() {
         return image;
@@ -84,11 +84,11 @@ public class DashboardDataItem {
         this.postLongitude = postLongitude;
     }
 
-    public String getLatitude() {
+    public Object getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Object latitude) {
         this.latitude = latitude;
     }
 
@@ -172,11 +172,11 @@ public class DashboardDataItem {
         this.username = username;
     }
 
-    public String getLongitude() {
+    public Object getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Object longitude) {
         this.longitude = longitude;
     }
 }

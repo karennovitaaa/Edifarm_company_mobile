@@ -60,7 +60,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Adapte
         final ActivityDataItem item = dataList.get(position);
         String activity_name = item.getActivityName();
         String status1 = item.getStatus();
-        String plantname = item.getPlantName();
+        String plantname = String.valueOf(item.getPlantName());
 
 
         holder.nama_kegiatan.setText(activity_name);

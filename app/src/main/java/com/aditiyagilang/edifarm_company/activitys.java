@@ -22,7 +22,6 @@ import com.aditiyagilang.edifarm_company.databinding.ActivityActivitysBinding;
 import com.aditiyagilang.edifarm_company.session.Sesession_jenis;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.snackbar.Snackbar;
 
 public class activitys extends AppCompatActivity {
 
@@ -37,11 +36,10 @@ public class activitys extends AppCompatActivity {
         binding = ActivityActivitysBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_activitys);
         appBarConfiguration = new AppBarConfiguration.Builder(R.id.First2Fragment).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationViewAct);
         bottomNavigationView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -96,7 +94,6 @@ public class activitys extends AppCompatActivity {
 
 
         });
-
 
 
 //        add = findViewById(R.id.add);

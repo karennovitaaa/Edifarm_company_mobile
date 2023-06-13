@@ -37,7 +37,6 @@
         <activity
             android:name=".Riwayat.Historys"
             android:exported="false"
-
             android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".Stalking.StalkingAcount"
@@ -49,7 +48,8 @@
             android:exported="false" />
         <activity
             android:name=".Biographical.ChangeAcount"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".Biographical.Biographical"
             android:exported="false"
@@ -75,7 +75,8 @@
             android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".dashboard_tabbed"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".Splash2"
             android:exported="true"
@@ -123,7 +124,8 @@
 
         <activity
             android:name=".register"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Edifarm_Company.NoActionBar" />
         <activity
             android:name=".login"
             android:exported="true"

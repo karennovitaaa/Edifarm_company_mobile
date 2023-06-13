@@ -20,8 +20,8 @@
         <LinearLayout
             android:id="@+id/constraint_appbar"
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
 
             <ImageView
@@ -63,11 +63,13 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:elevation="0dp"
-                        android:text="Unggahan"
-                        android:textSize="10dp"
-                        android:textAllCaps="false"
+
                         android:fontFamily="@font/poppins_bold"
-                        android:textColor="@color/white">
+
+                        android:text="Unggahan"
+                        android:textAllCaps="false"
+
+                        android:textSize="10dp">
 
 
                     </Button>
@@ -79,12 +81,14 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
 
+
+                        android:fontFamily="@font/poppins_bold"
+
                         android:gravity="center"
                         android:text="Aktivitas"
-                        android:textSize="10dp"
-                        android:fontFamily="@font/poppins_bold"
                         android:textAllCaps="false"
-                        android:textColor="@color/white">
+
+                        android:textSize="10dp">
 
 
                     </Button>

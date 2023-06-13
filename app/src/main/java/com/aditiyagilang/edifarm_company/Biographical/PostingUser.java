@@ -1,9 +1,16 @@
 package com.aditiyagilang.edifarm_company.Biographical;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,8 +25,8 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.FragmentLikeUserBinding;
-import com.aditiyagilang.edifarm_company.databinding.FragmentPostingSosmedBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLikeDataItem;
@@ -87,7 +94,29 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
                         recyclerView.setAdapter(adapterPostLike);
                         dgetPostDataItem = postLikeDataItemList.get(0);
                     } else {
-                        Toast.makeText(getContext(), "Ga Posting Paling", Toast.LENGTH_SHORT).show();
+                        final Dialog dialog = new Dialog(getContext());
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.pop_tryagain);
+                        Button oke = dialog.findViewById(R.id.dones);
+                        TextView massage = dialog.findViewById(R.id.masseges);
+                        massage.setText("Belum Menyukai Postingan Apapun");
+
+                        oke.setText("Oke");
+
+
+                        oke.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.dismiss();
+                                Intent intent = new Intent(getContext(), dashboardfix.class);
+                                startActivity(intent);
+                            }
+                        });
+                        dialog.show();
+                        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                        dialog.getWindow().setGravity(Gravity.CENTER);
                     }
                     Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }

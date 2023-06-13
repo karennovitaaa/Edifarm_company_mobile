@@ -2,21 +2,28 @@ package com.aditiyagilang.edifarm_company;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -175,16 +182,70 @@ public class register extends AppCompatActivity implements View.OnClickListener 
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if (response.isSuccessful() && response.body().isSuccess() && response != null) {
                     Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(register.this, berhasil_login.class);
-                    startActivity(intent);
+
+                    final Dialog dialog = new Dialog(register.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_up_done);
+                    Button oke = dialog.findViewById(R.id.done);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+                    massage.setText("Berhasil Mendaftar");
+
+                    oke.setText("Login");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(register.this, login.class);
+                            startActivity(intent);
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
+
                 } else {
-                    Toast.makeText(register.this, response.body().getMassage(), Toast.LENGTH_SHORT).show();
+                    final Dialog dialog = new Dialog(register.this);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.pop_tryagain);
+                    Button oke = dialog.findViewById(R.id.dones);
+                    TextView massage = dialog.findViewById(R.id.massegedone);
+
+                    oke.setText("Coba");
+                    oke.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                    dialog.getWindow().setGravity(Gravity.CENTER);
                 }
             }
 
             @Override
             public void onFailure(Call<Register> call, Throwable t) {
+                final Dialog dialog = new Dialog(register.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.pop_tryagain);
+                Button oke = dialog.findViewById(R.id.dones);
+                TextView massage = dialog.findViewById(R.id.massegedone);
 
+                oke.setText("Oke");
+                oke.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+                dialog.getWindow().setGravity(Gravity.CENTER);
             }
         });
     }
