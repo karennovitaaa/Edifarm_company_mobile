@@ -74,7 +74,7 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String fotoProfil = sesionManager.getUserDetail().get(SesionManager.PHOTO);
         String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
         String url = "http://edifarm.yoganova.my.id/";
-        String token = item.getFcmToken().toString();
+        String token = String.valueOf(item.getFcmToken());
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
         String imageUrlP = "http://edifarm.yoganova.my.id/" + gambarpost;
