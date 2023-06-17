@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,41 +12,32 @@
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="154dp"
+        android:layout_marginEnd="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/eclipse_success2" />
+        app:srcCompat="@drawable/checked" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
-        android:alpha="60"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/eclipse_success1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-125dp" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="50"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/farmer" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="544dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Selamat  anda telah berhasil registasi !"
+        android:layout_below="@+id/imageView13"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="58dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Selamat  anda telah berhasil Registasi !"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textStyle="bold"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,12 +45,16 @@
         android:id="@+id/logout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="162dp"
         android:layout_marginTop="600dp"
-        android:text="login"
+        android:layout_marginEnd="161dp"
+        android:backgroundTint="@color/button"
+        android:text="Login"
+        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -80,10 +75,10 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
-            android:background="@drawable/transparent_background"
+            android:backgroundTint="@color/button"
 
 
             >
@@ -92,4 +87,4 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
