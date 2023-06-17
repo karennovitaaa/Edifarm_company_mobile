@@ -1,6 +1,7 @@
 package com.aditiyagilang.edifarm_company.Biographical;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -23,10 +24,12 @@ import com.aditiyagilang.edifarm_company.R;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.api.ApiClient;
 import com.aditiyagilang.edifarm_company.api.ApiInterface;
+import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
 import com.aditiyagilang.edifarm_company.databinding.FragmentPostingUserBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostUser;
 import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUser;
 import com.aditiyagilang.edifarm_company.model.GetPostUser.GetPostUserDataItem;
+import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.List;
 
@@ -55,6 +58,7 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
     GetPostUserDataItem dashboardDataItem;
 
     private FragmentPostingUserBinding binding;
+    private LottieAnimationView progressBar;
 
     @Override
     public View onCreateView(
@@ -90,6 +94,10 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         Call<GetPostUser> dashCall = apiInterface.getPostUserResponse(user_id);
+        progressBar = getView().findViewById(R.id.load_titiku);
+        progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.playAnimation();
         dashCall.enqueue(new Callback<GetPostUser>() {
             @Override
             public void onResponse(Call<GetPostUser> call, Response<GetPostUser> response) {
@@ -103,6 +111,9 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
                         AdapterPostUser adapterPostLike = new AdapterPostUser(requireContext(), postUserDataItemList, GetPostUserA.this);
                         recyclerView.setAdapter(adapterPostLike);
                         dashboardDataItem = postUserDataItemList.get(0);
+                        progressBar.setVisibility(View.GONE);
+                        progressBar.cancelAnimation();
+
                     } else {
                         final Dialog dialog = new Dialog(getContext());
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -117,6 +128,8 @@ public class GetPostUserA extends Fragment implements View.OnClickListener, Adap
                             @Override
                             public void onClick(View view) {
                                 dialog.dismiss();
+                                Intent intent = new Intent(getContext(), dashboardfix.class);
+                                startActivity(intent);
                             }
                         });
                         dialog.show();

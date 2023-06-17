@@ -254,7 +254,7 @@ public class First2Fragment extends Fragment implements View.OnClickListener, Ac
                         Toast.makeText(requireContext(), "Kosong", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getContext(), "Cok", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Koneksi Error", Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -137,9 +137,9 @@ public class DashboardFixAdapter extends RecyclerView.Adapter<DashboardFixAdapte
 
 
         Picasso.get().load(imageUrl).resize(50, 50)
-                .centerCrop().into(holder.fotoProfil);
+                .centerInside().into(holder.fotoProfil);
         Picasso.get().load(imageUrlP).resize(900, 600)
-                .centerCrop().into(holder.gambarPosting);
+                .centerInside().into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);
         holder.caption.setText(item.getCaption());

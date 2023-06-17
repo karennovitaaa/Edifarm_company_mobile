@@ -87,8 +87,10 @@ public class AdapterPostUser extends RecyclerView.Adapter<AdapterPostUser.Adapte
         String post_id = String.valueOf(dataList.get(position).getId());
 
 
-        Picasso.get().load(imageUrl).into(holder.fotoProfil);
-        Picasso.get().load(imageUrlP).into(holder.gambarPosting);
+        Picasso.get().load(imageUrl).resize(50, 50)
+                .centerInside().into(holder.fotoProfil);
+        Picasso.get().load(imageUrlP).resize(900, 600)
+                .centerInside().into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);
         holder.caption.setText(item.getCaption());
