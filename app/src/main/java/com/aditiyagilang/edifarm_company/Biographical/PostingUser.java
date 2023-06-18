@@ -30,6 +30,7 @@ import com.aditiyagilang.edifarm_company.databinding.FragmentLikeUserBinding;
 import com.aditiyagilang.edifarm_company.design.AdapterPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLike;
 import com.aditiyagilang.edifarm_company.model.GetPostLike.GetPostLikeDataItem;
+import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
     ApiInterface apiInterface;
     GetPostLikeDataItem dgetPostDataItem;
     private FragmentLikeUserBinding binding;
+    private LottieAnimationView progressBar;
 
     @Override
     public View onCreateView(
@@ -79,6 +81,10 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         String user_id = sesionManager.getUserDetail().get(SesionManager.ID);
         Call<GetPostLike> dashCall = apiInterface.getPostlikeResponse(user_id);
+        progressBar = getView().findViewById(R.id.load_titiku);
+        progressBar.setAnimation(R.raw.load_titik);  // Ganti dengan file animasi Lottie Anda
+        progressBar.setVisibility(View.VISIBLE);
+        progressBar.playAnimation();
         dashCall.enqueue(new Callback<GetPostLike>() {
             @Override
             public void onResponse(Call<GetPostLike> call, Response<GetPostLike> response) {
@@ -93,6 +99,8 @@ public class PostingUser extends Fragment implements View.OnClickListener, Adapt
                         AdapterPostLike adapterPostLike = new AdapterPostLike(requireContext(), postLikeDataItemList, PostingUser.this);
                         recyclerView.setAdapter(adapterPostLike);
                         dgetPostDataItem = postLikeDataItemList.get(0);
+                        progressBar.setVisibility(View.GONE);
+                        progressBar.cancelAnimation();
                     } else {
                         final Dialog dialog = new Dialog(getContext());
                         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

@@ -97,8 +97,9 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
         String longitude = item.getLongitude();
 
         Picasso.get().load(imageUrl).resize(50, 50)
-                .centerCrop().into(holder.fotoProfil);
-        Picasso.get().load(imageUrlP).into(holder.gambarPosting);
+                .centerInside().into(holder.fotoProfil);
+        Picasso.get().load(imageUrlP).resize(900, 600)
+                .centerInside().into(holder.gambarPosting);
         holder.namaAkun.setText(akunname);
         holder.tanggalPost.setText(tanggals);
         holder.caption.setText(item.getCaption());

@@ -32,7 +32,6 @@ import com.aditiyagilang.edifarm_company.Riwayat.Historys;
 import com.aditiyagilang.edifarm_company.SesionManager;
 import com.aditiyagilang.edifarm_company.activitys;
 import com.aditiyagilang.edifarm_company.dashboardfixx.dashboardfix;
-
 import com.aditiyagilang.edifarm_company.databinding.ActivityBiographicalBinding;
 import com.aditiyagilang.edifarm_company.edit_profile;
 import com.aditiyagilang.edifarm_company.login;
@@ -79,13 +78,7 @@ public class Biographical extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_biographical);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.ChangePass || destination.getId() == R.id.ChangeAcount) {
-                getSupportActionBar().hide(); // Sembunyikan ActionBar
-            } else {
-                getSupportActionBar().show(); // Tampilkan ActionBar
-            }
-        });
+      
         posting = findViewById(R.id.posting);
         likes = findViewById(R.id.likes);
 //        binding.fab.setOnClickListener(new View.OnClickListener() {
