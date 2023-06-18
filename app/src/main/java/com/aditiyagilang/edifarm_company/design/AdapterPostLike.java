@@ -80,7 +80,7 @@ public class AdapterPostLike extends RecyclerView.Adapter<AdapterPostLike.Adapte
         String textProfil = String.valueOf(item.getUserId());
         String fotoProfil = item.getPhoto();
         String imageUrl = "http://edifarm.yoganova.my.id/" + fotoProfil;
-        String token = item.getFcmToken().toString();
+        String token = String.valueOf(item.getFcmToken());
         String tanggal = String.valueOf(item.getCreatedAt());
         String gambarpost = String.valueOf(item.getImage());
         String imageUrlP = "http://edifarm.yoganova.my.id/" + gambarpost;
