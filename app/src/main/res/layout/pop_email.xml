@@ -38,6 +38,7 @@
             android:inputType="textEmailAddress"
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/subText"
+            android:textSize="14dp"
             android:textColorHint="@color/subText">
 
         </EditText>

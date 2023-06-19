@@ -19,8 +19,8 @@
             android:id="@+id/imageProfilsearch"
             android:layout_width="50dp"
             android:layout_height="53dp"
-            android:scaleType="center"
-            android:src="@drawable/wishal_profile" />
+            android:scaleType="centerCrop"
+            />
 
     </androidx.cardview.widget.CardView>
 
