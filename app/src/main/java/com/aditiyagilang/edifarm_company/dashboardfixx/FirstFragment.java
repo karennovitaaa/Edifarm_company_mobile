@@ -1,17 +1,11 @@
 package com.aditiyagilang.edifarm_company.dashboardfixx;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -165,26 +159,26 @@ public class FirstFragment extends Fragment implements View.OnClickListener, Das
                     progressBar.setVisibility(View.GONE);
                     progressBar.cancelAnimation();
                 } else {
-                    final Dialog dialog = new Dialog(getContext());
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setContentView(R.layout.pop_tryagain);
-                    Button oke = dialog.findViewById(R.id.dones);
-                    TextView massage = dialog.findViewById(R.id.masseges);
-                    massage.setText("Coba Beberapa Saat Lagi");
-
-                    oke.setText("Oke");
-
-                    oke.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            dialog.dismiss();
-                        }
-                    });
-                    dialog.show();
-                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
-                    dialog.getWindow().setGravity(Gravity.CENTER);
+//                    final Dialog dialog = new Dialog(getContext());
+//                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//                    dialog.setContentView(R.layout.pop_tryagain);
+//                    Button oke = dialog.findViewById(R.id.dones);
+//                    TextView massage = dialog.findViewById(R.id.masseges);
+//                    massage.setText("Coba Beberapa Saat Lagi");
+//
+//                    oke.setText("Oke");
+//
+//                    oke.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                    dialog.show();
+//                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationSettPop;
+//                    dialog.getWindow().setGravity(Gravity.CENTER);
                 }
             }
 
